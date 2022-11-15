@@ -1,4 +1,5 @@
 <template>
+  <vue3-snackbar top :duration="4000" />
   <RouterView />
 </template>
 
