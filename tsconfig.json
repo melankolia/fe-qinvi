@@ -6,7 +6,9 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "target": "es2018"
+    "lib": ["es2018", "dom"],
+    "noImplicitAny": false,
+    "allowJs": true
   },
 
   "references": [

@@ -5,44 +5,40 @@ const instance = axios.create({
 });
 
 const MainInstance = {
-  async query(resource, params) {
+  async query(resource: any, params: any) {
     return instance.get(resource, params);
   },
 
-  async download(resource, params, type) {
+  async download(resource: any, params: any, type: any) {
     return instance.get(resource, { params, responseType: type });
   },
 
-  async fetch(resource, slug = "", params) {
+  async fetch(resource: any, slug: string = "", params: any) {
     return instance.get(`${resource}/${slug}`, params);
   },
 
-  async post(resource, params, config) {
+  async post(resource: any, params: any, config: any) {
     return instance.post(`${resource}`, params, config);
   },
 
-  async create(resource, slug = "", params, config) {
+  async create(resource: any, slug: string = "", params: any, config: any) {
     return instance.post(`${resource}/${slug}`, params, config);
   },
 
-  async update(resource, slug, params) {
+  async update(resource: any, slug: any, params: any) {
     return instance.put(`${resource}/${slug}`, params);
   },
 
-  async put(resource, params, config) {
+  async put(resource: any, params: any, config: any) {
     return instance.put(`${resource}`, params, config);
   },
 
-  async delete(resource, config) {
+  async delete(resource: any, config: any) {
     return instance.delete(resource, config);
   },
 
-  async deleteSlug(resource, slug, config) {
+  async deleteSlug(resource: any, slug: string = "", config: any) {
     return instance.delete(`${resource}/${slug}`, config);
-  },
-
-  cancelRequest() {
-    return instance.CancelToken;
   },
 };
 

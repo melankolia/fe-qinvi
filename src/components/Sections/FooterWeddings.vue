@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import type { DefineProps } from "vue";
 import { defineProps } from "vue";
 
 interface FooterWeddingsProps {

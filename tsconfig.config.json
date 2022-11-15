@@ -4,6 +4,8 @@
   "compilerOptions": {
     "composite": true,
     "types": ["node"],
-    "target": "es2018"
+    "lib": ["es2018", "dom"],
+    "noImplicitAny": false,
+    "allowJs": true
   }
 }

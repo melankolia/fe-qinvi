@@ -24,7 +24,7 @@ const isOpen: Ref<boolean> = ref(false);
 const loading: Ref<boolean> = ref(false);
 const mempelaiPria: Ref<string> = ref("-");
 const mempelaiWanita: Ref<string> = ref("-");
-const fotoFooter: Ref<string | null> = ref(null);
+const fotoFooter: Ref<string> = ref("-");
 
 const route = useRoute();
 const snackbar = useSnackbar();
