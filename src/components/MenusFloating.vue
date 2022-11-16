@@ -96,7 +96,9 @@ const changeStatePlay = (): void => {
       />
 
       <p class="caption-1 text-brown-70">{{ isPlay ? "Pause" : "Play" }}</p>
-      <audio id="myAudio" :src="usedAudio"></audio>
+      <audio id="myAudio" preload="auto">
+        <source :src="usedAudio" type="audio/mpeg" />
+      </audio>
     </button>
   </div>
 </template>
