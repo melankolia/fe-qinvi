@@ -74,7 +74,7 @@ interface dataPernikahanType {
     updatedAt: string;
     userId: number;
   }>;
-  tamu: Array<{
+  tamu: {
     createdAt: string;
     domainUndangan: string;
     id: number;
@@ -85,7 +85,7 @@ interface dataPernikahanType {
     tglKirimUndangan: string;
     updatedAt: string;
     userId: number;
-  }>;
+  };
   ucapan: Array<{
     createdAt: string;
     id: number;
@@ -102,7 +102,18 @@ const dataPernikahan: Ref<dataPernikahanType> = ref({
   gallery: [],
   pengantin: [],
   rekening: [],
-  tamu: [],
+  tamu: {
+    createdAt: "",
+    domainUndangan: "",
+    id: 0,
+    namaTamu: "",
+    noHandphone: "",
+    secureId: "",
+    statusUndangan: 0,
+    tglKirimUndangan: "",
+    updatedAt: "",
+    userId: 0,
+  },
   ucapan: [],
 });
 
@@ -217,6 +228,7 @@ onMounted(() => {
       />
       <IntroductionFamilies
         id="mempelaiSection"
+        :tamu="dataPernikahan.tamu"
         :pengantin="dataPernikahan.pengantin"
       />
       <WeddingEvents id="acaraSection" :acara="dataPernikahan.acara" />

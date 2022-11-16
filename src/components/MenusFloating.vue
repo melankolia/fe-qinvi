@@ -4,7 +4,7 @@ import { ref } from "vue";
 
 const isPlay: Ref<boolean> = ref(false);
 const usedAudio: Ref<string> = ref(
-  "http://139.99.27.20/storage/Sherina%20-%20Cinta%20Pertama%20dan%20Terakhir%20_%20Official%20Music%20Video_DRY81pGMABc.mp3"
+  "http://139.99.27.20/storage/Yovie%20&%20Nuno%20-%20Janji%20Suci%20(Video%20Clip)_hQ-wYw4hP84.mp3"
 );
 const emit = defineEmits<{
   (e: "fnClick", value: string): void;

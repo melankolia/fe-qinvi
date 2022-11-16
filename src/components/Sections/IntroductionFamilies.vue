@@ -17,6 +17,18 @@ type pengantinTypes = {
 
 type introductionFamiliesType = {
   pengantin: Array<pengantinTypes>;
+  tamu: {
+    createdAt: string;
+    domainUndangan: string;
+    id: number;
+    namaTamu: string;
+    noHandphone: string;
+    secureId: string;
+    statusUndangan: number;
+    tglKirimUndangan: string;
+    updatedAt: string;
+    userId: number;
+  };
 };
 
 const props = defineProps<introductionFamiliesType>();
@@ -83,7 +95,7 @@ onMounted(() => {
         Kepada Bapak/Ibu/Saudara/i,
         <br />
         <br />
-        Yang diundang
+        {{ props.tamu?.namaTamu }}
         <br />
         <br />
         Dengan memohon rahmat dan ridho Allah Subhanahu wa Ta'ala, kami memohon
