@@ -219,7 +219,11 @@ onMounted(() => {
         <p class="body-2 text-white">Buka Undangan</p>
       </button>
     </div>
-    <template v-else>
+    <div
+      class="flex flex-col"
+      v-else
+      style="max-width: 480px; margin-left: auto; margin-right: auto"
+    >
       <CoverInvitation
         :mempelaiPria="mempelaiPria"
         :mempelaiWanita="mempelaiWanita"
@@ -247,6 +251,6 @@ onMounted(() => {
       />
       <FooterSections />
       <MenusFloating @fnClick="(e) => handleMenuClick(e)" />
-    </template>
+    </div>
   </div>
 </template>
