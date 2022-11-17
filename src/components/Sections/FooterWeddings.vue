@@ -14,7 +14,7 @@ const props = defineProps<FooterWeddingsProps>();
   <div class="relative flex flex-col bg-brown-10 items-center">
     <img :src="foto" class="z-30 py-9 px-14" />
     <img src="@/assets/images/Flower4.png" class="absolute w-full" />
-    <p class="caption-1 text-center px-4">
+    <p class="caption-1 text-brown-70 text-center px-4">
       Menjadi sebuah kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan
       hadir dalam hari bahagia kami. Terima kasih atas segala ucapan, doa, dan
       perhatian yang diberikan. Kami mengharap pengertian Anda atas semua

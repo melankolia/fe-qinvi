@@ -1,7 +1,7 @@
 <template>
   <div
     id="wishes-container"
-    class="flex flex-col max-h-96 py-4 px-6 overflow-scroll"
+    class="flex flex-col max-h-96 py-4 px-6 overflow-scroll bg-white"
   >
     <WishesComponents
       :username="e.nama"
