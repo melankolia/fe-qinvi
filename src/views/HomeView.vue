@@ -220,9 +220,9 @@ onMounted(() => {
       </button>
     </div>
     <div
-      class="flex flex-col"
+      class="flex flex-col mx-none md:mx-auto"
       v-else
-      style="max-width: 480px; margin-left: auto; margin-right: auto"
+      style="max-width: 480px"
     >
       <CoverInvitation
         :mempelaiPria="mempelaiPria"
