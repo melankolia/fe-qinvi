@@ -22,9 +22,9 @@ const props = defineProps<FooterWeddingsProps>();
       bahagia kami!
     </p>
     <div class="flex flex-row items-center space-x-3 my-14">
-      <p class="headline-1 text-brown-70">{{ props.mempelaiWanita }}</p>
-      <p class="headline-2 text-brown-70">and</p>
       <p class="headline-1 text-brown-70">{{ props.mempelaiPria }}</p>
+      <p class="headline-2 text-brown-70">and</p>
+      <p class="headline-1 text-brown-70">{{ props.mempelaiWanita }}</p>
     </div>
   </div>
 </template>

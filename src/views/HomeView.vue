@@ -180,9 +180,9 @@ onMounted(() => {
     >
       <p class="caption-1 text-brown-70">We invite you to join our wedding</p>
       <div class="flex flex-row items-center space-x-3 mb-5">
-        <p class="headline-1 text-brown-70">{{ mempelaiWanita }}</p>
-        <p class="headline-2 text-brown-70">and</p>
         <p class="headline-1 text-brown-70">{{ mempelaiPria }}</p>
+        <p class="headline-2 text-brown-70">and</p>
+        <p class="headline-1 text-brown-70">{{ mempelaiWanita }}</p>
       </div>
       <button
         @click="handleClick"

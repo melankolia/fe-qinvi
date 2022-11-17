@@ -110,9 +110,9 @@ onMounted(() => {
     >
       <p class="caption-1 text-brown-70">We invite you to join our wedding</p>
       <div class="flex flex-row items-center space-x-3">
-        <p class="headline-1 text-brown-70">{{ props.mempelaiWanita }}</p>
-        <p class="headline-2 text-brown-70">and</p>
         <p class="headline-1 text-brown-70">{{ props.mempelaiPria }}</p>
+        <p class="headline-2 text-brown-70">and</p>
+        <p class="headline-1 text-brown-70">{{ props.mempelaiWanita }}</p>
       </div>
       <p class="caption-1 text-brown-70">{{ tanggal }}</p>
       <img src="@/assets/images/Flower1.png" class="absolute w-full h-full" />

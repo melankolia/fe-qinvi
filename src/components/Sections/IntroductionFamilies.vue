@@ -103,21 +103,21 @@ onMounted(() => {
       </p>
       <div class="flex flex-col items-center">
         <p class="headline-2 text-brown-70">
-          {{ pengantinWanita.namaPanggilan }}
-        </p>
-        <p class="caption-1 text-brown-70 text-center">
-          Putri dari Bapak {{ pengantinWanita.namaAyah }}
-          <br />
-          dan Ibu {{ pengantinWanita.namaIbu }}
-        </p>
-        <p class="headline-2 text-brown-70 my-6">&</p>
-        <p class="headline-2 text-brown-70">
           {{ pengantinPria.namaPanggilan }}
         </p>
         <p class="caption-1 text-brown-70 text-center">
           Putra dari Bapak {{ pengantinPria.namaAyah }}
           <br />
           dan Ibu {{ pengantinPria.namaIbu }}
+        </p>
+        <p class="headline-2 text-brown-70 my-6">&</p>
+        <p class="headline-2 text-brown-70">
+          {{ pengantinWanita.namaPanggilan }}
+        </p>
+        <p class="caption-1 text-brown-70 text-center">
+          Putri dari Bapak {{ pengantinWanita.namaAyah }}
+          <br />
+          dan Ibu {{ pengantinWanita.namaIbu }}
         </p>
       </div>
     </div>
