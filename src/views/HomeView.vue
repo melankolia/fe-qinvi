@@ -126,7 +126,6 @@ const handleClick = (): void => {
       const { data, status } = result;
       if (status == 200) {
         if (data.data?.gallery?.length > 0) {
-          console.log(data.data?.gallery[data.data?.gallery.length - 1]);
           fotoFooter.value = data.data?.gallery[data.data?.gallery.length - 1];
         }
 

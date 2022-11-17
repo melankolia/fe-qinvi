@@ -42,7 +42,6 @@ const handleSubmit = async (): Promise<void> => {
       } else {
         throw new Error(message);
       }
-      console.log(data);
     })
     .catch((err) => {
       console.error(err);
