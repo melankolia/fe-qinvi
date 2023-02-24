@@ -128,19 +128,6 @@ const handleClick = (): void => {
         }
 
         dataPernikahan.value = { ...data?.data } as dataPernikahanType;
-        dataPernikahan.value.acara.push({
-          id: 2,
-          alamat: "Jl. Sesama",
-          createdAt: "2022-11-06 15:09:21",
-          lokasi: "SM Town",
-          namaAcara: "Resepsi",
-          tanggal: "Januari 2023 Sabtu",
-          updatedAt: "2022-11-14 04:52:33",
-          urlMap: "wdas",
-          userId: 1,
-          waktuMulai: "16:02:00",
-          waktuSelesai: "16:02:00",
-        });
 
         isOpen.value = true;
       } else {
