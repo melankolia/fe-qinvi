@@ -174,17 +174,17 @@ onMounted(() => {
   <div class="flex flex-col">
     <div
       v-if="!isOpen"
-      class="bg-brown-10 flex flex-col items-center justify-center h-screen"
+      class="bg-green-10 flex flex-col items-center justify-center h-screen"
     >
-      <p class="caption-1 text-brown-70">We invite you to join our wedding</p>
+      <p class="caption-1 text-blue-10">We invite you to join our wedding</p>
       <div class="flex flex-row items-center space-x-3 mb-5">
-        <p class="headline-1 text-brown-70">{{ mempelaiPria }}</p>
-        <p class="headline-2 text-brown-70">and</p>
-        <p class="headline-1 text-brown-70">{{ mempelaiWanita }}</p>
+        <p class="headline-1 text-blue-10">{{ mempelaiPria }}</p>
+        <p class="headline-2 text-blue-10">and</p>
+        <p class="headline-1 text-blue-10">{{ mempelaiWanita }}</p>
       </div>
       <button
         @click="handleClick"
-        class="button-date bg-brown-70 py-1.5 px-3 rounded-md flex flex-row items-center space-x-2.5 transition-all"
+        class="button-date bg-blue-10 py-1.5 px-3 rounded-md flex flex-row items-center space-x-2.5 transition-all"
       >
         <svg
           v-if="loading"
