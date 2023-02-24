@@ -11,20 +11,33 @@ const props = defineProps<FooterWeddingsProps>();
 </script>
 
 <template>
-  <div class="relative flex flex-col bg-brown-10 items-center">
-    <img :src="foto" class="z-30 py-9 px-14" />
-    <img src="@/assets/images/Flower4.png" class="absolute w-full" />
-    <p class="caption-1 text-brown-70 text-center px-4">
-      Menjadi sebuah kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan
-      hadir dalam hari bahagia kami. Terima kasih atas segala ucapan, doa, dan
-      perhatian yang diberikan. Kami mengharap pengertian Anda atas semua
-      pemberlakuan protokol kesehatan di hari pernikahan. Sampai jumpa di hari
-      bahagia kami!
+  <div class="bg-footer relative flex flex-col bg-brown-10 items-center p-5">
+    <img
+      src="@/assets/images/ava-couple.png"
+      width="124"
+      height="124"
+      class="my-6"
+    />
+    <p class="caption-9 text-black text-center px-4">
+      Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila
+      <br />
+      Bapak/Ibu/Saudara/i berkenan hadir dan memberikan do’a restunya untuk
+      keberkahan pernikahan kami.
+      <br />
+      Atas do’a dan restunya, kami ucapkan terima kasih.
     </p>
     <div class="flex flex-row items-center space-x-3 my-14">
-      <p class="headline-1 text-brown-70">{{ props.mempelaiPria }}</p>
-      <p class="headline-2 text-brown-70">and</p>
-      <p class="headline-1 text-brown-70">{{ props.mempelaiWanita }}</p>
+      <p class="caption-5 text-black">{{ props.mempelaiPria }}</p>
+      <p class="caption-5 text-black">&</p>
+      <p class="caption-5 text-black">{{ props.mempelaiWanita }}</p>
     </div>
   </div>
 </template>
+
+<style scoped>
+.bg-footer {
+  background-image: url("@/assets/images/background-footer.png");
+  background-position: top;
+  background-size: cover;
+}
+</style>

@@ -58,61 +58,60 @@ const handleSubmit = async (): Promise<void> => {
 </script>
 
 <template>
-  <div class="flex flex-col bg-brown-80 px-4 py-6">
-    <p class="headline-3 text-green-10 mb-5 text-center">DOA DAN UCAPAN</p>
+  <div class="flex flex-col bg-green-50 px-4 py-16">
+    <div class="flex flex-col my-4">
+      <p class="headline-7 text-black mb-8 text-center">Best Wishes</p>
+      <p class="headline-8 text-black mb-5 text-center">
+        Thanks for all the wedding wishes! <br />You made a great day even
+        greater!
+      </p>
+    </div>
     <div class="flex flex-col">
-      <p class="caption-1 text-white mb-1.5">Nama Kamu</p>
       <input
         v-model="form.from"
         type="text"
         id="fname"
         name="fname"
-        class="rounded-sm mb-5"
+        class="rounded-sm mb-8 px-2 pb-2 pt-1"
+        placeholder="Nama"
       />
-      <p class="caption-1 text-white mb-1.5">Doa dan Ucapan</p>
       <textarea
+        placeholder="Give your wishes"
         v-model="form.message"
-        class="rounded-sm"
+        class="rounded-sm px-2 pt-1"
         id="prayer"
         name="prayer"
         rows="4"
         cols="50"
       />
     </div>
-    <div class="flex flex-col items-center pt-5">
-      <button
-        class="button-date bg-brown-10 py-1.5 px-3 rounded-2xl flex flex-row items-center space-x-2.5"
-        @click="handleSubmit"
+    <button
+      class="button-date bg-blue-10 py-1.5 px-3 mt-4 rounded-2xl flex flex-row justify-center items-center space-x-2.5"
+      @click="handleSubmit"
+      style="max-width: 120px"
+    >
+      <svg
+        v-if="loading"
+        class="animate-spin -ml-1 h-5 w-5 text-brown-70"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
       >
-        <svg
-          v-if="loading"
-          class="animate-spin -ml-1 h-5 w-5 text-brown-70"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-        >
-          <circle
-            class="opacity-25"
-            cx="12"
-            cy="12"
-            r="10"
-            stroke="currentColor"
-            stroke-width="4"
-          ></circle>
-          <path
-            class="opacity-75"
-            fill="currentColor"
-            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-          ></path>
-        </svg>
-        <img
-          v-else
-          src="@/assets/icons/icon-email.png"
-          height="18"
-          width="18"
-        />
-        <p class="body-2 text-brown-70">Kirim Ucapan</p>
-      </button>
-    </div>
+        <circle
+          class="opacity-25"
+          cx="12"
+          cy="12"
+          r="10"
+          stroke="currentColor"
+          stroke-width="4"
+        ></circle>
+        <path
+          class="opacity-75"
+          fill="currentColor"
+          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+        ></path>
+      </svg>
+      <p class="body-2 text-white">Kirim Ucapan</p>
+    </button>
   </div>
 </template>

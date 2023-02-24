@@ -50,9 +50,25 @@ const handleCopy = (i: number): void => {
 </script>
 
 <template>
-  <div class="flex flex-col bg-brown-90 px-4 py-6">
-    <p class="headline-3 text-green-10 mb-9 text-center">DOMPET DIGITAL</p>
-    <div
+  <div class="bg-wallet flex flex-col bg-brown-90 px-12 py-16">
+    <p class="headline-9 text-gold-10 text-center">Gift</p>
+    <hr class="mt-2 mb-6 mx-14 border-t border-black" />
+    <p class="body-3 text-black text-center px-6">
+      Doa restu Anda merupakan karunia yang sangat berarti bagi kami. Dan jika
+      memberi adalah ungkapan tanda kasih Anda, Anda dapat memberi kado secara
+      cashless.
+    </p>
+    <div class="flex flex-col items-center">
+      <button
+        class="button-date bg-blue-10 py-1.5 px-3 mt-4 rounded-2xl flex flex-row justify-center items-center space-x-2.5"
+        @click="handleCopy(0)"
+        style="max-width: 120px"
+      >
+        <p class="body-2 text-white">Klik Disini</p>
+      </button>
+    </div>
+
+    <!-- <div
       v-for="(e, i) in props.rekening"
       :key="i"
       class="flex flex-col bg-brown-10 items-center rounded-xl p-4 mb-3"
@@ -82,6 +98,14 @@ const handleCopy = (i: number): void => {
           <p class="body-2 text-white">Copy Text</p>
         </button>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
+
+<style scoped>
+.bg-wallet {
+  background-image: url("@/assets/images/background-gift.png");
+  background-position: top;
+  background-size: cover;
+}
+</style>

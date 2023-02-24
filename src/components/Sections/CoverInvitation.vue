@@ -100,45 +100,31 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex flex-col h-screen">
-    <div
-      class="w-full h-2/3 md:h-2/3 bg-center bg-cover"
-      :style="`background-image: url(${CoverImage})`"
+  <div
+    class="bg-cover flex flex-col bg-green-30 justify-center items-center"
+    style="height: 590px"
+  >
+    <p class="caption-7 text-black">The Wedding Of</p>
+    <img src="@/assets/images/Cover.png" width="135" height="157" />
+    <p class="caption-5 text-black mt-2">
+      {{ props.mempelaiPria }} & {{ props.mempelaiWanita }}
+    </p>
+    <p class="caption-5 text-black my-4">We invite you to join our wedding</p>
+    <p class="caption-6 text-gold-10">{{ tanggal }}</p>
+    <!-- <img src="@/assets/images/Flower1.png" class="absolute w-full h-full" /> -->
+    <TimerCountDown
+      :days="CountDown.days"
+      :hours="CountDown.hours"
+      :minutes="CountDown.minutes"
+      :seconds="CountDown.seconds"
     />
-    <div
-      class="relative h-1/3 md:h-1/3 flex flex-col justify-center items-center bg-brown-10"
-    >
-      <p class="caption-1 text-brown-70">We invite you to join our wedding</p>
-      <div class="flex flex-row items-center space-x-3">
-        <p class="headline-1 text-brown-70">{{ props.mempelaiPria }}</p>
-        <p class="headline-2 text-brown-70">and</p>
-        <p class="headline-1 text-brown-70">{{ props.mempelaiWanita }}</p>
-      </div>
-      <p class="caption-1 text-brown-70">{{ tanggal }}</p>
-      <img src="@/assets/images/Flower1.png" class="absolute w-full h-full" />
-      <TimerCountDown
-        :days="CountDown.days"
-        :hours="CountDown.hours"
-        :minutes="CountDown.minutes"
-        :seconds="CountDown.seconds"
-      />
-      <button
-        @click="handleSave"
-        class="button-date bg-brown-70 py-1.5 px-3 rounded-2xl flex flex-row items-center space-x-2.5 z-10"
-      >
-        <img
-          src="@/assets/icons/icon-calendar.png"
-          class="brightness-0 invert"
-          height="18"
-          width="18"
-        />
-        <span class="body-2 text-white">Save the Date</span>
-      </button>
-    </div>
   </div>
 </template>
 
 <style scoped>
+.bg-cover {
+  background-image: url("@/assets/images/background-cover.jpg");
+}
 .button-date {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1), 0px 4px 20px rgba(0, 0, 0, 0.1);
 }

@@ -3,18 +3,16 @@ import { ref, onMounted } from "vue";
 import type { Ref } from "vue";
 
 import CoverInvitation from "@/components/Sections/CoverInvitation.vue";
+import QuoteComponent from "@/components/Sections/QuoteComponent.vue";
 import IntroductionFamilies from "@/components/Sections/IntroductionFamilies.vue";
 import WeddingEvents from "@/components/Sections/WeddingEvents.vue";
 import HealthProtocols from "@/components/Sections/HealthProtocols.vue";
-import PresenceForm from "@/components/Sections/PresenceForm.vue";
 import ElectronicWallet from "@/components/Sections/ElectronicWallet.vue";
-import GalleryPhotos from "@/components/Sections/GalleryPhotos.vue";
 import PrayerWishes from "@/components/Sections/PrayerWishes.vue";
 import FooterWeddings from "@/components/Sections/FooterWeddings.vue";
 import FooterSections from "@/components/Sections/FooterSections.vue";
 import MenusFloating from "@/components/MenusFloating.vue";
 import WishesList from "@/components/Sections/WishesList.vue";
-import StorySections from "@/components/Sections/StorySections.vue";
 import { useRoute } from "vue-router";
 import { useSnackbar } from "vue3-snackbar";
 
@@ -130,6 +128,20 @@ const handleClick = (): void => {
         }
 
         dataPernikahan.value = { ...data?.data } as dataPernikahanType;
+        dataPernikahan.value.acara.push({
+          id: 2,
+          alamat: "Jl. Sesama",
+          createdAt: "2022-11-06 15:09:21",
+          lokasi: "SM Town",
+          namaAcara: "Resepsi",
+          tanggal: "Januari 2023 Sabtu",
+          updatedAt: "2022-11-14 04:52:33",
+          urlMap: "wdas",
+          userId: 1,
+          waktuMulai: "16:02:00",
+          waktuSelesai: "16:02:00",
+        });
+
         isOpen.value = true;
       } else {
         console.error(data?.data?.message);
@@ -229,6 +241,7 @@ onMounted(() => {
         :acara="dataPernikahan.acara"
         id="homeSection"
       />
+      <QuoteComponent />
       <IntroductionFamilies
         id="mempelaiSection"
         :tamu="dataPernikahan.tamu"
@@ -236,11 +249,7 @@ onMounted(() => {
       />
       <WeddingEvents id="acaraSection" :acara="dataPernikahan.acara" />
       <HealthProtocols />
-      <PresenceForm />
       <ElectronicWallet :rekening="dataPernikahan.rekening" />
-      <GalleryPhotos id="gallerySection" :gallery="dataPernikahan.gallery" />
-      <img src="@/assets/images/Rings.png" />
-      <StorySections :ceritaCinta="dataPernikahan.ceritaCinta" />
       <PrayerWishes />
       <WishesList :wishes="dataPernikahan.ucapan" />
       <FooterWeddings

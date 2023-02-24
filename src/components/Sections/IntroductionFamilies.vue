@@ -75,51 +75,53 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex flex-col bg-brown-10 items-center">
-    <div
-      class="flex flex-col pt-4 mx-4 px-4 bg-brown-80 text-center p-4 rounded-xl"
-    >
-      <p class="caption-1 text-white">
-        “Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
-        pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan
-        merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan
-        sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda
-        (kebesaran Allah) bagi kaum yang berpikir.
+  <div
+    style="min-height: 752px"
+    class="flex flex-col px-4 justify-center items-center relative pb-9 bg-green-30 bg-mempelai"
+  >
+    <p class="headline-6 text-black mt-4 mb-9">Assalamu’alaikum Wr. Wb.</p>
+    <p class="caption-8 text-black text-center mb-7 mx-6">
+      Dengan memohon rahmat dan ridho Allah Subhanahu Wa Ta’ala, insyaaAllah
+      kami akan menyelenggarakan acara pernikahan :
+    </p>
+    <div class="flex flex-col items-center">
+      <img
+        src="@/assets/images/ava-female.png"
+        width="145"
+        height="145"
+        class="mb-4"
+      />
+      <p class="caption-8 text-black mb-2">
+        {{ pengantinWanita.namaPanggilan }}
       </p>
-      <p class="caption-1 text-white pt-4">- QS. Ar-Rum 21 -</p>
-    </div>
-    <div class="flex flex-col px-4 items-center relative pb-9">
-      <img src="@/assets/images/Flower2.png" class="absolute w-full h-full" />
-      <p class="headline-3 text-green-20 mt-4 mb-9">MEMPELAI</p>
-      <p class="caption-1 text-brown-70 text-center mb-7">
-        Kepada Bapak/Ibu/Saudara/i,
+      <p class="caption-8 text-black text-center">
+        Putri dari Bapak {{ pengantinWanita.namaAyah }}
         <br />
-        <br />
-        {{ props.tamu?.namaTamu }}
-        <br />
-        <br />
-        Dengan memohon rahmat dan ridho Allah Subhanahu wa Ta'ala, kami memohon
-        kehadiran Bapak/Ibu/Saudara/i pada acara pernikahan kami:
+        dan Ibu {{ pengantinWanita.namaIbu }}
       </p>
-      <div class="flex flex-col items-center">
-        <p class="headline-2 text-brown-70">
-          {{ pengantinPria.namaPanggilan }}
-        </p>
-        <p class="caption-1 text-brown-70 text-center">
-          Putra dari Bapak {{ pengantinPria.namaAyah }}
-          <br />
-          dan Ibu {{ pengantinPria.namaIbu }}
-        </p>
-        <p class="headline-2 text-brown-70 my-6">&</p>
-        <p class="headline-2 text-brown-70">
-          {{ pengantinWanita.namaPanggilan }}
-        </p>
-        <p class="caption-1 text-brown-70 text-center">
-          Putri dari Bapak {{ pengantinWanita.namaAyah }}
-          <br />
-          dan Ibu {{ pengantinWanita.namaIbu }}
-        </p>
-      </div>
+      <p class="caption-8 text-black my-6">&</p>
+      <img
+        src="@/assets/images/ava-male.png"
+        width="145"
+        height="145"
+        class="mb-4"
+      />
+      <p class="caption-8 text-black mb-2">
+        {{ pengantinPria.namaPanggilan }}
+      </p>
+      <p class="caption-8 text-black text-center">
+        Putra dari Bapak {{ pengantinPria.namaAyah }}
+        <br />
+        dan Ibu {{ pengantinPria.namaIbu }}
+      </p>
     </div>
   </div>
 </template>
+
+<style>
+.bg-mempelai {
+  background-image: url("@/assets/images/background-mempelai.jpg");
+  background-position: top;
+  background-size: cover;
+}
+</style>

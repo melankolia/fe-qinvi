@@ -8,6 +8,27 @@
   src: url("./fonts/Rankings-Caps.otf");
 }
 
+@font-face {
+  font-family: "Butler";
+  src: url("./fonts/Butler.otf");
+}
+
+@font-face {
+  font-family: "Rolasan Signature";
+  src: url("./fonts/RolasanSignature.ttf");
+}
+
+@font-face {
+  font-family: "Times New Roman";
+  src: url("./fonts/times_new_roman.ttf");
+}
+
+@font-face {
+  font-family: "Times New Roman";
+  font-style: italic;
+  src: url("./fonts/times_new_roman_italic.ttf");
+}
+
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
   color-scheme: light only;

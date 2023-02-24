@@ -30,6 +30,62 @@
   line-height: 18px;
 }
 
+.caption-5 {
+  font-family: "Great Vibes", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 23px;
+}
+
+.caption-6 {
+  font-family: "Abhaya Libre", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 37px;
+}
+
+.caption-7 {
+  font-family: "Butler", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.caption-8 {
+  font-family: "Combo", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.caption-9 {
+  font-family: "Times New Roman", sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12.5px;
+  line-height: 23px;
+}
+
+.caption-10 {
+  font-family: "Noto Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.caption-11 {
+  font-family: "Inter", sans-serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 37px;
+}
+
 .body-1 {
   font-family: "Noto Sans", sans-serif;
   font-style: normal;
@@ -47,6 +103,14 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;
+}
+
+.body-3 {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .headline-1 {
@@ -93,4 +157,44 @@
   font-weight: 400;
   font-size: 24px;
   line-height: 22px;
+}
+
+.headline-6 {
+  font-family: "Dancing Script", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.headline-7 {
+  font-family: "Rolasan Signature", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 30px;
+}
+
+.headline-8 {
+  font-family: "Rankings Caps", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 11px;
+}
+
+.headline-9 {
+  font-family: "Rolasan Signature", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 52px;
+}
+
+.headline-10 {
+  font-family: "Dancing Script", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 37px;
 }
