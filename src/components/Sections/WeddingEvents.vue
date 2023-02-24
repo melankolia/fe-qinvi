@@ -50,14 +50,14 @@ onMounted(() => {
     </p>
     <template v-for="(e, i) in props.acara" :key="i">
       <div class="flex flex-col items-center rounded-xl p-4 mb-3">
-        <p class="headline-10 text-black mb-3">{{ e.namaAcara }}</p>
+        <p class="headline-10 text-black">{{ e.namaAcara }}</p>
         <p class="caption-6 text-black">{{ e.tanggal }}</p>
-        <p class="caption-11 text-black">Pukul : {{ e.waktuMulai }} WIB</p>
+        <p class="caption-11 text-black mb-3">Pukul : {{ e.waktuMulai }} WIB</p>
         <p
           class="caption-1 text-black text-center"
           style="font-weight: 300; max-width: 300px"
         >
-          Tempat : {{ e.tanggal }}
+          Tempat : {{ e.lokasi }}
         </p>
       </div>
       <div class="flex flex-col items-center">
