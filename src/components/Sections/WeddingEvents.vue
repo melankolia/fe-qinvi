@@ -29,13 +29,17 @@ const bindingData = (): void => {
   });
 };
 
+const handleOpenMap = (e: any): void => {
+  window.open(e.urlMap);
+};
+
 onMounted(() => {
   bindingData();
 });
 </script>
 
 <template>
-  <div class="flex flex-col bg-brown-90 px-4 py-28 relative bg-weddings">
+  <div class="flex flex-col px-4 py-28 relative bg-weddings">
     <img
       class="absolute top-0 right-0"
       src="@/assets/images/leaf-up.png"
@@ -62,6 +66,7 @@ onMounted(() => {
       </div>
       <div class="flex flex-col items-center">
         <button
+          @click="handleOpenMap(e)"
           class="button-date bg-blue-10 mb-6 py-1.5 px-3 rounded-2xl flex flex-row items-center space-x-2.5"
         >
           <p class="body-2 text-white">Lihat Maps</p>

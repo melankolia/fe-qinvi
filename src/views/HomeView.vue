@@ -25,6 +25,7 @@ const mempelaiWanita: Ref<string> = ref("-");
 const fotoFooter: Ref<string> = ref("-");
 
 const route = useRoute();
+const invitedName: string | null = route.query?.to as string | null;
 const snackbar = useSnackbar();
 
 interface dataPernikahanType {
@@ -176,6 +177,10 @@ onMounted(() => {
       v-if="!isOpen"
       class="bg-green-10 flex flex-col items-center justify-center h-screen"
     >
+      <p class="caption-1 text-blue-10">
+        Hi,
+        <span class="font-bold italic"> {{ invitedName }} and Partner </span>
+      </p>
       <p class="caption-1 text-blue-10">We invite you to join our wedding</p>
       <div class="flex flex-row items-center space-x-3 mb-5">
         <p class="headline-1 text-blue-10">{{ mempelaiPria }}</p>

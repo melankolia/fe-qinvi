@@ -50,7 +50,7 @@ const handleCopy = (i: number): void => {
 </script>
 
 <template>
-  <div class="bg-wallet flex flex-col bg-brown-90 px-12 py-16">
+  <div class="bg-wallet flex flex-col px-12 py-16">
     <p class="headline-9 text-gold-10 text-center">Gift</p>
     <hr class="mt-2 mb-6 mx-14 border-t border-black" />
     <p class="body-3 text-black text-center px-6">

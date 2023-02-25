@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import type { Ref } from "vue";
-import images from "@/assets/images/cover.png";
 import TimerCountDown from "@/components/TimerCountdown.vue";
 import { useSnackbar } from "vue3-snackbar";
 
@@ -36,7 +35,6 @@ interface CoverInvitationProps {
 }
 
 const props = defineProps<CoverInvitationProps>();
-const CoverImage: Ref<string> = ref(images);
 const tanggal: Ref<string> = ref("-");
 const CountDown: Ref<CountDownTypes> = ref({
   days: "0",
