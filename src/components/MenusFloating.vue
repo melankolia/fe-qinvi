@@ -24,7 +24,7 @@ const changeStatePlay = (): void => {
   >
     <button
       class="flex flex-col items-center px-1"
-      @click="() => emit('fnClick', 'homeSection')"
+      @click="() => emit('fnClick', 'welcomeSection')"
     >
       <img
         src="@/assets/icons/icon-home.png"
@@ -32,7 +32,7 @@ const changeStatePlay = (): void => {
         height="15.5"
         class="pb-2"
       />
-      <p class="caption-1 text-brown-70">Home</p>
+      <p class="caption-1 text-blue-10">Home</p>
     </button>
     <button
       class="flex flex-col items-center px-1"
@@ -44,7 +44,7 @@ const changeStatePlay = (): void => {
         height="18"
         class="pb-2"
       />
-      <p class="caption-1 text-brown-70">Mempelai</p>
+      <p class="caption-1 text-blue-10">Mempelai</p>
     </button>
     <button
       class="flex flex-col items-center px-1"
@@ -56,7 +56,7 @@ const changeStatePlay = (): void => {
         height="18"
         class="pb-2"
       />
-      <p class="caption-1 text-brown-70">Acara</p>
+      <p class="caption-1 text-blue-10">Acara</p>
     </button>
     <button
       class="flex flex-col items-center px-1"
@@ -68,37 +68,7 @@ const changeStatePlay = (): void => {
         height="18"
         class="pb-2"
       />
-      <p class="caption-1 text-brown-70">Gallery</p>
-    </button>
-    <button
-      class="flex flex-col items-center px-1"
-      @click="
-        () => {
-          changeStatePlay();
-          emit('fnClick', 'playMusic');
-        }
-      "
-      style="min-width: 42px"
-    >
-      <img
-        v-if="isPlay"
-        src="@/assets/icons/icon-pause.svg"
-        width="18"
-        height="18"
-        class="pb-2"
-      />
-      <img
-        v-else
-        src="@/assets/icons/icon-play.svg"
-        width="18"
-        height="18"
-        class="pb-2"
-      />
-
-      <p class="caption-1 text-brown-70">{{ isPlay ? "Pause" : "Play" }}</p>
-      <audio id="myAudio" preload="auto">
-        <source :src="usedAudio" type="audio/mpeg" />
-      </audio>
+      <p class="caption-1 text-blue-10">Gallery</p>
     </button>
   </div>
 </template>

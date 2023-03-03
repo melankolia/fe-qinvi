@@ -1,6 +1,6 @@
 .caption-1 {
   font-family: "Noto Sans", sans-serif;
-  font-style: normal;
+  /* font-style: normal; */
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
@@ -28,6 +28,14 @@
   font-weight: 300;
   font-size: 12px;
   line-height: 18px;
+}
+
+.caption-5 {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
 }
 
 .body-1 {
@@ -93,4 +101,28 @@
   font-weight: 400;
   font-size: 24px;
   line-height: 22px;
+}
+
+.headline-6 {
+  font-family: "Geshana - Personal Use";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 39px;
+}
+
+.headline-7 {
+  font-family: "Geshana - Personal Use";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 34px;
+}
+
+.headline-8 {
+  font-family: "Times New Roman", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
 }

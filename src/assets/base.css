@@ -8,6 +8,16 @@
   src: url("./fonts/Rankings-Caps.otf");
 }
 
+@font-face {
+  font-family: "Geshana";
+  src: url("./fonts/Geshana.ttf");
+}
+
+@font-face {
+  font-family: "Times New Roman";
+  src: url("./fonts/Times-New-Roman.ttf");
+}
+
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
   color-scheme: light only;

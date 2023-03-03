@@ -50,12 +50,12 @@ const handleCopy = (i: number): void => {
 </script>
 
 <template>
-  <div class="flex flex-col bg-brown-90 px-4 py-6">
-    <p class="headline-3 text-green-10 mb-9 text-center">DOMPET DIGITAL</p>
+  <div class="flex flex-col bg-[#67ABC1] px-4 py-6">
+    <p class="headline-6 text-blue-10 mb-9 text-center">Dompet Digital</p>
     <div
       v-for="(e, i) in props.rekening"
       :key="i"
-      class="flex flex-col bg-brown-10 items-center rounded-xl p-4 mb-3"
+      class="flex flex-col bg-[#EEF1F3] items-center rounded-xl p-4 mb-3"
     >
       <input type="hidden" :id="`#copy-rekening-${i}`" :value="e.noRekening" />
       <img
@@ -64,14 +64,14 @@ const handleCopy = (i: number): void => {
         height="19"
         class="mb-3"
       />
-      <p class="caption-1 text-brown-70 mb-3">
+      <p class="caption-1 text-blue-10 mb-3">
         No. Rekening : {{ e.noRekening }}
       </p>
-      <p class="caption-1 text-brown-70 mb-3">A/n {{ e.namaPemilik }}</p>
+      <p class="caption-1 text-blue-10 mb-3">A/n {{ e.namaPemilik }}</p>
       <div class="flex flex-col items-center">
         <button
           @click="() => handleCopy(i)"
-          class="button-date bg-brown-70 py-1.5 px-3 rounded-2xl flex flex-row items-center space-x-2.5"
+          class="button-date border border-white bg-blue-10 py-1.5 px-3 rounded-2xl flex flex-row items-center space-x-2.5"
         >
           <img
             src="@/assets/icons/icon-copy.png"

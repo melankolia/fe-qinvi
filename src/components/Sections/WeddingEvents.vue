@@ -35,35 +35,32 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex flex-col bg-brown-90 px-4 py-6">
-    <p class="headline-3 text-green-10 mb-9 text-center">ACARA</p>
+  <div class="flex flex-col px-4 pt-6 pb-36 bg-wedding">
     <template v-for="(e, i) in props.acara" :key="i">
-      <div class="flex flex-col bg-brown-10 items-center rounded-xl p-4 mb-3">
-        <p class="headline-4 text-brown-70 mb-3">{{ e.namaAcara }}</p>
-        <p class="caption-1 text-brown-70 mb-3">{{ e.tanggal }}</p>
-        <p class="caption-1 text-brown-70 mb-3" style="font-weight: 300">
-          Pukul : {{ e.waktuMulai }} WIB
-        </p>
-        <p
-          class="caption-1 text-brown-70 text-center"
-          style="font-weight: 300; max-width: 300px"
-        >
-          Tempat : {{ e.tanggal }}
+      <div class="flex flex-col items-center rounded-xl p-4">
+        <p class="headline-6 text-blue-10 mt-5 mb-10">{{ e.namaAcara }}</p>
+        <p class="body-2 text-blue-10">{{ e.tanggal }}</p>
+        <p class="body-2 text-blue-10">Pukul : {{ e.waktuMulai }} WIB</p>
+        <p class="body-2 text-blue-10 text-center" style="max-width: 300px">
+          Tempat : {{ e.alamat }}
         </p>
       </div>
       <div class="flex flex-col items-center">
+        <div class="border-l border-blue-10 h-[70px] mb-6"></div>
         <button
-          class="button-date bg-brown-70 mb-6 py-1.5 px-3 rounded-2xl flex flex-row items-center space-x-2.5"
+          class="button-date bg-blue-10 border border-white mb-6 py-1.5 px-3 rounded-2xl flex flex-row items-center space-x-2.5"
         >
-          <img
-            src="@/assets/icons/icon-location.png"
-            class="brightness-0 invert"
-            height="18"
-            width="18"
-          />
-          <p class="body-2 text-white">Lihat Peta</p>
+          <p class="body-2 text-white">Lihat Lokasi</p>
         </button>
       </div>
     </template>
   </div>
 </template>
+
+<style scoped>
+.bg-wedding {
+  background-image: url("@/assets/images/bg-wedding.webp");
+  background-position: center;
+  background-size: cover;
+}
+</style>

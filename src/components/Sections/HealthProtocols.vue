@@ -1,10 +1,16 @@
 <template>
-  <div class="flex flex-col px-4 items-center relative pb-9 bg-white">
-    <p class="headline-3 text-green-20 mt-6 mb-4">PROTOKOL KESEHATAN</p>
+  <div class="flex flex-col px-4 items-center relative pb-9 bg-[#EEF1F3]">
+    <p class="headline-6 text-blue-10 mt-6 mb-4">Protokol Kesehatan</p>
     <img
       src="@/assets/images/protokol-kesehatan.png"
       class="h-auto w-full z-30"
     />
-    <img src="@/assets/images/Flower5.png" class="absolute w-full" />
+
+    <div class="flex flex-col items-center mt-8">
+      <p class="caption-1 text-blue-10 mb-4" style="font-weight: bold">
+        Created By Qinvi
+      </p>
+      <img src="@/assets/images/qinvi-logo.png" height="66" width="96" />
+    </div>
   </div>
 </template>

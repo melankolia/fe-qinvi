@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed } from "vue";
 import type { Ref } from "vue";
 
-import CoverInvitation from "@/components/Sections/CoverInvitation.vue";
+import WelcomeSection from "@/components/Sections/WelcomeSection.vue";
+import CountdownSection from "@/components/Sections/CountdownSection.vue";
 import IntroductionFamilies from "@/components/Sections/IntroductionFamilies.vue";
 import WeddingEvents from "@/components/Sections/WeddingEvents.vue";
 import HealthProtocols from "@/components/Sections/HealthProtocols.vue";
@@ -10,11 +11,9 @@ import PresenceForm from "@/components/Sections/PresenceForm.vue";
 import ElectronicWallet from "@/components/Sections/ElectronicWallet.vue";
 import GalleryPhotos from "@/components/Sections/GalleryPhotos.vue";
 import PrayerWishes from "@/components/Sections/PrayerWishes.vue";
-import FooterWeddings from "@/components/Sections/FooterWeddings.vue";
 import FooterSections from "@/components/Sections/FooterSections.vue";
 import MenusFloating from "@/components/MenusFloating.vue";
 import WishesList from "@/components/Sections/WishesList.vue";
-import StorySections from "@/components/Sections/StorySections.vue";
 import { useRoute } from "vue-router";
 import { useSnackbar } from "vue3-snackbar";
 
@@ -28,6 +27,11 @@ const fotoFooter: Ref<string> = ref("-");
 
 const route = useRoute();
 const snackbar = useSnackbar();
+
+const invitedPerson: string | null = route.query?.to as string | null;
+const isInvited = computed(() => {
+  return invitedPerson !== null;
+});
 
 interface dataPernikahanType {
   acara: Array<{
@@ -175,17 +179,24 @@ onMounted(() => {
   <div class="flex flex-col">
     <div
       v-if="!isOpen"
-      class="bg-brown-10 flex flex-col items-center justify-center h-screen"
+      class="bg-[#EEF1F3] flex flex-col h-screen justify-around"
     >
-      <p class="caption-1 text-brown-70">We invite you to join our wedding</p>
-      <div class="flex flex-row items-center space-x-3 mb-5">
-        <p class="headline-1 text-brown-70">{{ mempelaiPria }}</p>
-        <p class="headline-2 text-brown-70">and</p>
-        <p class="headline-1 text-brown-70">{{ mempelaiWanita }}</p>
+      <div class="flex flex-col items-center container">
+        <p class="headline-8 text-blue-10 mb-20">Undangan Pernikahan</p>
+        <img
+          src="@/assets/images/arif-prita.webp"
+          alt="Qinvi Wedding Invitation"
+        />
+        <p v-if="isInvited" class="caption-1 text-blue-10 -mt-20">
+          Hi,
+          <span class="font-black italic">{{ invitedPerson }} and Partner</span>
+        </p>
+        <p class="caption-1 text-blue-10">We invite you to join our wedding</p>
       </div>
+
       <button
         @click="handleClick"
-        class="button-date bg-brown-70 py-1.5 px-3 rounded-md flex flex-row items-center space-x-2.5 transition-all"
+        class="button-date bg-blue-10 py-1.5 px-3 rounded-md flex flex-row justify-center items-center space-x-2.5 transition-all mx-6"
       >
         <svg
           v-if="loading"
@@ -223,33 +234,33 @@ onMounted(() => {
       v-else
       style="max-width: 480px"
     >
-      <CoverInvitation
-        :mempelaiPria="mempelaiPria"
-        :mempelaiWanita="mempelaiWanita"
-        :acara="dataPernikahan.acara"
-        id="homeSection"
-      />
+      <WelcomeSection id="welcomeSection" />
       <IntroductionFamilies
         id="mempelaiSection"
         :tamu="dataPernikahan.tamu"
         :pengantin="dataPernikahan.pengantin"
       />
-      <WeddingEvents id="acaraSection" :acara="dataPernikahan.acara" />
-      <HealthProtocols />
-      <PresenceForm />
-      <ElectronicWallet :rekening="dataPernikahan.rekening" />
-      <GalleryPhotos id="gallerySection" :gallery="dataPernikahan.gallery" />
-      <img src="@/assets/images/Rings.png" />
-      <StorySections :ceritaCinta="dataPernikahan.ceritaCinta" />
-      <PrayerWishes />
-      <WishesList :wishes="dataPernikahan.ucapan" />
-      <FooterWeddings
+      <CountdownSection
         :mempelaiPria="mempelaiPria"
         :mempelaiWanita="mempelaiWanita"
-        :foto="fotoFooter"
+        :acara="dataPernikahan.acara"
+        id="homeSection"
       />
+      <PresenceForm />
+      <WeddingEvents id="acaraSection" :acara="dataPernikahan.acara" />
+      <PrayerWishes />
+      <WishesList :wishes="dataPernikahan.ucapan" />
+      <GalleryPhotos id="gallerySection" :gallery="dataPernikahan.gallery" />
+      <ElectronicWallet :rekening="dataPernikahan.rekening" />
+      <HealthProtocols />
       <FooterSections />
       <MenusFloating @fnClick="(e) => handleMenuClick(e)" />
     </div>
   </div>
 </template>
+
+<style scoped>
+.container img {
+  transform: scale(1.5);
+}
+</style>
