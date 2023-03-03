@@ -176,12 +176,12 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex flex-col">
+  <div class="flex flex-col mx-auto" style="max-width: 480px">
     <div
       v-if="!isOpen"
       class="bg-[#EEF1F3] flex flex-col h-screen justify-around"
     >
-      <div class="flex flex-col items-center container overflow-x-hidden">
+      <div class="flex flex-col items-center container overflow-hidden">
         <p class="headline-8 text-blue-10 mb-20">Undangan Pernikahan</p>
         <img
           src="@/assets/images/arif-prita.webp"
