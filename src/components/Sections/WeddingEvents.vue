@@ -40,7 +40,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex flex-col px-4 pt-6 pb-36 bg-wedding">
+  <div class="flex flex-col px-4 pt-6 pb-36 bg-wedding bg-white">
     <template v-for="(e, i) in props.acara" :key="i">
       <div class="flex flex-col items-center rounded-xl p-4">
         <p class="headline-6 text-blue-10 mt-5 mb-10">{{ e.namaAcara }}</p>

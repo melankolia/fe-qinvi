@@ -1,6 +1,6 @@
 <template>
-  <div class="flex flex-col relative">
-    <div class="flex flex-col bg-container h-[556px]">
+  <div class="flex flex-col bg-white relative">
+    <div class="flex flex-col bg-container bg-white h-[556px]">
       <div class="flex flex-col overlay"></div>
     </div>
     <div class="absolute top-1/2 w-full text-center">
