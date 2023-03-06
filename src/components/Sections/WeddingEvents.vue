@@ -23,8 +23,9 @@ const bindingData = (): void => {
   props.acara.map((e: acaraTypes) => {
     e.tanggal = new Date(e.tanggal).toLocaleDateString("id-ID", {
       weekday: "long",
-      year: "numeric",
+      day: "2-digit",
       month: "long",
+      year: "numeric",
     });
   });
 };

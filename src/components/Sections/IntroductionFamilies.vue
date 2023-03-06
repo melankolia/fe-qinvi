@@ -91,23 +91,23 @@ onMounted(() => {
       <div class="flex flex-col">
         <div class="flex flex-col text-center px-14 py-5 border border-blue-10">
           <p class="headline-7 text-blue-10">
-            {{ pengantinPria.namaPanggilan }}
+            {{ pengantinWanita.namaLengkap }}
           </p>
           <p class="caption-1 italic text-blue-10">
-            Putra dari Bapak {{ pengantinPria.namaAyah }}
+            Putri Ketiga dari Bapak {{ pengantinWanita.namaAyah }}
             <br />
-            dan Ibu {{ pengantinPria.namaIbu }}
+            dan Ibu {{ pengantinWanita.namaIbu }}
           </p>
         </div>
         <p class="caption-1 text-blue-10 my-6 self-center">&</p>
         <div class="flex flex-col text-center px-14 py-5 border border-blue-10">
           <p class="headline-7 text-blue-10">
-            {{ pengantinWanita.namaPanggilan }}
+            {{ pengantinPria.namaLengkap }}
           </p>
           <p class="caption-1 italic text-blue-10">
-            Putri dari Bapak {{ pengantinWanita.namaAyah }}
+            Putra Kedua dari Bapak {{ pengantinPria.namaAyah }}
             <br />
-            dan Ibu {{ pengantinWanita.namaIbu }}
+            dan Ibu {{ pengantinPria.namaIbu }}
           </p>
         </div>
       </div>

@@ -59,7 +59,7 @@ const handleCopy = (i: number): void => {
     >
       <input type="hidden" :id="`#copy-rekening-${i}`" :value="e.noRekening" />
       <img
-        src="@/assets/images/BCA_logo.png"
+        src="@/assets/images/BNI_logo.svg"
         width="60"
         height="19"
         class="mb-3"
