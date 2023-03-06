@@ -30,6 +30,10 @@ const bindingData = (): void => {
   });
 };
 
+const openMap = (e: acaraTypes): void => {
+  window.open(e.urlMap);
+};
+
 onMounted(() => {
   bindingData();
 });
@@ -49,6 +53,7 @@ onMounted(() => {
       <div class="flex flex-col items-center">
         <div class="border-l border-blue-10 h-[70px] mb-6"></div>
         <button
+          @click="openMap(e)"
           class="button-date bg-blue-10 border border-white mb-6 py-1.5 px-3 rounded-2xl flex flex-row items-center space-x-2.5"
         >
           <p class="body-2 text-white">Lihat Lokasi</p>

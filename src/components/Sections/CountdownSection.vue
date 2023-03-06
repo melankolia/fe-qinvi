@@ -82,13 +82,9 @@ const startCountDown = (): void => {
 };
 
 const handleSave = (): void => {
-  snackbar.add({
-    type: "success",
-    title: "Success",
-    text: "Berhasil menyimpan tanggal acara",
-    group: "5862a88b",
-    count: 1,
-  });
+  window.open(
+    "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MHQwZXBiOGp1N3BvNm1wdXZxZmdoc2JicW0gdjJmazc3dmduYzgxbDkydWJsb2NmOWo5YzBAZw&tmsrc=v2fk77vgnc81l92ublocf9j9c0%40group.calendar.google.com"
+  );
 };
 
 onMounted(() => {

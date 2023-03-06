@@ -16,6 +16,7 @@ import MenusFloating from "@/components/MenusFloating.vue";
 import WishesList from "@/components/Sections/WishesList.vue";
 import { useRoute } from "vue-router";
 import { useSnackbar } from "vue3-snackbar";
+import { useHead } from "unhead";
 
 import HomeService from "@/services/resources/home.service";
 
@@ -152,10 +153,12 @@ const handleClick = (): void => {
     .finally(() => (loading.value = false));
 };
 
-const splittingUsername = (username: string): void => {
+const splittingUsername = (username: string): string => {
   const result = username.split("-");
   mempelaiPria.value = result[0];
   mempelaiWanita.value = result[1];
+
+  return `The Wedding of ${result[0]} and ${result[1]}`;
 };
 
 const handleMenuClick = (e: string): void => {
@@ -172,6 +175,10 @@ const handleMenuClick = (e: string): void => {
 onMounted(() => {
   const username: string | null = route.params?.username as string;
   splittingUsername(username);
+});
+
+useHead({
+  title: splittingUsername(route.params?.username as string),
 });
 </script>
 
