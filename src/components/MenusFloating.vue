@@ -1,14 +1,18 @@
 <script setup lang="ts">
 import type { Ref } from "vue";
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 
 const isPlay: Ref<boolean> = ref(false);
 const usedAudio: Ref<string> = ref(
-  "http://dashboard.qinvi.my.id/storage/Yovie%20&%20Nuno%20-%20Janji%20Suci%20(Video%20Clip)_hQ-wYw4hP84.mp3"
+  "https://dashboard.qinvi.my.id/storage/Kahitna%20-%20Menikahimu.mp3"
 );
 const emit = defineEmits<{
   (e: "fnClick", value: string): void;
 }>();
+
+onMounted(() => {
+  changeStatePlay();
+});
 
 const changeStatePlay = (): void => {
   const myAudio = document.getElementById("myAudio") as HTMLVideoElement | null;
@@ -69,6 +73,36 @@ const changeStatePlay = (): void => {
         class="pb-2"
       />
       <p class="caption-1 text-blue-10">Gallery</p>
+    </button>
+    <button
+      class="flex flex-col items-center px-1"
+      @click="
+        () => {
+          changeStatePlay();
+          emit('fnClick', 'playMusic');
+        }
+      "
+      style="min-width: 42px"
+    >
+      <img
+        v-if="isPlay"
+        src="@/assets/icons/icon-pause.svg"
+        width="18"
+        height="18"
+        class="pb-2"
+      />
+      <img
+        v-else
+        src="@/assets/icons/icon-play.svg"
+        width="18"
+        height="18"
+        class="pb-2"
+      />
+
+      <p class="caption-1 text-blue-10">{{ isPlay ? "Pause" : "Play" }}</p>
+      <audio id="myAudio" preload="auto">
+        <source :src="usedAudio" type="audio/mpeg" />
+      </audio>
     </button>
   </div>
 </template>
