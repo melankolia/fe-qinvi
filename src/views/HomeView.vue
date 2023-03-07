@@ -196,7 +196,7 @@ useHead({
         />
         <p v-if="isInvited" class="caption-1 text-blue-10 -mt-20">
           Hi,
-          <span class="font-black italic">{{ invitedPerson }} and Partner</span>
+          <span class="font-black italic">{{ invitedPerson }}</span>
         </p>
         <p class="caption-1 text-blue-10">We invite you to join our wedding</p>
       </div>
