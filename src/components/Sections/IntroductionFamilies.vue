@@ -77,19 +77,39 @@ onMounted(() => {
 <template>
   <div class="flex flex-col">
     <div class="flex flex-col p-8 bg-blue-05 text-center">
-      <p class="caption-1 text-blue-10 italic">
+      <p
+        data-aos="fade-down"
+        data-aos-duration="2500"
+        class="caption-1 text-blue-10 italic"
+      >
         “Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
         pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan
         merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan
         sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda
         (kebesaran Allah) bagi kaum yang berpikir.
       </p>
-      <p class="caption-1 text-blue-10 italic pt-4">- QS. Ar-Rum 21 -</p>
+      <p
+        data-aos="fade-down"
+        data-aos-duration="2500"
+        class="caption-1 text-blue-10 italic pt-4"
+      >
+        - QS. Ar-Rum 21 -
+      </p>
     </div>
     <div class="flex flex-col px-4 items-center relative pb-9 bg-[#EEF1F3]">
-      <p class="headline-6 text-blue-10 mt-12 mb-14">The Wedding Of</p>
+      <p
+        data-aos="fade-right"
+        data-aos-duration="2500"
+        class="headline-6 text-blue-10 mt-12 mb-14"
+      >
+        The Wedding Of
+      </p>
       <div class="flex flex-col">
-        <div class="flex flex-col text-center px-14 py-5 border border-blue-10">
+        <div
+          data-aos="fade-down"
+          data-aos-duration="2500"
+          class="flex flex-col text-center px-14 py-5 border border-blue-10"
+        >
           <p class="headline-7 text-blue-10">
             {{ pengantinWanita.namaLengkap }}
           </p>
@@ -100,7 +120,11 @@ onMounted(() => {
           </p>
         </div>
         <p class="caption-1 text-blue-10 my-6 self-center">&</p>
-        <div class="flex flex-col text-center px-14 py-5 border border-blue-10">
+        <div
+          data-aos="fade-up"
+          data-aos-duration="2500"
+          class="flex flex-col text-center px-14 py-5 border border-blue-10"
+        >
           <p class="headline-7 text-blue-10">
             {{ pengantinPria.namaLengkap }}
           </p>

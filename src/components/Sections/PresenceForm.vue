@@ -68,7 +68,13 @@ const handleConfirm = (): void => {
 
 <template>
   <div class="flex flex-col bg-[#8EABB4] px-4 py-6">
-    <p class="headline-6 text-blue-10 mb-5 text-center">Konfirmasi Kehadiran</p>
+    <p
+      data-aos="fade-right"
+      data-aos-duration="2500"
+      class="headline-6 text-blue-10 mb-5 text-center"
+    >
+      Konfirmasi Kehadiran
+    </p>
     <form action="#">
       <div class="flex flex-col">
         <input

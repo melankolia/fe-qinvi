@@ -23,6 +23,11 @@ const onHide = (): void => {
   visibleRef.value = false;
 };
 
+const handleAnimation = (i: number): string => {
+  if (i % 2 == 0) return "fade-down";
+  return "fade-right";
+};
+
 const onLoad = (): void => {
   const initial: number = thumbnailRef.value.length;
   loading.value = true;
@@ -52,10 +57,24 @@ onMounted(() => {
 <template>
   <div class="flex flex-col">
     <div class="flex flex-col items-center py-6 relative bg-[#EEF1F3]">
-      <p class="headline-6 text-blue-10 mb-9">Gallery</p>
-      <img @click="onShow(0)" :src="firstPhotos" class="z-30" />
+      <p
+        data-aos="fade-right"
+        data-aos-duration="2500"
+        class="headline-6 text-blue-10 mb-9"
+      >
+        Gallery
+      </p>
+      <img
+        data-aos="fade-down"
+        data-aos-duration="2500"
+        @click="onShow(0)"
+        :src="firstPhotos"
+        class="z-30"
+      />
       <div class="grid grid-cols-2">
         <img
+          :data-aos="handleAnimation(i)"
+          data-aos-duration="2500"
           v-for="(e, i) in thumbnailRef"
           loading="lazy"
           :key="i"

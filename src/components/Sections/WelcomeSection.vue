@@ -3,7 +3,11 @@
     <div class="flex flex-col bg-container bg-white h-[556px]">
       <div class="flex flex-col overlay"></div>
     </div>
-    <div class="absolute top-1/2 w-full text-center">
+    <div
+      data-aos="fade-up"
+      data-aos-duration="2500"
+      class="absolute top-1/2 w-full text-center"
+    >
       <p class="caption-5 text-blue-10">سْمِ اللّهِ الرَّحْمَنِ الرَّحِيْمِ</p>
       <p class="caption-5 text-blue-10 my-4">
         Assalamualaikum warahmatullahi wabarakatuh

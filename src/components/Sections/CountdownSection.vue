@@ -97,7 +97,13 @@ onMounted(() => {
   <div
     class="h-1/3 md:h-1/3 flex flex-col justify-center items-center bg-white py-8 container"
   >
-    <p class="headline-6 text-blue-10">Countdown</p>
+    <p
+      data-aos="fade-right"
+      data-aos-duration="2500"
+      class="headline-6 text-blue-10"
+    >
+      Countdown
+    </p>
     <TimerCountDown
       :days="CountDown.days"
       :hours="CountDown.hours"

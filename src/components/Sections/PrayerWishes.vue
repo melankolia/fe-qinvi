@@ -59,7 +59,11 @@ const handleSubmit = async (): Promise<void> => {
 
 <template>
   <div class="flex flex-col bg-[#EEF1F3]">
-    <div class="flex flex-col w-[300px] bg-[#8EABB4] -mt-24 self-end p-6 mr-4">
+    <div
+      data-aos="fade-right"
+      data-aos-duration="2500"
+      class="flex flex-col w-[300px] bg-[#8EABB4] -mt-24 self-end p-6 mr-4"
+    >
       <p class="body-2 text-blue-10 text-shadow">
         Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila
         Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu.
@@ -69,7 +73,13 @@ const handleSubmit = async (): Promise<void> => {
       </p>
     </div>
     <div class="flex flex-col bg-[#EEF1F3] px-4 pb-6 pt-8">
-      <p class="headline-6 text-blue-10 mb-5 text-center">Kirim Ucapan</p>
+      <p
+        data-aos="fade-right"
+        data-aos-duration="2500"
+        class="headline-6 text-blue-10 mb-5 text-center"
+      >
+        Kirim Ucapan
+      </p>
       <div class="flex flex-col">
         <input
           placeholder="Nama"

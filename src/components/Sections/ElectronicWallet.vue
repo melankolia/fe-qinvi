@@ -51,7 +51,13 @@ const handleCopy = (i: number): void => {
 
 <template>
   <div class="flex flex-col bg-[#67ABC1] px-4 py-6">
-    <p class="headline-6 text-blue-10 mb-9 text-center">Dompet Digital</p>
+    <p
+      data-aos="fade-right"
+      data-aos-duration="2500"
+      class="headline-6 text-blue-10 mb-9 text-center"
+    >
+      Dompet Digital
+    </p>
     <div
       v-for="(e, i) in props.rekening"
       :key="i"

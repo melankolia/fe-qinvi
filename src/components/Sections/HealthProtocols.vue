@@ -1,6 +1,12 @@
 <template>
   <div class="flex flex-col px-4 items-center relative pb-9 bg-[#EEF1F3]">
-    <p class="headline-6 text-blue-10 mt-6 mb-4">Protokol Kesehatan</p>
+    <p
+      data-aos="fade-right"
+      data-aos-duration="2500"
+      class="headline-6 text-blue-10 mt-6 mb-4"
+    >
+      Protokol Kesehatan
+    </p>
     <img
       src="@/assets/images/protokol-kesehatan.png"
       class="h-auto w-full z-30"

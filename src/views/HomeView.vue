@@ -194,11 +194,22 @@ useHead({
           src="@/assets/images/arif-prita.webp"
           alt="Qinvi Wedding Invitation"
         />
-        <p v-if="isInvited" class="caption-1 text-blue-10 -mt-20">
+        <p
+          data-aos="fade-down"
+          data-aos-duration="1500"
+          v-if="isInvited"
+          class="caption-1 text-blue-10 -mt-20"
+        >
           Hi,
           <span class="font-black italic">{{ invitedPerson }}</span>
         </p>
-        <p class="caption-1 text-blue-10">We invite you to join our wedding</p>
+        <p
+          data-aos="fade-down"
+          data-aos-duration="1500"
+          class="caption-1 text-blue-10"
+        >
+          We invite you to join our wedding
+        </p>
       </div>
 
       <button

@@ -42,7 +42,11 @@ onMounted(() => {
 <template>
   <div class="flex flex-col px-4 pt-6 pb-36 bg-wedding bg-white">
     <template v-for="(e, i) in props.acara" :key="i">
-      <div class="flex flex-col items-center rounded-xl p-4">
+      <div
+        data-aos="fade-down"
+        data-aos-duration="2500"
+        class="flex flex-col items-center rounded-xl p-4"
+      >
         <p class="headline-6 text-blue-10 mt-5 mb-10">{{ e.namaAcara }}</p>
         <p class="body-2 text-blue-10">{{ e.tanggal }}</p>
         <p class="body-2 text-blue-10">Pukul : {{ e.waktuMulai }} WIB</p>
@@ -50,7 +54,11 @@ onMounted(() => {
           Tempat : {{ e.alamat }}
         </p>
       </div>
-      <div class="flex flex-col items-center">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="2500"
+        class="flex flex-col items-center"
+      >
         <div class="border-l border-blue-10 h-[70px] mb-6"></div>
         <button
           @click="openMap(e)"
