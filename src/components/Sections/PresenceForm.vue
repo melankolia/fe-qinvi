@@ -67,37 +67,51 @@ const handleConfirm = (): void => {
 </script>
 
 <template>
-  <div class="flex flex-col bg-[#8EABB4] px-4 py-6">
-    <p
-      data-aos="fade-right"
-      data-aos-duration="2500"
-      class="headline-6 text-blue-10 mb-5 text-center"
-    >
-      Konfirmasi Kehadiran
-    </p>
+  <div class="flex flex-col bg-green-30 px-4 py-6">
+    <div class="flex flex-row justify-between items-center mb-5">
+      <img
+        width="140"
+        class="h-[64px]"
+        src="@/assets/images/icon-rsvp-l.webp"
+      />
+      <p
+        data-aos="fade-right"
+        data-aos-duration="2500"
+        class="headline-13 text-blue-10 text-center font-semibold"
+      >
+        RSVP
+      </p>
+      <img
+        width="140"
+        class="h-[64px]"
+        src="@/assets/images/icon-rsvp-r.webp"
+      />
+    </div>
     <form action="#">
       <div class="flex flex-col">
+        <label for="text" class="caption-8 mb-1 text-yellow-20">Nama</label>
         <input
           placeholder="Nama"
           v-model="form.nama"
           type="text"
           id="fname"
           name="fname"
-          class="rounded-sm mb-5 p-2"
+          class="rounded-sm mb-5 p-2 text-black"
           required
         />
+        <label for="phone" class="caption- mb-18 text-yellow-20">No Hp</label>
         <input
           v-model="form.nomor_handphone"
           placeholder="No Handphone"
           type="text"
           id="phone"
           name="phone"
-          class="rounded-sm mb-5 p-2"
+          class="rounded-sm mb-5 p-2 text-black"
           required
         />
       </div>
       <div class="flex flex-col">
-        <p class="caption-1 text-blue-10 mb-2">Kehadiran</p>
+        <p class="caption-8 text-yellow-20 mb-2">Kehadiran</p>
 
         <div class="flex flex-row space-x-12">
           <div class="flex flex-row space-x-2">
@@ -125,9 +139,9 @@ const handleConfirm = (): void => {
         </div>
       </div>
     </form>
-    <div class="flex flex-col items-center pt-5">
+    <div class="flex flex-col pt-5">
       <button
-        class="button-date border border-white bg-blue-10 py-1.5 px-3 mt-4 rounded-2xl flex flex-row justify-center items-center space-x-2.5"
+        class="button-date border border-white bg-yellow-20 py-1.5 px-3 mt-4 rounded-2xl flex flex-row justify-center items-center space-x-2.5"
         @click="handleConfirm"
         :disabled="loading"
       >
@@ -152,7 +166,7 @@ const handleConfirm = (): void => {
             d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
           ></path>
         </svg>
-        <p class="body-2 text-white">Kirim Konfirmasi</p>
+        <p class="body-2 text-black">Kirim Konfirmasi</p>
       </button>
     </div>
   </div>

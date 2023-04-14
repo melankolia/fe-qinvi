@@ -1,22 +1,63 @@
+<script setup lang="ts">
+import { ref, onMounted } from "vue";
+import { useRoute } from "vue-router";
+import type { Ref } from "vue";
+
+const mempelaiPria: Ref<string> = ref("-");
+const mempelaiWanita: Ref<string> = ref("-");
+
+const route = useRoute();
+
+const splittingUsername = (username: string): void => {
+  const result = username.split("-");
+  mempelaiPria.value = result[0];
+  mempelaiWanita.value = result[1];
+};
+
+onMounted(() => {
+  const username: string | null = route.params?.username as string;
+  console.log(username);
+  splittingUsername(username);
+});
+</script>
+
 <template>
-  <div class="flex flex-col bg-white relative">
-    <div class="flex flex-col bg-container bg-white h-[556px]">
-      <div class="flex flex-col overlay"></div>
-    </div>
-    <div
-      data-aos="fade-up"
-      data-aos-duration="2500"
-      class="absolute top-1/2 w-full text-center"
-    >
-      <p class="caption-5 text-blue-10">سْمِ اللّهِ الرَّحْمَنِ الرَّحِيْمِ</p>
-      <p class="caption-5 text-blue-10 my-4">
-        Assalamualaikum warahmatullahi wabarakatuh
-      </p>
-      <p class="caption-5 text-blue-10">
-        Dengan memohon rahmat dan ridho Allah SWT <br />
-        kami bermaksud menyelanggarakan <br />
-        prosesi pernikahan putra putri kami
-      </p>
+  <div
+    class="flex flex-col w-full text-center bg-container justify-end text-white"
+  >
+    <p data-aos="fade-up" data-aos-duration="2500" class="headline-11">
+      The Wedding Of <br />
+      {{ mempelaiPria }} & {{ mempelaiWanita }}
+    </p>
+    <div class="flex flex-row justify-center mt-20 mb-7 caption-7">
+      <div
+        class="flex flex-row border-r border-white border-y px-6 py-1 space-x-6"
+      >
+        <div class="flex flex-col">
+          <p>
+            30 <br />
+            Hari
+          </p>
+          <p>
+            15 <br />
+            Menit
+          </p>
+        </div>
+        <div class="flex flex-col">
+          <p>
+            30 <br />
+            Hari
+          </p>
+          <p>
+            15 <br />
+            Menit
+          </p>
+        </div>
+      </div>
+      <div class="flex flex-col border-white border-y px-6 py-1 justify-center">
+        Save The Dates <br />
+        18.08.2023
+      </div>
     </div>
   </div>
 </template>
@@ -25,14 +66,9 @@
 
 <style>
 .bg-container {
-  background-image: url("@/assets/images/cover.webp");
+  background-image: url("@/assets/images/bg-welcome.webp");
   background-size: cover;
-  opacity: 25%;
-}
-
-.bg-container .overlay {
-  background-color: rgb(255, 255, 255);
-  mix-blend-mode: soft-light;
-  height: 556px;
+  background-position: center;
+  height: 600px;
 }
 </style>

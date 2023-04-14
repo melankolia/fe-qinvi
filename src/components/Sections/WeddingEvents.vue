@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { defineProps, onMounted } from "vue";
+import { useRoute } from "vue-router";
 
 type acaraTypes = {
   alamat: string;
@@ -19,6 +20,9 @@ type acaraPropsTypes = {
   acara: Array<acaraTypes>;
 };
 const props = defineProps<acaraPropsTypes>();
+
+const route = useRoute();
+
 const bindingData = (): void => {
   props.acara.map((e: acaraTypes) => {
     e.tanggal = new Date(e.tanggal).toLocaleDateString("id-ID", {
@@ -34,24 +38,78 @@ const openMap = (e: acaraTypes): void => {
   window.open(e.urlMap);
 };
 
+const invitedPerson: string | null = route.query?.to as string | null;
+
 onMounted(() => {
   bindingData();
 });
 </script>
 
 <template>
-  <div class="flex flex-col px-4 pt-6 pb-36 bg-wedding bg-white">
+  <div class="flex flex-col items-center px-4 pb-36 bg-wedding bg-white">
+    <img
+      data-aos="fade-up"
+      data-aos-duration="2500"
+      src="@/assets/images/img-header.webp"
+      width="300"
+      alt="Qinvi Header Events"
+      class="-mt-4 mb-1"
+    />
+    <p
+      data-aos="fade-up"
+      data-aos-duration="2500"
+      class="body-2 text-black text-center"
+    >
+      Kepada Bapak/Ibu/Saudara/i,
+    </p>
+    <p
+      data-aos="fade-up"
+      data-aos-duration="2500"
+      class="body-2 text-black text-center my-2"
+    >
+      {{ invitedPerson }}
+    </p>
+    <p
+      data-aos="fade-up"
+      data-aos-duration="2500"
+      class="body-2 text-black text-center"
+    >
+      Dengan memohon rahmat dan ridho Allah Subhanahu wa Ta'ala, kami memohon
+      kehadiran Bapak/Ibu/Saudara/i pada acara pernikahan kami:
+    </p>
+    <img
+      data-aos="fade-up"
+      data-aos-duration="2500"
+      width="85"
+      height="78"
+      src="@/assets/images/icon-sincan-black.webp"
+      alt="Qinvi Wedding Icon"
+      class="my-4"
+    />
     <template v-for="(e, i) in props.acara" :key="i">
       <div
         data-aos="fade-down"
         data-aos-duration="2500"
-        class="flex flex-col items-center rounded-xl p-4"
+        class="flex flex-col items-center rounded-xl"
       >
-        <p class="headline-6 text-blue-10 mt-5 mb-10">{{ e.namaAcara }}</p>
-        <p class="body-2 text-blue-10">{{ e.tanggal }}</p>
-        <p class="body-2 text-blue-10">Pukul : {{ e.waktuMulai }} WIB</p>
-        <p class="body-2 text-blue-10 text-center" style="max-width: 300px">
-          Tempat : {{ e.alamat }}
+        <p class="headline-6 text-black my-2">{{ e.namaAcara }}</p>
+        <img
+          src="@/assets/images/img-leaf-events.webp"
+          width="186"
+          alt="Qinvi Image Leaf"
+        />
+        <p class="body-2 text-black my-2">{{ e.tanggal }}</p>
+        <img
+          src="@/assets/images/img-leaf-events.webp"
+          width="186"
+          alt="Qinvi Image Leaf"
+        />
+        <!-- <p class="body-2 text-black">Pukul : {{ e.waktuMulai }} WIB</p> -->
+        <p class="body-2 text-black text-center" style="max-width: 300px">
+          Tempat : <br />
+        </p>
+        <p class="body-2 text-black text-center my-2" style="max-width: 300px">
+          {{ e.alamat }}
         </p>
       </div>
       <div
@@ -59,12 +117,16 @@ onMounted(() => {
         data-aos-duration="2500"
         class="flex flex-col items-center"
       >
-        <div class="border-l border-blue-10 h-[70px] mb-6"></div>
         <button
           @click="openMap(e)"
-          class="button-date bg-blue-10 border border-white mb-6 py-1.5 px-3 rounded-2xl flex flex-row items-center space-x-2.5"
+          class="button-date drop-shadow-md bg-yellow-20 border border-white mt-2 mb-6 py-1.5 px-3 rounded-2xl flex flex-row items-center space-x-2.5"
         >
-          <p class="body-2 text-white">Lihat Lokasi</p>
+          <img
+            src="@/assets/icons/icon-locations.png"
+            width="18"
+            height="15.5"
+          />
+          <p class="body-2 text-black">Lihat Peta</p>
         </button>
       </div>
     </template>
@@ -76,5 +138,6 @@ onMounted(() => {
   background-image: url("@/assets/images/bg-wedding.webp");
   background-position: center;
   background-size: cover;
+  min-height: 940px;
 }
 </style>

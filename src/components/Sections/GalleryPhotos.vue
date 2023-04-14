@@ -56,13 +56,21 @@ onMounted(() => {
 
 <template>
   <div class="flex flex-col">
-    <div class="flex flex-col items-center py-6 relative bg-[#EEF1F3]">
+    <div class="flex flex-col items-center py-6 relative bg-green-30 px-10">
       <p
         data-aos="fade-right"
         data-aos-duration="2500"
-        class="headline-6 text-blue-10 mb-9"
+        class="headline-14 text-white mb-8"
       >
-        Gallery
+        GALLERY
+      </p>
+      <p
+        data-aos="fade-up"
+        data-aos-duration="2500"
+        class="caption-9 text-white text-center mb-6"
+      >
+        A successful marriage requires falling in love many times, always with
+        the same person
       </p>
       <img
         data-aos="fade-down"
@@ -104,14 +112,33 @@ onMounted(() => {
           ></path>
         </svg>
       </div>
-      <div class="flex flex-col items-center mt-6">
+      <p
+        data-aos="fade-right"
+        data-aos-duration="2500"
+        class="headline-14 text-white mt-10 mb-8"
+      >
+        LIVESTREAM
+      </p>
+      <iframe
+        data-aos="fade-up"
+        data-aos-duration="2500"
+        width="100%"
+        height="217"
+        src="https://www.youtube.com/embed/9spb7087LIg"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        class="rounded-lg mb-4"
+      />
+      <!-- <div class="flex flex-col items-center mt-6">
         <button
           class="button-date border border-white bg-blue-10 py-1.5 px-3 rounded-2xl flex flex-row items-center space-x-2.5 z-10"
           @click="onLoad()"
         >
           <p class="body-2 text-white">Lihat Potret Kami</p>
         </button>
-      </div>
+      </div> -->
     </div>
     <vue-easy-lightbox
       :visible="visibleRef"

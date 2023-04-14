@@ -1,30 +1,35 @@
-<script setup lang="ts">
-import { defineProps } from "vue";
-
-interface FooterWeddingsProps {
-  mempelaiPria: string;
-  mempelaiWanita: string;
-  foto: string;
-}
-
-const props = defineProps<FooterWeddingsProps>();
-</script>
-
 <template>
-  <div class="relative flex flex-col bg-brown-10 items-center">
-    <img :src="foto" class="z-30 py-9 px-14" />
-    <img src="@/assets/images/Flower4.png" class="absolute w-full" />
-    <p class="caption-1 text-brown-70 text-center px-4">
-      Menjadi sebuah kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan
-      hadir dalam hari bahagia kami. Terima kasih atas segala ucapan, doa, dan
-      perhatian yang diberikan. Kami mengharap pengertian Anda atas semua
-      pemberlakuan protokol kesehatan di hari pernikahan. Sampai jumpa di hari
-      bahagia kami!
+  <div
+    class="flex flex-col bg-container items-center justify-center px-10 relative"
+  >
+    <p
+      data-aos="fade-down"
+      data-aos-duration="2500"
+      class="body-3 text-white font-medium mt-32"
+    >
+      Kehadiran Bapak/Ibu/Saudara/i di acara kami akan menjadi suatu kebahagiaan
+      dan kehormatan yang tidak terlupakan bagi kami. Terima kasih atas restu
+      dan dukungannya.
     </p>
-    <div class="flex flex-row items-center space-x-3 my-14">
-      <p class="headline-1 text-brown-70">{{ props.mempelaiPria }}</p>
-      <p class="headline-2 text-brown-70">and</p>
-      <p class="headline-1 text-brown-70">{{ props.mempelaiWanita }}</p>
-    </div>
+    <img
+      data-aos="fade-up"
+      data-aos-duration="2500"
+      width="85"
+      height="78"
+      src="@/assets/images/icon-sincan.png"
+      alt="Qinvi Wedding Icon"
+      class="absolute top-8"
+    />
   </div>
 </template>
+
+<script setup></script>
+
+<style scoped>
+.bg-container {
+  background-image: url("@/assets/images/bg-thanks.webp");
+  background-size: cover;
+  background-position: center;
+  height: 580px;
+}
+</style>

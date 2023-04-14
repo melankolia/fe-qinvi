@@ -18,6 +18,21 @@
   src: url("./fonts/Times-New-Roman.ttf");
 }
 
+@font-face {
+  font-family: "Rolasan Signature";
+  src: url("./fonts/Rolasan-Signature.ttf");
+}
+
+@font-face {
+  font-family: "Dream Avenue";
+  src: url("./fonts/Dream-Avenue.ttf");
+}
+
+@font-face {
+  font-family: "Monesta";
+  src: url("./fonts/Monesta.otf");
+}
+
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
   color-scheme: light only;

@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { useSnackbar } from "vue3-snackbar";
+import BNI_Logo from "@/assets/images/BNI_logo.svg";
+import BCA_Logo from "@/assets/images/BCA_logo.png";
 
 const snackbar = useSnackbar();
 
@@ -18,6 +20,16 @@ type RekeningPropsTypes = {
 };
 
 const props = defineProps<RekeningPropsTypes>();
+
+const handleIconBank = (e: string): string => {
+  if (!e) return "";
+
+  const bank: string = e.toLowerCase();
+  if (bank == "bni") return BNI_Logo;
+  if (bank == "bca") return BCA_Logo;
+
+  return "";
+};
 
 const handleCopy = (i: number): void => {
   let codeToCopy = document.getElementById(
@@ -50,44 +62,51 @@ const handleCopy = (i: number): void => {
 </script>
 
 <template>
-  <div class="flex flex-col bg-[#67ABC1] px-4 py-6">
-    <p
-      data-aos="fade-right"
-      data-aos-duration="2500"
-      class="headline-6 text-blue-10 mb-9 text-center"
-    >
-      Dompet Digital
-    </p>
-    <div
-      v-for="(e, i) in props.rekening"
-      :key="i"
-      class="flex flex-col bg-[#EEF1F3] items-center rounded-xl p-4 mb-3"
-    >
-      <input type="hidden" :id="`#copy-rekening-${i}`" :value="e.noRekening" />
-      <img
-        src="@/assets/images/BNI_logo.svg"
-        width="60"
-        height="19"
-        class="mb-3"
-      />
-      <p class="caption-1 text-blue-10 mb-3">
-        No. Rekening : {{ e.noRekening }}
+  <div class="flex flex-col bg-green-30 relative">
+    <div class="flex flex-col px-4 py-6">
+      <p
+        data-aos="fade-right"
+        data-aos-duration="2500"
+        class="headline-6 text-white mb-9 text-center"
+      >
+        Wedding Gift
       </p>
-      <p class="caption-1 text-blue-10 mb-3">A/n {{ e.namaPemilik }}</p>
-      <div class="flex flex-col items-center">
-        <button
-          @click="() => handleCopy(i)"
-          class="button-date border border-white bg-blue-10 py-1.5 px-3 rounded-2xl flex flex-row items-center space-x-2.5"
-        >
-          <img
-            src="@/assets/icons/icon-copy.png"
-            class="brightness-0 invert"
-            height="18"
-            width="18"
-          />
-          <p class="body-2 text-white">Copy Text</p>
-        </button>
+      <div
+        v-for="(e, i) in props.rekening"
+        :key="i"
+        class="flex flex-col bg-[#EEF1F3] items-center rounded-xl p-4 mb-3 z-10"
+      >
+        <input
+          type="hidden"
+          :id="`#copy-rekening-${i}`"
+          :value="e.noRekening"
+        />
+        <img
+          :src="handleIconBank(e.namaBank)"
+          width="60"
+          height="19"
+          class="mb-3"
+        />
+        <p class="caption-1 text-blue-10 mb-3">
+          No. Rekening : {{ e.noRekening }}
+        </p>
+        <p class="caption-1 text-blue-10 mb-3">A/n {{ e.namaPemilik }}</p>
+        <div class="flex flex-col items-center">
+          <button
+            @click="() => handleCopy(i)"
+            class="button-date border border-white bg-blue-10 py-1.5 px-3 rounded-2xl flex flex-row items-center space-x-2.5 drop-shadow-md"
+          >
+            <img
+              src="@/assets/icons/icon-copy.png"
+              class="brightness-0 invert"
+              height="18"
+              width="18"
+            />
+            <p class="body-2 text-white">Copy Text</p>
+          </button>
+        </div>
       </div>
     </div>
+    <img src="@/assets/images/bg-wedding-gift.webp" class="absolute z-0" />
   </div>
 </template>

@@ -76,13 +76,22 @@ onMounted(() => {
 
 <template>
   <div class="flex flex-col">
-    <div class="flex flex-col p-8 bg-blue-05 text-center">
+    <div class="flex flex-col items-center p-8 bg-green-30 relative">
+      <img
+        data-aos="fade-up"
+        data-aos-duration="2500"
+        width="85"
+        height="78"
+        src="@/assets/images/icon-sincan.png"
+        alt="Qinvi Wedding Icon"
+        class="mb-4 mt-10"
+      />
       <p
         data-aos="fade-down"
         data-aos-duration="2500"
-        class="caption-1 text-blue-10 italic"
+        class="caption-8 text-white"
       >
-        “Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
+        Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
         pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan
         merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan
         sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda
@@ -91,50 +100,88 @@ onMounted(() => {
       <p
         data-aos="fade-down"
         data-aos-duration="2500"
-        class="caption-1 text-blue-10 italic pt-4"
+        class="caption-8 text-white pt-4"
       >
         - QS. Ar-Rum 21 -
       </p>
+      <img
+        width="100"
+        class="h-[103px] absolute top-0 left-0"
+        src="@/assets/images/bg-leaf-l.webp"
+        alt="Qinvi Wedding Icon Leaf"
+      />
+      <img
+        width="137"
+        class="h-[147px] absolute bottom-0 right-0"
+        src="@/assets/images/bg-leaf-r.webp"
+        alt="Qinvi Wedding Icon Leaf"
+      />
     </div>
-    <div class="flex flex-col px-4 items-center relative pb-9 bg-[#EEF1F3]">
-      <p
+    <div class="flex flex-col px-6 relative pt-7 pb-9 bg-events">
+      <div
         data-aos="fade-right"
         data-aos-duration="2500"
-        class="headline-6 text-blue-10 mt-12 mb-14"
+        class="flex flex-col relative px-10 mb-36"
       >
-        The Wedding Of
-      </p>
-      <div class="flex flex-col">
-        <div
-          data-aos="fade-down"
-          data-aos-duration="2500"
-          class="flex flex-col text-center px-14 py-5 border border-blue-10"
-        >
+        <div class="flex flex-col max-w-[200px]">
+          <img
+            src="@/assets/images/img-lukman.webp"
+            alt="Qinvi Wedding Photos Groom"
+            width="200"
+          />
+          <p class="headline-7 text-blue-10 my-1">
+            {{ pengantinPria.namaLengkap }}
+          </p>
+          <p class="caption-11 text-blue-10">
+            <span class="caption-10">Putra dari : </span><br />
+            Bapak {{ pengantinPria.namaAyah }}
+            <br />
+            Ibu {{ pengantinPria.namaIbu }}
+          </p>
+        </div>
+        <p class="headline-15 text-green-40 absolute top-0 left-0 orientation">
+          THE GROOM
+        </p>
+      </div>
+      <div
+        data-aos="fade-up"
+        data-aos-duration="2500"
+        class="flex flex-col items-end relative px-10"
+      >
+        <div class="flex flex-col max-w-[200px]">
+          <img
+            src="@/assets/images/img-erryca.webp"
+            alt="Qinvi Wedding Photos Groom"
+            width="200"
+          />
           <p class="headline-7 text-blue-10">
             {{ pengantinWanita.namaLengkap }}
           </p>
-          <p class="caption-1 italic text-blue-10">
-            Putri Ketiga dari Bapak {{ pengantinWanita.namaAyah }}
+          <p class="caption-11 text-blue-10">
+            <span class="caption-10">Putri dari : </span><br />
+            Bapak {{ pengantinWanita.namaAyah }}
             <br />
-            dan Ibu {{ pengantinWanita.namaIbu }}
+            Ibu {{ pengantinWanita.namaIbu }}
           </p>
         </div>
-        <p class="caption-1 text-blue-10 my-6 self-center">&</p>
-        <div
-          data-aos="fade-up"
-          data-aos-duration="2500"
-          class="flex flex-col text-center px-14 py-5 border border-blue-10"
-        >
-          <p class="headline-7 text-blue-10">
-            {{ pengantinPria.namaLengkap }}
-          </p>
-          <p class="caption-1 italic text-blue-10">
-            Putra Kedua dari Bapak {{ pengantinPria.namaAyah }}
-            <br />
-            dan Ibu {{ pengantinPria.namaIbu }}
-          </p>
-        </div>
+        <p class="headline-15 text-green-40 absolute top-0 right-0 orientation">
+          THE BRIDE
+        </p>
       </div>
     </div>
   </div>
 </template>
+
+<style scoped>
+.bg-events {
+  background-image: url("@/assets/images/bg-events.webp");
+  background-size: cover;
+  background-position: center;
+  height: 1050px;
+}
+
+.orientation {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+</style>

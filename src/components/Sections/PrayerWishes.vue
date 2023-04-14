@@ -58,27 +58,22 @@ const handleSubmit = async (): Promise<void> => {
 </script>
 
 <template>
-  <div class="flex flex-col bg-[#EEF1F3]">
-    <div
-      data-aos="fade-right"
-      data-aos-duration="2500"
-      class="flex flex-col w-[300px] bg-[#8EABB4] -mt-24 self-end p-6 mr-4"
-    >
-      <p class="body-2 text-blue-10 text-shadow">
-        Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila
-        Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu.
-        <br />
-        <br />
-        Wassalamualaikum Warahmatullahi Wabarakatuh
-      </p>
-    </div>
-    <div class="flex flex-col bg-[#EEF1F3] px-4 pb-6 pt-8">
+  <div class="flex flex-col bg-yellow-10">
+    <div class="flex flex-col bg-yellow-10 px-4 pb-6 pt-8">
       <p
         data-aos="fade-right"
         data-aos-duration="2500"
-        class="headline-6 text-blue-10 mb-5 text-center"
+        class="headline-6 text-blue-10 mb-2 text-center"
       >
-        Kirim Ucapan
+        Wedding Wish
+      </p>
+      <p
+        data-aos="fade-up"
+        data-aos-duration="2500"
+        class="headline-12 text-center text-blue-10 mb-3"
+      >
+        THANKS FOR ALL THE WEDDING WISHES ! <br />
+        YOU MADE A GREAT DAY EVEN GREATER !
       </p>
       <div class="flex flex-col">
         <input
@@ -87,12 +82,12 @@ const handleSubmit = async (): Promise<void> => {
           type="text"
           id="fname"
           name="fname"
-          class="rounded-sm mb-5 p-2"
+          class="rounded-sm mb-5 p-2 text-black"
         />
         <textarea
           placeholder="Give Your Wish"
           v-model="form.message"
-          class="rounded-sm p-2"
+          class="rounded-sm p-2 text-black"
           id="prayer"
           name="prayer"
           rows="4"
@@ -101,7 +96,7 @@ const handleSubmit = async (): Promise<void> => {
       </div>
       <div class="flex flex-col pt-5">
         <button
-          class="button-date border border-white bg-blue-10 py-1.5 px-3 rounded-2xl flex flex-row justify-center items-center space-x-2.5"
+          class="button-date border border-white bg-yellow-20 py-1.5 px-3 rounded-2xl flex flex-row justify-center items-center space-x-2.5 drop-shadow-md"
           @click="handleSubmit"
         >
           <svg
@@ -125,7 +120,7 @@ const handleSubmit = async (): Promise<void> => {
               d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
             ></path>
           </svg>
-          <p class="body-2 text-white">Kirim Ucapan</p>
+          <p class="body-2 text-black">Kirim Ucapan</p>
         </button>
       </div>
     </div>

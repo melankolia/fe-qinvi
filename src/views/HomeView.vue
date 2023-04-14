@@ -3,15 +3,15 @@ import { ref, onMounted, computed } from "vue";
 import type { Ref } from "vue";
 
 import WelcomeSection from "@/components/Sections/WelcomeSection.vue";
-import CountdownSection from "@/components/Sections/CountdownSection.vue";
+// import CountdownSection from "@/components/Sections/CountdownSection.vue";
 import IntroductionFamilies from "@/components/Sections/IntroductionFamilies.vue";
 import WeddingEvents from "@/components/Sections/WeddingEvents.vue";
-import HealthProtocols from "@/components/Sections/HealthProtocols.vue";
 import PresenceForm from "@/components/Sections/PresenceForm.vue";
 import ElectronicWallet from "@/components/Sections/ElectronicWallet.vue";
 import GalleryPhotos from "@/components/Sections/GalleryPhotos.vue";
 import PrayerWishes from "@/components/Sections/PrayerWishes.vue";
 import FooterSections from "@/components/Sections/FooterSections.vue";
+import FooterWeddings from "@/components/Sections/FooterWeddings.vue";
 import MenusFloating from "@/components/MenusFloating.vue";
 import WishesList from "@/components/Sections/WishesList.vue";
 import { useRoute } from "vue-router";
@@ -135,6 +135,7 @@ const handleClick = (): void => {
         }
 
         dataPernikahan.value = { ...data?.data } as dataPernikahanType;
+
         isOpen.value = true;
       } else {
         console.error(data?.data?.message);
@@ -186,35 +187,28 @@ useHead({
   <div class="flex flex-col mx-auto" style="max-width: 480px">
     <div
       v-if="!isOpen"
-      class="bg-[#EEF1F3] flex flex-col h-screen justify-around"
+      class="container flex flex-col h-screen justify-between pt-9 pb-24"
     >
-      <div class="flex flex-col items-center container overflow-hidden">
-        <p class="headline-8 text-blue-10 mb-20">Undangan Pernikahan</p>
-        <img
-          src="@/assets/images/arif-prita.webp"
-          alt="Qinvi Wedding Invitation"
-        />
-        <p
-          data-aos="fade-down"
-          data-aos-duration="1500"
-          v-if="isInvited"
-          class="caption-1 text-blue-10 -mt-20"
-        >
-          Hi,
-          <span class="font-black italic">{{ invitedPerson }}</span>
+      <div class="flex flex-col items-center text-black">
+        <p data-aos="fade-down" data-aos-duration="1000" class="headline-9">
+          Undangan Pernikahan
         </p>
         <p
           data-aos="fade-down"
-          data-aos-duration="1500"
-          class="caption-1 text-blue-10"
+          data-aos-duration="3000"
+          class="headline-10 mt-8 mb-2.5"
         >
-          We invite you to join our wedding
+          {{ mempelaiPria }} dan {{ mempelaiWanita }}
+        </p>
+        <p data-aos="fade-down" data-aos-duration="3000" class="caption-6">
+          22.03.2022
         </p>
       </div>
-
       <button
+        data-aos="fade-up"
+        data-aos-duration="1500"
         @click="handleClick"
-        class="button-date bg-blue-10 py-1.5 px-3 rounded-md flex flex-row justify-center items-center space-x-2.5 transition-all mx-6"
+        class="button-date border border-white bg-green-30 py-1.5 px-3 rounded-md flex flex-row justify-center items-center space-x-2.5 transition-all mx-6 drop-shadow-md"
       >
         <svg
           v-if="loading"
@@ -258,19 +252,20 @@ useHead({
         :tamu="dataPernikahan.tamu"
         :pengantin="dataPernikahan.pengantin"
       />
-      <CountdownSection
+      <GalleryPhotos id="gallerySection" :gallery="dataPernikahan.gallery" />
+      <!-- <CountdownSection
         :mempelaiPria="mempelaiPria"
         :mempelaiWanita="mempelaiWanita"
         :acara="dataPernikahan.acara"
         id="homeSection"
-      />
-      <PresenceForm />
+      /> -->
       <WeddingEvents id="acaraSection" :acara="dataPernikahan.acara" />
+      <PresenceForm />
       <PrayerWishes />
       <WishesList :wishes="dataPernikahan.ucapan" />
-      <GalleryPhotos id="gallerySection" :gallery="dataPernikahan.gallery" />
       <ElectronicWallet :rekening="dataPernikahan.rekening" />
-      <HealthProtocols />
+      <!-- <HealthProtocols /> -->
+      <FooterWeddings />
       <FooterSections />
       <MenusFloating @fnClick="(e) => handleMenuClick(e)" />
     </div>
@@ -278,7 +273,9 @@ useHead({
 </template>
 
 <style scoped>
-.container img {
-  transform: scale(1.5);
+.container {
+  background-image: url("@/assets/images/bg-cover.webp");
+  background-position: center;
+  background-size: cover;
 }
 </style>
