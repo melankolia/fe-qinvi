@@ -4,7 +4,7 @@ import { ref, onMounted } from "vue";
 
 const isPlay: Ref<boolean> = ref(false);
 const usedAudio: Ref<string> = ref(
-  "https://dashboard.qinvi.my.id/storage/Kahitna%20-%20Menikahimu.mp3"
+  "https://dashboard.qinvi.my.id/storage/Yovie%20&%20Nuno%20-%20Janji%20Suci.mp3"
 );
 const emit = defineEmits<{
   (e: "fnClick", value: string): void;
