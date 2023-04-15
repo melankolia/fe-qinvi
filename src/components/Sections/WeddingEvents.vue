@@ -40,13 +40,19 @@ const openMap = (e: acaraTypes): void => {
 
 const invitedPerson: string | null = route.query?.to as string | null;
 
+const handleSave = (): void => {
+  window.open(
+    "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MW4zdjVrcmVqOWI5cW5icTBvZ2NrdmU5NjIgYWRtLnFpbnZpQG0&tmsrc=adm.qinvi%40gmail.com"
+  );
+};
+
 onMounted(() => {
   bindingData();
 });
 </script>
 
 <template>
-  <div class="flex flex-col items-center px-4 pb-36 bg-wedding bg-white">
+  <div class="flex flex-col items-center px-4 bg-wedding bg-white">
     <img
       data-aos="fade-up"
       data-aos-duration="2500"
@@ -82,7 +88,7 @@ onMounted(() => {
       data-aos-duration="2500"
       width="85"
       height="78"
-      src="@/assets/images/icon-sincan-black.webp"
+      src="@/assets/images/icon-sincan-blacks.webp"
       alt="Qinvi Wedding Icon"
       class="my-4"
     />
@@ -130,6 +136,14 @@ onMounted(() => {
         </button>
       </div>
     </template>
+    <button
+      data-aos="fade-right"
+      data-aos-duration="2500"
+      class="button-date w-full mt-6 mb-12 border border-white bg-yellow-20 py-1.5 px-3 rounded-2xl space-x-2.5 z-10 drop-shadow-md"
+      @click="handleSave()"
+    >
+      <p class="body-2 text-black">Simpan Acara</p>
+    </button>
   </div>
 </template>
 

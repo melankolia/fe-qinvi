@@ -82,7 +82,7 @@ onMounted(() => {
         data-aos-duration="2500"
         width="85"
         height="78"
-        src="@/assets/images/icon-sincan.png"
+        src="@/assets/images/icon-sincan.webp"
         alt="Qinvi Wedding Icon"
         class="mb-4 mt-10"
       />
@@ -121,11 +121,11 @@ onMounted(() => {
       <div
         data-aos="fade-right"
         data-aos-duration="2500"
-        class="flex flex-col relative px-10 mb-36"
+        class="flex flex-col relative px-10 mb-28"
       >
         <div class="flex flex-col max-w-[200px]">
           <img
-            src="@/assets/images/img-lukman.webp"
+            :src="pengantinPria.urlPath"
             alt="Qinvi Wedding Photos Groom"
             width="200"
           />
@@ -150,7 +150,7 @@ onMounted(() => {
       >
         <div class="flex flex-col max-w-[200px]">
           <img
-            src="@/assets/images/img-erryca.webp"
+            :src="pengantinWanita.urlPath"
             alt="Qinvi Wedding Photos Groom"
             width="200"
           />
@@ -177,7 +177,7 @@ onMounted(() => {
   background-image: url("@/assets/images/bg-events.webp");
   background-size: cover;
   background-position: center;
-  height: 1050px;
+  min-height: 1050px;
 }
 
 .orientation {

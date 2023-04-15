@@ -201,7 +201,7 @@ useHead({
           {{ mempelaiPria }} dan {{ mempelaiWanita }}
         </p>
         <p data-aos="fade-down" data-aos-duration="3000" class="caption-6">
-          22.03.2022
+          30.04.2022
         </p>
       </div>
       <button
@@ -246,7 +246,7 @@ useHead({
       v-else
       style="max-width: 480px"
     >
-      <WelcomeSection id="welcomeSection" />
+      <WelcomeSection :acara="dataPernikahan.acara" id="welcomeSection" />
       <IntroductionFamilies
         id="mempelaiSection"
         :tamu="dataPernikahan.tamu"

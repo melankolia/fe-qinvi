@@ -16,7 +16,7 @@
       data-aos-duration="2500"
       width="85"
       height="78"
-      src="@/assets/images/icon-sincan.png"
+      src="@/assets/images/icon-sincan.webp"
       alt="Qinvi Wedding Icon"
       class="absolute top-8"
     />

@@ -92,7 +92,7 @@ onMounted(() => {
       </div>
       <div v-if="loading" class="flex flex-col items-center">
         <svg
-          class="animate-spin mb-4 mt-6 h-8 w-8 text-blue-10"
+          class="animate-spin mb-4 mt-6 h-8 w-8 text-white"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -112,33 +112,32 @@ onMounted(() => {
           ></path>
         </svg>
       </div>
+      <button
+        class="button-date w-full mt-6 border border-white bg-yellow-20 py-1.5 px-3 rounded-2xl space-x-2.5 z-10 drop-shadow-md"
+        @click="onLoad()"
+      >
+        <p class="body-2 text-black">Lihat Potret Kami</p>
+      </button>
+
       <p
         data-aos="fade-right"
         data-aos-duration="2500"
         class="headline-14 text-white mt-10 mb-8"
       >
-        LIVESTREAM
+        PREWEDDING
       </p>
       <iframe
         data-aos="fade-up"
         data-aos-duration="2500"
         width="100%"
         height="217"
-        src="https://www.youtube.com/embed/9spb7087LIg"
+        src="https://www.youtube.com/embed/ncF2W8ooUg0"
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         class="rounded-lg mb-4"
       />
-      <!-- <div class="flex flex-col items-center mt-6">
-        <button
-          class="button-date border border-white bg-blue-10 py-1.5 px-3 rounded-2xl flex flex-row items-center space-x-2.5 z-10"
-          @click="onLoad()"
-        >
-          <p class="body-2 text-white">Lihat Potret Kami</p>
-        </button>
-      </div> -->
     </div>
     <vue-easy-lightbox
       :visible="visibleRef"

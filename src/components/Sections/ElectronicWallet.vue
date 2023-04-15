@@ -2,6 +2,7 @@
 import { useSnackbar } from "vue3-snackbar";
 import BNI_Logo from "@/assets/images/BNI_logo.svg";
 import BCA_Logo from "@/assets/images/BCA_logo.png";
+import Mandiri_Logo from "@/assets/images/Mandiri_logo.webp";
 
 const snackbar = useSnackbar();
 
@@ -26,7 +27,8 @@ const handleIconBank = (e: string): string => {
 
   const bank: string = e.toLowerCase();
   if (bank == "bni") return BNI_Logo;
-  if (bank == "bca") return BCA_Logo;
+  else if (bank == "bca") return BCA_Logo;
+  else if (bank == "mandiri") return Mandiri_Logo;
 
   return "";
 };
@@ -83,7 +85,7 @@ const handleCopy = (i: number): void => {
         />
         <img
           :src="handleIconBank(e.namaBank)"
-          width="60"
+          width="100"
           height="19"
           class="mb-3"
         />
