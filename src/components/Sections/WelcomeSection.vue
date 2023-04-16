@@ -39,26 +39,10 @@ const CountDownAkad: Ref<CountDownTypes> = ref({
   counterFunction: 0,
 });
 
-const tanggalResepsi: Ref<string> = ref("-");
-const CountDownResepsi: Ref<CountDownTypes> = ref({
-  days: "0",
-  hours: "0",
-  minutes: "0",
-  seconds: "0",
-  counterFunction: 0,
-});
-
 const bindingData = (): void => {
   props.acara.map((e: acaraTypes) => {
     if (e.namaAcara.toLowerCase().includes("akad")) {
       tanggalAkad.value = new Date(e.tanggal).toLocaleDateString("id-ID", {
-        weekday: "long",
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-      });
-    } else if (e.namaAcara?.toLowerCase().includes("resepsi")) {
-      tanggalResepsi.value = new Date(e.tanggal).toLocaleDateString("id-ID", {
         weekday: "long",
         year: "numeric",
         month: "long",
@@ -92,34 +76,6 @@ const startCountDownAkad = (): void => {
   }, 1000);
 };
 
-const startCountDownResepsi = (): void => {
-  const myInterval = setInterval(() => {
-    const now = new Date().getTime();
-    const countDownDate = new Date(tanggalResepsi.value).getTime();
-
-    // Find the distance between now and the count down date
-    const distance = countDownDate - now;
-
-    if (distance > 0) {
-      // Time calculations for days, hours, minutes and seconds
-      CountDownResepsi.value.days = Math.floor(
-        distance / (1000 * 60 * 60 * 24)
-      );
-      CountDownResepsi.value.hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      );
-      CountDownResepsi.value.minutes = Math.floor(
-        (distance % (1000 * 60 * 60)) / (1000 * 60)
-      );
-      CountDownResepsi.value.seconds = Math.floor(
-        (distance % (1000 * 60)) / 1000
-      );
-    } else {
-      clearInterval(myInterval);
-    }
-  }, 1000);
-};
-
 const mempelaiPria: Ref<string> = ref("-");
 const mempelaiWanita: Ref<string> = ref("-");
 
@@ -136,7 +92,6 @@ onMounted(() => {
   splittingUsername(username);
   bindingData();
   startCountDownAkad();
-  startCountDownResepsi();
 });
 </script>
 
@@ -164,18 +119,18 @@ onMounted(() => {
         </div>
         <div class="flex flex-col">
           <p>
-            {{ CountDownResepsi.days }} <br />
-            Hari
+            {{ CountDownAkad.hours }} <br />
+            Jam
           </p>
           <p>
-            {{ CountDownResepsi.minutes }} <br />
-            Menit
+            {{ CountDownAkad.seconds }} <br />
+            Detik
           </p>
         </div>
       </div>
       <div class="flex flex-col border-white border-y px-6 py-1 justify-center">
         Save The Dates <br />
-        {{ tanggalResepsi }}
+        {{ tanggalAkad }}
       </div>
     </div>
   </div>

@@ -35,6 +35,46 @@ const isInvited = computed(() => {
 });
 
 interface dataPernikahanType {
+  // homeView: {
+  //   background: "/image.webp",
+  //   type: "image"
+  // };
+  // welcomeSection: {
+  //   background: "/image.webp",
+  //   type: "image"
+  // },
+  // galleryPhotos: {
+  //   background: "#768C6E",
+  //   type: "color"
+  // },
+  // IntroductionFamilies: {
+  //   background: "/image.webp",
+  //   type: "image"
+  // },
+  // weddingEvents: {
+  //   background: "/image.webp",
+  //   type: "image"
+  // },
+  // presenceForm: {
+  //   background: "#768C6E",
+  //   type: "color"
+  // },
+  // prayerWishes: {
+  //   background: "#FAFFD8",
+  //   type: "color"
+  // }
+  // wishesList: {
+  //   background: "#FAFFD8",
+  //   type: "color"
+  // },
+  // electronicWallet: {
+  //   background: "#768C6E",
+  //   type: "color"
+  // },
+  // footerWeddings: {
+  //   background: "/images/bg-thanks.webp",
+  //   type: "image"
+  // }
   acara: Array<{
     alamat: string;
     createdAt: string;
