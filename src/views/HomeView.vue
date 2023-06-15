@@ -330,6 +330,8 @@ useHead({
       <WeddingEvents id="acaraSection" :acara="dataPernikahan.acara" />
       <div class="flex flex-col bg-combo px-8 pt-9">
         <div
+          data-aos="zoom-in-up"
+          data-aos-duration="1000"
           class="flex flex-col pt-20 bg-combo-linear rounded-tema-jawa mb-10"
         >
           <PresenceForm />

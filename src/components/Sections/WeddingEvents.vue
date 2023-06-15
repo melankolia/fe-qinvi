@@ -96,28 +96,30 @@ onMounted(() => {
 <template>
   <div class="flex flex-col items-center px-4 pt-16 pb-5 bg-wedding bg-white">
     <div
+      data-aos="zoom-in-up"
+      data-aos-duration="1000"
       class="flex flex-col pt-20 pb-32 bg-container-shadow rounded-tema-jawa mb-10"
     >
       <div class="flex flex-col items-center">
         <img
-          data-aos="fade-up"
-          data-aos-duration="2500"
+          data-aos="zoom-in-up"
+          data-aos-duration="2000"
           src="@/assets/images/img-header.webp"
           alt="Qinvi Header Events"
           class="mb-1"
           width="250"
         />
         <p
-          data-aos="fade-right"
-          data-aos-duration="2500"
+          data-aos="zoom-in-up"
+          data-aos-duration="2000"
           class="headline-20 text-black"
         >
           With Love
         </p>
         <hr class="border-black mt-6 mb-9" style="width: 40%" />
         <p
-          data-aos="fade-up"
-          data-aos-duration="2500"
+          data-aos="zoom-in-up"
+          data-aos-duration="2000"
           class="caption-14 text-black text-center mx-7 mb-12"
         >
           Dengan segala kerendahan hati dan dengan ucapan syukur atas karunia
@@ -128,8 +130,8 @@ onMounted(() => {
 
       <!-- Akad Nikah -->
       <div
-        data-aos="fade-down"
-        data-aos-duration="2500"
+        data-aos="zoom-in-up"
+        data-aos-duration="2000"
         class="flex flex-col items-center rounded-xl bg-akad py-14 mx-8"
       >
         <p class="headline-21 text-gold-10 mt-2 uppercase">Akad Nikah</p>
@@ -138,8 +140,8 @@ onMounted(() => {
         <p class="body-7 text-gold-10 my-5">{{ acaraAkad.tanggal }}</p>
         <p class="body-7 text-gold-10 my-2">{{ acaraAkad.jamMulai }} WIB</p>
         <img
-          data-aos="fade-up"
-          data-aos-duration="2500"
+          data-aos="zoom-in-up"
+          data-aos-duration="2000"
           src="@/assets/images/img-chruch.png"
           alt="Qinvi Header Events"
           class="my-7"
@@ -157,8 +159,8 @@ onMounted(() => {
           {{ acaraAkad.alamat }}
         </p>
         <div
-          data-aos="fade-up"
-          data-aos-duration="2500"
+          data-aos="zoom-in-up"
+          data-aos-duration="2000"
           class="flex flex-col items-center"
         >
           <button
@@ -168,8 +170,8 @@ onMounted(() => {
             <p class="body-6 text-white">Lihat Lokasi</p>
           </button>
           <button
-            data-aos="fade-right"
-            data-aos-duration="2500"
+            data-aos="zoom-in-up"
+            data-aos-duration="2000"
             class="button-date bg-linear-btn px-8 py-4 rounded-3xl flex flex-row justify-center items-center space-x-2.5 transition-all my-4 mx-6"
           >
             <p class="body-6 text-white">Add to Calendar</p>
@@ -179,8 +181,8 @@ onMounted(() => {
 
       <!-- Resepsi -->
       <div
-        data-aos="fade-down"
-        data-aos-duration="2500"
+        data-aos="zoom-in-up"
+        data-aos-duration="2000"
         class="flex flex-col mt-2.5 items-center rounded-xl bg-resepsi py-14 mx-8"
       >
         <p class="headline-21 text-gold-10 mt-2 uppercase text-center">
@@ -192,8 +194,8 @@ onMounted(() => {
         <p class="body-7 text-gold-10 my-5">{{ acaraResepsi.tanggal }}</p>
         <p class="body-7 text-gold-10 my-2">{{ acaraResepsi.jamMulai }} WIB</p>
         <img
-          data-aos="fade-up"
-          data-aos-duration="2500"
+          data-aos="zoom-in-up"
+          data-aos-duration="2000"
           src="@/assets/images/img-chruch.png"
           alt="Qinvi Header Events"
           class="my-7"
@@ -211,8 +213,8 @@ onMounted(() => {
           {{ acaraResepsi.alamat }}
         </p>
         <div
-          data-aos="fade-up"
-          data-aos-duration="2500"
+          data-aos="zoom-in-up"
+          data-aos-duration="2000"
           class="flex flex-col items-center"
         >
           <button
@@ -222,8 +224,8 @@ onMounted(() => {
             <p class="body-6 text-white">Lihat Lokasi</p>
           </button>
           <button
-            data-aos="fade-right"
-            data-aos-duration="2500"
+            data-aos="zoom-in-up"
+            data-aos-duration="2000"
             class="button-date bg-linear-btn px-8 py-4 rounded-3xl flex flex-row justify-center items-center space-x-2.5 transition-all my-4 mx-6"
           >
             <p class="body-6 text-white">Add to Calendar</p>

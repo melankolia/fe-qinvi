@@ -98,8 +98,8 @@ onMounted(() => {
     class="h-1/3 md:h-1/3 flex flex-col justify-center items-center bg-white py-8 container"
   >
     <p
-      data-aos="fade-right"
-      data-aos-duration="2500"
+      data-aos="zoom-in-up"
+      data-aos-duration="2000"
       class="headline-6 text-blue-10"
     >
       Countdown

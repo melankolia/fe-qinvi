@@ -57,15 +57,15 @@ onMounted(() => {
     <div class="flex flex-col items-center bg-gallery">
       <div class="flex flex-col items-center bg-gallery-ov px-10 py-6">
         <p
-          data-aos="fade-right"
-          data-aos-duration="2500"
+          data-aos="zoom-in-up"
+          data-aos-duration="2000"
           class="headline-19 text-white mb-8 font-extralight"
         >
           GALLERY
         </p>
         <p
-          data-aos="fade-up"
-          data-aos-duration="2500"
+          data-aos="zoom-in-up"
+          data-aos-duration="2000"
           class="caption-9 text-white text-center mb-6"
         >
           A successful marriage requires falling in love many times, always with

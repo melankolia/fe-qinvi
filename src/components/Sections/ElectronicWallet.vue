@@ -67,8 +67,8 @@ const handleCopy = (i: number): void => {
   <div class="flex flex-col bg-green-30 relative">
     <div class="flex flex-col px-4 py-6">
       <p
-        data-aos="fade-right"
-        data-aos-duration="2500"
+        data-aos="zoom-in-up"
+        data-aos-duration="2000"
         class="headline-6 text-white mb-9 text-center"
       >
         Wedding Gift

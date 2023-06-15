@@ -69,8 +69,8 @@ const handleConfirm = (): void => {
 <template>
   <div class="flex flex-col px-6 py-6">
     <p
-      data-aos="fade-right"
-      data-aos-duration="2500"
+      data-aos="zoom-in-up"
+      data-aos-duration="2000"
       class="headline-19 text-brown-30 text-center font-extralight mb-5"
     >
       RSVP

@@ -3,8 +3,8 @@
     class="flex flex-col bg-container items-center justify-center px-10 relative"
   >
     <p
-      data-aos="fade-down"
-      data-aos-duration="2500"
+      data-aos="zoom-in-up"
+      data-aos-duration="2000"
       class="body-3 text-white font-medium mb-32"
     >
       Kehadiran Bapak/Ibu/Saudara/i di acara kami akan menjadi suatu kebahagiaan

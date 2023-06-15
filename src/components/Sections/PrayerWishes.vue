@@ -61,15 +61,15 @@ const handleSubmit = async (): Promise<void> => {
   <div class="flex flex-col">
     <div class="flex flex-col px-6 pb-6 pt-8">
       <p
-        data-aos="fade-right"
-        data-aos-duration="2500"
+        data-aos="zoom-in-up"
+        data-aos-duration="2000"
         class="headline-6 text-brown-30 mb-2 text-center"
       >
         Wedding Wish
       </p>
       <p
-        data-aos="fade-up"
-        data-aos-duration="2500"
+        data-aos="zoom-in-up"
+        data-aos-duration="2000"
         class="headline-12 text-center text-brown-30 mb-3"
       >
         Bantu kami mempersiapkan acara yang aman dan jamuan yang hangat untuk
