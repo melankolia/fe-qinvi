@@ -87,6 +87,7 @@ interface dataPernikahanType {
     userId: number;
     waktuMulai: string;
     waktuSelesai: string;
+    ingatkanAcara: string;
   }>;
   ceritaCinta: Array<{
     createdDate: string;
