@@ -28,7 +28,7 @@ const handleAnimation = (i: number): string => {
 };
 
 const onLoad = (): void => {
-  const initial: number = thumbnailRef.value.length;
+  const initial: number = thumbnailRef.value.length - 1;
   loading.value = true;
 
   setTimeout(() => {
