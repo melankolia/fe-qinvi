@@ -39,11 +39,12 @@
 }
 
 .caption-6 {
-  font-family: "Inter", sans-serif;
+  font-family: "Cormorant Garamond";
   font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 15px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: 1.8px;
 }
 
 .caption-7 {
@@ -79,11 +80,36 @@
 }
 
 .caption-11 {
-  font-family: "Monesta";
-  font-style: normal;
+  font-family: "Cormorant Garamond";
+  font-style: italic;
+  font-weight: 700;
+  font-size: 20.8px;
+  line-height: 27px;
+  letter-spacing: 0.2px;
+}
+
+.caption-12 {
+  font-family: "Cormorant Garamond";
+  font-style: italic;
   font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
+  font-size: 12.8px;
+  line-height: 13px;
+}
+
+.caption-13 {
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.caption-14 {
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
 }
 
 .body-1 {
@@ -114,6 +140,51 @@
   text-align: center;
 }
 
+.body-4 {
+  font-family: "Cormorant Garamond", "cursive";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.body-5 {
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 30px;
+}
+
+.body-6 {
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12.8px;
+  line-height: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.body-7 {
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 19.2px;
+  line-height: 25px;
+  letter-spacing: 1px;
+}
+
+.body-8 {
+  font-family: "Cormorant Garamond";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 14.4px;
+  line-height: 22px;
+}
+
 .headline-1 {
   font-family: "Rankings Caps", sans-serif;
   font-style: normal;
@@ -124,12 +195,11 @@
 }
 
 .headline-2 {
-  font-family: "North Avellion", sans-serif;
+  font-family: "Dream Avenue";
   font-style: normal;
   font-weight: 400;
-  font-size: 60px;
-  line-height: 66px;
-  letter-spacing: 0.05em;
+  font-size: 32px;
+  line-height: 48px;
 }
 
 .headline-3 {
@@ -185,11 +255,12 @@
 }
 
 .headline-9 {
-  font-family: "Comfortaa", sans-serif;
+  font-family: "Cormorant Garamond";
   font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 16px;
+  font-weight: 700;
+  font-size: 14.4px;
+  line-height: 19px;
+  letter-spacing: 1.8px;
 }
 
 .headline-10 {
@@ -203,17 +274,17 @@
 .headline-11 {
   font-family: "Dream Avenue", sans-serif;
   font-style: normal;
-  font-weight: 400;
   font-size: 38px;
   line-height: 38px;
 }
 
 .headline-12 {
-  font-family: "Rankings Caps", sans-serif;
+  font-family: "Cormorant Garamond";
   font-style: normal;
-  font-weight: 400;
-  font-size: 10px;
-  line-height: 11px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0.1px;
 }
 
 .headline-13 {
@@ -239,4 +310,48 @@
   font-weight: 400;
   font-size: 30px;
   line-height: 30px;
+}
+
+.headline-16 {
+  font-family: "Inter";
+  font-weight: 100;
+  font-size: 21.8px;
+  line-height: 37px;
+}
+
+.headline-17 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100;
+  font-size: 50px;
+}
+
+.headline-18 {
+  font-family: "Monesta";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 19.8px;
+  letter-spacing: 0.1rem;
+}
+
+.headline-19 {
+  font-family: "Inter";
+  font-style: normal;
+  font-size: 33px;
+  line-height: 56px;
+}
+
+.headline-20 {
+  font-family: "Inter";
+  font-weight: 100;
+  font-size: 33px;
+  line-height: 56px;
+}
+
+.headline-21 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 23px;
+  line-height: 22px;
 }

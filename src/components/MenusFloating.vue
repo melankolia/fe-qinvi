@@ -36,7 +36,7 @@ const changeStatePlay = (): void => {
         height="15.5"
         class="pb-2"
       />
-      <p class="caption-1 text-blue-10">Home</p>
+      <p class="caption-1 text-brown-10">Home</p>
     </button>
     <button
       class="flex flex-col items-center px-1"
@@ -48,7 +48,7 @@ const changeStatePlay = (): void => {
         height="18"
         class="pb-2"
       />
-      <p class="caption-1 text-blue-10">Mempelai</p>
+      <p class="caption-1 text-brown-10">Mempelai</p>
     </button>
     <button
       class="flex flex-col items-center px-1"
@@ -60,7 +60,7 @@ const changeStatePlay = (): void => {
         height="18"
         class="pb-2"
       />
-      <p class="caption-1 text-blue-10">Acara</p>
+      <p class="caption-1 text-brown-10">Acara</p>
     </button>
     <button
       class="flex flex-col items-center px-1"
@@ -72,7 +72,7 @@ const changeStatePlay = (): void => {
         height="18"
         class="pb-2"
       />
-      <p class="caption-1 text-blue-10">Gallery</p>
+      <p class="caption-1 text-brown-10">Gallery</p>
     </button>
     <button
       class="flex flex-col items-center px-1"
@@ -99,7 +99,7 @@ const changeStatePlay = (): void => {
         class="pb-2"
       />
 
-      <p class="caption-1 text-blue-10">{{ isPlay ? "Pause" : "Play" }}</p>
+      <p class="caption-1 text-brown-10">{{ isPlay ? "Pause" : "Play" }}</p>
       <audio id="myAudio" preload="auto">
         <source :src="usedAudio" type="audio/mpeg" />
       </audio>

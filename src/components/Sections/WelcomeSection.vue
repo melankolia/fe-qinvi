@@ -2,6 +2,7 @@
 import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
 import type { Ref } from "vue";
+import TimerCountDown from "@/components/TimerCountdown.vue";
 
 type acaraTypes = {
   alamat: string;
@@ -97,50 +98,53 @@ onMounted(() => {
 
 <template>
   <div
-    class="flex flex-col w-full text-center bg-container justify-end text-white"
+    class="flex flex-col w-full text-center bg-container justify-center text-white py-6"
   >
-    <p data-aos="fade-up" data-aos-duration="2500" class="headline-11">
-      The Wedding Of <br />
-      {{ mempelaiPria }} & {{ mempelaiWanita }}
-    </p>
-    <div class="flex flex-row justify-center mt-20 mb-7 caption-7">
-      <div
-        class="flex flex-row border-r border-white border-y px-6 py-1 space-x-6"
+    <div
+      data-aos="zoom-in-up"
+      data-aos-duration="1000"
+      class="flex flex-col bg-brown-10 opacity-90 mx-9 pb-10 pt-24 bg-container-shadow rounded-tema-jawa px-7"
+    >
+      <p
+        data-aos="zoom-in-up"
+        data-aos-duration="2000"
+        class="headline-16 mb-4"
       >
-        <div class="flex flex-col">
-          <p>
-            {{ CountDownAkad.days }} <br />
-            Hari
-          </p>
-          <p>
-            {{ CountDownAkad.minutes }} <br />
-            Menit
-          </p>
-        </div>
-        <div class="flex flex-col">
-          <p>
-            {{ CountDownAkad.hours }} <br />
-            Jam
-          </p>
-          <p>
-            {{ CountDownAkad.seconds }} <br />
-            Detik
-          </p>
-        </div>
-      </div>
-      <div class="flex flex-col border-white border-y px-6 py-1 justify-center">
-        Save The Dates <br />
-        {{ tanggalAkad }}
+        The Wedding Of
+      </p>
+      <p
+        data-aos="zoom-in-up"
+        data-aos-duration="2000"
+        class="headline-11 mb-10"
+      >
+        {{ mempelaiPria }} & {{ mempelaiWanita }}
+      </p>
+      <img
+        data-aos="zoom-in-up"
+        data-aos-duration="2000"
+        src="@/assets/images/p-spouses.webp"
+        alt="Qinvi Spouses"
+      />
+      <div class="flex flex-col justify-center items-center pt-10">
+        <TimerCountDown
+          :days="CountDownAkad.days"
+          :hours="CountDownAkad.hours"
+          :minutes="CountDownAkad.minutes"
+          :seconds="CountDownAkad.seconds"
+        />
       </div>
     </div>
   </div>
 </template>
 
-<style>
+<style scoped>
 .bg-container {
   background-image: url("@/assets/images/bg-welcome.webp");
   background-size: cover;
   background-position: center;
-  height: 600px;
+}
+
+.bg-container-shadow {
+  box-shadow: 0px 0px 45px 1px rgba(0, 0, 0, 0.5);
 }
 </style>

@@ -58,36 +58,39 @@ const handleSubmit = async (): Promise<void> => {
 </script>
 
 <template>
-  <div class="flex flex-col bg-yellow-10">
-    <div class="flex flex-col bg-yellow-10 px-4 pb-6 pt-8">
+  <div class="flex flex-col">
+    <div class="flex flex-col px-6 pb-6 pt-8">
       <p
         data-aos="fade-right"
         data-aos-duration="2500"
-        class="headline-6 text-blue-10 mb-2 text-center"
+        class="headline-6 text-brown-30 mb-2 text-center"
       >
         Wedding Wish
       </p>
       <p
         data-aos="fade-up"
         data-aos-duration="2500"
-        class="headline-12 text-center text-blue-10 mb-3"
+        class="headline-12 text-center text-brown-30 mb-3"
       >
-        THANKS FOR ALL THE WEDDING WISHES ! <br />
-        YOU MADE A GREAT DAY EVEN GREATER !
+        Bantu kami mempersiapkan acara yang aman dan jamuan yang hangat untuk
+        anda semua dengan mengirimkan konfirmasi kehadiran melalui form berikut:
       </p>
       <div class="flex flex-col">
+        <p class="headline-12 text-brown-30 mb-1.5">Nama</p>
         <input
-          placeholder="Nama"
           v-model="form.from"
           type="text"
           id="fname"
           name="fname"
-          class="rounded-sm mb-5 p-2 text-black"
+          class="rounded-sm mb-5 p-2 text-brown-30"
         />
+        <p class="headline-12 text-brown-30 mb-1.5">
+          Sampaikan ucapan selamat untuk <br />
+          pernikahan kami :
+        </p>
         <textarea
-          placeholder="Give Your Wish"
           v-model="form.message"
-          class="rounded-sm p-2 text-black"
+          class="rounded-sm p-2 text-brown-30"
           id="prayer"
           name="prayer"
           rows="4"
@@ -120,7 +123,7 @@ const handleSubmit = async (): Promise<void> => {
               d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
             ></path>
           </svg>
-          <p class="body-2 text-black">Kirim Ucapan</p>
+          <p class="body-2 text-brown-30">Kirim Ucapan</p>
         </button>
       </div>
     </div>

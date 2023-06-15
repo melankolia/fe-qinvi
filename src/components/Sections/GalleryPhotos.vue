@@ -6,7 +6,6 @@ type GalleryPhotoPropsTypes = {
   gallery: string[];
 };
 
-const firstPhotos: Ref<string> = ref("/src/assets/images/Hug.png");
 const imgsRef: Ref<string[]> = ref([]);
 const thumbnailRef: Ref<string[]> = ref([]);
 const visibleRef: Ref<boolean> = ref(false);
@@ -49,95 +48,70 @@ onMounted(() => {
     thumbnailRef.value = [
       ...props.gallery.filter((e: string, i: number) => i != 0 && i <= 4),
     ];
-    firstPhotos.value = imgsRef.value[0];
   }
 });
 </script>
 
 <template>
   <div class="flex flex-col">
-    <div class="flex flex-col items-center py-6 relative bg-green-30 px-10">
-      <p
-        data-aos="fade-right"
-        data-aos-duration="2500"
-        class="headline-14 text-white mb-8"
-      >
-        GALLERY
-      </p>
-      <p
-        data-aos="fade-up"
-        data-aos-duration="2500"
-        class="caption-9 text-white text-center mb-6"
-      >
-        A successful marriage requires falling in love many times, always with
-        the same person
-      </p>
-      <img
-        data-aos="fade-down"
-        data-aos-duration="2500"
-        @click="onShow(0)"
-        :src="firstPhotos"
-        class="z-30"
-      />
-      <div class="grid grid-cols-2">
-        <img
-          :data-aos="handleAnimation(i)"
+    <div class="flex flex-col items-center bg-gallery">
+      <div class="flex flex-col items-center bg-gallery-ov px-10 py-6">
+        <p
+          data-aos="fade-right"
           data-aos-duration="2500"
-          v-for="(e, i) in thumbnailRef"
-          loading="lazy"
-          :key="i"
-          @click="onShow(i + 1)"
-          :src="e"
-        />
-      </div>
-      <div v-if="loading" class="flex flex-col items-center">
-        <svg
-          class="animate-spin mb-4 mt-6 h-8 w-8 text-white"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
+          class="headline-19 text-white mb-8 font-extralight"
         >
-          <circle
-            class="opacity-25"
-            cx="12"
-            cy="12"
-            r="10"
-            stroke="currentColor"
-            stroke-width="4"
-          ></circle>
-          <path
-            class="opacity-75"
-            fill="currentColor"
-            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-          ></path>
-        </svg>
+          GALLERY
+        </p>
+        <p
+          data-aos="fade-up"
+          data-aos-duration="2500"
+          class="caption-9 text-white text-center mb-6"
+        >
+          A successful marriage requires falling in love many times, always with
+          the same person
+        </p>
+        <div class="grid grid-cols-2">
+          <img
+            :data-aos="handleAnimation(i)"
+            data-aos-duration="2500"
+            v-for="(e, i) in thumbnailRef"
+            loading="lazy"
+            :key="i"
+            @click="onShow(i + 1)"
+            :src="e"
+            class="p-1"
+          />
+        </div>
+        <div v-if="loading" class="flex flex-col items-center">
+          <svg
+            class="animate-spin mb-4 mt-6 h-8 w-8 text-white"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <circle
+              class="opacity-25"
+              cx="12"
+              cy="12"
+              r="10"
+              stroke="currentColor"
+              stroke-width="4"
+            ></circle>
+            <path
+              class="opacity-75"
+              fill="currentColor"
+              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+            ></path>
+          </svg>
+        </div>
+        <button
+          class="button-date bg-linear-btn px-8 py-3 rounded-3xl flex flex-row justify-center items-center space-x-2.5 transition-all mt-4 mx-6"
+          @click="onLoad()"
+        >
+          <p class="body-6 text-white">More Of Us</p>
+        </button>
       </div>
-      <button
-        class="button-date w-full mt-6 border border-white bg-yellow-20 py-1.5 px-3 rounded-2xl space-x-2.5 z-10 drop-shadow-md"
-        @click="onLoad()"
-      >
-        <p class="body-2 text-black">Lihat Potret Kami</p>
-      </button>
-
-      <p
-        data-aos="fade-right"
-        data-aos-duration="2500"
-        class="headline-14 text-white mt-10 mb-8"
-      >
-        PREWEDDING
-      </p>
-      <iframe
-        data-aos="fade-up"
-        data-aos-duration="2500"
-        width="100%"
-        height="217"
-        src="https://www.youtube.com/embed/ncF2W8ooUg0"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        class="rounded-lg mb-4"
-      />
     </div>
     <vue-easy-lightbox
       :visible="visibleRef"
@@ -147,3 +121,16 @@ onMounted(() => {
     />
   </div>
 </template>
+
+<style scoped>
+.bg-gallery-ov {
+  background: rgba(131, 96, 63, 0.9);
+}
+.bg-gallery {
+  background-image: url("@/assets/images/bg-gallery.webp");
+  background-size: cover;
+}
+.bg-linear-btn {
+  background: linear-gradient(282.22deg, #000000 0%, #a98466 100%);
+}
+</style>

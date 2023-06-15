@@ -1,32 +1,32 @@
 <template>
-  <div class="flex flex-row space-x-3 my-6 z-30">
+  <div class="flex flex-row space-x-1.5 my-6 z-30">
     <div
-      class="flex flex-col items-center py-2 px-3.5 bg-[#EEF1F3] rounded-lg"
-      style="max-width: 54px"
+      class="flex flex-col items-center py-2 px-3.5 border border-black bg-linear rounded-lg"
+      style="width: 66px"
     >
-      <p class="body-1 text-blue-10">{{ days }}</p>
-      <p class="caption-1 text-blue-10">Hari</p>
+      <p class="body-5 text-black">{{ days }}</p>
+      <p class="caption-12 text-black">Days</p>
     </div>
     <div
-      class="flex flex-col items-center py-2 px-3.5 bg-[#EEF1F3] rounded-lg"
-      style="max-width: 54px"
+      class="flex flex-col items-center py-2 px-3.5 border border-black bg-linear rounded-lg"
+      style="width: 66px"
     >
-      <p class="body-1 text-blue-10">{{ hours }}</p>
-      <p class="caption-1 text-blue-10">Jam</p>
+      <p class="body-5 text-black">{{ hours }}</p>
+      <p class="caption-12 text-black">Hours</p>
     </div>
     <div
-      class="flex flex-col items-center py-2 px-3.5 bg-[#EEF1F3] rounded-lg"
-      style="max-width: 54px"
+      class="flex flex-col items-center py-2 px-3.5 border border-black bg-linear rounded-lg"
+      style="width: 66px"
     >
-      <p class="body-1 text-blue-10">{{ minutes }}</p>
-      <p class="caption-1 text-blue-10">Menit</p>
+      <p class="body-5 text-black">{{ minutes }}</p>
+      <p class="caption-12 text-black">Minutes</p>
     </div>
     <div
-      class="flex flex-col items-center py-2 px-3.5 bg-[#EEF1F3] rounded-lg"
-      style="max-width: 54px"
+      class="flex flex-col items-center py-2 px-3.5 border border-black bg-linear rounded-lg"
+      style="width: 66px"
     >
-      <p class="body-1 text-blue-10">{{ seconds }}</p>
-      <p class="caption-1 text-blue-10">Detik</p>
+      <p class="body-5 text-black">{{ seconds }}</p>
+      <p class="caption-12 text-black">Seconds</p>
     </div>
   </div>
 </template>
@@ -43,3 +43,9 @@ interface CountDownTypes {
 
 const props = defineProps<CountDownTypes>();
 </script>
+
+<style scoped>
+.bg-linear {
+  background: rgba(255, 255, 255, 0.58);
+}
+</style>

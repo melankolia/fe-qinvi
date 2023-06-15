@@ -1,7 +1,7 @@
 <template>
   <div
     id="wishes-container"
-    class="flex flex-col max-h-96 py-4 px-6 overflow-scroll bg-yellow-10"
+    class="flex flex-col max-h-96 py-4 px-6 overflow-scroll mb-8"
   >
     <WishesComponents
       :username="e.nama"
@@ -14,8 +14,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
-import type { Ref } from "vue";
+import { onMounted } from "vue";
 import WishesComponents from "@/components/Sections/WishesComponents.vue";
 
 interface WishesTypes {

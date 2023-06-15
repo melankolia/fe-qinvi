@@ -100,3 +100,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.rounded-tema-jawa {
+  border-top-left-radius: 350px;
+  border-top-right-radius: 350px;
+  border-bottom-left-radius: 35px;
+  border-bottom-right-radius: 35px;
+}

@@ -12,9 +12,9 @@ const props = defineProps<WishProps>();
 
 <template>
   <div class="flex flex-col">
-    <p class="caption-2 text-blue-10">{{ props.username }}</p>
+    <p class="caption-2 text-brown-30">{{ props.username }}</p>
     <p class="caption-3 text-grey-10 my-1">{{ props.date }}</p>
-    <p class="caption-4 text-blue-10">
+    <p class="caption-4 text-brown-30">
       {{ props.wish }}
     </p>
     <hr class="my-2" />

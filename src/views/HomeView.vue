@@ -7,7 +7,7 @@ import WelcomeSection from "@/components/Sections/WelcomeSection.vue";
 import IntroductionFamilies from "@/components/Sections/IntroductionFamilies.vue";
 import WeddingEvents from "@/components/Sections/WeddingEvents.vue";
 import PresenceForm from "@/components/Sections/PresenceForm.vue";
-import ElectronicWallet from "@/components/Sections/ElectronicWallet.vue";
+// import ElectronicWallet from "@/components/Sections/ElectronicWallet.vue";
 import GalleryPhotos from "@/components/Sections/GalleryPhotos.vue";
 import PrayerWishes from "@/components/Sections/PrayerWishes.vue";
 import FooterSections from "@/components/Sections/FooterSections.vue";
@@ -227,59 +227,84 @@ useHead({
   <div class="flex flex-col mx-auto" style="max-width: 480px">
     <div
       v-if="!isOpen"
-      class="container flex flex-col h-screen justify-between pt-9 pb-24"
+      class="container flex flex-col h-screen justify-center px-8"
     >
-      <div class="flex flex-col items-center text-black">
-        <p data-aos="fade-down" data-aos-duration="1000" class="headline-9">
-          Undangan Pernikahan
+      <div
+        data-aos="zoom-in-up"
+        data-aos-duration="1000"
+        class="flex flex-col items-center text-black background-linear rounded-full py-[71px]"
+      >
+        <p
+          data-aos="zoom-in-up"
+          data-aos-duration="2000"
+          class="headline-9 text-brown-10"
+        >
+          PERNIKAHAN
+        </p>
+        <div
+          data-aos="zoom-in-up"
+          data-aos-duration="2000"
+          class="flex flex-col items-center mt-8 mb-2.5"
+        >
+          <p class="headline-2 text-center text-brown-10 uppercase">
+            {{ mempelaiPria }}
+          </p>
+          <p class="headline-2 text-center text-brown-10 uppercase">&</p>
+          <p class="headline-2 text-center text-brown-10 uppercase">
+            {{ mempelaiWanita }}
+          </p>
+        </div>
+        <p
+          data-aos="zoom-in-up"
+          data-aos-duration="2000"
+          class="caption-6 text-brown-10 mb-11 mt-10"
+        >
+          25 • 07 • 2023
         </p>
         <p
-          data-aos="fade-down"
-          data-aos-duration="3000"
-          class="headline-10 mt-8 mb-2.5"
+          data-aos="zoom-in-up"
+          data-aos-duration="2000"
+          class="headline-9 text-brown-10"
         >
-          {{ mempelaiPria }} dan {{ mempelaiWanita }}
+          KEPADA :
         </p>
-        <p data-aos="fade-down" data-aos-duration="3000" class="caption-6">
-          30.04.2022
+        <p
+          data-aos="zoom-in-up"
+          data-aos-duration="2000"
+          class="caption-11 text-brown-10 mb-7 mt-2.5"
+        >
+          Keluarga & Sahabat
         </p>
+        <button
+          data-aos="zoom-in-up"
+          data-aos-duration="2000"
+          @click="handleClick"
+          class="button-date bg-linear-btn px-8 py-3.5 rounded-3xl flex flex-row justify-center items-center space-x-2.5 transition-all mx-6"
+        >
+          <svg
+            v-if="loading"
+            class="animate-spin -ml-1 h-3 w-3 text-white"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <circle
+              class="opacity-25"
+              cx="12"
+              cy="12"
+              r="10"
+              stroke="currentColor"
+              stroke-width="4"
+            ></circle>
+            <path
+              class="opacity-75"
+              fill="currentColor"
+              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+            ></path>
+          </svg>
+          <p class="body-4 text-white">Buka Undangan</p>
+        </button>
       </div>
-      <button
-        data-aos="fade-up"
-        data-aos-duration="1500"
-        @click="handleClick"
-        class="button-date border border-white bg-green-30 py-1.5 px-3 rounded-md flex flex-row justify-center items-center space-x-2.5 transition-all mx-6 drop-shadow-md"
-      >
-        <svg
-          v-if="loading"
-          class="animate-spin -ml-1 h-5 w-5 text-white"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-        >
-          <circle
-            class="opacity-25"
-            cx="12"
-            cy="12"
-            r="10"
-            stroke="currentColor"
-            stroke-width="4"
-          ></circle>
-          <path
-            class="opacity-75"
-            fill="currentColor"
-            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-          ></path>
-        </svg>
-        <img
-          v-else
-          src="@/assets/icons/icon-email.png"
-          class="brightness-0 invert"
-          height="16"
-          width="16"
-        />
-        <p class="body-2 text-white">Buka Undangan</p>
-      </button>
     </div>
     <div
       class="flex flex-col mx-none md:mx-auto"
@@ -292,7 +317,10 @@ useHead({
         :tamu="dataPernikahan.tamu"
         :pengantin="dataPernikahan.pengantin"
       />
-      <GalleryPhotos id="gallerySection" :gallery="dataPernikahan.gallery" />
+      <img
+        src="@/assets/images/p-spouses-3.webp"
+        alt="Qinvi Wedding Photos Groom"
+      />
       <!-- <CountdownSection
         :mempelaiPria="mempelaiPria"
         :mempelaiWanita="mempelaiWanita"
@@ -300,11 +328,22 @@ useHead({
         id="homeSection"
       /> -->
       <WeddingEvents id="acaraSection" :acara="dataPernikahan.acara" />
-      <PresenceForm />
-      <PrayerWishes />
-      <WishesList :wishes="dataPernikahan.ucapan" />
-      <ElectronicWallet :rekening="dataPernikahan.rekening" />
+      <div class="flex flex-col bg-combo px-8 pt-9">
+        <div
+          class="flex flex-col pt-20 bg-combo-linear rounded-tema-jawa mb-10"
+        >
+          <PresenceForm />
+          <PrayerWishes />
+          <WishesList :wishes="dataPernikahan.ucapan" />
+        </div>
+      </div>
+      <!-- <ElectronicWallet :rekening="dataPernikahan.rekening" /> -->
       <!-- <HealthProtocols /> -->
+      <img
+        src="@/assets/images/p-spouses-4.webp"
+        alt="Qinvi Wedding Photos Groom"
+      />
+      <GalleryPhotos id="gallerySection" :gallery="dataPernikahan.gallery" />
       <FooterWeddings />
       <FooterSections />
       <MenusFloating @fnClick="(e) => handleMenuClick(e)" />
@@ -317,5 +356,27 @@ useHead({
   background-image: url("@/assets/images/bg-cover.webp");
   background-position: center;
   background-size: cover;
+}
+
+.background-linear {
+  background: linear-gradient(
+    0deg,
+    rgba(255, 247, 239, 0.47) 100%,
+    rgba(244, 234, 225, 0.37) 100%
+  );
+}
+
+.bg-linear-btn {
+  background: linear-gradient(282.22deg, #000000 0%, #a98466 100%);
+}
+
+.bg-combo {
+  background-image: url("@/assets/images/bg-combo.webp");
+  background-size: cover;
+}
+
+.bg-combo-linear {
+  background: rgba(244, 234, 225, 0.77);
+  box-shadow: 0px 0px 45px 1px rgba(0, 0, 0, 0.5);
 }
 </style>

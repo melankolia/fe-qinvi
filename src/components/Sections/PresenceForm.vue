@@ -67,51 +67,39 @@ const handleConfirm = (): void => {
 </script>
 
 <template>
-  <div class="flex flex-col bg-green-30 px-4 py-6">
-    <div class="flex flex-row justify-between items-center mb-5">
-      <img
-        width="140"
-        class="h-[64px]"
-        src="@/assets/images/icon-rsvp-l.webp"
-      />
-      <p
-        data-aos="fade-right"
-        data-aos-duration="2500"
-        class="headline-13 text-blue-10 text-center font-semibold"
-      >
-        RSVP
-      </p>
-      <img
-        width="140"
-        class="h-[64px]"
-        src="@/assets/images/icon-rsvp-r.webp"
-      />
-    </div>
+  <div class="flex flex-col px-6 py-6">
+    <p
+      data-aos="fade-right"
+      data-aos-duration="2500"
+      class="headline-19 text-brown-30 text-center font-extralight mb-5"
+    >
+      RSVP
+    </p>
     <form action="#">
       <div class="flex flex-col">
-        <label for="text" class="caption-8 mb-1 text-yellow-20">Nama</label>
+        <p class="headline-12 text-brown-30 mb-1.5">Nama</p>
         <input
           placeholder="Nama"
           v-model="form.nama"
           type="text"
           id="fname"
           name="fname"
-          class="rounded-sm mb-5 p-2 text-black"
+          class="rounded-sm mb-5 p-2 text-brown-30"
           required
         />
-        <label for="phone" class="caption- mb-18 text-yellow-20">No Hp</label>
+        <p class="headline-12 text-brown-30 mb-1.5">No Hp:</p>
         <input
           v-model="form.nomor_handphone"
           placeholder="No Handphone"
           type="text"
           id="phone"
           name="phone"
-          class="rounded-sm mb-5 p-2 text-black"
+          class="rounded-sm mb-5 p-2 text-brown-30"
           required
         />
       </div>
       <div class="flex flex-col">
-        <p class="caption-8 text-yellow-20 mb-2">Kehadiran</p>
+        <p class="headline-12 text-brown-30 mb-1.5">Kehadiran</p>
 
         <div class="flex flex-row space-x-12">
           <div class="flex flex-row space-x-2">
@@ -123,7 +111,7 @@ const handleConfirm = (): void => {
               v-model="form.hadir"
               required
             />
-            <label class="text-blue-10 caption-1" for="ya">Ya</label>
+            <label class="text-brown-30 caption-1" for="ya">Ya</label>
           </div>
           <div class="flex flex-row space-x-2">
             <input
@@ -134,7 +122,7 @@ const handleConfirm = (): void => {
               v-model="form.hadir"
               required
             />
-            <label class="text-blue-10 caption-1" for="tidak">Tidak</label>
+            <label class="text-brown-30 caption-1" for="tidak">Tidak</label>
           </div>
         </div>
       </div>
@@ -166,7 +154,7 @@ const handleConfirm = (): void => {
             d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
           ></path>
         </svg>
-        <p class="body-2 text-black">Kirim Konfirmasi</p>
+        <p class="body-2 text-brown-30">Kirim Konfirmasi</p>
       </button>
     </div>
   </div>

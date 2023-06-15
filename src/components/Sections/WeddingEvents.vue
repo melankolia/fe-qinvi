@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { defineProps, onMounted } from "vue";
+import type { Ref } from "vue";
+import { defineProps, onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
 
 type acaraTypes = {
@@ -19,6 +20,25 @@ type acaraTypes = {
 type acaraPropsTypes = {
   acara: Array<acaraTypes>;
 };
+
+const acaraAkad: Ref<any> = ref({
+  hari: null,
+  tanggal: null,
+  jamMulai: null,
+  lokasi: null,
+  alamat: null,
+  urlMap: null,
+});
+
+const acaraResepsi: Ref<any> = ref({
+  hari: null,
+  tanggal: null,
+  jamMulai: null,
+  lokasi: null,
+  alamat: null,
+  urlMap: null,
+});
+
 const props = defineProps<acaraPropsTypes>();
 
 const route = useRoute();
@@ -32,6 +52,28 @@ const bindingData = (): void => {
       year: "numeric",
     });
   });
+
+  if (props.acara.length > 0) {
+    acaraAkad.value = {
+      jamMulai: props.acara[0].waktuMulai,
+      lokasi: props.acara[0].lokasi,
+      alamat: props.acara[0].alamat,
+      urlMap: props.acara[0].urlMap,
+      hari: props.acara[0].tanggal.split(",")[0],
+      tanggal: props.acara[0].tanggal.split(",")[1],
+    };
+
+    console.log(props.acara);
+
+    acaraResepsi.value = {
+      jamMulai: props.acara[1].waktuMulai,
+      lokasi: props.acara[1].lokasi,
+      alamat: props.acara[1].alamat,
+      urlMap: props.acara[1].urlMap,
+      hari: props.acara[1].tanggal.split(",")[0],
+      tanggal: props.acara[1].tanggal.split(",")[1],
+    };
+  }
 };
 
 const openMap = (e: acaraTypes): void => {
@@ -52,106 +94,168 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex flex-col items-center px-4 bg-wedding bg-white">
-    <img
-      data-aos="fade-up"
-      data-aos-duration="2500"
-      src="@/assets/images/img-header.webp"
-      width="300"
-      alt="Qinvi Header Events"
-      class="-mt-4 mb-1"
-    />
-    <p
-      data-aos="fade-up"
-      data-aos-duration="2500"
-      class="body-2 text-black text-center"
+  <div class="flex flex-col items-center px-4 pt-16 pb-5 bg-wedding bg-white">
+    <div
+      class="flex flex-col pt-20 pb-32 bg-container-shadow rounded-tema-jawa mb-10"
     >
-      Kepada Bapak/Ibu/Saudara/i,
-    </p>
-    <p
-      data-aos="fade-up"
-      data-aos-duration="2500"
-      class="body-2 text-black text-center my-2"
-    >
-      {{ invitedPerson }}
-    </p>
-    <p
-      data-aos="fade-up"
-      data-aos-duration="2500"
-      class="body-2 text-black text-center"
-    >
-      Dengan memohon rahmat dan ridho Allah Subhanahu wa Ta'ala, kami memohon
-      kehadiran Bapak/Ibu/Saudara/i pada acara pernikahan kami:
-    </p>
-    <img
-      data-aos="fade-up"
-      data-aos-duration="2500"
-      width="85"
-      height="78"
-      src="@/assets/images/icon-sincan-blacks.webp"
-      alt="Qinvi Wedding Icon"
-      class="my-4"
-    />
-    <template v-for="(e, i) in props.acara" :key="i">
+      <div class="flex flex-col items-center">
+        <img
+          data-aos="fade-up"
+          data-aos-duration="2500"
+          src="@/assets/images/img-header.webp"
+          alt="Qinvi Header Events"
+          class="mb-1"
+          width="250"
+        />
+        <p
+          data-aos="fade-right"
+          data-aos-duration="2500"
+          class="headline-20 text-black"
+        >
+          With Love
+        </p>
+        <hr class="border-black mt-6 mb-9" style="width: 40%" />
+        <p
+          data-aos="fade-up"
+          data-aos-duration="2500"
+          class="caption-14 text-black text-center mx-7 mb-12"
+        >
+          Dengan segala kerendahan hati dan dengan ucapan syukur atas karunia
+          Tuhan, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir di
+          acara pernikahan kami yang akan dilaksanakan pada:
+        </p>
+      </div>
+
+      <!-- Akad Nikah -->
       <div
         data-aos="fade-down"
         data-aos-duration="2500"
-        class="flex flex-col items-center rounded-xl"
+        class="flex flex-col items-center rounded-xl bg-akad py-14 mx-8"
       >
-        <p class="headline-6 text-black my-2">{{ e.namaAcara }}</p>
+        <p class="headline-21 text-gold-10 mt-2 uppercase">Akad Nikah</p>
+        <hr class="border-gold-10 mt-5 mb-7" style="width: 40%" />
+        <p class="body-7 text-gold-10 my-2">{{ acaraAkad.hari }}</p>
+        <p class="body-7 text-gold-10 my-5">{{ acaraAkad.tanggal }}</p>
+        <p class="body-7 text-gold-10 my-2">{{ acaraAkad.jamMulai }} WIB</p>
         <img
-          src="@/assets/images/img-leaf-events.webp"
-          width="186"
-          alt="Qinvi Image Leaf"
+          data-aos="fade-up"
+          data-aos-duration="2500"
+          src="@/assets/images/img-chruch.png"
+          alt="Qinvi Header Events"
+          class="my-7"
         />
-        <p class="body-2 text-black my-2">{{ e.tanggal }}</p>
-        <img
-          src="@/assets/images/img-leaf-events.webp"
-          width="186"
-          alt="Qinvi Image Leaf"
-        />
-        <!-- <p class="body-2 text-black">Pukul : {{ e.waktuMulai }} WIB</p> -->
-        <p class="body-2 text-black text-center" style="max-width: 300px">
-          Tempat : <br />
-        </p>
-        <p class="body-2 text-black text-center my-2" style="max-width: 300px">
-          {{ e.alamat }}
-        </p>
-      </div>
-      <div
-        data-aos="fade-up"
-        data-aos-duration="2500"
-        class="flex flex-col items-center"
-      >
-        <button
-          @click="openMap(e)"
-          class="button-date drop-shadow-md bg-yellow-20 border border-white mt-2 mb-6 py-1.5 px-3 rounded-2xl flex flex-row items-center space-x-2.5"
+        <p
+          class="body-7 text-gold-10 text-center mt-2 mb-6"
+          style="max-width: 300px"
         >
-          <img
-            src="@/assets/icons/icon-locations.png"
-            width="18"
-            height="15.5"
-          />
-          <p class="body-2 text-black">Lihat Peta</p>
-        </button>
+          {{ acaraAkad.lokasi }}
+        </p>
+        <p
+          class="body-8 text-gold-10 text-center mt-2 mb-6"
+          style="max-width: 300px"
+        >
+          {{ acaraAkad.alamat }}
+        </p>
+        <div
+          data-aos="fade-up"
+          data-aos-duration="2500"
+          class="flex flex-col items-center"
+        >
+          <button
+            @click="openMap(acaraAkad)"
+            class="button-date bg-linear-btn px-8 py-4 rounded-3xl flex flex-row justify-center items-center space-x-2.5 transition-all my-4 mx-6"
+          >
+            <p class="body-6 text-white">Lihat Lokasi</p>
+          </button>
+          <button
+            data-aos="fade-right"
+            data-aos-duration="2500"
+            class="button-date bg-linear-btn px-8 py-4 rounded-3xl flex flex-row justify-center items-center space-x-2.5 transition-all my-4 mx-6"
+          >
+            <p class="body-6 text-white">Add to Calendar</p>
+          </button>
+        </div>
       </div>
-    </template>
-    <button
-      data-aos="fade-right"
-      data-aos-duration="2500"
-      class="button-date w-full mt-6 mb-12 border border-white bg-yellow-20 py-1.5 px-3 rounded-2xl space-x-2.5 z-10 drop-shadow-md"
-      @click="handleSave()"
-    >
-      <p class="body-2 text-black">Simpan Acara</p>
-    </button>
+
+      <!-- Resepsi -->
+      <div
+        data-aos="fade-down"
+        data-aos-duration="2500"
+        class="flex flex-col mt-2.5 items-center rounded-xl bg-resepsi py-14 mx-8"
+      >
+        <p class="headline-21 text-gold-10 mt-2 uppercase text-center">
+          Resepsi <br />
+          Pernikahan
+        </p>
+        <hr class="border-gold-10 mt-5 mb-7" style="width: 40%" />
+        <p class="body-7 text-gold-10 my-2">{{ acaraResepsi.hari }}</p>
+        <p class="body-7 text-gold-10 my-5">{{ acaraResepsi.tanggal }}</p>
+        <p class="body-7 text-gold-10 my-2">{{ acaraResepsi.jamMulai }} WIB</p>
+        <img
+          data-aos="fade-up"
+          data-aos-duration="2500"
+          src="@/assets/images/img-chruch.png"
+          alt="Qinvi Header Events"
+          class="my-7"
+        />
+        <p
+          class="body-7 text-gold-10 text-center mt-2 mb-6"
+          style="max-width: 300px"
+        >
+          {{ acaraResepsi.lokasi }}
+        </p>
+        <p
+          class="body-8 text-gold-10 text-center mt-2 mb-6"
+          style="max-width: 300px"
+        >
+          {{ acaraResepsi.alamat }}
+        </p>
+        <div
+          data-aos="fade-up"
+          data-aos-duration="2500"
+          class="flex flex-col items-center"
+        >
+          <button
+            @click="openMap(acaraResepsi)"
+            class="button-date bg-linear-btn px-8 py-4 rounded-3xl flex flex-row justify-center items-center space-x-2.5 transition-all my-4 mx-6"
+          >
+            <p class="body-6 text-white">Lihat Lokasi</p>
+          </button>
+          <button
+            data-aos="fade-right"
+            data-aos-duration="2500"
+            class="button-date bg-linear-btn px-8 py-4 rounded-3xl flex flex-row justify-center items-center space-x-2.5 transition-all my-4 mx-6"
+          >
+            <p class="body-6 text-white">Add to Calendar</p>
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <style scoped>
 .bg-wedding {
   background-image: url("@/assets/images/bg-wedding.webp");
-  background-position: center;
   background-size: cover;
-  min-height: 940px;
+}
+
+.bg-akad {
+  background-image: url("@/assets/images/bg-akad.webp");
+  background-size: cover;
+}
+
+.bg-resepsi {
+  background-image: url("@/assets/images/bg-resepsi.webp");
+  background-size: cover;
+}
+
+.bg-container-shadow {
+  background: rgba(244, 234, 225, 0.77);
+  box-shadow: 0px 0px 45px 1px rgba(0, 0, 0, 0.5);
+}
+
+.bg-linear-btn {
+  background: linear-gradient(282.22deg, #000000 0%, #a98466 100%);
 }
 </style>
