@@ -185,6 +185,15 @@
   line-height: 22px;
 }
 
+.body-9 {
+  font-family: "Cormorant Garamond";
+  font-style: italic;
+  font-weight: 600;
+  font-size: 19.2px;
+  line-height: 25px;
+  letter-spacing: 1px;
+}
+
 .headline-1 {
   font-family: "Rankings Caps", sans-serif;
   font-style: normal;

@@ -273,7 +273,7 @@ useHead({
           data-aos-duration="2000"
           class="caption-11 text-brown-10 mb-7 mt-2.5"
         >
-          Keluarga & Sahabat
+          {{ invitedPerson }}
         </p>
         <button
           data-aos="zoom-in-up"

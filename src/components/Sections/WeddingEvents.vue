@@ -15,6 +15,7 @@ type acaraTypes = {
   userId: number;
   waktuMulai: string;
   waktuSelesai: string;
+  ingatkanAcara: string;
 };
 
 type acaraPropsTypes = {
@@ -28,6 +29,7 @@ const acaraAkad: Ref<any> = ref({
   lokasi: null,
   alamat: null,
   urlMap: null,
+  ingatkanAcara: null,
 });
 
 const acaraResepsi: Ref<any> = ref({
@@ -37,6 +39,7 @@ const acaraResepsi: Ref<any> = ref({
   lokasi: null,
   alamat: null,
   urlMap: null,
+  ingatkanAcara: null,
 });
 
 const props = defineProps<acaraPropsTypes>();
@@ -59,17 +62,17 @@ const bindingData = (): void => {
       lokasi: props.acara[0].lokasi,
       alamat: props.acara[0].alamat,
       urlMap: props.acara[0].urlMap,
+      ingatkanAcara: props.acara[0].ingatkanAcara,
       hari: props.acara[0].tanggal.split(",")[0],
       tanggal: props.acara[0].tanggal.split(",")[1],
     };
-
-    console.log(props.acara);
 
     acaraResepsi.value = {
       jamMulai: props.acara[1].waktuMulai,
       lokasi: props.acara[1].lokasi,
       alamat: props.acara[1].alamat,
       urlMap: props.acara[1].urlMap,
+      ingatkanAcara: props.acara[1].ingatkanAcara,
       hari: props.acara[1].tanggal.split(",")[0],
       tanggal: props.acara[1].tanggal.split(",")[1],
     };
@@ -80,12 +83,8 @@ const openMap = (e: acaraTypes): void => {
   window.open(e.urlMap);
 };
 
-const invitedPerson: string | null = route.query?.to as string | null;
-
-const handleSave = (): void => {
-  window.open(
-    "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MW4zdjVrcmVqOWI5cW5icTBvZ2NrdmU5NjIgYWRtLnFpbnZpQG0&tmsrc=adm.qinvi%40gmail.com"
-  );
+const openAcara = (e: any): void => {
+  window.open(e.ingatkanAcara);
 };
 
 onMounted(() => {
@@ -142,7 +141,8 @@ onMounted(() => {
         <img
           data-aos="zoom-in-up"
           data-aos-duration="2000"
-          src="@/assets/images/img-chruch.png"
+          src="@/assets/images/img-building.png"
+          width="128"
           alt="Qinvi Header Events"
           class="my-7"
         />
@@ -170,6 +170,7 @@ onMounted(() => {
             <p class="body-6 text-white">Lihat Lokasi</p>
           </button>
           <button
+            @click="openAcara(acaraAkad)"
             data-aos="zoom-in-up"
             data-aos-duration="2000"
             class="button-date bg-linear-btn px-8 py-4 rounded-3xl flex flex-row justify-center items-center space-x-2.5 transition-all my-4 mx-6"
@@ -193,10 +194,14 @@ onMounted(() => {
         <p class="body-7 text-gold-10 my-2">{{ acaraResepsi.hari }}</p>
         <p class="body-7 text-gold-10 my-5">{{ acaraResepsi.tanggal }}</p>
         <p class="body-7 text-gold-10 my-2">{{ acaraResepsi.jamMulai }} WIB</p>
+        <p class="body-9 text-gold-10 my-2 text-center" style="">
+          (diawali dengan prosesi Kadga Pora)
+        </p>
         <img
           data-aos="zoom-in-up"
           data-aos-duration="2000"
-          src="@/assets/images/img-chruch.png"
+          src="@/assets/images/img-building.png"
+          width="128"
           alt="Qinvi Header Events"
           class="my-7"
         />
@@ -224,6 +229,7 @@ onMounted(() => {
             <p class="body-6 text-white">Lihat Lokasi</p>
           </button>
           <button
+            @click="openAcara(acaraResepsi)"
             data-aos="zoom-in-up"
             data-aos-duration="2000"
             class="button-date bg-linear-btn px-8 py-4 rounded-3xl flex flex-row justify-center items-center space-x-2.5 transition-all my-4 mx-6"
