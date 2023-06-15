@@ -36,7 +36,7 @@ const onLoad = (): void => {
     thumbnailRef.value = [
       ...thumbnailRef.value,
       ...props.gallery.filter(
-        (e: string, i: number) => i != 0 && i > initial && i <= initial + 4
+        (e: string, i: number) => i > initial && i <= initial + 4
       ),
     ];
   }, 1500);
@@ -46,7 +46,7 @@ onMounted(() => {
   if (props.gallery.length > 0) {
     imgsRef.value = [...props.gallery];
     thumbnailRef.value = [
-      ...props.gallery.filter((e: string, i: number) => i != 0 && i <= 4),
+      ...props.gallery.filter((e: string, i: number) => i <= 4),
     ];
   }
 });
