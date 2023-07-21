@@ -260,7 +260,7 @@ useHead({
           data-aos-duration="2000"
           class="caption-6 text-brown-10 mb-11 mt-10"
         >
-          25 • 07 • 2023
+          17 • 09 • 2023
         </p>
         <p
           data-aos="zoom-in-up"
