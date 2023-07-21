@@ -106,7 +106,7 @@ onMounted(() => {
           src="@/assets/images/img-header.webp"
           alt="Qinvi Header Events"
           class="mb-1"
-          width="250"
+          width="211"
         />
         <p
           data-aos="zoom-in-up"

@@ -80,7 +80,7 @@ onMounted(() => {
       <div
         data-aos="zoom-in-up"
         data-aos-duration="1000"
-        class="flex flex-col bg-quotes-linear items-center rounded-tema-jawa pt-10 px-3 text-justify"
+        class="flex flex-col bg-quotes-linear items-center rounded-tema-jawa px-10 pt-10 pb-20 text-justify"
       >
         <img
           data-aos="zoom-in-up"
@@ -109,13 +109,6 @@ onMounted(() => {
         >
           - QS. Ar-Rum 21 -
         </p>
-        <div
-          data-aos="zoom-in-up"
-          data-aos-duration="2000"
-          class="mx-10 mb-10 mt-5"
-        >
-          <img src="@/assets/images/p-spouses-2.webp" alt="Qinvi Spouses" />
-        </div>
       </div>
     </div>
     <div class="flex flex-col px-8 pt-7 pb-9 bg-events">
@@ -129,22 +122,20 @@ onMounted(() => {
           data-aos-duration="2500"
           class="flex flex-col items-center px-10 mb-10"
         >
-          <p class="headline-18 text-brown-10 mb-5">KEDUA MEMPELAI</p>
+          <p class="headline-18 text-brown-10 mb-20">KEDUA MEMPELAI</p>
           <img
             :src="pengantinWanita.urlPath"
             alt="Qinvi Wedding Photos Groom"
             class="mb-6 rounded-full"
+            width="165"
           />
-          <p class="headline-17 text-brown-10">
-            {{ pengantinWanita.namaPanggilan }}
-          </p>
           <p
             style="font-style: normal"
-            class="caption-11 font-bold text-brown-10 mt-4 mb-8 text-center"
+            class="caption-11 font-bold text-brown-10 my-8 text-center"
           >
             {{ pengantinWanita.namaLengkap }}
           </p>
-          <p class="caption-10 text-brown-10">Putri Kedua dari :</p>
+          <p class="caption-10 text-brown-10">Putri Pertama dari :</p>
           <p class="caption-10 text-brown-10">
             Bapak {{ pengantinWanita.namaAyah }}
           </p>
@@ -155,7 +146,7 @@ onMounted(() => {
             src="@/assets/images/p-ig.webp"
             alt="Qinvi Wedding Photos Groom"
             width="50"
-            class="mt-7"
+            class="my-7"
           />
         </div>
         <div
@@ -168,14 +159,12 @@ onMounted(() => {
               :src="pengantinPria.urlPath"
               alt="Qinvi Wedding Photos Groom"
               class="mb-6 rounded-full"
+              width="165"
             />
           </div>
-          <p class="headline-17 text-brown-10">
-            {{ pengantinPria.namaPanggilan }}
-          </p>
           <p
             style="font-style: normal"
-            class="caption-11 font-bold text-brown-10 mt-4 mb-8 text-center"
+            class="caption-11 font-bold text-brown-10 my-8 text-center"
           >
             {{ pengantinPria.namaLengkap }}
           </p>
@@ -211,6 +200,7 @@ onMounted(() => {
   background: rgba(244, 234, 225, 0.77);
   box-shadow: 0px 0px 45px 1px rgba(0, 0, 0, 0.5);
 }
+
 .bg-events {
   background-image: url("@/assets/images/bg-events.webp");
   background-size: cover;

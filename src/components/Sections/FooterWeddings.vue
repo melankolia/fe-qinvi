@@ -5,13 +5,13 @@
     <p
       data-aos="zoom-in-up"
       data-aos-duration="2000"
-      class="body-3 text-white font-medium mb-32"
+      class="body-3 text-white font-medium mb-56"
     >
       Kehadiran Bapak/Ibu/Saudara/i di acara kami akan menjadi suatu kebahagiaan
       dan kehormatan yang tidak terlupakan bagi kami. Terima kasih atas restu
       dan dukungannya.
     </p>
-    <!-- <img
+    <img
       data-aos="fade-up"
       data-aos-duration="2500"
       width="85"
@@ -19,7 +19,7 @@
       src="@/assets/images/icon-sincan.webp"
       alt="Qinvi Wedding Icon"
       class="absolute top-8"
-    /> -->
+    />
   </div>
 </template>
 

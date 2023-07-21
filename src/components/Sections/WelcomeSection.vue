@@ -103,7 +103,7 @@ onMounted(() => {
     <div
       data-aos="zoom-in-up"
       data-aos-duration="1000"
-      class="flex flex-col bg-brown-10 opacity-90 mx-9 pb-10 pt-24 bg-container-shadow rounded-tema-jawa px-7"
+      class="flex flex-col bg-brown-10 bg-opacity-90 mx-9 pb-10 pt-24 bg-container-shadow rounded-tema-jawa px-7"
     >
       <p
         data-aos="zoom-in-up"

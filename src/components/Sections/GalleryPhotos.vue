@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed } from "vue";
 import type { Ref } from "vue";
 
 type GalleryPhotoPropsTypes = {
   gallery: string[];
 };
 
+const firstPhotos: Ref<string> = ref("/src/assets/images/Hug.png");
+const lastPhotos: Ref<string> = ref("/src/assets/images/Hug.png");
 const imgsRef: Ref<string[]> = ref([]);
 const thumbnailRef: Ref<string[]> = ref([]);
 const visibleRef: Ref<boolean> = ref(false);
@@ -28,7 +30,7 @@ const handleAnimation = (i: number): string => {
 };
 
 const onLoad = (): void => {
-  const initial: number = thumbnailRef.value.length - 1;
+  const initial: number = thumbnailRef.value.length;
   loading.value = true;
 
   setTimeout(() => {
@@ -46,9 +48,17 @@ onMounted(() => {
   if (props.gallery.length > 0) {
     imgsRef.value = [...props.gallery];
     thumbnailRef.value = [
-      ...props.gallery.filter((e: string, i: number) => i <= 4),
+      ...props.gallery.filter(
+        (e: string, i: number) => i != 0 && i != lastIndex.value && i <= 5
+      ),
     ];
+    firstPhotos.value = imgsRef.value[0];
+    lastPhotos.value = imgsRef.value[lastIndex.value];
   }
+});
+
+const lastIndex = computed(() => {
+  return imgsRef.value.length - 1;
 });
 </script>
 
@@ -71,6 +81,13 @@ onMounted(() => {
           A successful marriage requires falling in love many times, always with
           the same person
         </p>
+        <img
+          data-aos="fade-down"
+          data-aos-duration="2500"
+          @click="onShow(0)"
+          :src="firstPhotos"
+          class="z-30"
+        />
         <div class="grid grid-cols-2">
           <img
             :data-aos="handleAnimation(i)"
@@ -83,6 +100,13 @@ onMounted(() => {
             class="p-1"
           />
         </div>
+        <img
+          data-aos="fade-down"
+          data-aos-duration="2500"
+          @click="onShow(lastIndex)"
+          :src="lastPhotos"
+          class="z-30"
+        />
         <div v-if="loading" class="flex flex-col items-center">
           <svg
             class="animate-spin mb-4 mt-6 h-8 w-8 text-white"
