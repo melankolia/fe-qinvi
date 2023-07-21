@@ -139,15 +139,9 @@ onMounted(() => {
           <p class="caption-10 text-brown-10">
             Bapak {{ pengantinWanita.namaAyah }}
           </p>
-          <p class="caption-10 text-brown-10">
+          <p class="caption-10 text-brown-10 mb-7">
             Ibu {{ pengantinWanita.namaIbu }}
           </p>
-          <img
-            src="@/assets/images/p-ig.webp"
-            alt="Qinvi Wedding Photos Groom"
-            width="50"
-            class="my-7"
-          />
         </div>
         <div
           data-aos="zoom-in-up"
@@ -175,14 +169,7 @@ onMounted(() => {
           <p class="caption-10 text-brown-10">
             Ibu {{ pengantinPria.namaIbu }}
           </p>
-          <div class="flex flex-col items-center px-1">
-            <img
-              src="@/assets/images/p-ig.webp"
-              alt="Qinvi Wedding Photos Groom"
-              width="50"
-              class="mt-7"
-            />
-          </div>
+          <div class="flex flex-col items-center px-1 mt-7" />
         </div>
       </div>
     </div>
