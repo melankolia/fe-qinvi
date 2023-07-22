@@ -46,7 +46,7 @@ const CountDown: Ref<CountDownTypes> = ref({
 
 const bindingData = (): void => {
   props.acara.map((e: acaraTypes) => {
-    if (e.namaAcara == "Akad Nikah") {
+    if (e.namaAcara == "Resepsi") {
       tanggal.value = new Date(e.tanggal).toLocaleDateString("id-ID", {
         weekday: "long",
         year: "numeric",

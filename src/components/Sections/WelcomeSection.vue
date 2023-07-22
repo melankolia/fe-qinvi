@@ -31,8 +31,8 @@ interface CoverInvitationProps {
 }
 
 const props = defineProps<CoverInvitationProps>();
-const tanggalAkad: Ref<string> = ref("-");
-const CountDownAkad: Ref<CountDownTypes> = ref({
+const tanggalResepsi: Ref<string> = ref("-");
+const CountDownResepsi: Ref<CountDownTypes> = ref({
   days: "0",
   hours: "0",
   minutes: "0",
@@ -42,35 +42,34 @@ const CountDownAkad: Ref<CountDownTypes> = ref({
 
 const bindingData = (): void => {
   props.acara.map((e: acaraTypes) => {
-    if (e.namaAcara.toLowerCase().includes("akad")) {
-      tanggalAkad.value = new Date(e.tanggal).toLocaleDateString("id-ID", {
-        weekday: "long",
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-      });
+    if (e.namaAcara.toLowerCase().includes("resepsi")) {
+      tanggalResepsi.value = e.tanggal;
     }
   });
 };
 
-const startCountDownAkad = (): void => {
+const startCountDownResepsi = (): void => {
   const myInterval = setInterval(() => {
     const now = new Date().getTime();
-    const countDownDate = new Date(tanggalAkad.value).getTime();
+    const countDownDate = new Date(tanggalResepsi.value).getTime();
 
     // Find the distance between now and the count down date
     const distance = countDownDate - now;
 
     if (distance > 0) {
       // Time calculations for days, hours, minutes and seconds
-      CountDownAkad.value.days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      CountDownAkad.value.hours = Math.floor(
+      CountDownResepsi.value.days = Math.floor(
+        distance / (1000 * 60 * 60 * 24)
+      );
+      CountDownResepsi.value.hours = Math.floor(
         (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
       );
-      CountDownAkad.value.minutes = Math.floor(
+      CountDownResepsi.value.minutes = Math.floor(
         (distance % (1000 * 60 * 60)) / (1000 * 60)
       );
-      CountDownAkad.value.seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      CountDownResepsi.value.seconds = Math.floor(
+        (distance % (1000 * 60)) / 1000
+      );
     } else {
       clearInterval(myInterval);
     }
@@ -92,7 +91,7 @@ onMounted(() => {
   const username: string | null = route.params?.username as string;
   splittingUsername(username);
   bindingData();
-  startCountDownAkad();
+  startCountDownResepsi();
 });
 </script>
 
@@ -127,10 +126,10 @@ onMounted(() => {
       />
       <div class="flex flex-col justify-center items-center pt-10">
         <TimerCountDown
-          :days="CountDownAkad.days"
-          :hours="CountDownAkad.hours"
-          :minutes="CountDownAkad.minutes"
-          :seconds="CountDownAkad.seconds"
+          :days="CountDownResepsi.days"
+          :hours="CountDownResepsi.hours"
+          :minutes="CountDownResepsi.minutes"
+          :seconds="CountDownResepsi.seconds"
         />
       </div>
     </div>

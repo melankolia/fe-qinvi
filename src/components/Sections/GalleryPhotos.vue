@@ -27,26 +27,28 @@ const handleAnimation = (i: number): string => {
   return "fade-right";
 };
 
-const onLoad = (): void => {
-  const initial: number = thumbnailRef.value.length - 1;
-  loading.value = true;
+// const onLoad = (): void => {
+//   const initial: number = thumbnailRef.value.length - 1;
+//   loading.value = true;
 
-  setTimeout(() => {
-    loading.value = false;
-    thumbnailRef.value = [
-      ...thumbnailRef.value,
-      ...props.gallery.filter(
-        (e: string, i: number) => i > initial && i <= initial + 4
-      ),
-    ];
-  }, 1500);
-};
+//   setTimeout(() => {
+//     loading.value = false;
+//     thumbnailRef.value = [
+//       ...thumbnailRef.value,
+//       ...props.gallery.filter(
+//         (e: string, i: number) => i > initial && i <= initial + 4
+//       ),
+//     ];
+//   }, 1500);
+// };
 
 onMounted(() => {
   if (props.gallery.length > 0) {
     imgsRef.value = [...props.gallery];
     thumbnailRef.value = [
-      ...props.gallery.filter((e: string, i: number) => i <= 4),
+      ...props.gallery.filter(
+        (e: string, i: number) => ![1, 2, 5, 6].includes(i)
+      ),
     ];
   }
 });
@@ -71,6 +73,21 @@ onMounted(() => {
           A successful marriage requires falling in love many times, always with
           the same person
         </p>
+        <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
+          <img
+            data-aos="fade-down p-1"
+            loading="lazy"
+            data-aos-duration="2500"
+            :src="imgsRef[1]"
+          />
+          <img
+            data-aos="fade-down p-1"
+            loading="lazy"
+            data-aos-duration="2500"
+            :src="imgsRef[2]"
+          />
+        </div>
+
         <div class="grid grid-cols-2">
           <img
             :data-aos="handleAnimation(i)"
@@ -83,6 +100,21 @@ onMounted(() => {
             class="p-1"
           />
         </div>
+        <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
+          <img
+            data-aos="fade-down p-1"
+            loading="lazy"
+            data-aos-duration="2500"
+            :src="imgsRef[5]"
+          />
+          <img
+            data-aos="fade-down p-1"
+            loading="lazy"
+            data-aos-duration="2500"
+            :src="imgsRef[6]"
+          />
+        </div>
+
         <div v-if="loading" class="flex flex-col items-center">
           <svg
             class="animate-spin mb-4 mt-6 h-8 w-8 text-white"
@@ -105,12 +137,12 @@ onMounted(() => {
             ></path>
           </svg>
         </div>
-        <button
+        <!-- <button
           class="button-date bg-linear-btn px-8 py-3 rounded-3xl flex flex-row justify-center items-center space-x-2.5 transition-all mt-4 mx-6"
           @click="onLoad()"
         >
           <p class="body-6 text-white">More Of Us</p>
-        </button>
+        </button> -->
       </div>
     </div>
     <vue-easy-lightbox
