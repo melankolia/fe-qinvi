@@ -63,7 +63,7 @@ const handleSubmit = async (): Promise<void> => {
       <p
         data-aos="zoom-in-up"
         data-aos-duration="2000"
-        class="headline-6 text-brown-30 mb-2 text-center"
+        class="headline-wish text-brown-30 mb-2 text-center"
       >
         Wedding Wish
       </p>

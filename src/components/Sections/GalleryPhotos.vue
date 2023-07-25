@@ -61,7 +61,7 @@ onMounted(() => {
         <p
           data-aos="zoom-in-up"
           data-aos-duration="2000"
-          class="headline-19 text-white mb-8 font-extralight"
+          class="headline-19 text-white my-8 font-extralight"
         >
           GALLERY
         </p>

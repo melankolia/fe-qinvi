@@ -29,6 +29,16 @@
 }
 
 @font-face {
+  font-family: "Bon Vivant Family Serif";
+  src: url("./fonts/BonVivantSerif.ttf");
+}
+
+@font-face {
+  font-family: "Bon Vivant Family Reguler";
+  src: url("./fonts/BonVivant-Regular.ttf");
+}
+
+@font-face {
   font-family: "Monesta";
   src: url("./fonts/Monesta.otf");
 }

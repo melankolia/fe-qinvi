@@ -112,9 +112,9 @@ onMounted(() => {
         <div
           data-aos="zoom-in-up"
           data-aos-duration="2000"
-          class="mx-10 mb-10 mt-5"
+          class="mx-10 mb-10 mt-5 rounded-full"
         >
-          <img src="@/assets/images/p-spouses-2.webp" alt="Qinvi Spouses" />
+          <img class="rounded-full" src="@/assets/images/p-spouses-2.webp" alt="Qinvi Spouses" />
         </div>
       </div>
     </div>
@@ -144,7 +144,7 @@ onMounted(() => {
           >
             {{ pengantinWanita.namaLengkap }}
           </p>
-          <p class="caption-10 text-brown-10">Putri Kedua dari :</p>
+          <p class="caption-10 text-brown-10">Putri Keempat dari :</p>
           <p class="caption-10 text-brown-10">
             Bapak {{ pengantinWanita.namaAyah }}
           </p>
@@ -179,7 +179,7 @@ onMounted(() => {
           >
             {{ pengantinPria.namaLengkap }}
           </p>
-          <p class="caption-10 text-brown-10">Putra Kedua dari :</p>
+          <p class="caption-10 text-brown-10">Putra Pertama dari :</p>
           <p class="caption-10 text-brown-10">
             Bapak {{ pengantinPria.namaAyah }}
           </p>
