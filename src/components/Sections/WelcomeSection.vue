@@ -123,6 +123,7 @@ onMounted(() => {
         data-aos-duration="2000"
         src="@/assets/images/p-spouses.webp"
         alt="Qinvi Spouses"
+        class="rounded-xl"
       />
       <div class="flex flex-col justify-center items-center pt-10">
         <TimerCountDown
