@@ -260,7 +260,7 @@ useHead({
           data-aos-duration="2000"
           class="caption-6 text-brown-10 mb-11 mt-10"
         >
-          25 Agustus 2023
+          5 Agustus 2023
         </p>
         <p
           data-aos="zoom-in-up"

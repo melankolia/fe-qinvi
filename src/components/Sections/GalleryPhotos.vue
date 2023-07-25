@@ -46,8 +46,9 @@ onMounted(() => {
   if (props.gallery.length > 0) {
     imgsRef.value = [...props.gallery];
     thumbnailRef.value = [
+      // ...props.gallery
       ...props.gallery.filter(
-        (e: string, i: number) => ![1, 2, 5, 6].includes(i)
+        (e: string, i: number) => ![1, 2, 3, 4, 5, 6, 7, 9, 10].includes(i)
       ),
     ];
   }
@@ -79,15 +80,9 @@ onMounted(() => {
             loading="lazy"
             data-aos-duration="2500"
             :src="imgsRef[1]"
-          />
-          <img
-            data-aos="fade-down p-1"
-            loading="lazy"
-            data-aos-duration="2500"
-            :src="imgsRef[2]"
+            @click="onShow(1 + 1)"
           />
         </div>
-
         <div class="grid grid-cols-2">
           <img
             :data-aos="handleAnimation(i)"
@@ -105,16 +100,81 @@ onMounted(() => {
             data-aos="fade-down p-1"
             loading="lazy"
             data-aos-duration="2500"
-            :src="imgsRef[5]"
+            :src="imgsRef[2]"
+            @click="onShow(2 + 1)"
           />
+        </div>
+        <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
+          <img
+            data-aos="fade-down p-1"
+            loading="lazy"
+            data-aos-duration="2500"
+            :src="imgsRef[3]"
+            @click="onShow(3 + 1)"
+          />
+        </div>
+        <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
+          <img
+            data-aos="fade-down p-1"
+            loading="lazy"
+            data-aos-duration="2500"
+            :src="imgsRef[5]"
+            @click="onShow(5 + 1)"
+          />
+        </div>
+        <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
           <img
             data-aos="fade-down p-1"
             loading="lazy"
             data-aos-duration="2500"
             :src="imgsRef[6]"
+            @click="onShow(6 + 1)"
           />
         </div>
-
+        <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
+          <img
+            data-aos="fade-down p-1"
+            loading="lazy"
+            data-aos-duration="2500"
+            :src="imgsRef[7]"
+            @click="onShow(7 + 1)"
+          />
+        </div>
+        <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
+          <img
+            data-aos="fade-down p-1"
+            loading="lazy"
+            data-aos-duration="2500"
+            :src="imgsRef[9]"
+            @click="onShow(9 + 1)"
+          />
+        </div>
+        <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
+          <img
+            data-aos="fade-down p-1"
+            loading="lazy"
+            data-aos-duration="2500"
+            :src="imgsRef[10]"
+            @click="onShow(10 + 1)"
+          />
+        </div>
+        <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
+          <img
+            data-aos="fade-down p-1"
+            loading="lazy"
+            data-aos-duration="2500"
+            :src="imgsRef[4]"
+            @click="onShow(4 + 1)"
+          />
+        </div>
+        <!-- <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
+          <img
+            data-aos="fade-down p-1"
+            loading="lazy"
+            data-aos-duration="2500"
+            :src="imgsRef[8]"
+          />
+        </div> -->
         <div v-if="loading" class="flex flex-col items-center">
           <svg
             class="animate-spin mb-4 mt-6 h-8 w-8 text-white"

@@ -11,15 +11,15 @@
       dan kehormatan yang tidak terlupakan bagi kami. Terima kasih atas restu
       dan dukungannya.
     </p>
-    <!-- <img
+    <img
       data-aos="fade-up"
       data-aos-duration="2500"
       width="85"
       height="78"
-      src="@/assets/images/icon-sincan.webp"
+      src="@/assets/images/icon-sincan-2.webp"
       alt="Qinvi Wedding Icon"
-      class="absolute top-8"
-    /> -->
+      class="absolute top-12"
+    />
   </div>
 </template>
 
