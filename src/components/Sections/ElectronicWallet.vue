@@ -4,6 +4,7 @@ import BNI_Logo from "@/assets/images/BNI_logo.svg";
 import BCA_Logo from "@/assets/images/BCA_logo.png";
 import Mandiri_Logo from "@/assets/images/Mandiri_logo.webp";
 import BTN_Logo from "@/assets/images/BTN_logo.svg";
+import BRI_Logo from "@/assets/images/BRI_logo.svg";
 
 const snackbar = useSnackbar();
 
@@ -31,6 +32,7 @@ const handleIconBank = (e: string): string => {
   else if (bank == "bca") return BCA_Logo;
   else if (bank == "mandiri") return Mandiri_Logo;
   else if (bank == "btn") return BTN_Logo;
+  else if (bank == "bri") return BRI_Logo;
 
   return "";
 };
