@@ -77,7 +77,6 @@ onMounted(() => {
         <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
           <img
             data-aos="fade-down p-1"
-            loading="lazy"
             data-aos-duration="2500"
             :src="imgsRef[1]"
             @click="onShow(1 + 1)"
@@ -88,7 +87,6 @@ onMounted(() => {
             :data-aos="handleAnimation(i)"
             data-aos-duration="2500"
             v-for="(e, i) in thumbnailRef"
-            loading="lazy"
             :key="i"
             @click="onShow(i + 1)"
             :src="e"
@@ -98,7 +96,6 @@ onMounted(() => {
         <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
           <img
             data-aos="fade-down p-1"
-            loading="lazy"
             data-aos-duration="2500"
             :src="imgsRef[2]"
             @click="onShow(2 + 1)"
@@ -107,7 +104,6 @@ onMounted(() => {
         <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
           <img
             data-aos="fade-down p-1"
-            loading="lazy"
             data-aos-duration="2500"
             :src="imgsRef[3]"
             @click="onShow(3 + 1)"
@@ -116,7 +112,6 @@ onMounted(() => {
         <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
           <img
             data-aos="fade-down p-1"
-            loading="lazy"
             data-aos-duration="2500"
             :src="imgsRef[5]"
             @click="onShow(5 + 1)"
@@ -125,7 +120,6 @@ onMounted(() => {
         <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
           <img
             data-aos="fade-down p-1"
-            loading="lazy"
             data-aos-duration="2500"
             :src="imgsRef[6]"
             @click="onShow(6 + 1)"
@@ -134,7 +128,6 @@ onMounted(() => {
         <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
           <img
             data-aos="fade-down p-1"
-            loading="lazy"
             data-aos-duration="2500"
             :src="imgsRef[7]"
             @click="onShow(7 + 1)"
@@ -143,7 +136,6 @@ onMounted(() => {
         <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
           <img
             data-aos="fade-down p-1"
-            loading="lazy"
             data-aos-duration="2500"
             :src="imgsRef[9]"
             @click="onShow(9 + 1)"
@@ -152,7 +144,6 @@ onMounted(() => {
         <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
           <img
             data-aos="fade-down p-1"
-            loading="lazy"
             data-aos-duration="2500"
             :src="imgsRef[10]"
             @click="onShow(10 + 1)"
@@ -161,7 +152,6 @@ onMounted(() => {
         <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
           <img
             data-aos="fade-down p-1"
-            loading="lazy"
             data-aos-duration="2500"
             :src="imgsRef[4]"
             @click="onShow(4 + 1)"
@@ -170,7 +160,6 @@ onMounted(() => {
         <!-- <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
           <img
             data-aos="fade-down p-1"
-            loading="lazy"
             data-aos-duration="2500"
             :src="imgsRef[8]"
           />
