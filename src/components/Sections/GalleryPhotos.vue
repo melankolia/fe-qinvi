@@ -149,14 +149,14 @@ onMounted(() => {
             @click="onShow(10 + 1)"
           />
         </div>
-        <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
+        <!-- <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
           <img
             data-aos="fade-down p-1"
             data-aos-duration="2500"
             :src="imgsRef[4]"
             @click="onShow(4 + 1)"
           />
-        </div>
+        </div> -->
         <!-- <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
           <img
             data-aos="fade-down p-1"

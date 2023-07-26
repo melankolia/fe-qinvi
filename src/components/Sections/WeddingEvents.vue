@@ -128,7 +128,7 @@ onMounted(() => {
       </div>
 
       <!-- Akad Nikah -->
-      <div
+      <!-- <div
         data-aos="zoom-in-up"
         data-aos-duration="2000"
         class="flex flex-col items-center rounded-xl bg-akad py-14 mx-8"
@@ -178,7 +178,7 @@ onMounted(() => {
             <p class="body-6 text-white">Add to Calendar</p>
           </button>
         </div>
-      </div>
+      </div> -->
 
       <!-- Resepsi -->
       <div
@@ -251,11 +251,13 @@ onMounted(() => {
 .bg-akad {
   background-image: url("@/assets/images/bg-akad.webp");
   background-size: cover;
+  background-position: center;
 }
 
 .bg-resepsi {
   background-image: url("@/assets/images/bg-resepsi.webp");
   background-size: cover;
+  background-position: center;
 }
 
 .bg-container-shadow {
