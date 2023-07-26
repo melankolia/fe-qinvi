@@ -7,7 +7,7 @@ import WelcomeSection from "@/components/Sections/WelcomeSection.vue";
 import IntroductionFamilies from "@/components/Sections/IntroductionFamilies.vue";
 import WeddingEvents from "@/components/Sections/WeddingEvents.vue";
 import PresenceForm from "@/components/Sections/PresenceForm.vue";
-// import ElectronicWallet from "@/components/Sections/ElectronicWallet.vue";
+import ElectronicWallet from "@/components/Sections/ElectronicWallet.vue";
 import GalleryPhotos from "@/components/Sections/GalleryPhotos.vue";
 import PrayerWishes from "@/components/Sections/PrayerWishes.vue";
 import FooterSections from "@/components/Sections/FooterSections.vue";
@@ -340,7 +340,7 @@ useHead({
           <WishesList :wishes="dataPernikahan.ucapan" />
         </div>
       </div>
-      <!-- <ElectronicWallet :rekening="dataPernikahan.rekening" /> -->
+      <ElectronicWallet :rekening="dataPernikahan.rekening" />
       <!-- <HealthProtocols /> -->
       <img
         src="@/assets/images/p-spouses-4.webp"

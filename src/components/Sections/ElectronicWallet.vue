@@ -3,6 +3,7 @@ import { useSnackbar } from "vue3-snackbar";
 import BNI_Logo from "@/assets/images/BNI_logo.svg";
 import BCA_Logo from "@/assets/images/BCA_logo.png";
 import Mandiri_Logo from "@/assets/images/Mandiri_logo.webp";
+import BTN_Logo from "@/assets/images/BTN_logo.svg";
 
 const snackbar = useSnackbar();
 
@@ -29,6 +30,7 @@ const handleIconBank = (e: string): string => {
   if (bank == "bni") return BNI_Logo;
   else if (bank == "bca") return BCA_Logo;
   else if (bank == "mandiri") return Mandiri_Logo;
+  else if (bank == "btn") return BTN_Logo;
 
   return "";
 };
@@ -64,19 +66,19 @@ const handleCopy = (i: number): void => {
 </script>
 
 <template>
-  <div class="flex flex-col bg-green-30 relative">
+  <div class="flex flex-col container-e-wallet relative">
     <div class="flex flex-col px-4 py-6">
       <p
         data-aos="zoom-in-up"
         data-aos-duration="2000"
-        class="headline-6 text-white mb-9 text-center"
+        class="headline-19 text-white mb-8 font-extralight text-center"
       >
         Wedding Gift
       </p>
       <div
         v-for="(e, i) in props.rekening"
         :key="i"
-        class="flex flex-col bg-[#EEF1F3] items-center rounded-xl p-4 mb-3 z-10"
+        class="flex flex-col bg-[#F8F7F3] items-center rounded-xl p-4 mb-3 z-10"
       >
         <input
           type="hidden"
@@ -109,6 +111,15 @@ const handleCopy = (i: number): void => {
         </div>
       </div>
     </div>
-    <img src="@/assets/images/bg-wedding-gift.webp" class="absolute z-0" />
+    <!-- <img src="@/assets/images/bg-wedding-gift.webp" class="absolute z-0" /> -->
   </div>
 </template>
+
+<style scoped>
+.container-e-wallet {
+  /* background-image: url("@/assets/images/bg-gift.webp");
+  background-size: cover;
+  background-position: center; */
+  background-color: #8c6c4f;
+}
+</style>
