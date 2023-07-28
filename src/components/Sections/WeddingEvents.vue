@@ -58,7 +58,7 @@ const bindingData = (): void => {
 
   if (props.acara.length > 0) {
     acaraAkad.value = {
-      jamMulai: props.acara[0].waktuMulai,
+      jamMulai: props.acara[0]?.waktuMulai?.split(":").splice(0, 2).join(":"),
       lokasi: props.acara[0].lokasi,
       alamat: props.acara[0].alamat,
       urlMap: props.acara[0].urlMap,
@@ -68,7 +68,7 @@ const bindingData = (): void => {
     };
 
     acaraResepsi.value = {
-      jamMulai: props.acara[1].waktuMulai,
+      jamMulai: props.acara[1]?.waktuMulai?.split(":").splice(0, 2).join(":"),
       lokasi: props.acara[1].lokasi,
       alamat: props.acara[1].alamat,
       urlMap: props.acara[1].urlMap,
