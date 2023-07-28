@@ -194,9 +194,6 @@ onMounted(() => {
         <p class="body-7 text-gold-10 my-2">{{ acaraResepsi.hari }}</p>
         <p class="body-7 text-gold-10 my-5">{{ acaraResepsi.tanggal }}</p>
         <p class="body-7 text-gold-10 my-2">{{ acaraResepsi.jamMulai }} WIB</p>
-        <p class="body-9 text-gold-10 my-2 text-center" style="">
-          (diawali dengan prosesi Kadga Pora)
-        </p>
         <img
           data-aos="zoom-in-up"
           data-aos-duration="2000"
