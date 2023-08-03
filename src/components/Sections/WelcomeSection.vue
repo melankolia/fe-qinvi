@@ -16,6 +16,7 @@ type acaraTypes = {
   userId: number;
   waktuMulai: string;
   waktuSelesai: string;
+  ingatkanAcara: string;
 };
 
 type CountDownTypes = {
@@ -30,6 +31,16 @@ interface CoverInvitationProps {
   acara: Array<acaraTypes>;
 }
 
+const acaraResepsi: Ref<any> = ref({
+  hari: null,
+  tanggal: null,
+  jamMulai: null,
+  lokasi: null,
+  alamat: null,
+  urlMap: null,
+  ingatkanAcara: null,
+});
+
 const props = defineProps<CoverInvitationProps>();
 const tanggalResepsi: Ref<string> = ref("-");
 const CountDownResepsi: Ref<CountDownTypes> = ref({
@@ -40,14 +51,17 @@ const CountDownResepsi: Ref<CountDownTypes> = ref({
   counterFunction: 0,
 });
 
-const openAcara = (e: string = ""): void => {
-  console.log(e);
+const openAcara = (): void => {
+  window.open(acaraResepsi.value.ingatkanAcara);
 };
 
 const bindingData = (): void => {
   props.acara.map((e: acaraTypes) => {
     if (e.namaAcara.toLowerCase().includes("resepsi")) {
       tanggalResepsi.value = e.tanggal;
+      acaraResepsi.value = {
+        ingatkanAcara: e.ingatkanAcara,
+      };
     }
   });
   startCountDownResepsi();
