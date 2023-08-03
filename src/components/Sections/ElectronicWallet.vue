@@ -69,7 +69,7 @@ const handleCopy = (i: number): void => {
 
 <template>
   <div class="flex flex-col container-e-wallet relative bg-blue-05">
-    <div class="flex flex-col px-4 py-10">
+    <div class="flex flex-col px-8 py-10">
       <p class="headline-local mb-2.5">
         Bagi yang ingin memberikan tanda kasih, dapat mengirimkan melalui fitur
         di bawah ini:
@@ -136,7 +136,7 @@ const handleCopy = (i: number): void => {
 }
 .container-e-wallet {
   background-image: url("@/assets/images/border.png");
-  background-size: cover;
+  background-size: 100% 96%;
   background-repeat: no-repeat;
 }
 </style>

@@ -47,16 +47,10 @@ const openAcara = (e: string = ""): void => {
 const bindingData = (): void => {
   props.acara.map((e: acaraTypes) => {
     if (e.namaAcara.toLowerCase().includes("resepsi")) {
-      tanggalResepsi.value = new Date(e.tanggal).toLocaleDateString("id-ID", {
-        weekday: "long",
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-      });
-
-      startCountDownResepsi();
+      tanggalResepsi.value = e.tanggal;
     }
   });
+  startCountDownResepsi();
 };
 
 const startCountDownResepsi = (): void => {
@@ -66,8 +60,6 @@ const startCountDownResepsi = (): void => {
 
     // Find the distance between now and the count down date
     const distance = countDownDate - now;
-
-    console.log({ tanggalResepsi, distance, countDownDate });
 
     if (distance > 0) {
       // Time calculations for days, hours, minutes and seconds

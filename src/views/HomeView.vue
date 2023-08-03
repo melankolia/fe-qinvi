@@ -237,7 +237,7 @@ useHead({
         <p class="title-2 mt-4 text-center text-white">
           {{ mempelaiPria }} & {{ mempelaiWanita }}
         </p>
-        <img src="@/assets/images/logo-wedding.webp" width="114" />
+        <img src="@/assets/images/logo-wedding-2.png" width="114" />
       </div>
       <div class="flex flex-col">
         <!-- data-aos="zoom-in-up"
@@ -301,15 +301,13 @@ useHead({
       <PresenceForm />
       <ElectronicWallet :rekening="dataPernikahan.rekening" />
       <!-- <HealthProtocols /> -->
-      <img
-        src="@/assets/images/p-spouses-4.webp"
-        alt="Qinvi Wedding Photos Groom"
-      />
       <GalleryPhotos id="gallerySection" :gallery="dataPernikahan.gallery" />
-      <PrayerWishes />
-      <WishesList :wishes="dataPernikahan.ucapan" />
+      <div class="flex flex-col px-6 bg-blue-10 border-outline">
+        <PrayerWishes />
+        <WishesList :wishes="dataPernikahan.ucapan" />
+      </div>
       <FooterWeddings />
-      <FooterSections />
+      <FooterSections :pengantin="dataPernikahan.pengantin" />
       <MenusFloating @fnClick="(e) => handleMenuClick(e)" />
     </div>
   </div>
@@ -371,5 +369,12 @@ useHead({
 
 .bg-linear-btn {
   background: linear-gradient(282.22deg, #000000 0%, #a98466 100%);
+}
+
+.border-outline {
+  background-image: url("@/assets/images/border-outline.webp");
+  background-size: 97% 98%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 </style>

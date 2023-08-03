@@ -1,25 +1,16 @@
 <template>
   <div
-    class="flex flex-col bg-container items-center justify-center px-10 relative"
+    class="flex flex-col bg-container items-center justify-end p-10 relative"
   >
-    <p
+    <div
+      class="flex flex-col items-center"
       data-aos="zoom-in-up"
       data-aos-duration="2000"
-      class="body-3 text-white font-medium mb-56"
     >
-      Kehadiran Bapak/Ibu/Saudara/i di acara kami akan menjadi suatu kebahagiaan
-      dan kehormatan yang tidak terlupakan bagi kami. Terima kasih atas restu
-      dan dukungannya.
-    </p>
-    <img
-      data-aos="fade-up"
-      data-aos-duration="2500"
-      width="85"
-      height="78"
-      src="@/assets/images/icon-sincan.webp"
-      alt="Qinvi Wedding Icon"
-      class="absolute top-8"
-    />
+      <img class="mt-5" src="@/assets/images/logo-wedding-2.png" width="114" />
+      <p class="headline-local-1">#BeMineforever</p>
+      <p class="headline-local-2">Sampai bertemu di hari pernikahan!</p>
+    </div>
   </div>
 </template>
 
@@ -30,6 +21,26 @@
   background-image: url("@/assets/images/bg-thanks.webp");
   background-size: cover;
   background-position: center;
-  height: 640px;
+  height: 949px;
+}
+
+.headline-local-1 {
+  color: #fff;
+  text-align: center;
+  font-family: "EB Garamond";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 36px; /* 150% */
+}
+
+.headline-local-2 {
+  color: #fff;
+  text-align: center;
+  font-family: "Pinyon Script";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px; /* 166.667% */
 }
 </style>

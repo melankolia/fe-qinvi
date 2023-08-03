@@ -53,6 +53,11 @@
   src: url("./fonts/FleurDeLeah-Regular.ttf");
 }
 
+@font-face {
+  font-family: "TAN - PEARL";
+  src: url("./fonts/TAN-PEARL.otf");
+}
+
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
   color-scheme: light only;

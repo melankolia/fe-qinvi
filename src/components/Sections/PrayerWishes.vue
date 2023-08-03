@@ -59,24 +59,23 @@ const handleSubmit = async (): Promise<void> => {
 
 <template>
   <div class="flex flex-col">
-    <div class="flex flex-col px-6 pb-6 pt-8">
+    <div class="flex flex-col pb-6 pt-8">
       <p
         data-aos="zoom-in-up"
         data-aos-duration="2000"
-        class="headline-6 text-brown-30 mb-2 text-center"
+        class="headline-local mb-2 text-center"
       >
         Wedding Wish
       </p>
       <p
         data-aos="zoom-in-up"
         data-aos-duration="2000"
-        class="headline-12 text-center text-brown-30 mb-3"
+        class="title-1 text-center mb-3"
       >
-        Bantu kami mempersiapkan acara yang aman dan jamuan yang hangat untuk
-        anda semua dengan mengirimkan konfirmasi kehadiran melalui form berikut:
+        Silakan kirimkan doa dan ucapan yang tulus untuk kami:
       </p>
       <div class="flex flex-col">
-        <p class="headline-12 text-brown-30 mb-1.5">Nama</p>
+        <p class="title-1 text-brown-30 mb-1.5">Nama</p>
         <input
           v-model="form.from"
           type="text"
@@ -84,7 +83,7 @@ const handleSubmit = async (): Promise<void> => {
           name="fname"
           class="rounded-sm mb-5 p-2 text-brown-30"
         />
-        <p class="headline-12 text-brown-30 mb-1.5">
+        <p class="title-1 text-brown-30 mb-1.5">
           Sampaikan ucapan selamat untuk <br />
           pernikahan kami :
         </p>
@@ -97,9 +96,9 @@ const handleSubmit = async (): Promise<void> => {
           cols="50"
         />
       </div>
-      <div class="flex flex-col pt-5">
+      <div class="flex flex-col items-end pt-5">
         <button
-          class="button-date border border-white bg-yellow-20 py-1.5 px-3 rounded-2xl flex flex-row justify-center items-center space-x-2.5 drop-shadow-md"
+          class="button-date bg-white px-2.5 py-2 rounded-lg flex flex-row justify-center items-center space-x-2.5 transition-all mb-4"
           @click="handleSubmit"
         >
           <svg
@@ -123,7 +122,7 @@ const handleSubmit = async (): Promise<void> => {
               d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
             ></path>
           </svg>
-          <p class="body-2 text-brown-30">Kirim Ucapan</p>
+          <p class="title-3 text-blue-10">Kirim Ucapan</p>
         </button>
       </div>
     </div>
@@ -133,5 +132,35 @@ const handleSubmit = async (): Promise<void> => {
 <style scoped>
 .text-shadow {
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.headline-local {
+  color: #e8eced;
+  text-align: center;
+  font-family: "EB Garamond";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 41.6px; /* 173.333% */
+}
+
+.title-1 {
+  color: #e8eced;
+  font-family: "EB Garamond";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22.4px; /* 140% */
+  letter-spacing: 0.1px;
+}
+
+.title-3 {
+  color: #6d829b;
+  text-align: center;
+  font-family: "Jost";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16.8px;
 }
 </style>
