@@ -33,6 +33,26 @@
   src: url("./fonts/Monesta.otf");
 }
 
+@font-face {
+  font-family: "Jost";
+  src: url("./fonts/Jost.ttf");
+}
+
+@font-face {
+  font-family: "Pinyon Script";
+  src: url("./fonts/PinyonRegular.ttf");
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  src: url("./fonts/EBGaramond.ttf");
+}
+
+@font-face {
+  font-family: "Fleur De Leah";
+  src: url("./fonts/FleurDeLeah-Regular.ttf");
+}
+
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
   color-scheme: light only;

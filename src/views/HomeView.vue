@@ -228,63 +228,27 @@ useHead({
   <div class="flex flex-col mx-auto" style="max-width: 480px">
     <div
       v-if="!isOpen"
-      class="container flex flex-col h-screen justify-center px-8"
+      class="container flex flex-col items-center justify-between h-screen px-8 pt-14 pb-20"
     >
-      <div
-        data-aos="zoom-in-up"
-        data-aos-duration="1000"
-        class="flex flex-col items-center text-black background-linear rounded-full py-[71px]"
-      >
-        <p
-          data-aos="zoom-in-up"
-          data-aos-duration="2000"
-          class="headline-9 text-brown-10"
-        >
-          PERNIKAHAN
+      <!-- data-aos="zoom-in-up"
+      data-aos-duration="2000" -->
+      <div class="flex flex-col items-center mb-2.5">
+        <p class="title-1">The Wedding Of</p>
+        <p class="title-2 mt-4 text-center text-white">
+          {{ mempelaiPria }} & {{ mempelaiWanita }}
         </p>
-        <div
-          data-aos="zoom-in-up"
-          data-aos-duration="2000"
-          class="flex flex-col items-center mt-8 mb-2.5"
-        >
-          <p class="headline-2 text-center text-brown-10 uppercase">
-            {{ mempelaiPria }}
-          </p>
-          <p class="headline-2 text-center text-brown-10 uppercase">&</p>
-          <p class="headline-2 text-center text-brown-10 uppercase">
-            {{ mempelaiWanita }}
-          </p>
-        </div>
-        <p
-          data-aos="zoom-in-up"
-          data-aos-duration="2000"
-          class="caption-6 text-brown-10 mb-11 mt-10"
-        >
-          17 • 09 • 2023
-        </p>
-        <p
-          data-aos="zoom-in-up"
-          data-aos-duration="2000"
-          class="headline-9 text-brown-10"
-        >
-          KEPADA :
-        </p>
-        <p
-          data-aos="zoom-in-up"
-          data-aos-duration="2000"
-          class="caption-11 text-brown-10 mb-7 mt-2.5"
-        >
-          {{ invitedPerson }}
-        </p>
+        <img src="@/assets/images/logo-wedding.webp" width="114" />
+      </div>
+      <div class="flex flex-col">
+        <!-- data-aos="zoom-in-up"
+          data-aos-duration="2000" -->
         <button
-          data-aos="zoom-in-up"
-          data-aos-duration="2000"
           @click="handleClick"
-          class="button-date bg-linear-btn px-8 py-3.5 rounded-3xl flex flex-row justify-center items-center space-x-2.5 transition-all mx-6"
+          class="button-date bg-white px-4 py-3 rounded-sm flex flex-row justify-center items-center space-x-2.5 transition-all mx-6 mb-4"
         >
           <svg
             v-if="loading"
-            class="animate-spin -ml-1 h-3 w-3 text-white"
+            class="animate-spin -ml-1 h-3 w-3 text-black"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -303,25 +267,26 @@ useHead({
               d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
             ></path>
           </svg>
-          <p class="body-4 text-white">Buka Undangan</p>
+          <p class="title-3 text-black uppercase">Buka Undangan</p>
         </button>
+        <p class="caption-local text-white">Created with Love by Qinvi</p>
+        <p class="caption-local text-white">
+          © 2023 Dita & Arif. All Rights Reserved
+        </p>
       </div>
     </div>
+
     <div
       class="flex flex-col mx-none md:mx-auto"
       v-else
       style="max-width: 480px"
     >
-      <WelcomeSection :acara="dataPernikahan.acara" id="welcomeSection" />
       <IntroductionFamilies
         id="mempelaiSection"
         :tamu="dataPernikahan.tamu"
         :pengantin="dataPernikahan.pengantin"
       />
-      <img
-        src="@/assets/images/p-spouses-3.webp"
-        alt="Qinvi Wedding Photos Groom"
-      />
+      <WelcomeSection :acara="dataPernikahan.acara" id="welcomeSection" />
       <!-- <CountdownSection
         :mempelaiPria="mempelaiPria"
         :mempelaiWanita="mempelaiWanita"
@@ -329,17 +294,11 @@ useHead({
         id="homeSection"
       /> -->
       <WeddingEvents id="acaraSection" :acara="dataPernikahan.acara" />
-      <div class="flex flex-col bg-combo px-8 pt-9">
-        <div
-          data-aos="zoom-in-up"
-          data-aos-duration="1000"
-          class="flex flex-col pt-20 bg-combo-linear rounded-tema-jawa mb-10"
-        >
-          <PresenceForm />
-          <PrayerWishes />
-          <WishesList :wishes="dataPernikahan.ucapan" />
-        </div>
-      </div>
+      <img
+        src="@/assets/images/p-spouses-5.webp"
+        alt="Qinvi Wedding Photos Groom"
+      />
+      <PresenceForm />
       <ElectronicWallet :rekening="dataPernikahan.rekening" />
       <!-- <HealthProtocols /> -->
       <img
@@ -347,6 +306,8 @@ useHead({
         alt="Qinvi Wedding Photos Groom"
       />
       <GalleryPhotos id="gallerySection" :gallery="dataPernikahan.gallery" />
+      <PrayerWishes />
+      <WishesList :wishes="dataPernikahan.ucapan" />
       <FooterWeddings />
       <FooterSections />
       <MenusFloating @fnClick="(e) => handleMenuClick(e)" />
@@ -361,6 +322,45 @@ useHead({
   background-size: cover;
 }
 
+.title-1 {
+  color: #e8eced;
+  text-align: center;
+  font-family: "Jost";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 21px; /* 150% */
+  text-transform: uppercase;
+}
+
+.title-2 {
+  color: #e8eced;
+  text-align: center;
+  font-family: "Pinyon Script";
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 45px; /* 150% */
+}
+
+.title-3 {
+  font-family: "Jost";
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+.caption-local {
+  font-family: "Jost";
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
 .background-linear {
   background: linear-gradient(
     0deg,
@@ -371,15 +371,5 @@ useHead({
 
 .bg-linear-btn {
   background: linear-gradient(282.22deg, #000000 0%, #a98466 100%);
-}
-
-.bg-combo {
-  background-image: url("@/assets/images/bg-combo.webp");
-  background-size: cover;
-}
-
-.bg-combo-linear {
-  background: rgba(244, 234, 225, 0.77);
-  box-shadow: 0px 0px 45px 1px rgba(0, 0, 0, 0.5);
 }
 </style>

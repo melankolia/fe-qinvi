@@ -56,11 +56,14 @@
 }
 
 .caption-8 {
-  font-family: "Noto Sans", sans-serif;
-  font-style: normal;
+  font-family: "Jost";
+  font-size: 13px;
+  font-style: italic;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: center;
+  
 }
 
 .caption-9 {

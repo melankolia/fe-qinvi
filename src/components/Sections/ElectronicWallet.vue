@@ -4,6 +4,7 @@ import BNI_Logo from "@/assets/images/BNI_logo.svg";
 import BCA_Logo from "@/assets/images/BCA_logo.png";
 import Mandiri_Logo from "@/assets/images/Mandiri_logo.webp";
 import BTN_Logo from "@/assets/images/BTN_logo.svg";
+import BRI_Logo from "@/assets/images/BRI_logo.svg";
 
 const snackbar = useSnackbar();
 
@@ -31,6 +32,7 @@ const handleIconBank = (e: string): string => {
   else if (bank == "bca") return BCA_Logo;
   else if (bank == "mandiri") return Mandiri_Logo;
   else if (bank == "btn") return BTN_Logo;
+  else if (bank == "bri") return BRI_Logo;
 
   return "";
 };
@@ -66,19 +68,16 @@ const handleCopy = (i: number): void => {
 </script>
 
 <template>
-  <div class="flex flex-col container-e-wallet relative">
-    <div class="flex flex-col px-4 py-6">
-      <p
-        data-aos="zoom-in-up"
-        data-aos-duration="2000"
-        class="headline-19 text-blue-10 mb-8 font-extralight text-center"
-      >
-        Wedding Gift
+  <div class="flex flex-col container-e-wallet relative bg-blue-05">
+    <div class="flex flex-col px-4 py-10">
+      <p class="headline-local mb-2.5">
+        Bagi yang ingin memberikan tanda kasih, dapat mengirimkan melalui fitur
+        di bawah ini:
       </p>
       <div
         v-for="(e, i) in props.rekening"
         :key="i"
-        class="flex flex-col bg-[#F8F7F3] items-center rounded-xl p-4 mb-3 z-10"
+        class="flex flex-col items-center rounded-xl px-4 pt-4 z-10"
       >
         <input
           type="hidden"
@@ -89,16 +88,16 @@ const handleCopy = (i: number): void => {
           :src="handleIconBank(e.namaBank)"
           width="100"
           height="19"
-          class="mb-3"
+          class="mb-2.5"
         />
-        <p class="caption-1 text-blue-10 mb-3">
+        <p class="caption-local text-blue-10 mb-3">
           No. Rekening : {{ e.noRekening }}
         </p>
-        <p class="caption-1 text-blue-10 mb-3">A/n {{ e.namaPemilik }}</p>
+        <p class="caption-local text-blue-10 mb-3">A/n {{ e.namaPemilik }}</p>
         <div class="flex flex-col items-center">
           <button
             @click="() => handleCopy(i)"
-            class="button-date border border-white bg-blue-10 py-1.5 px-3 rounded-2xl flex flex-row items-center space-x-2.5 drop-shadow-md"
+            class="button-date border border-white bg-[#354259] py-1.5 px-3 rounded-2xl flex flex-row items-center space-x-2.5 drop-shadow-md"
           >
             <img
               src="@/assets/icons/icon-copy.png"
@@ -116,9 +115,28 @@ const handleCopy = (i: number): void => {
 </template>
 
 <style scoped>
+.headline-local {
+  color: #6d829b;
+  text-align: center;
+  font-family: " EB Garamond";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+}
+
+.caption-local {
+  color: #6d829b;
+  text-align: center;
+  font-family: "EB Garamond";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
 .container-e-wallet {
-  background-image: url("@/assets/images/bg-gift.webp");
+  background-image: url("@/assets/images/border.png");
   background-size: cover;
-  background-position: center;
+  background-repeat: no-repeat;
 }
 </style>

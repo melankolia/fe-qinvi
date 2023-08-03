@@ -31,8 +31,8 @@ interface CoverInvitationProps {
 }
 
 const props = defineProps<CoverInvitationProps>();
-const tanggalAkad: Ref<string> = ref("-");
-const CountDownAkad: Ref<CountDownTypes> = ref({
+const tanggalResepsi: Ref<string> = ref("-");
+const CountDownResepsi: Ref<CountDownTypes> = ref({
   days: "0",
   hours: "0",
   minutes: "0",
@@ -40,37 +40,49 @@ const CountDownAkad: Ref<CountDownTypes> = ref({
   counterFunction: 0,
 });
 
+const openAcara = (e: string = ""): void => {
+  console.log(e);
+};
+
 const bindingData = (): void => {
   props.acara.map((e: acaraTypes) => {
-    if (e.namaAcara.toLowerCase().includes("akad")) {
-      tanggalAkad.value = new Date(e.tanggal).toLocaleDateString("id-ID", {
+    if (e.namaAcara.toLowerCase().includes("resepsi")) {
+      tanggalResepsi.value = new Date(e.tanggal).toLocaleDateString("id-ID", {
         weekday: "long",
         year: "numeric",
         month: "long",
         day: "numeric",
       });
+
+      startCountDownResepsi();
     }
   });
 };
 
-const startCountDownAkad = (): void => {
+const startCountDownResepsi = (): void => {
   const myInterval = setInterval(() => {
     const now = new Date().getTime();
-    const countDownDate = new Date(tanggalAkad.value).getTime();
+    const countDownDate = new Date(tanggalResepsi.value).getTime();
 
     // Find the distance between now and the count down date
     const distance = countDownDate - now;
 
+    console.log({ tanggalResepsi, distance, countDownDate });
+
     if (distance > 0) {
       // Time calculations for days, hours, minutes and seconds
-      CountDownAkad.value.days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      CountDownAkad.value.hours = Math.floor(
+      CountDownResepsi.value.days = Math.floor(
+        distance / (1000 * 60 * 60 * 24)
+      );
+      CountDownResepsi.value.hours = Math.floor(
         (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
       );
-      CountDownAkad.value.minutes = Math.floor(
+      CountDownResepsi.value.minutes = Math.floor(
         (distance % (1000 * 60 * 60)) / (1000 * 60)
       );
-      CountDownAkad.value.seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      CountDownResepsi.value.seconds = Math.floor(
+        (distance % (1000 * 60)) / 1000
+      );
     } else {
       clearInterval(myInterval);
     }
@@ -92,59 +104,52 @@ onMounted(() => {
   const username: string | null = route.params?.username as string;
   splittingUsername(username);
   bindingData();
-  startCountDownAkad();
 });
 </script>
 
 <template>
   <div
-    class="flex flex-col w-full text-center bg-container justify-center text-white py-6"
+    class="flex flex-col min-h-[500px] w-full text-center bg-container justify-end text-white py-6"
   >
     <div
       data-aos="zoom-in-up"
       data-aos-duration="1000"
-      class="flex flex-col bg-brown-10 bg-opacity-90 mx-9 pb-10 pt-24 bg-container-shadow rounded-tema-jawa px-7"
+      class="flex flex-col justify-end items-center pt-10"
     >
-      <p
-        data-aos="zoom-in-up"
-        data-aos-duration="2000"
-        class="headline-16 mb-4"
-      >
-        The Wedding Of
-      </p>
-      <p
-        data-aos="zoom-in-up"
-        data-aos-duration="2000"
-        class="headline-11 mb-10"
-      >
-        {{ mempelaiPria }} & {{ mempelaiWanita }}
-      </p>
-      <img
-        data-aos="zoom-in-up"
-        data-aos-duration="2000"
-        src="@/assets/images/p-spouses.webp"
-        alt="Qinvi Spouses"
+      <TimerCountDown
+        :days="CountDownResepsi.days"
+        :hours="CountDownResepsi.hours"
+        :minutes="CountDownResepsi.minutes"
+        :seconds="CountDownResepsi.seconds"
       />
-      <div class="flex flex-col justify-center items-center pt-10">
-        <TimerCountDown
-          :days="CountDownAkad.days"
-          :hours="CountDownAkad.hours"
-          :minutes="CountDownAkad.minutes"
-          :seconds="CountDownAkad.seconds"
-        />
-      </div>
+      <button
+        @click="() => openAcara()"
+        class="button-date bg-white px-2.5 py-2 rounded-lg flex flex-row justify-center items-center space-x-2.5 transition-all mx-6 mb-4"
+      >
+        <p class="title-3 text-black">Ingatkan Acara</p>
+      </button>
     </div>
   </div>
 </template>
 
 <style scoped>
 .bg-container {
-  background-image: url("@/assets/images/bg-welcome.webp");
+  background-image: url("@/assets/images/p-spouses-3.webp");
   background-size: cover;
   background-position: center;
 }
 
 .bg-container-shadow {
   box-shadow: 0px 0px 45px 1px rgba(0, 0, 0, 0.5);
+}
+
+.title-3 {
+  color: #6d829b;
+  text-align: center;
+  font-family: "Jost";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16.8px;
 }
 </style>

@@ -93,125 +93,63 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex flex-col items-center px-4 pt-16 pb-5 bg-wedding bg-white">
+  <div
+    class="flex flex-col items-center px-4 pt-16 pb-5 bg-wedding bg-blue-10 text-white"
+  >
     <div
       data-aos="zoom-in-up"
       data-aos-duration="1000"
-      class="flex flex-col pt-20 pb-32 bg-container-shadow rounded-tema-jawa mb-10"
+      class="flex flex-col py-20 bg-container-shadow rounded-tema-jawa mb-10"
     >
-      <div class="flex flex-col items-center">
-        <img
-          data-aos="zoom-in-up"
-          data-aos-duration="2000"
-          src="@/assets/images/img-header.webp"
-          alt="Qinvi Header Events"
-          class="mb-1"
-          width="211"
-        />
-        <p
-          data-aos="zoom-in-up"
-          data-aos-duration="2000"
-          class="headline-20 text-black"
-        >
-          With Love
-        </p>
-        <hr class="border-black mt-6 mb-9" style="width: 40%" />
-        <p
-          data-aos="zoom-in-up"
-          data-aos-duration="2000"
-          class="caption-14 text-black text-center mx-7 mb-12"
-        >
-          Dengan segala kerendahan hati dan dengan ucapan syukur atas karunia
-          Tuhan, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir di
-          acara pernikahan kami yang akan dilaksanakan pada:
-        </p>
-      </div>
-
+      <p class="headline-local">Acara Pernikahan</p>
       <!-- Akad Nikah -->
       <div
         data-aos="zoom-in-up"
         data-aos-duration="2000"
-        class="flex flex-col items-center rounded-xl bg-akad py-14 mx-8"
+        class="flex flex-col items-center rounded-xl bg-akad pt-14 mx-1"
       >
-        <p class="headline-21 text-gold-10 mt-2 uppercase">Akad Nikah</p>
-        <hr class="border-gold-10 mt-5 mb-7" style="width: 40%" />
-        <p class="body-7 text-gold-10 my-2">{{ acaraAkad.hari }}</p>
-        <p class="body-7 text-gold-10 my-5">{{ acaraAkad.tanggal }}</p>
-        <p class="body-7 text-gold-10 my-2">{{ acaraAkad.jamMulai }} WIB</p>
+        <p class="title-1 mt-2 uppercase">Akad Nikah</p>
+        <p class="subtitle-1 my-2">
+          {{ acaraAkad.hari }}, {{ acaraAkad.tanggal }}
+        </p>
+        <p class="subtitle-1 my-2">{{ acaraAkad.jamMulai }} WIB</p>
         <img
           data-aos="zoom-in-up"
           data-aos-duration="2000"
           src="@/assets/images/img-building.png"
-          width="128"
+          width="256"
           alt="Qinvi Header Events"
-          class="my-7"
+          class="mb-7"
         />
-        <p
-          class="body-7 text-gold-10 text-center mt-2 mb-6"
-          style="max-width: 300px"
-        >
-          {{ acaraAkad.lokasi }}
-        </p>
-        <p
-          class="body-8 text-gold-10 text-center mt-2 mb-6"
-          style="max-width: 300px"
-        >
-          {{ acaraAkad.alamat }}
-        </p>
-        <div
-          data-aos="zoom-in-up"
-          data-aos-duration="2000"
-          class="flex flex-col items-center"
-        >
-          <button
-            @click="openMap(acaraAkad)"
-            class="button-date bg-linear-btn px-8 py-4 rounded-3xl flex flex-row justify-center items-center space-x-2.5 transition-all my-4 mx-6"
-          >
-            <p class="body-6 text-white">Lihat Lokasi</p>
-          </button>
-          <button
-            @click="openAcara(acaraAkad)"
-            data-aos="zoom-in-up"
-            data-aos-duration="2000"
-            class="button-date bg-linear-btn px-8 py-4 rounded-3xl flex flex-row justify-center items-center space-x-2.5 transition-all my-4 mx-6"
-          >
-            <p class="body-6 text-white">Add to Calendar</p>
-          </button>
-        </div>
       </div>
 
       <!-- Resepsi -->
       <div
         data-aos="zoom-in-up"
         data-aos-duration="2000"
-        class="flex flex-col mt-2.5 items-center rounded-xl bg-resepsi py-14 mx-8"
+        class="flex flex-col mt-2.5 items-center rounded-xl bg-resepsi mx-1"
       >
-        <p class="headline-21 text-gold-10 mt-2 uppercase text-center">
-          Resepsi <br />
-          Pernikahan
+        <p class="title-1 mt-2 uppercase">Resepsi Pernikahan</p>
+        <p class="subtitle-1 text-center mt-7 mb-2.5">
+          Kami memohon kehadiran Bapak/Ibu/Saudara/i dalam pelaksanaan Resepsi
+          Pernikahan yang akan dilaksanakan pada:
         </p>
-        <hr class="border-gold-10 mt-5 mb-7" style="width: 40%" />
-        <p class="body-7 text-gold-10 my-2">{{ acaraResepsi.hari }}</p>
-        <p class="body-7 text-gold-10 my-5">{{ acaraResepsi.tanggal }}</p>
-        <p class="body-7 text-gold-10 my-2">{{ acaraResepsi.jamMulai }} WIB</p>
+        <p class="subtitle-1 my-2">
+          {{ acaraResepsi.hari }}, {{ acaraResepsi.tanggal }}
+        </p>
+        <p class="subtitle-1 my-2">{{ acaraResepsi.jamMulai }} WIB</p>
         <img
           data-aos="zoom-in-up"
           data-aos-duration="2000"
           src="@/assets/images/img-building.png"
-          width="128"
+          width="256"
           alt="Qinvi Header Events"
-          class="my-7"
+          class="mb-7"
         />
-        <p
-          class="body-7 text-gold-10 text-center mt-2 mb-6"
-          style="max-width: 300px"
-        >
+        <p class="subtitle-1 text-center mt-2" style="max-width: 300px">
           {{ acaraResepsi.lokasi }}
         </p>
-        <p
-          class="body-8 text-gold-10 text-center mt-2 mb-6"
-          style="max-width: 300px"
-        >
+        <p class="subtitle-1 text-center mt-2 mb-4" style="max-width: 300px">
           {{ acaraResepsi.alamat }}
         </p>
         <div
@@ -220,18 +158,10 @@ onMounted(() => {
           class="flex flex-col items-center"
         >
           <button
-            @click="openMap(acaraResepsi)"
-            class="button-date bg-linear-btn px-8 py-4 rounded-3xl flex flex-row justify-center items-center space-x-2.5 transition-all my-4 mx-6"
+            @click="() => openMap(acaraResepsi)"
+            class="button-date bg-white px-2.5 py-2 rounded-lg flex flex-row justify-center items-center space-x-2.5 transition-all mx-6 mb-4"
           >
-            <p class="body-6 text-white">Lihat Lokasi</p>
-          </button>
-          <button
-            @click="openAcara(acaraResepsi)"
-            data-aos="zoom-in-up"
-            data-aos-duration="2000"
-            class="button-date bg-linear-btn px-8 py-4 rounded-3xl flex flex-row justify-center items-center space-x-2.5 transition-all my-4 mx-6"
-          >
-            <p class="body-6 text-white">Add to Calendar</p>
+            <p class="title-3 text-blue-10">Lihat Peta</p>
           </button>
         </div>
       </div>
@@ -240,23 +170,63 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.bg-wedding {
+.headline-local {
+  color: #e8eced;
+  text-align: center;
+  font-family: "Pinyon Script";
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 43.2px; /* 123.429% */
+}
+
+.title-1 {
+  color: #e8eced;
+  text-align: center;
+  font-family: "EB Garamond";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+  text-transform: uppercase;
+}
+
+.title-3 {
+  color: #6d829b;
+  text-align: center;
+  font-family: "Jost";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16.8px;
+}
+
+.subtitle-1 {
+  color: #e8eced;
+  font-family: "EB Garamond";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21px; /* 150% */
+  text-transform: uppercase;
+}
+/* .bg-wedding {
   background-image: url("@/assets/images/bg-wedding.webp");
   background-size: cover;
-}
+} */
 
-.bg-akad {
+/* .bg-akad {
   background-image: url("@/assets/images/bg-akad.webp");
   background-size: cover;
-}
+} */
 
-.bg-resepsi {
+/* .bg-resepsi {
   background-image: url("@/assets/images/bg-resepsi.webp");
   background-size: cover;
-}
+} */
 
 .bg-container-shadow {
-  background: rgba(244, 234, 225, 0.77);
+  background: #ffffff1a;
   box-shadow: 0px 0px 45px 1px rgba(0, 0, 0, 0.5);
 }
 
