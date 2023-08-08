@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, computed } from "vue";
 import type { Ref } from "vue";
+import Swiper from "../../components/SwiperComp.vue";
 
 type GalleryPhotoPropsTypes = {
   gallery: string[];
@@ -51,37 +52,10 @@ onMounted(() => {
       her prince.” <br />
       —Elizabeth Young
     </p>
-    <div
-      data-aos="fade-up"
-      data-aos-duration="2500"
-      class="flex flex-col items-center bg-gallery-ov p-4"
-    >
-      <div class="flex flex-row items-start overflow-scroll">
-        <img
-          v-for="(e, i) in thumbnailVerticalRef"
-          loading="lazy"
-          :key="i"
-          @click="onShow(i + 1)"
-          :src="e"
-          class="p-1"
-        />
-      </div>
-    </div>
-    <div
-      data-aos="fade-down"
-      data-aos-duration="2500"
-      class="flex flex-col items-center bg-gallery-ov p-4"
-    >
-      <div class="flex flex-row items-start overflow-scroll">
-        <img
-          v-for="(e, i) in thumbnailLandscapeRef"
-          loading="lazy"
-          :key="i"
-          @click="onShow(i + 1)"
-          :src="e"
-          class="p-1"
-        />
-      </div>
+    <div class="flex flex-col items-center bg-gallery-ov p-4 overflow-hidden">
+      <!-- <div class="flex flex-row items-start overflow-scroll"> -->
+      <Swiper :imgRef="imgsRef" @onShow="(e: any) => onShow(e)" />
+      <!-- </div> -->
     </div>
     <div v-if="loading" class="flex flex-col items-center">
       <svg
@@ -124,4 +98,5 @@ onMounted(() => {
   font-weight: 400;
   line-height: 27px; /* 150% */
 }
+
 </style>
