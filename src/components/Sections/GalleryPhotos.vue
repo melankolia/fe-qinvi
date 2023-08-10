@@ -43,19 +43,24 @@ onMounted(() => {
 <template>
   <div class="flex flex-col items-center bg-blue-10 px-10 py-6">
     <img class="my-11" src="@/assets/images/logo-wedding-2.png" width="114" />
-    <p
-      data-aos="zoom-in-up"
-      data-aos-duration="2000"
-      class="caption-local text-white text-center mb-8"
+    <div
+      class="flex flex-col items-center bg-gallery-ov p-4 overflow-hidden mt-8"
     >
-      “And I knew exactly how old Walt Disney’s Cinderella felt when she found
-      her prince.” <br />
-      —Elizabeth Young
-    </p>
-    <div class="flex flex-col items-center bg-gallery-ov p-4 overflow-hidden">
-      <!-- <div class="flex flex-row items-start overflow-scroll"> -->
-      <Swiper :imgRef="imgsRef" @onShow="(e: any) => onShow(e)" />
-      <!-- </div> -->
+      <div style="max-width: 363px !important; overflow: hidden !important">
+        <Swiper
+          :imgRef="thumbnailVerticalRef"
+          @onShow="(e: any) => onShow(e)"
+        />
+      </div>
+      <div
+        class="mt-8"
+        style="max-width: 363px !important; overflow: hidden !important"
+      >
+        <Swiper
+          :imgRef="thumbnailLandscapeRef"
+          @onShow="(e: any) => onShow(e)"
+        />
+      </div>
     </div>
     <div v-if="loading" class="flex flex-col items-center">
       <svg
@@ -98,5 +103,4 @@ onMounted(() => {
   font-weight: 400;
   line-height: 27px; /* 150% */
 }
-
 </style>
