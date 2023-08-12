@@ -291,6 +291,7 @@ useHead({
         id="mempelaiSection"
         :tamu="dataPernikahan.tamu"
         :pengantin="dataPernikahan.pengantin"
+        :acara="dataPernikahan.acara"
       />
       <GalleryPhotos id="gallerySection" :gallery="dataPernikahan.gallery" />
       <!-- <CountdownSection

@@ -1,6 +1,21 @@
 <script setup lang="ts">
 import { defineProps, onMounted, ref } from "vue";
 import type { Ref } from "vue";
+import { useRoute } from "vue-router";
+
+type acaraTypes = {
+  alamat: string;
+  createdAt: string;
+  id: number;
+  lokasi: string;
+  namaAcara: string;
+  tanggal: string;
+  updatedAt: string;
+  urlMap: string;
+  userId: number;
+  waktuMulai: string;
+  waktuSelesai: string;
+};
 
 type pengantinTypes = {
   createdAt: string;
@@ -29,10 +44,14 @@ type introductionFamiliesType = {
     updatedAt: string;
     userId: number;
   };
+  acara: Array<acaraTypes>;
 };
-
+const route = useRoute();
 const props = defineProps<introductionFamiliesType>();
 
+const invitedPerson: string | null = route.query?.to as string | null;
+
+const tanggalResepsi: Ref<string> = ref("-");
 const pengantinPria: Ref<pengantinTypes> = ref({
   createdAt: "-",
   gender: "-",
@@ -67,6 +86,17 @@ const bindingData = (): void => {
       pengantinWanita.value = { ...e };
     }
   });
+
+  props.acara.map((e: acaraTypes) => {
+    if (e.namaAcara?.toLowerCase().includes("resepsi")) {
+      tanggalResepsi.value = new Date(e.tanggal).toLocaleDateString("id-ID", {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      });
+    }
+  });
 };
 
 onMounted(() => {
@@ -84,7 +114,7 @@ onMounted(() => {
         height="78"
         src="@/assets/images/icon-sincan.webp"
         alt="Qinvi Wedding Icon"
-        class="mb-4 mt-10"
+        class="my-4"
       />
       <p
         data-aos="fade-down"
@@ -117,55 +147,77 @@ onMounted(() => {
         alt="Qinvi Wedding Icon Leaf"
       />
     </div>
-    <div class="flex flex-col px-6 relative pt-7 pb-9 bg-events">
+    <div class="flex flex-col justify-center px-6 relative bg-events">
       <div
         data-aos="fade-right"
         data-aos-duration="2500"
-        class="flex flex-col relative px-10 mb-28"
+        class="flex flex-col relative mb-28"
       >
-        <div class="flex flex-col max-w-[200px]">
-          <img
-            :src="pengantinPria.urlPath"
-            alt="Qinvi Wedding Photos Groom"
-            width="200"
-          />
-          <p class="headline-7 text-blue-10 my-1">
-            {{ pengantinPria.namaLengkap }}
-          </p>
-          <p class="caption-11 text-blue-10">
-            <span class="caption-10">Putra dari : </span><br />
-            Bapak {{ pengantinPria.namaAyah }}
-            <br />
-            Ibu {{ pengantinPria.namaIbu }}
-          </p>
-        </div>
-        <p class="headline-15 text-green-40 absolute top-0 left-0 orientation">
-          THE GROOM
+        <p
+          data-aos="fade-up"
+          data-aos-duration="2500"
+          class="caption-1-local text-white text-center"
+        >
+          Kepada Bapak/Ibu/Saudara/i,
         </p>
-      </div>
-      <div
-        data-aos="fade-up"
-        data-aos-duration="2500"
-        class="flex flex-col items-end relative px-10"
-      >
-        <div class="flex flex-col max-w-[200px]">
-          <img
-            :src="pengantinWanita.urlPath"
-            alt="Qinvi Wedding Photos Groom"
-            width="200"
-          />
-          <p class="headline-7 text-blue-10">
-            {{ pengantinWanita.namaLengkap }}
-          </p>
-          <p class="caption-11 text-blue-10">
-            <span class="caption-10">Putri dari : </span><br />
-            Bapak {{ pengantinWanita.namaAyah }}
-            <br />
-            Ibu {{ pengantinWanita.namaIbu }}
-          </p>
-        </div>
-        <p class="headline-15 text-green-40 absolute top-0 right-0 orientation">
-          THE BRIDE
+        <p
+          data-aos="fade-up"
+          data-aos-duration="2500"
+          class="caption-1-local text-white text-center mt-2 mb-10"
+        >
+          {{ invitedPerson }}
+        </p>
+        <p
+          data-aos="fade-down"
+          data-aos-duration="2500"
+          class="caption-2-local text-white"
+        >
+          Dengan memohon rahmat dan ridho Allah SWT, kami memohon kehadiran
+          Bapak/Ibu/Saudara/i pada acara pernikahan kami:
+        </p>
+        <p
+          data-aos="fade-up"
+          data-aos-duration="5000"
+          class="caption-3-local text-white my-5"
+        >
+          {{ pengantinPria.namaLengkap }}
+        </p>
+        <p
+          data-aos="fade-down"
+          data-aos-duration="5500"
+          class="caption-4-local text-white"
+        >
+          Putra dari Bapak {{ pengantinPria.namaAyah }} dan <br />
+          Ibu {{ pengantinPria.namaIbu }}
+        </p>
+        <p
+          data-aos="fade-up"
+          data-aos-duration="2500"
+          class="body-1-local text-white mt-4"
+        >
+          dan
+        </p>
+        <p
+          data-aos="fade-down"
+          data-aos-duration="5000"
+          class="caption-3-local text-white my-5"
+        >
+          {{ pengantinWanita.namaLengkap }}
+        </p>
+        <p
+          data-aos="fade-up"
+          data-aos-duration="5500"
+          class="caption-4-local text-white"
+        >
+          Putri dari Bapak {{ pengantinWanita.namaAyah }} dan <br />
+          Ibu {{ pengantinWanita.namaIbu }}
+        </p>
+        <p
+          data-aos="fade-right"
+          data-aos-duration="2500"
+          class="caption-4-local text-white mt-10"
+        >
+          {{ tanggalResepsi }}
         </p>
       </div>
     </div>
@@ -177,11 +229,64 @@ onMounted(() => {
   background-image: url("@/assets/images/bg-events.webp");
   background-size: cover;
   background-position: center;
-  min-height: 1050px;
+  min-height: 681px;
 }
 
 .orientation {
   writing-mode: vertical-rl;
   text-orientation: upright;
+}
+
+.caption-1-local {
+  color: #fff;
+  text-align: center;
+  font-family: EB Garamond;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  /* 160% */
+}
+
+.caption-2-local {
+  color: #fff;
+  text-align: center;
+  font-family: "EB Garamond";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 150% */
+  text-transform: uppercase;
+}
+
+.caption-3-local {
+  color: #fff;
+  font-family: "EB Garamond";
+  text-align: center;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px; /* 150% */
+  text-transform: uppercase;
+}
+
+.caption-4-local {
+  color: #fff;
+  text-align: center;
+  font-family: "Monesta";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.body-1-local {
+  color: #fff;
+  text-align: center;
+  font-family: "Fleur De Leah";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 36px; /* 150% */
 }
 </style>

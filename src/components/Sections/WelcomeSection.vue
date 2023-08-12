@@ -96,17 +96,13 @@ onMounted(() => {
 </script>
 
 <template>
-  <div
-    class="flex flex-col w-full text-center bg-container justify-end text-white"
-  >
+  <div class="flex flex-col w-full text-center bg-container justify-end text-white">
     <p data-aos="fade-up" data-aos-duration="2500" class="headline-11">
       The Wedding Of <br />
       {{ mempelaiPria }} & {{ mempelaiWanita }}
     </p>
     <div class="flex flex-row justify-center mt-20 mb-7 caption-7">
-      <div
-        class="flex flex-row border-r border-white border-y px-6 py-1 space-x-6"
-      >
+      <div class="flex flex-row border-r border-white border-y px-6 py-1 space-x-6">
         <div class="flex flex-col">
           <p>
             {{ CountDownAkad.days }} <br />
@@ -142,5 +138,6 @@ onMounted(() => {
   background-size: cover;
   background-position: center;
   height: 600px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 </style>

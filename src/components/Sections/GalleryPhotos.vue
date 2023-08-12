@@ -56,7 +56,7 @@ onMounted(() => {
 
 <template>
   <div class="flex flex-col">
-    <div class="flex flex-col items-center py-6 relative bg-green-30 px-10">
+    <div class="flex flex-col items-center py-6 relative bg-gallery px-10">
       <p
         data-aos="fade-right"
         data-aos-duration="2500"
@@ -147,3 +147,11 @@ onMounted(() => {
     />
   </div>
 </template>
+
+<style scoped>
+.bg-gallery {
+  background-image: url("@/assets/images/bg-gallery.webp");
+  background-position: center;
+  background-size: cover;
+}
+</style>
