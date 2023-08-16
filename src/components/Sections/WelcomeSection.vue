@@ -1,150 +1,93 @@
-<script setup lang="ts">
-import { ref, onMounted } from "vue";
-import { useRoute } from "vue-router";
-import type { Ref } from "vue";
-import TimerCountDown from "@/components/TimerCountdown.vue";
-
-type acaraTypes = {
-  alamat: string;
-  createdAt: string;
-  id: number;
-  lokasi: string;
-  namaAcara: string;
-  tanggal: string;
-  updatedAt: string;
-  urlMap: string;
-  userId: number;
-  waktuMulai: string;
-  waktuSelesai: string;
-};
-
-type CountDownTypes = {
-  days: string | number;
-  hours: string | number;
-  minutes: string | number;
-  seconds: string | number;
-  counterFunction: number | undefined;
-};
-
-interface CoverInvitationProps {
-  acara: Array<acaraTypes>;
-}
-
-const props = defineProps<CoverInvitationProps>();
-const tanggalResepsi: Ref<string> = ref("-");
-const CountDownResepsi: Ref<CountDownTypes> = ref({
-  days: "0",
-  hours: "0",
-  minutes: "0",
-  seconds: "0",
-  counterFunction: 0,
-});
-
-const bindingData = (): void => {
-  props.acara.map((e: acaraTypes) => {
-    if (e.namaAcara.toLowerCase().includes("resepsi")) {
-      tanggalResepsi.value = e.tanggal;
-    }
-  });
-};
-
-const startCountDownResepsi = (): void => {
-  const myInterval = setInterval(() => {
-    const now = new Date().getTime();
-    const countDownDate = new Date(tanggalResepsi.value).getTime();
-
-    // Find the distance between now and the count down date
-    const distance = countDownDate - now;
-
-    if (distance > 0) {
-      // Time calculations for days, hours, minutes and seconds
-      CountDownResepsi.value.days = Math.floor(
-        distance / (1000 * 60 * 60 * 24)
-      );
-      CountDownResepsi.value.hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      );
-      CountDownResepsi.value.minutes = Math.floor(
-        (distance % (1000 * 60 * 60)) / (1000 * 60)
-      );
-      CountDownResepsi.value.seconds = Math.floor(
-        (distance % (1000 * 60)) / 1000
-      );
-    } else {
-      clearInterval(myInterval);
-    }
-  }, 1000);
-};
-
-const mempelaiPria: Ref<string> = ref("-");
-const mempelaiWanita: Ref<string> = ref("-");
-
-const route = useRoute();
-
-const splittingUsername = (username: string): void => {
-  const result = username.split("-");
-  mempelaiPria.value = result[0];
-  mempelaiWanita.value = result[1];
-};
-
-onMounted(() => {
-  const username: string | null = route.params?.username as string;
-  splittingUsername(username);
-  bindingData();
-  startCountDownResepsi();
-});
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div
-    class="flex flex-col w-full text-center bg-container justify-center text-white py-6"
+    class="flex flex-col w-full text-center bg-[#D8B7C5] justify-center text-white py-6 min-h-screen"
   >
     <div
       data-aos="zoom-in-up"
       data-aos-duration="1000"
-      class="flex flex-col bg-brown-10 opacity-90 mx-9 pb-10 pt-24 bg-container-shadow rounded-tema-jawa px-7"
+      class="flex flex-col items-center bg-[#5C2947] opacity-90 mx-4 bg-container-shadow rounded-tema-jawa relative"
     >
-      <p
-        data-aos="zoom-in-up"
-        data-aos-duration="2000"
-        class="headline-16 mb-4"
-      >
-        The Wedding Of
-      </p>
-      <p
-        data-aos="zoom-in-up"
-        data-aos-duration="2000"
-        class="headline-11 mb-10"
-      >
-        {{ mempelaiPria }} & {{ mempelaiWanita }}
-      </p>
-      <img
-        data-aos="zoom-in-up"
-        data-aos-duration="2000"
-        src="@/assets/images/p-spouses.webp"
-        alt="Qinvi Spouses"
-        class="rounded-xl"
-      />
-      <div class="flex flex-col justify-center items-center pt-10">
-        <TimerCountDown
-          :days="CountDownResepsi.days"
-          :hours="CountDownResepsi.hours"
-          :minutes="CountDownResepsi.minutes"
-          :seconds="CountDownResepsi.seconds"
-        />
+      <!--  -->
+      <div class="border border-white rounded-tema-jawa mx-3.5 my-3.5">
+        <div
+          class="flex flex-col items-center border border-white rounded-tema-jawa pb-10 px-7 mx-3 my-3"
+        >
+          <img
+            src="@/assets/images/flower-center.webp"
+            width="138"
+            class="mb-4"
+          />
+          <p class="header-local">
+            MITONI <br />
+            7 BULANAN
+          </p>
+          <p class="body-local my-2">26 Agustus 2023</p>
+          <p class="body-local italic">
+            Puji syukur kami panjatkan ke hadirat Tuhan YME, karena telah
+            memberikan karunia kepada kami berupa putri yang saat ini berusia 7
+            bulan dalam kandungan. Kami bersyukur dan berdoa semoga senantiasa
+            diberi kesahatan, keselamatan, dan selalu berada dalam
+            perlindungan-Nya. Kami juga berharap agar proses kelahiran putri
+            kami berjalan lancar.
+            <br />
+            Amin.
+            <br />
+            <br />
+            Kami juga ingin menyampaikan undangan istimewa kepada
+            Bapak/Ibu/Saudara/Saudari untuk hadir dalam acara spesial kami yang
+            akan berlangsung pada:
+            <br />
+            <br />
+
+            Hari/Tanggal: Sabtu, 26 Agustus
+            <br />
+            Waktu: 16.00 - 18.30
+            <br />
+            Tempat: Candi Ballroom, Hotel Padma, Lt. 1
+          </p>
+          <p class="body-local italic mt-4">Kami yang berbahagia</p>
+          <p class="body-local mb-4">Bella & Fredo</p>
+          <p class="body-local italic">Hormat Kami,</p>
+          <p class="body-local">
+            Kombes Pol Johanson Ronald Simamora SIK,SH,MH. dan Istri
+          </p>
+        </div>
       </div>
+      <img
+        src="@/assets/images/turtle.webp"
+        width="92"
+        class="absolute bottom-[18%] left-0 -z-10"
+      />
+      <img
+        src="@/assets/images/flower.webp"
+        width="98"
+        class="absolute bottom-0 right-0 -z-10"
+      />
     </div>
   </div>
 </template>
 
 <style scoped>
-.bg-container {
-  background-image: url("@/assets/images/bg-welcome.webp");
-  background-size: cover;
-  background-position: center;
-}
-
 .bg-container-shadow {
   box-shadow: 0px 0px 45px 1px rgba(0, 0, 0, 0.5);
+}
+
+.header-local {
+  text-align: center;
+  font-family: "Times New Roman";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.body-local {
+  text-align: center;
+  font-family: "Times New Roman";
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.33;
 }
 </style>

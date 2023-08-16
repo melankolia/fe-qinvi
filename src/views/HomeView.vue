@@ -1,226 +1,28 @@
 <script setup lang="ts">
-import { ref, onMounted, computed } from "vue";
+import { ref } from "vue";
 import type { Ref } from "vue";
 
 import WelcomeSection from "@/components/Sections/WelcomeSection.vue";
-// import CountdownSection from "@/components/Sections/CountdownSection.vue";
-import IntroductionFamilies from "@/components/Sections/IntroductionFamilies.vue";
-import WeddingEvents from "@/components/Sections/WeddingEvents.vue";
-import PresenceForm from "@/components/Sections/PresenceForm.vue";
-import ElectronicWallet from "@/components/Sections/ElectronicWallet.vue";
-import GalleryPhotos from "@/components/Sections/GalleryPhotos.vue";
-import PrayerWishes from "@/components/Sections/PrayerWishes.vue";
-import FooterSections from "@/components/Sections/FooterSections.vue";
-import FooterWeddings from "@/components/Sections/FooterWeddings.vue";
-import MenusFloating from "@/components/MenusFloating.vue";
-import WishesList from "@/components/Sections/WishesList.vue";
 import { useRoute } from "vue-router";
-import { useSnackbar } from "vue3-snackbar";
 import { useHead } from "unhead";
-
-import HomeService from "@/services/resources/home.service";
 
 const isOpen: Ref<boolean> = ref(false);
 const loading: Ref<boolean> = ref(false);
-const mempelaiPria: Ref<string> = ref("-");
-const mempelaiWanita: Ref<string> = ref("-");
-const fotoFooter: Ref<string> = ref("-");
 
 const route = useRoute();
-const snackbar = useSnackbar();
 
 const invitedPerson: string | null = route.query?.to as string | null;
-const isInvited = computed(() => {
-  return invitedPerson !== null;
-});
-
-interface dataPernikahanType {
-  // homeView: {
-  //   background: "/image.webp",
-  //   type: "image"
-  // };
-  // welcomeSection: {
-  //   background: "/image.webp",
-  //   type: "image"
-  // },
-  // galleryPhotos: {
-  //   background: "#768C6E",
-  //   type: "color"
-  // },
-  // IntroductionFamilies: {
-  //   background: "/image.webp",
-  //   type: "image"
-  // },
-  // weddingEvents: {
-  //   background: "/image.webp",
-  //   type: "image"
-  // },
-  // presenceForm: {
-  //   background: "#768C6E",
-  //   type: "color"
-  // },
-  // prayerWishes: {
-  //   background: "#FAFFD8",
-  //   type: "color"
-  // }
-  // wishesList: {
-  //   background: "#FAFFD8",
-  //   type: "color"
-  // },
-  // electronicWallet: {
-  //   background: "#768C6E",
-  //   type: "color"
-  // },
-  // footerWeddings: {
-  //   background: "/images/bg-thanks.webp",
-  //   type: "image"
-  // }
-  acara: Array<{
-    alamat: string;
-    createdAt: string;
-    id: number;
-    lokasi: string;
-    namaAcara: string;
-    tanggal: string;
-    updatedAt: string;
-    urlMap: string;
-    userId: number;
-    waktuMulai: string;
-    waktuSelesai: string;
-    ingatkanAcara: string;
-  }>;
-  ceritaCinta: Array<{
-    createdDate: string;
-    id: number;
-    isiCerita: string;
-    judul: string;
-    tanggal: string;
-    updatedDate: string;
-    userId: number;
-  }>;
-  gallery: string[];
-  pengantin: Array<{
-    createdAt: string;
-    gender: string;
-    id: number;
-    namaAyah: string;
-    namaIbu: string;
-    namaLengkap: string;
-    namaPanggilan: string;
-    updatedAt: string;
-    urlPath: string;
-    userId: string;
-  }>;
-  rekening: Array<{
-    createdAt: string;
-    id: number;
-    namaBank: string;
-    namaPemilik: string;
-    noRekening: string;
-    updatedAt: string;
-    userId: number;
-  }>;
-  tamu: {
-    createdAt: string;
-    domainUndangan: string;
-    id: number;
-    namaTamu: string;
-    noHandphone: string;
-    secureId: string;
-    statusUndangan: number;
-    tglKirimUndangan: string;
-    updatedAt: string;
-    userId: number;
-  };
-  ucapan: Array<{
-    createdAt: string;
-    id: number;
-    nama: string;
-    ucapan: string;
-    updatedAt: string;
-    userId: number;
-  }>;
-}
-
-const dataPernikahan: Ref<dataPernikahanType> = ref({
-  acara: [],
-  ceritaCinta: [],
-  gallery: [],
-  pengantin: [],
-  rekening: [],
-  tamu: {
-    createdAt: "",
-    domainUndangan: "",
-    id: 0,
-    namaTamu: "",
-    noHandphone: "",
-    secureId: "",
-    statusUndangan: 0,
-    tglKirimUndangan: "",
-    updatedAt: "",
-    userId: 0,
-  },
-  ucapan: [],
-});
 
 const handleClick = (): void => {
-  const id: string | string[] = route.params?.secureId;
   loading.value = true;
-
-  HomeService.getHome(id)
-    .then((result): void => {
-      const { data, status } = result;
-      if (status == 200) {
-        if (data.data?.gallery?.length > 0) {
-          fotoFooter.value = data.data?.gallery[data.data?.gallery.length - 1];
-        }
-
-        dataPernikahan.value = { ...data?.data } as dataPernikahanType;
-
-        isOpen.value = true;
-      } else {
-        console.error(data?.data?.message);
-        snackbar.add({
-          type: "error",
-          title: "Error",
-          text: "Gagal memuat data!",
-          group: "5862a88b",
-          count: 1,
-        });
-      }
-    })
-    .catch((err) => {
-      console.error(err);
-    })
-    .finally(() => (loading.value = false));
+  setTimeout(() => {
+    loading.value = false;
+    isOpen.value = true;
+  }, 2000);
 };
-
-const splittingUsername = (username: string): string => {
-  const result = username.split("-");
-  mempelaiPria.value = result[0];
-  mempelaiWanita.value = result[1];
-
-  return `The Wedding of ${result[0]} and ${result[1]}`;
-};
-
-const handleMenuClick = (e: string): void => {
-  const $element = document.getElementById(e);
-  if ($element) {
-    $element.scrollIntoView({
-      behavior: "smooth",
-      block: "center",
-      inline: "nearest",
-    });
-  }
-};
-
-onMounted(() => {
-  const username: string | null = route.params?.username as string;
-  splittingUsername(username);
-});
 
 useHead({
-  title: splittingUsername(route.params?.username as string),
+  title: "Mitoni Bella & Fredo",
 });
 </script>
 
@@ -228,51 +30,55 @@ useHead({
   <div class="flex flex-col mx-auto" style="max-width: 480px">
     <div
       v-if="!isOpen"
-      class="container flex flex-col h-screen justify-center px-8"
+      class="flex flex-col h-screen justify-center px-8 bg-[#5C2947] relative"
     >
       <div
         data-aos="zoom-in-up"
         data-aos-duration="1000"
-        class="flex flex-col items-center text-black background-linear rounded-full py-[71px]"
+        class="flex flex-col items-center text-black background-linear rounded-full py-[71px] z-10"
       >
         <p
           data-aos="zoom-in-up"
           data-aos-duration="2000"
-          class="headline-9 text-brown-10"
+          class="headline-9 text-white"
         >
-          PERNIKAHAN
+          UNDANGAN
         </p>
         <div
           data-aos="zoom-in-up"
           data-aos-duration="2000"
           class="flex flex-col items-center mt-8 mb-2.5"
         >
-          <p class="headline-2 text-center text-brown-10 uppercase">
-            {{ mempelaiPria }}
-          </p>
-          <p class="headline-2 text-center text-brown-10 uppercase">&</p>
-          <p class="headline-2 text-center text-brown-10 uppercase">
-            {{ mempelaiWanita }}
+          <p class="headline-2 text-center text-white uppercase">
+            Mitoni <br />
+            7 BUlanan
           </p>
         </div>
         <p
           data-aos="zoom-in-up"
           data-aos-duration="2000"
-          class="caption-6 text-brown-10 mb-11 mt-10"
+          class="caption-6 text-white mt-8"
         >
-          5 Agustus 2023
+          Bella & Fredo
         </p>
         <p
           data-aos="zoom-in-up"
           data-aos-duration="2000"
-          class="headline-9 text-brown-10"
+          class="caption-6 text-white mb-11 mt-10"
+        >
+          26 Agustus 2023
+        </p>
+        <p
+          data-aos="zoom-in-up"
+          data-aos-duration="2000"
+          class="headline-9 text-white"
         >
           KEPADA :
         </p>
         <p
           data-aos="zoom-in-up"
           data-aos-duration="2000"
-          class="caption-11 text-brown-10 mb-7 mt-2.5"
+          class="caption-11 text-white mb-7 mt-2.5"
         >
           {{ invitedPerson }}
         </p>
@@ -306,61 +112,22 @@ useHead({
           <p class="body-4 text-white">Buka Undangan</p>
         </button>
       </div>
+      <img
+        src="@/assets/images/bg-cover.webp"
+        class="absolute bottom-0 left-0"
+      />
     </div>
     <div
       class="flex flex-col mx-none md:mx-auto"
       v-else
       style="max-width: 480px"
     >
-      <WelcomeSection :acara="dataPernikahan.acara" id="welcomeSection" />
-      <IntroductionFamilies
-        id="mempelaiSection"
-        :tamu="dataPernikahan.tamu"
-        :pengantin="dataPernikahan.pengantin"
-      />
-      <img
-        src="@/assets/images/p-spouses-3.webp"
-        alt="Qinvi Wedding Photos Groom"
-      />
-      <!-- <CountdownSection
-        :mempelaiPria="mempelaiPria"
-        :mempelaiWanita="mempelaiWanita"
-        :acara="dataPernikahan.acara"
-        id="homeSection"
-      /> -->
-      <WeddingEvents id="acaraSection" :acara="dataPernikahan.acara" />
-      <div class="flex flex-col bg-combo px-8 pt-9">
-        <div
-          data-aos="zoom-in-up"
-          data-aos-duration="1000"
-          class="flex flex-col pt-20 bg-combo-linear rounded-tema-jawa mb-10"
-        >
-          <PresenceForm />
-          <PrayerWishes />
-          <WishesList :wishes="dataPernikahan.ucapan" />
-        </div>
-      </div>
-      <ElectronicWallet :rekening="dataPernikahan.rekening" />
-      <!-- <HealthProtocols /> -->
-      <img
-        src="@/assets/images/p-spouses-4.webp"
-        alt="Qinvi Wedding Photos Groom"
-      />
-      <GalleryPhotos id="gallerySection" :gallery="dataPernikahan.gallery" />
-      <FooterWeddings />
-      <FooterSections />
-      <MenusFloating @fnClick="(e) => handleMenuClick(e)" />
+      <WelcomeSection id="welcomeSection" />
     </div>
   </div>
 </template>
 
 <style scoped>
-.container {
-  background-image: url("@/assets/images/bg-cover.webp");
-  background-position: center;
-  background-size: cover;
-}
-
 .background-linear {
   background: linear-gradient(
     0deg,
@@ -370,7 +137,7 @@ useHead({
 }
 
 .bg-linear-btn {
-  background: linear-gradient(282.22deg, #000000 0%, #a98466 100%);
+  background: linear-gradient(347deg, #5c2947 99.99%, #a98466 100%);
 }
 
 .bg-combo {
