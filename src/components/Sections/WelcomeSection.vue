@@ -41,7 +41,7 @@
             <br />
             <br />
 
-            Hari/Tanggal: Sabtu, 26 Agustus
+            Hari/Tanggal: Sabtu, 26 Agustus 2023
             <br />
             Waktu: 16.00 - 18.30
             <br />
