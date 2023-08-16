@@ -3,6 +3,7 @@ import { ref } from "vue";
 import type { Ref } from "vue";
 
 import WelcomeSection from "@/components/Sections/WelcomeSection.vue";
+import ButtonMusic from "@/components/ButtonMusic.vue";
 import { useRoute } from "vue-router";
 import { useHead } from "unhead";
 
@@ -27,7 +28,7 @@ useHead({
 </script>
 
 <template>
-  <div class="flex flex-col mx-auto" style="max-width: 480px">
+  <div class="flex flex-col mx-auto relative" style="max-width: 480px">
     <div
       v-if="!isOpen"
       class="flex flex-col h-screen justify-center px-8 bg-[#5C2947] relative"
@@ -124,6 +125,7 @@ useHead({
     >
       <WelcomeSection id="welcomeSection" />
     </div>
+    <ButtonMusic v-if="isOpen" />
   </div>
 </template>
 
