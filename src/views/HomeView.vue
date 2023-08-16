@@ -124,8 +124,8 @@ useHead({
       style="max-width: 480px"
     >
       <WelcomeSection id="welcomeSection" />
+      <ButtonMusic />
     </div>
-    <ButtonMusic v-if="isOpen" />
   </div>
 </template>
 
