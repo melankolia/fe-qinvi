@@ -2,10 +2,10 @@
   <div
     data-aos="zoom-in-up"
     data-aos-duration="1000"
-    class="flex flex-col bg-[#5c2947] absolute right-4 bottom-24 rounded-full p-2 border border-white"
+    class="flex flex-col bg-[#5c2947] absolute right-4 bottom-24 rounded-full border border-white"
   >
     <button
-      class="flex flex-col items-center"
+      class="flex flex-col items-center m-2"
       @click="
         () => {
           changeStatePlay();

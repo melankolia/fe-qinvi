@@ -4,11 +4,16 @@ import type { Ref } from "vue";
 
 import WelcomeSection from "@/components/Sections/WelcomeSection.vue";
 import ButtonMusic from "@/components/ButtonMusic.vue";
+import HomeService from "@/services/resources/home.service";
+import { useSnackbar } from "vue3-snackbar";
+
+
 import { useRoute } from "vue-router";
 import { useHead } from "unhead";
 
 const isOpen: Ref<boolean> = ref(false);
 const loading: Ref<boolean> = ref(false);
+const snackbar = useSnackbar();
 
 const route = useRoute();
 
@@ -16,12 +21,28 @@ const invitedPerson: string | null = route.query?.to as string | null;
 
 const handleClick = (): void => {
   loading.value = true;
-  setTimeout(() => {
-    loading.value = false;
-    isOpen.value = true;
-  }, 2000);
-};
 
+  HomeService.getDemo()
+    .then((result): void => {
+      const { data, status } = result;
+      if (status == 200) {
+        isOpen.value = true;
+      } else {
+        console.error(data?.data?.message);
+        snackbar.add({
+          type: "error",
+          title: "Error",
+          text: "Gagal memuat data!",
+          group: "5862a88b",
+          count: 1,
+        });
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+    })
+    .finally(() => (loading.value = false));
+};
 useHead({
   title: "Mitoni Bella & Fredo",
 });

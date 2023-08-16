@@ -5,6 +5,9 @@ const HomeService = {
   getHome(id: any) {
     return MainInstance.fetch(MENU.GET_HOME, id, null);
   },
+  getDemo() {
+    return MainInstance.query(MENU.DEMO, null);
+  },
   postPresence(data: any, secureId: any) {
     return MainInstance.create(MENU.HADIR, secureId, data, null);
   },
