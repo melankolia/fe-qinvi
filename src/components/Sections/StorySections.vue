@@ -9,6 +9,7 @@ type ceritaCintaTypes = {
   tanggal: string;
   updatedDate: string;
   userId: number;
+  pathImg: string;
 };
 
 type ceritaCintaPropsType = {
@@ -27,9 +28,16 @@ const dateFilter = computed(() => {
 </script>
 
 <template>
-  <div class="px-4 pb-4 pt-8 bg-white">
+  <div class="px-4 pb-4 pt-8 bg-[#ffffffff]">
+    <p
+      data-aos="zoom-in-up"
+      data-aos-duration="2000"
+      class="headline-wish text-[#b5a088] mb-2 text-center"
+    >
+      Love Story
+    </p>
     <div class="container">
-      <div class="flex flex-col md:grid grid-cols-12 text-gray-50">
+      <div class="flex flex-col md:grid grid-cols-12 text-[#b5a088]">
         <div
           v-for="(e, i) in props.ceritaCinta"
           class="flex md:contents"
@@ -40,19 +48,20 @@ const dateFilter = computed(() => {
               class="w-4 flex items-center justify-center"
               :class="{ 'h-full': i !== props.ceritaCinta.length - 1 }"
             >
-              <div class="h-full w-1 bg-brown-90 pointer-events-none"></div>
+              <div class="h-full w-1 bg-[#b5a088] pointer-events-none"></div>
             </div>
             <div
-              class="w-4 h-4 absolute top-1 -mt-3 rounded-full bg-brown-90 shadow text-center"
+              class="w-4 h-4 absolute top-1 -mt-3 rounded-full bg-[#b5a088] shadow text-center"
             >
-              <i class="fas fa-check-circle text-white"></i>
+              <i class="fas fa-check-circle text-[#b5a088]"></i>
             </div>
           </div>
           <div class="col-start-4 col-end-12 rounded-xl mb-6 mr-auto w-full">
-            <p class="headline-5 text-brown-90 mb-4">
+            <img :src="e.pathImg" class="rounded-xl" />
+            <p class="headline-5 text-[#b5a088] my-4">
               {{ dateFilter(e.tanggal) }}
             </p>
-            <p class="caption-1 text-brown-90">
+            <p class="caption-1 text-[#b5a088]">
               {{ e.isiCerita }}
             </p>
           </div>

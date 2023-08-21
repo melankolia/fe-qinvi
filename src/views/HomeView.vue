@@ -7,7 +7,8 @@ import WelcomeSection from "@/components/Sections/WelcomeSection.vue";
 import IntroductionFamilies from "@/components/Sections/IntroductionFamilies.vue";
 import WeddingEvents from "@/components/Sections/WeddingEvents.vue";
 import PresenceForm from "@/components/Sections/PresenceForm.vue";
-import ElectronicWallet from "@/components/Sections/ElectronicWallet.vue";
+// import ElectronicWallet from "@/components/Sections/ElectronicWallet.vue";
+import StorySections from "@/components/Sections/StorySections.vue";
 import GalleryPhotos from "@/components/Sections/GalleryPhotos.vue";
 import PrayerWishes from "@/components/Sections/PrayerWishes.vue";
 import FooterSections from "@/components/Sections/FooterSections.vue";
@@ -97,6 +98,7 @@ interface dataPernikahanType {
     tanggal: string;
     updatedDate: string;
     userId: number;
+    pathImg: string;
   }>;
   gallery: string[];
   pengantin: Array<{
@@ -340,7 +342,7 @@ useHead({
           <WishesList :wishes="dataPernikahan.ucapan" />
         </div>
       </div>
-      <!-- <ElectronicWallet :rekening="dataPernikahan.rekening" /> -->
+      <StorySections :ceritaCinta="dataPernikahan.ceritaCinta" />
       <GalleryPhotos id="gallerySection" :gallery="dataPernikahan.gallery" />
       <FooterWeddings />
       <FooterSections />
