@@ -148,7 +148,7 @@ onMounted(() => {
           >
             {{ pengantinWanita.namaLengkap }}
           </p>
-          <p class="caption-10 text-brown-10">Putri Keempat dari :</p>
+          <p class="caption-10 text-brown-10">Putri Tunggal dari :</p>
           <p class="caption-10 text-brown-10">
             Bapak {{ pengantinWanita.namaAyah }}
           </p>
@@ -183,7 +183,7 @@ onMounted(() => {
           >
             {{ pengantinPria.namaLengkap }}
           </p>
-          <p class="caption-10 text-brown-10">Putra Pertama dari :</p>
+          <p class="caption-10 text-brown-10">Putra Kedua dari :</p>
           <p class="caption-10 text-brown-10">
             Bapak {{ pengantinPria.namaAyah }}
           </p>
