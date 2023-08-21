@@ -114,7 +114,11 @@ onMounted(() => {
           data-aos-duration="2000"
           class="mx-10 mb-10 mt-5 rounded-full"
         >
-          <img class="rounded-full" src="@/assets/images/p-spouses-2.webp" alt="Qinvi Spouses" />
+          <img
+            class="rounded-full"
+            src="https://ik.imagekit.io/qinvi/AhmadHusna/SEC%202.jpg?updatedAt=1692603425291"
+            alt="Qinvi Spouses"
+          />
         </div>
       </div>
     </div>

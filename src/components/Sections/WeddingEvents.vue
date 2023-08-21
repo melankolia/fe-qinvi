@@ -128,114 +128,125 @@ onMounted(() => {
       </div>
 
       <!-- Akad Nikah -->
-      <!-- <div
+      <div
         data-aos="zoom-in-up"
         data-aos-duration="2000"
-        class="flex flex-col items-center rounded-xl bg-akad py-14 mx-8"
+        class="bg-akad rounded-xl mx-8"
       >
-        <p class="headline-21 text-gold-10 mt-2 uppercase">Akad Nikah</p>
-        <hr class="border-gold-10 mt-5 mb-7" style="width: 40%" />
-        <p class="body-7 text-gold-10 my-2">{{ acaraAkad.hari }}</p>
-        <p class="body-7 text-gold-10 my-5">{{ acaraAkad.tanggal }}</p>
-        <p class="body-7 text-gold-10 my-2">{{ acaraAkad.jamMulai }} WIB</p>
-        <img
-          data-aos="zoom-in-up"
-          data-aos-duration="2000"
-          src="@/assets/images/img-building.png"
-          width="128"
-          alt="Qinvi Header Events"
-          class="my-7"
-        />
-        <p
-          class="body-7 text-gold-10 text-center mt-2 mb-6"
-          style="max-width: 300px"
-        >
-          {{ acaraAkad.lokasi }}
-        </p>
-        <p
-          class="body-8 text-gold-10 text-center mt-2 mb-6"
-          style="max-width: 300px"
-        >
-          {{ acaraAkad.alamat }}
-        </p>
         <div
-          data-aos="zoom-in-up"
-          data-aos-duration="2000"
-          class="flex flex-col items-center"
+          class="flex flex-col items-center rounded-xl bg-akad-overlay py-14"
         >
-          <button
-            @click="openMap(acaraAkad)"
-            class="button-date bg-linear-btn px-8 py-4 rounded-3xl flex flex-row justify-center items-center space-x-2.5 transition-all my-4 mx-6"
-          >
-            <p class="body-6 text-white">Lihat Lokasi</p>
-          </button>
-          <button
-            @click="openAcara(acaraAkad)"
+          <p class="headline-21 text-gold-10 mt-2 uppercase">Akad Nikah</p>
+          <hr class="border-gold-10 mt-5 mb-7" style="width: 40%" />
+          <p class="body-7 text-gold-10 my-2">{{ acaraAkad.hari }}</p>
+          <p class="body-7 text-gold-10 my-5">{{ acaraAkad.tanggal }}</p>
+          <p class="body-7 text-gold-10 my-2">{{ acaraAkad.jamMulai }} WIB</p>
+          <img
             data-aos="zoom-in-up"
             data-aos-duration="2000"
-            class="button-date bg-linear-btn px-8 py-4 rounded-3xl flex flex-row justify-center items-center space-x-2.5 transition-all my-4 mx-6"
+            src="@/assets/images/img-building.png"
+            width="128"
+            alt="Qinvi Header Events"
+            class="my-7"
+          />
+          <p
+            class="body-7 text-gold-10 text-center mt-2 mb-6"
+            style="max-width: 300px"
           >
-            <p class="body-6 text-white">Add to Calendar</p>
-          </button>
+            {{ acaraAkad.lokasi }}
+          </p>
+          <p
+            class="body-8 text-gold-10 text-center mt-2 mb-6"
+            style="max-width: 300px"
+          >
+            {{ acaraAkad.alamat }}
+          </p>
+          <div
+            data-aos="zoom-in-up"
+            data-aos-duration="2000"
+            class="flex flex-col items-center"
+          >
+            <button
+              @click="openMap(acaraAkad)"
+              class="button-date bg-linear-btn px-8 py-4 rounded-3xl flex flex-row justify-center items-center space-x-2.5 transition-all my-4 mx-6"
+            >
+              <p class="body-6 text-white">Lihat Lokasi</p>
+            </button>
+            <button
+              @click="openAcara(acaraAkad)"
+              data-aos="zoom-in-up"
+              data-aos-duration="2000"
+              class="button-date bg-linear-btn px-8 py-4 rounded-3xl flex flex-row justify-center items-center space-x-2.5 transition-all my-4 mx-6"
+            >
+              <p class="body-6 text-white">Add to Calendar</p>
+            </button>
+          </div>
         </div>
-      </div> -->
+      </div>
+      <!-- AKAD -->
 
       <!-- Resepsi -->
       <div
         data-aos="zoom-in-up"
         data-aos-duration="2000"
-        class="flex flex-col mt-2.5 items-center rounded-xl bg-resepsi py-14 mx-8"
+        class="bg-resepsi rounded-xl mx-8 mt-2.5"
       >
-        <p class="headline-21 text-gold-10 mt-2 uppercase text-center">
-          Resepsi <br />
-          Pernikahan
-        </p>
-        <hr class="border-gold-10 mt-5 mb-7" style="width: 40%" />
-        <p class="body-7 text-gold-10 my-2">{{ acaraResepsi.hari }}</p>
-        <p class="body-7 text-gold-10 my-5">{{ acaraResepsi.tanggal }}</p>
-        <p class="body-7 text-gold-10 my-2">{{ acaraResepsi.jamMulai }} WIB</p>
-        <p class="body-9 text-gold-10 my-2 text-center" style="">
-          (diawali dengan prosesi Pedang Pora)
-        </p>
-        <img
-          data-aos="zoom-in-up"
-          data-aos-duration="2000"
-          src="@/assets/images/img-building.png"
-          width="128"
-          alt="Qinvi Header Events"
-          class="my-7"
-        />
-        <p
-          class="body-7 text-gold-10 text-center mt-2 mb-6"
-          style="max-width: 300px"
-        >
-          {{ acaraResepsi.lokasi }}
-        </p>
-        <p
-          class="body-8 text-gold-10 text-center mt-2 mb-6"
-          style="max-width: 300px"
-        >
-          {{ acaraResepsi.alamat }}
-        </p>
         <div
-          data-aos="zoom-in-up"
-          data-aos-duration="2000"
-          class="flex flex-col items-center"
+          class="flex flex-col items-center rounded-xl bg-resepsi-overlay py-14"
         >
-          <button
-            @click="openMap(acaraResepsi)"
-            class="button-date bg-linear-btn px-8 py-4 rounded-3xl flex flex-row justify-center items-center space-x-2.5 transition-all my-4 mx-6"
-          >
-            <p class="body-6 text-white">Lihat Lokasi</p>
-          </button>
-          <button
-            @click="openAcara(acaraResepsi)"
+          <p class="headline-21 text-gold-10 mt-2 uppercase text-center">
+            Resepsi <br />
+            Pernikahan
+          </p>
+          <hr class="border-gold-10 mt-5 mb-7" style="width: 40%" />
+          <p class="body-7 text-gold-10 my-2">{{ acaraResepsi.hari }}</p>
+          <p class="body-7 text-gold-10 my-5">{{ acaraResepsi.tanggal }}</p>
+          <p class="body-7 text-gold-10 my-2">
+            {{ acaraResepsi.jamMulai }} WIB
+          </p>
+          <!-- <p class="body-9 text-gold-10 my-2 text-center" style="">
+          (diawali dengan prosesi Pedang Pora)
+        </p> -->
+          <img
             data-aos="zoom-in-up"
             data-aos-duration="2000"
-            class="button-date bg-linear-btn px-8 py-4 rounded-3xl flex flex-row justify-center items-center space-x-2.5 transition-all my-4 mx-6"
+            src="@/assets/images/img-building.png"
+            width="128"
+            alt="Qinvi Header Events"
+            class="my-7"
+          />
+          <p
+            class="body-7 text-gold-10 text-center mt-2 mb-6"
+            style="max-width: 300px"
           >
-            <p class="body-6 text-white">Add to Calendar</p>
-          </button>
+            {{ acaraResepsi.lokasi }}
+          </p>
+          <p
+            class="body-8 text-gold-10 text-center mt-2 mb-6"
+            style="max-width: 300px"
+          >
+            {{ acaraResepsi.alamat }}
+          </p>
+          <div
+            data-aos="zoom-in-up"
+            data-aos-duration="2000"
+            class="flex flex-col items-center"
+          >
+            <button
+              @click="openMap(acaraResepsi)"
+              class="button-date bg-linear-btn px-8 py-4 rounded-3xl flex flex-row justify-center items-center space-x-2.5 transition-all my-4 mx-6"
+            >
+              <p class="body-6 text-white">Lihat Lokasi</p>
+            </button>
+            <button
+              @click="openAcara(acaraResepsi)"
+              data-aos="zoom-in-up"
+              data-aos-duration="2000"
+              class="button-date bg-linear-btn px-8 py-4 rounded-3xl flex flex-row justify-center items-center space-x-2.5 transition-all my-4 mx-6"
+            >
+              <p class="body-6 text-white">Add to Calendar</p>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -249,15 +260,23 @@ onMounted(() => {
 }
 
 .bg-akad {
-  background-image: url("@/assets/images/bg-akad.webp");
+  background-image: url("https://ik.imagekit.io/qinvi/AhmadHusna/SEC%204.jpg?updatedAt=1692603476276");
   background-size: cover;
   background-position: center;
 }
 
+.bg-akad-overlay {
+  background: rgba(0, 0, 0, 0.5) !important;
+}
+
 .bg-resepsi {
-  background-image: url("@/assets/images/bg-resepsi.webp");
+  background-image: url("https://ik.imagekit.io/qinvi/AhmadHusna/319B63A1-DDF1-45B3-8531-1E7733DCEB19.JPG?updatedAt=1692603206664");
   background-size: cover;
   background-position: center;
+}
+
+.bg-resepsi-overlay {
+  background: rgba(0, 0, 0, 0.7) !important;
 }
 
 .bg-container-shadow {

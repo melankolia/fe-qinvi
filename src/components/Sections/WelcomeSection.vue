@@ -121,7 +121,7 @@ onMounted(() => {
       <img
         data-aos="zoom-in-up"
         data-aos-duration="2000"
-        src="@/assets/images/p-spouses.webp"
+        src="https://ik.imagekit.io/qinvi/AhmadHusna/SEC%201.jpg?updatedAt=1692603251480"
         alt="Qinvi Spouses"
         class="rounded-xl"
       />

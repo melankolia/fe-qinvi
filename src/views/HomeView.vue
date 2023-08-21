@@ -197,8 +197,8 @@ const handleClick = (): void => {
 
 const splittingUsername = (username: string): string => {
   const result = username.split("-");
-  mempelaiPria.value = result[0];
-  mempelaiWanita.value = result[1];
+  mempelaiPria.value = result[1];
+  mempelaiWanita.value = result[0];
 
   return `The Wedding of ${result[0]} and ${result[1]}`;
 };
@@ -248,11 +248,11 @@ useHead({
           class="flex flex-col items-center mt-8 mb-2.5"
         >
           <p class="headline-2 text-center text-brown-10 uppercase">
-            {{ mempelaiPria }}
+            {{ mempelaiWanita }}
           </p>
           <p class="headline-2 text-center text-brown-10 uppercase">&</p>
           <p class="headline-2 text-center text-brown-10 uppercase">
-            {{ mempelaiWanita }}
+            {{ mempelaiPria }}
           </p>
         </div>
         <p
@@ -260,7 +260,7 @@ useHead({
           data-aos-duration="2000"
           class="caption-6 text-brown-10 mb-11 mt-10"
         >
-          5 Agustus 2023
+          12 September 2023
         </p>
         <p
           data-aos="zoom-in-up"
@@ -319,7 +319,7 @@ useHead({
         :pengantin="dataPernikahan.pengantin"
       />
       <img
-        src="@/assets/images/p-spouses-3.webp"
+        src="https://ik.imagekit.io/qinvi/AhmadHusna/DSC_2135.jpg?updatedAt=1692604390365"
         alt="Qinvi Wedding Photos Groom"
       />
       <!-- <CountdownSection
@@ -340,12 +340,7 @@ useHead({
           <WishesList :wishes="dataPernikahan.ucapan" />
         </div>
       </div>
-      <ElectronicWallet :rekening="dataPernikahan.rekening" />
-      <!-- <HealthProtocols /> -->
-      <img
-        src="@/assets/images/p-spouses-4.webp"
-        alt="Qinvi Wedding Photos Groom"
-      />
+      <!-- <ElectronicWallet :rekening="dataPernikahan.rekening" /> -->
       <GalleryPhotos id="gallerySection" :gallery="dataPernikahan.gallery" />
       <FooterWeddings />
       <FooterSections />
