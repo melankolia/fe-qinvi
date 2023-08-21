@@ -87,7 +87,7 @@ onMounted(() => {
           data-aos-duration="2000"
           width="85"
           height="78"
-          src="@/assets/images/icon-sincan.webp"
+          src="@/assets/images/icon-sincan.png"
           alt="Qinvi Wedding Icon"
           class="mb-4 mt-10"
         />
