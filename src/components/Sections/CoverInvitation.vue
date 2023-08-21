@@ -102,8 +102,13 @@ onMounted(() => {
 
 <template>
   <div class="flex flex-col h-screen">
-    <div class="w-full h-2/3 md:h-2/3 bg-center bg-cover" :style="`background-image: url(${CoverImage})`" />
-    <div class="relative h-1/3 md:h-1/3 flex flex-col justify-center items-center bg-brown-10">
+    <div
+      class="w-full h-2/3 md:h-2/3 bg-center bg-cover"
+      :style="`background-image: url(${CoverImage})`"
+    />
+    <div
+      class="relative h-1/3 md:h-1/3 flex flex-col justify-center items-center bg-brown-10"
+    >
       <p class="caption-1 text-brown-70">We invite you to join our wedding</p>
       <div class="flex flex-row items-center space-x-3">
         <p class="headline-1 text-brown-70">{{ props.mempelaiPria }}</p>
@@ -112,11 +117,22 @@ onMounted(() => {
       </div>
       <p class="caption-1 text-brown-70">{{ tanggal }}</p>
       <img src="@/assets/images/Flower1.png" class="absolute w-full h-full" />
-      <TimerCountDown :days="CountDown.days" :hours="CountDown.hours" :minutes="CountDown.minutes"
-        :seconds="CountDown.seconds" />
-      <button @click="handleSave"
-        class="button-date bg-brown-70 py-1.5 px-3 rounded-2xl flex flex-row items-center space-x-2.5 z-10">
-        <img src="@/assets/icons/icon-calendar.png" class="brightness-0 invert" height="18" width="18" />
+      <TimerCountDown
+        :days="CountDown.days"
+        :hours="CountDown.hours"
+        :minutes="CountDown.minutes"
+        :seconds="CountDown.seconds"
+      />
+      <button
+        @click="handleSave"
+        class="button-date bg-brown-70 py-1.5 px-3 rounded-2xl flex flex-row items-center space-x-2.5 z-10"
+      >
+        <img
+          src="@/assets/icons/icon-calendar.png"
+          class="brightness-0 invert"
+          height="18"
+          width="18"
+        />
         <span class="body-2 text-white">Save the Date</span>
       </button>
     </div>

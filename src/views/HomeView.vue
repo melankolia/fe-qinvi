@@ -250,11 +250,11 @@ useHead({
           class="flex flex-col items-center mt-8 mb-2.5"
         >
           <p class="headline-2 text-center text-brown-10 uppercase">
-            {{ mempelaiWanita }}
+            {{ mempelaiPria }}
           </p>
           <p class="headline-2 text-center text-brown-10 uppercase">&</p>
           <p class="headline-2 text-center text-brown-10 uppercase">
-            {{ mempelaiPria }}
+            {{ mempelaiWanita }}
           </p>
         </div>
         <p

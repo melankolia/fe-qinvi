@@ -83,8 +83,8 @@ const route = useRoute();
 
 const splittingUsername = (username: string): void => {
   const result = username.split("-");
-  mempelaiPria.value = result[0];
-  mempelaiWanita.value = result[1];
+  mempelaiPria.value = result[1];
+  mempelaiWanita.value = result[0];
 };
 
 onMounted(() => {
