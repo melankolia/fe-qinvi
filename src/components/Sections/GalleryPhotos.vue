@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import { ref, onMounted, computed } from "vue";
+import ChevronLogo from "@/assets/right-chevron.svg";
+
+import { ref, onMounted } from "vue";
 import type { Ref } from "vue";
-import Swiper from "../../components/SwiperComp.vue";
+// import Swiper from "../../components/SwiperComp.vue";
 
 type GalleryPhotoPropsTypes = {
   gallery: string[];
@@ -24,7 +26,33 @@ const onHide = (): void => {
   visibleRef.value = false;
 };
 
+const image: Ref<HTMLElement | null> = ref(null);
+const containerImage: Ref<HTMLElement | null> = ref(null);
+
+const sliding: Ref<number> = ref(0);
+
+const handleNext = (): void => {
+  const containerWidth: number =
+    (containerImage.value && containerImage.value.offsetWidth) || 0;
+
+  if (sliding.value * -1 == containerWidth * (imgsRef.value.length - 1)) return;
+
+  sliding.value -= containerWidth;
+};
+
+const handlePrev = (): void => {
+  if (sliding.value >= 0) return;
+
+  const containerWidth: number =
+    (containerImage.value && containerImage.value.offsetWidth) || 0;
+  sliding.value += containerWidth;
+};
+
 onMounted(() => {
+  // setTimeout(() => {
+  //   image1.value && image1.value.classList.add("translateX");
+  //   image2.value && image2.value.classList.add("translateX");
+  // }, 3000);
   if (props.gallery.length > 0) {
     imgsRef.value = [...props.gallery];
     let midIndex = Math.ceil(imgsRef.value.length / 2);
@@ -46,19 +74,36 @@ onMounted(() => {
     <div
       class="flex flex-col items-center bg-gallery-ov p-4 overflow-hidden mt-8"
     >
-      <div style="max-width: 363px !important; overflow: hidden !important">
-        <Swiper
-          :imgRef="thumbnailVerticalRef"
-          @onShow="(e: any) => onShow(e)"
-        />
-      </div>
-      <div
-        class="mt-8"
-        style="max-width: 363px !important; overflow: hidden !important"
-      >
-        <Swiper
-          :imgRef="thumbnailLandscapeRef"
-          @onShow="(e: any) => onShow(e)"
+      <div ref="containerImage" class="flex flex-row overflow-hidden relative">
+        <div
+          class="flex flex-col justify-center absolute left-0 top-0 bottom-0 my-auto"
+        >
+          <button
+            @click="handlePrev"
+            class="button-date py-1.5 px-3 rounded-2xl flex flex-row items-center space-x-2.5 z-10"
+          >
+            <img :src="ChevronLogo" width="24" class="rotate-180" />
+          </button>
+        </div>
+        <div
+          class="flex flex-col justify-center absolute right-0 top-0 bottom-0 my-auto"
+        >
+          <button
+            @click="handleNext"
+            class="button-date py-1.5 px-3 rounded-2xl flex flex-row items-center space-x-2.5 z-10"
+          >
+            <img :src="ChevronLogo" width="24" />
+          </button>
+        </div>
+
+        <img
+          v-for="(e, i) in imgsRef"
+          ref="image"
+          class="image-slide"
+          :style="`transform: translateX(${sliding}px);`"
+          :src="e"
+          :key="i"
+          @click="onShow(i)"
         />
       </div>
     </div>
@@ -102,5 +147,10 @@ onMounted(() => {
   font-style: normal;
   font-weight: 400;
   line-height: 27px; /* 150% */
+}
+
+.image-slide {
+  transition: transform 1s;
+  object-fit: contain;
 }
 </style>
