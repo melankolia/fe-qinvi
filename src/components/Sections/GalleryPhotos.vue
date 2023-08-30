@@ -26,11 +26,11 @@ const onHide = (): void => {
   visibleRef.value = false;
 };
 
+// Vertical Slider
 const image: Ref<HTMLElement | null> = ref(null);
 const containerImage: Ref<HTMLElement | null> = ref(null);
 
 const sliding: Ref<number> = ref(0);
-
 const handleNext = (): void => {
   const containerWidth: number =
     (containerImage.value && containerImage.value.offsetWidth) || 0;
@@ -46,6 +46,29 @@ const handlePrev = (): void => {
   const containerWidth: number =
     (containerImage.value && containerImage.value.offsetWidth) || 0;
   sliding.value += containerWidth;
+};
+
+// Landscape Slider
+const slidingLandscape: Ref<number> = ref(0);
+const handleNextLandscape = (): void => {
+  const containerWidth: number =
+    (containerImage.value && containerImage.value.offsetWidth) || 0;
+
+  if (
+    slidingLandscape.value * -1 ==
+    containerWidth * (imgsRef.value.length - 1)
+  )
+    return;
+
+  slidingLandscape.value -= containerWidth;
+};
+
+const handlePrevLandscape = (): void => {
+  if (slidingLandscape.value >= 0) return;
+
+  const containerWidth: number =
+    (containerImage.value && containerImage.value.offsetWidth) || 0;
+  slidingLandscape.value += containerWidth;
 };
 
 onMounted(() => {
@@ -72,8 +95,9 @@ onMounted(() => {
   <div class="flex flex-col items-center bg-blue-10 px-10 py-6">
     <img class="my-11" src="@/assets/images/logo-wedding-2.png" width="114" />
     <div
-      class="flex flex-col items-center bg-gallery-ov p-4 overflow-hidden mt-8"
+      class="flex flex-col items-center bg-gallery-ov p-4 overflow-hidden my-8"
     >
+      <!-- Vertical Slider -->
       <div ref="containerImage" class="flex flex-row overflow-hidden relative">
         <div
           class="flex flex-col justify-center absolute left-0 top-0 bottom-0 my-auto"
@@ -97,10 +121,46 @@ onMounted(() => {
         </div>
 
         <img
-          v-for="(e, i) in imgsRef"
+          v-for="(e, i) in thumbnailVerticalRef"
           ref="image"
-          class="image-slide"
+          class="image-slide rounded-xl"
           :style="`transform: translateX(${sliding}px);`"
+          :src="e"
+          :key="i"
+          @click="onShow(i)"
+        />
+      </div>
+      <!-- Landscape Slider -->
+      <div
+        ref="containerImage"
+        class="flex flex-row overflow-hidden relative mt-8"
+      >
+        <div
+          class="flex flex-col justify-center absolute left-0 top-0 bottom-0 my-auto"
+        >
+          <button
+            @click="handlePrevLandscape"
+            class="button-date py-1.5 px-3 rounded-2xl flex flex-row items-center space-x-2.5 z-10"
+          >
+            <img :src="ChevronLogo" width="24" class="rotate-180" />
+          </button>
+        </div>
+        <div
+          class="flex flex-col justify-center absolute right-0 top-0 bottom-0 my-auto"
+        >
+          <button
+            @click="handleNextLandscape"
+            class="button-date py-1.5 px-3 rounded-2xl flex flex-row items-center space-x-2.5 z-10"
+          >
+            <img :src="ChevronLogo" width="24" />
+          </button>
+        </div>
+
+        <img
+          v-for="(e, i) in thumbnailLandscapeRef"
+          ref="image"
+          class="image-slide rounded-xl"
+          :style="`transform: translateX(${slidingLandscape}px);`"
           :src="e"
           :key="i"
           @click="onShow(i)"
