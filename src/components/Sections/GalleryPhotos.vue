@@ -35,7 +35,11 @@ const handleNext = (): void => {
   const containerWidth: number =
     (containerImage.value && containerImage.value.offsetWidth) || 0;
 
-  if (sliding.value * -1 == containerWidth * (imgsRef.value.length - 1)) return;
+  if (
+    sliding.value * -1 ==
+    containerWidth * (thumbnailVerticalRef.value.length - 1)
+  )
+    return;
 
   sliding.value -= containerWidth;
 };
@@ -49,14 +53,15 @@ const handlePrev = (): void => {
 };
 
 // Landscape Slider
+const containerImage2: Ref<HTMLElement | null> = ref(null);
 const slidingLandscape: Ref<number> = ref(0);
 const handleNextLandscape = (): void => {
   const containerWidth: number =
-    (containerImage.value && containerImage.value.offsetWidth) || 0;
+    (containerImage2.value && containerImage2.value.offsetWidth) || 0;
 
   if (
     slidingLandscape.value * -1 ==
-    containerWidth * (imgsRef.value.length - 1)
+    containerWidth * (thumbnailLandscapeRef.value.length - 1)
   )
     return;
 
@@ -67,7 +72,7 @@ const handlePrevLandscape = (): void => {
   if (slidingLandscape.value >= 0) return;
 
   const containerWidth: number =
-    (containerImage.value && containerImage.value.offsetWidth) || 0;
+    (containerImage2.value && containerImage2.value.offsetWidth) || 0;
   slidingLandscape.value += containerWidth;
 };
 
@@ -132,7 +137,7 @@ onMounted(() => {
       </div>
       <!-- Landscape Slider -->
       <div
-        ref="containerImage"
+        ref="containerImage2"
         class="flex flex-row overflow-hidden relative mt-8"
       >
         <div
