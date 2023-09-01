@@ -105,7 +105,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex flex-col">
+  <div class="flex flex-col bg-green-30">
     <div class="flex flex-col items-center p-8 bg-green-30 relative">
       <img
         data-aos="fade-up"
@@ -147,11 +147,18 @@ onMounted(() => {
         alt="Qinvi Wedding Icon Leaf"
       />
     </div>
-    <div class="flex flex-col justify-center px-6 relative bg-events">
+    <div
+      class="flex flex-col justify-center px-6 relative bg-events bg-green-30"
+    >
+      <img
+        src="@/assets/images/left-flower.webp"
+        width="120"
+        class="absolute left-0 top-0"
+      />
       <div
         data-aos="fade-right"
         data-aos-duration="2500"
-        class="flex flex-col relative mb-28"
+        class="flex flex-col items-center relative mb-28"
       >
         <p
           data-aos="fade-up"
@@ -175,6 +182,7 @@ onMounted(() => {
           Dengan memohon rahmat dan ridho Allah SWT, kami memohon kehadiran
           Bapak/Ibu/Saudara/i pada acara pernikahan kami:
         </p>
+        <img src="@/assets/images/p-spouse-1.png" width="128" class="mt-7" />
         <p
           data-aos="fade-up"
           data-aos-duration="5000"
@@ -197,6 +205,7 @@ onMounted(() => {
         >
           dan
         </p>
+        <img src="@/assets/images/p-spouse-2.png" width="128" class="mt-7" />
         <p
           data-aos="fade-down"
           data-aos-duration="5000"
@@ -226,9 +235,6 @@ onMounted(() => {
 
 <style scoped>
 .bg-events {
-  background-image: url("@/assets/images/bg-events.webp");
-  background-size: cover;
-  background-position: center;
   min-height: 681px;
 }
 
