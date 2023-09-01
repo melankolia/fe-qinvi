@@ -158,7 +158,7 @@ onMounted(() => {
       <div
         data-aos="fade-right"
         data-aos-duration="2500"
-        class="flex flex-col items-center relative mb-28"
+        class="flex flex-col items-center relative mb-16"
       >
         <p
           data-aos="fade-up"

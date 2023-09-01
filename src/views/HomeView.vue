@@ -224,7 +224,7 @@ useHead({
 </script>
 
 <template>
-  <div class="flex flex-col mx-auto" style="max-width: 480px">
+  <div class="flex flex-col mx-auto bg-green-30" style="max-width: 480px">
     <div
       v-if="!isOpen"
       class="container flex flex-col h-screen justify-between pt-9 pb-24"

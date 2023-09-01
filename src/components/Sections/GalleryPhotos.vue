@@ -57,6 +57,16 @@ onMounted(() => {
 <template>
   <div class="flex flex-col bg-green-30">
     <div class="flex flex-col items-center py-6 relative bg-green-30 px-10">
+      <img
+        src="@/assets/images/left-flower-gallery.webp"
+        width="135"
+        class="absolute left-0 top-5"
+      />
+      <img
+        src="@/assets/images/right-bot-flower-gallery.webp"
+        width="230"
+        class="absolute right-0 bottom-0"
+      />
       <p
         data-aos="fade-right"
         data-aos-duration="2500"
@@ -72,14 +82,83 @@ onMounted(() => {
         A successful marriage requires falling in love many times, always with
         the same person
       </p>
-      <img
-        data-aos="fade-down"
-        data-aos-duration="2500"
-        @click="onShow(0)"
-        :src="firstPhotos"
-        class="z-30"
-      />
+      <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
+        <img
+          data-aos="fade-down p-1"
+          data-aos-duration="2500"
+          :src="imgsRef[0]"
+          @click="onShow(0 + 1)"
+        />
+      </div>
+      <!--
       <div class="grid grid-cols-2">
+        <img
+          :data-aos="handleAnimation(i)"
+          data-aos-duration="2500"
+          v-for="(e, i) in thumbnailRef"
+          :key="i"
+          @click="onShow(i + 1)"
+          :src="e"
+          class="p-1"
+        />
+      </div>
+      <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
+        <img
+          data-aos="fade-down p-1"
+          data-aos-duration="2500"
+          :src="imgsRef[0]"
+          @click="onShow(0 + 1)"
+        />
+      </div>
+      <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
+        <img
+          data-aos="fade-down p-1"
+          data-aos-duration="2500"
+          :src="imgsRef[0]"
+          @click="onShow(0 + 1)"
+        />
+      </div>
+      <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
+        <img
+          data-aos="fade-down p-1"
+          data-aos-duration="2500"
+          :src="imgsRef[0]"
+          @click="onShow(0 + 1)"
+        />
+      </div>
+      <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
+        <img
+          data-aos="fade-down p-1"
+          data-aos-duration="2500"
+          :src="imgsRef[0]"
+          @click="onShow(0 + 1)"
+        />
+      </div>
+      <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
+        <img
+          data-aos="fade-down p-1"
+          data-aos-duration="2500"
+          :src="imgsRef[0]"
+          @click="onShow(0 + 1)"
+        />
+      </div>
+      <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
+        <img
+          data-aos="fade-down p-1"
+          data-aos-duration="2500"
+          :src="imgsRef[0]"
+          @click="onShow(0 + 1)"
+        />
+      </div>
+      <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
+        <img
+          data-aos="fade-down p-1"
+          data-aos-duration="2500"
+          :src="imgsRef[0]"
+          @click="onShow(0 + 1)"
+        />
+      </div> -->
+      <!-- <div class="grid grid-cols-2">
         <img
           :data-aos="handleAnimation(i)"
           data-aos-duration="2500"
@@ -89,7 +168,7 @@ onMounted(() => {
           @click="onShow(i + 1)"
           :src="e"
         />
-      </div>
+      </div> -->
       <div v-if="loading" class="flex flex-col items-center">
         <svg
           class="animate-spin mb-4 mt-6 h-8 w-8 text-white"

@@ -56,7 +56,17 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex flex-col items-center px-4 bg-wedding bg-white">
+  <div class="flex flex-col items-center px-4 bg-wedding bg-green-30 relative">
+    <img
+      src="@/assets/images/left-top-flower-event.webp"
+      class="absolute top-24 left-0"
+      width="100"
+    />
+    <img
+      src="@/assets/images/right-bot-flower-gallery.webp"
+      width="230"
+      class="absolute right-0 bottom-0"
+    />
     <img
       data-aos="fade-up"
       data-aos-duration="2500"
@@ -155,9 +165,6 @@ onMounted(() => {
 
 <style scoped>
 .bg-wedding {
-  background-image: url("@/assets/images/bg-wedding.webp");
-  background-position: center;
-  background-size: cover;
   min-height: 940px;
 }
 </style>

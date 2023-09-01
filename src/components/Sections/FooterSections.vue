@@ -1,5 +1,16 @@
 <template>
-  <div class="flex flex-col items-center bg-green-30 px-4 py-6 min-h-[140px]">
-    <p class="caption-1 text-white">created with 💛 qinvi</p>
+  <div class="flex flex-col items-center bg-green-30 px-2 py-6 min-h-[140px]">
+    <p class="caption-local text-white mt-8 mb-20">QINVI</p>
   </div>
 </template>
+
+<style scoped>
+.caption-local {
+  color: #fff;
+  font-family: "TAN - PEARL";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+</style>
