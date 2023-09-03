@@ -196,8 +196,8 @@ const handleClick = (): void => {
 
 const splittingUsername = (username: string): string => {
   const result = username.split("-");
-  mempelaiPria.value = result[0];
-  mempelaiWanita.value = result[1];
+  mempelaiPria.value = result[1];
+  mempelaiWanita.value = result[0];
 
   return `The Wedding of ${result[0]} and ${result[1]}`;
 };
@@ -241,7 +241,7 @@ useHead({
           {{ mempelaiPria }} dan {{ mempelaiWanita }}
         </p>
         <p data-aos="fade-down" data-aos-duration="3000" class="caption-6">
-          30.04.2022
+          17.11.2023
         </p>
       </div>
       <button
