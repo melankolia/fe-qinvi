@@ -130,7 +130,7 @@ onMounted(() => {
         <p class="body-2 text-black">Lihat Potret Kami</p>
       </button>
 
-      <p
+      <!-- <p
         data-aos="fade-right"
         data-aos-duration="2500"
         class="headline-14 text-white mt-10 mb-8"
@@ -148,7 +148,7 @@ onMounted(() => {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         class="rounded-lg mb-4"
-      />
+      /> -->
     </div>
     <vue-easy-lightbox
       :visible="visibleRef"
