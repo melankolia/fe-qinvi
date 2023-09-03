@@ -90,7 +90,6 @@ onMounted(() => {
           @click="onShow(0 + 1)"
         />
       </div>
-      <!--
       <div class="grid grid-cols-2">
         <img
           :data-aos="handleAnimation(i)"
@@ -102,73 +101,6 @@ onMounted(() => {
           class="p-1"
         />
       </div>
-      <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
-        <img
-          data-aos="fade-down p-1"
-          data-aos-duration="2500"
-          :src="imgsRef[0]"
-          @click="onShow(0 + 1)"
-        />
-      </div>
-      <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
-        <img
-          data-aos="fade-down p-1"
-          data-aos-duration="2500"
-          :src="imgsRef[0]"
-          @click="onShow(0 + 1)"
-        />
-      </div>
-      <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
-        <img
-          data-aos="fade-down p-1"
-          data-aos-duration="2500"
-          :src="imgsRef[0]"
-          @click="onShow(0 + 1)"
-        />
-      </div>
-      <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
-        <img
-          data-aos="fade-down p-1"
-          data-aos-duration="2500"
-          :src="imgsRef[0]"
-          @click="onShow(0 + 1)"
-        />
-      </div>
-      <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
-        <img
-          data-aos="fade-down p-1"
-          data-aos-duration="2500"
-          :src="imgsRef[0]"
-          @click="onShow(0 + 1)"
-        />
-      </div>
-      <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
-        <img
-          data-aos="fade-down p-1"
-          data-aos-duration="2500"
-          :src="imgsRef[0]"
-          @click="onShow(0 + 1)"
-        />
-      </div>
-      <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
-        <img
-          data-aos="fade-down p-1"
-          data-aos-duration="2500"
-          :src="imgsRef[0]"
-          @click="onShow(0 + 1)"
-        />
-      </div> -->
-      <!-- <div class="grid grid-cols-2">
-        <img
-          :data-aos="handleAnimation(i)"
-          data-aos-duration="2500"
-          v-for="(e, i) in thumbnailRef"
-          loading="lazy"
-          :key="i"
-          @click="onShow(i + 1)"
-          :src="e"
-        />
-      </div> -->
       <div v-if="loading" class="flex flex-col items-center">
         <svg
           class="animate-spin mb-4 mt-6 h-8 w-8 text-white"
