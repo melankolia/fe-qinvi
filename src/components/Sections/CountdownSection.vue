@@ -94,39 +94,65 @@ onMounted(() => {
 </script>
 
 <template>
-  <div
-    class="h-1/3 md:h-1/3 flex flex-col justify-center items-center bg-white py-8 container"
-  >
-    <p
-      data-aos="fade-right"
-      data-aos-duration="2500"
-      class="headline-6 text-blue-10"
+  <div class="h-1/3 md:h-1/3 flex flex-col py-8">
+    <div class="flex flex-row w-full justify-between pl-4">
+      <p
+        data-aos="fade-right"
+        data-aos-duration="2500"
+        class="headline-6-local text-black"
+      >
+        Save The
+        <br />
+        Date
+      </p>
+      <div class="flex flex-col min-w-[60%] justify-center">
+        <div class="flex flex-row border-t border-t-black"></div>
+      </div>
+    </div>
+    <div
+      class="flex flex-col justify-center border-b border-b-black w-full mt-6 mb-10"
     >
-      Countdown
-    </p>
-    <TimerCountDown
-      :days="CountDown.days"
-      :hours="CountDown.hours"
-      :minutes="CountDown.minutes"
-      :seconds="CountDown.seconds"
-    />
-    <p class="caption-1 text-blue-10 mb-4">{{ tanggal }}</p>
+      <TimerCountDown
+        :days="CountDown.days"
+        :hours="CountDown.hours"
+        :minutes="CountDown.minutes"
+        :seconds="CountDown.seconds"
+      />
+    </div>
     <button
       @click="handleSave"
-      class="button-date bg-blue-10 border border-white py-1.5 px-3 rounded-2xl flex flex-row items-center space-x-2.5 z-10"
+      class="bg-[#F8F4EA] border border-white py-1.5 px-3 mx-10 rounded-lg space-x-2.5 z-10"
     >
-      <span class="body-2 text-white">Save the Date</span>
+      <span class="body-2-local text-black text-center">Save The Date</span>
     </button>
   </div>
 </template>
 
 <style scoped>
-.container {
-  background-image: url("@/assets/images/bg-countdown.webp");
+/* .container { */
+/* background-image: url("@/assets/images/bg-countdown.webp");
   background-position: center;
-  background-size: cover;
-}
-.button-date {
+  background-size: cover; */
+/* } */
+/* .button-date {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1), 0px 4px 20px rgba(0, 0, 0, 0.1);
+} */
+
+.headline-6-local {
+  text-align: right;
+  font-family: "Poppins";
+  font-size: 29.9px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 48.86px;
+}
+
+.body-2-local {
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 17.55px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 </style>

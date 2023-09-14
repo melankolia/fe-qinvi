@@ -27,6 +27,13 @@ const tanggal: Ref<string> = ref("-");
 
 const bindingData = (): void => {
   props.acara.map((e: acaraTypes) => {
+    e.waktuMulai = `${e.waktuMulai.split(":")[0]}:${
+      e.waktuMulai.split(":")[1]
+    }`;
+
+    e.waktuSelesai = `${e.waktuSelesai.split(":")[0]}:${
+      e.waktuSelesai.split(":")[1]
+    }`;
     if (e.namaAcara?.toLowerCase().includes("resepsi")) {
       tanggal.value = new Date(e.tanggal).toLocaleDateString("id-ID", {
         weekday: "long",
@@ -42,12 +49,40 @@ const openMap = (e: acaraTypes): void => {
   window.open(e.urlMap);
 };
 
-const invitedPerson: string | null = route.query?.to as string | null;
-
 const handleSave = (): void => {
   window.open(
     "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MW4zdjVrcmVqOWI5cW5icTBvZ2NrdmU5NjIgYWRtLnFpbnZpQG0&tmsrc=adm.qinvi%40gmail.com"
   );
+};
+
+const getDay = (e: string, type: string): string | null => {
+  if (!e) return null;
+
+  if (type == "name") {
+    return new Date(e).toLocaleDateString("en-US", {
+      weekday: "long",
+    });
+  }
+
+  return new Date(e).toLocaleDateString("en-US", {
+    day: "numeric",
+  });
+};
+
+const getMonth = (e: string): string | null => {
+  if (!e) return null;
+
+  return new Date(e).toLocaleDateString("en-US", {
+    month: "long",
+  });
+};
+
+const getYear = (e: string): string | null => {
+  if (!e) return null;
+
+  return new Date(e).toLocaleDateString("en-US", {
+    year: "numeric",
+  });
 };
 
 onMounted(() => {
@@ -56,100 +91,68 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex flex-col items-center px-4 bg-wedding bg-green-30 relative">
-    <img
-      src="@/assets/images/left-top-flower-event.webp"
-      class="absolute top-24 left-0"
-      width="100"
-    />
-    <img
-      src="@/assets/images/right-bot-flower-gallery.webp"
-      width="230"
-      class="absolute right-0 bottom-0"
-    />
-    <img
-      data-aos="fade-up"
-      data-aos-duration="2500"
-      src="@/assets/images/img-header.webp"
-      width="300"
-      alt="Qinvi Header Events"
-      class="-mt-4 mb-1"
-    />
+  <div
+    class="flex flex-col items-center px-4 bg-wedding relative w-max-[331px]"
+  >
     <p
       data-aos="fade-up"
       data-aos-duration="2500"
-      class="body-2 text-white text-center"
+      class="title-1-local text-black text-center my-6"
     >
-      Kepada Bapak/Ibu/Saudara/i,
+      The Wedding Day
     </p>
     <p
       data-aos="fade-up"
       data-aos-duration="2500"
-      class="body-2 text-white text-center my-2"
+      class="body-2-local text-black text-center mx-12 mb-12"
     >
-      {{ invitedPerson }}
+      Dengan segala kerendahan hati dan dengan ungkapan syukur atas karunia
+      Tuhan, kami hendak menyampaikan kabar bahagia pernikahan kami
     </p>
-    <p
-      data-aos="fade-up"
-      data-aos-duration="2500"
-      class="body-2 text-white text-center"
-    >
-      Dengan memohon rahmat dan ridho Allah Subhanahu wa Ta'ala, kami memohon
-      kehadiran Bapak/Ibu/Saudara/i pada acara pernikahan kami:
-    </p>
-    <div class="flex flex-col items-center my-4">
-      <img
-        src="@/assets/images/img-leaf-events.webp"
-        width="186"
-        alt="Qinvi Image Leaf"
-      />
-      <p class="body-2 text-white my-2">{{ tanggal }}</p>
-      <img
-        src="@/assets/images/img-leaf-events.webp"
-        width="186"
-        alt="Qinvi Image Leaf"
-      />
-    </div>
-    <img
-      data-aos="fade-up"
-      data-aos-duration="2500"
-      width="85"
-      height="78"
-      src="@/assets/images/icon-sincan.webp"
-      alt="Qinvi Wedding Icon"
-      class="my-4"
-    />
     <template v-for="(e, i) in props.acara" :key="i">
       <div
         data-aos="fade-down"
         data-aos-duration="2500"
-        class="flex flex-col items-center rounded-xl"
+        class="container-event flex flex-col items-center rounded-xl mb-8"
       >
-        <p class="headline-6 text-white my-2">{{ e.namaAcara }}</p>
-        <!-- <p class="body-2 text-white">Pukul : {{ e.waktuMulai }} WIB</p> -->
-        <p class="body-2 text-white text-center" style="max-width: 300px">
-          Tempat : <br />
-        </p>
-        <p class="body-2 text-white text-center my-2" style="max-width: 300px">
-          {{ e.alamat }}
-        </p>
-      </div>
-      <div
-        data-aos="fade-up"
-        data-aos-duration="2500"
-        class="flex flex-col items-center"
-      >
-        <button
-          @click="openMap(e)"
-          class="button-date drop-shadow-md bg-yellow-20 border border-white mt-2 mb-6 py-1.5 px-3 rounded-2xl flex flex-row items-center space-x-2.5"
-        >
-          <img
-            src="@/assets/icons/icon-locations.png"
-            width="18"
-            height="15.5"
-          />
-          <p class="body-2 text-black">Lihat Peta</p>
-        </button>
+        <p class="title-2-local text-black mb-6 mt-5">{{ e.namaAcara }}</p>
+        <div class="flex flex-row">
+          <div class="flex flex-col border-r border-r-black text-black px-2">
+            <p class="body-3-local">{{ getDay(e.tanggal, "name") }}</p>
+            <p class="body-4-local">{{ getDay(e.tanggal, "number") }}</p>
+            <p class="body-3-local">{{ getMonth(e.tanggal) }}</p>
+            <p class="body-3-local">{{ getYear(e.tanggal) }}</p>
+          </div>
+          <div class="flex flex-col text-center px-2">
+            <p class="title-3-local text-black my-2" style="max-width: 300px">
+              {{ e.lokasi }}
+            </p>
+            <p
+              class="body-5-local text-[#404040;] my-2"
+              style="max-width: 300px"
+            >
+              {{ e.alamat }}
+            </p>
+            <p class="body-5-local text-black my-2" style="max-width: 300px">
+              {{ e.waktuMulai }} - {{ e.waktuSelesai }} WIB
+            </p>
+            <div
+              data-aos="fade-up"
+              data-aos-duration="2500"
+              class="flex flex-col"
+            >
+              <button
+                @click="openMap(e)"
+                class="bg-[#F8F4EA] border border-white mb-6 py-1.5 px-3 rounded-lg space-x-2.5 z-10"
+              >
+                <span class="body-2-local text-black text-center">
+                  View Maps
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <img src="@/assets/images/p-wedding-events.webp" />
       </div>
     </template>
     <button
@@ -164,7 +167,74 @@ onMounted(() => {
 </template>
 
 <style scoped>
+.container-event {
+  border-radius: 16px 16px 0px 0px;
+  background: #fffdfb;
+  box-shadow: 0px 1px 16px 0px rgba(0, 0, 0, 0.08);
+}
 .bg-wedding {
   min-height: 940px;
+}
+
+.title-1-local {
+  text-align: center;
+  font-family: "Pinyon Script";
+  font-size: 33.9px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 53px;
+}
+
+.title-2-local {
+  text-align: center;
+  font-family: "Pinyon Script";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 43.26px;
+}
+
+.title-3-local {
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 21.55px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 30.17px;
+}
+
+.body-2-local {
+  text-align: center;
+  font-family: "EB Garamond";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24.57px;
+}
+
+.body-3-local {
+  font-family: "Poppins";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 24.57px;
+}
+
+.body-4-local {
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 60px;
+}
+
+.body-5-local {
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 21.77px;
 }
 </style>

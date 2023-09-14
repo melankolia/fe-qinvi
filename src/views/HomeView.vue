@@ -3,7 +3,7 @@ import { ref, onMounted, computed } from "vue";
 import type { Ref } from "vue";
 
 import WelcomeSection from "@/components/Sections/WelcomeSection.vue";
-// import CountdownSection from "@/components/Sections/CountdownSection.vue";
+import CountdownSection from "@/components/Sections/CountdownSection.vue";
 import IntroductionFamilies from "@/components/Sections/IntroductionFamilies.vue";
 import WeddingEvents from "@/components/Sections/WeddingEvents.vue";
 import PresenceForm from "@/components/Sections/PresenceForm.vue";
@@ -224,7 +224,7 @@ useHead({
 </script>
 
 <template>
-  <div class="flex flex-col mx-auto bg-green-30" style="max-width: 480px">
+  <div class="flex flex-col mx-auto bg-white" style="max-width: 480px">
     <div
       v-if="!isOpen"
       class="container flex flex-col h-screen justify-between pt-9 pb-24"
@@ -293,14 +293,14 @@ useHead({
         :pengantin="dataPernikahan.pengantin"
         :acara="dataPernikahan.acara"
       />
-      <GalleryPhotos id="gallerySection" :gallery="dataPernikahan.gallery" />
-      <!-- <CountdownSection
+      <CountdownSection
         :mempelaiPria="mempelaiPria"
         :mempelaiWanita="mempelaiWanita"
         :acara="dataPernikahan.acara"
         id="homeSection"
-      /> -->
-      <WeddingEvents id="acaraSection" :acara="dataPernikahan.acara" />
+      /><WeddingEvents id="acaraSection" :acara="dataPernikahan.acara" />
+      <GalleryPhotos id="gallerySection" :gallery="dataPernikahan.gallery" />
+
       <PresenceForm />
       <PrayerWishes />
       <WishesList :wishes="dataPernikahan.ucapan" />

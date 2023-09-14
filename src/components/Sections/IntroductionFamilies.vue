@@ -105,8 +105,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex flex-col bg-green-30">
-    <div class="flex flex-col items-center p-8 bg-green-30 relative">
+  <div class="flex flex-col">
+    <!-- <div class="flex flex-col items-center p-8 bg-green-30 relative">
       <img
         data-aos="fade-up"
         data-aos-duration="2500"
@@ -116,24 +116,7 @@ onMounted(() => {
         alt="Qinvi Wedding Icon"
         class="my-4"
       />
-      <p
-        data-aos="fade-down"
-        data-aos-duration="2500"
-        class="caption-8 text-white"
-      >
-        Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
-        pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan
-        merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan
-        sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda
-        (kebesaran Allah) bagi kaum yang berpikir.
-      </p>
-      <p
-        data-aos="fade-down"
-        data-aos-duration="2500"
-        class="caption-8 text-white pt-4"
-      >
-        - QS. Ar-Rum 21 -
-      </p>
+
       <img
         width="100"
         class="h-[103px] absolute top-0 left-0"
@@ -146,15 +129,10 @@ onMounted(() => {
         src="@/assets/images/bg-leaf-r.webp"
         alt="Qinvi Wedding Icon Leaf"
       />
-    </div>
+    </div> -->
     <div
-      class="flex flex-col justify-center px-6 relative bg-events bg-green-30"
+      class="flex flex-col justify-center py-14 px-6 relative bg-events bg-white"
     >
-      <img
-        src="@/assets/images/left-flower.webp"
-        width="120"
-        class="absolute left-0 top-0"
-      />
       <div
         data-aos="fade-right"
         data-aos-duration="2500"
@@ -163,37 +141,90 @@ onMounted(() => {
         <p
           data-aos="fade-up"
           data-aos-duration="2500"
-          class="caption-1-local text-white text-center"
+          class="caption-1-local text-black text-center"
         >
-          Kepada Bapak/Ibu/Saudara/i,
+          Kepada Bapak/Ibu/
+          <br />
+          Saudara/i,
         </p>
         <p
           data-aos="fade-up"
           data-aos-duration="2500"
-          class="caption-1-local text-white text-center mt-2 mb-10"
+          class="caption-1-local text-black text-center mt-2 mb-5"
         >
           {{ invitedPerson }}
         </p>
         <p
           data-aos="fade-down"
           data-aos-duration="2500"
-          class="caption-2-local text-white"
+          class="caption-2-local text-black mb-4"
         >
           Dengan memohon rahmat dan ridho Allah SWT, kami memohon kehadiran
           Bapak/Ibu/Saudara/i pada acara pernikahan kami:
         </p>
-        <img src="@/assets/images/p-spouse-1.png" width="128" class="mt-7" />
         <p
           data-aos="fade-up"
           data-aos-duration="5000"
-          class="caption-3-local text-white my-5"
+          class="caption-6-local text-black"
+        >
+          {{ pengantinPria.namaLengkap }}
+        </p>
+        <p
+          data-aos="fade-up"
+          data-aos-duration="5000"
+          class="caption-dan-local text-black my-1"
+        >
+          dan
+        </p>
+        <p
+          data-aos="fade-up"
+          data-aos-duration="5000"
+          class="caption-6-local text-black"
+        >
+          {{ pengantinWanita.namaLengkap }}
+        </p>
+        <p
+          data-aos="fade-right"
+          data-aos-duration="2500"
+          class="caption-4-local text-black mt-5 mb-8"
+        >
+          {{ tanggalResepsi }}
+        </p>
+        <p
+          data-aos="fade-down"
+          data-aos-duration="2500"
+          class="caption-5-local text-black"
+        >
+          Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
+          pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung
+          dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa
+          kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat
+          tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.
+        </p>
+        <p
+          data-aos="fade-down"
+          data-aos-duration="2500"
+          class="caption-5-local text-black pt-4"
+        >
+          - QS. Ar-Rum 21 -
+        </p>
+        <img
+          src="@/assets/images/p-spouse-1.png"
+          width="128"
+          class="mt-16"
+          style="border-radius: 50%"
+        />
+        <p
+          data-aos="fade-up"
+          data-aos-duration="5000"
+          class="caption-3-local text-black my-5"
         >
           {{ pengantinPria.namaLengkap }}
         </p>
         <p
           data-aos="fade-down"
           data-aos-duration="5500"
-          class="caption-4-local text-white"
+          class="caption-4-local text-black"
         >
           Putra dari Bapak {{ pengantinPria.namaAyah }} dan <br />
           Ibu {{ pengantinPria.namaIbu }}
@@ -201,34 +232,36 @@ onMounted(() => {
         <p
           data-aos="fade-up"
           data-aos-duration="2500"
-          class="body-1-local text-white mt-4"
+          class="body-1-local text-black mt-4"
         >
           dan
         </p>
-        <img src="@/assets/images/p-spouse-2.png" width="128" class="mt-7" />
+        <img
+          src="@/assets/images/p-spouse-2.png"
+          width="128"
+          class="mt-7"
+          style="border-radius: 50%"
+        />
         <p
           data-aos="fade-down"
           data-aos-duration="5000"
-          class="caption-3-local text-white my-5"
+          class="caption-3-local text-black my-5"
         >
           {{ pengantinWanita.namaLengkap }}
         </p>
         <p
           data-aos="fade-up"
           data-aos-duration="5500"
-          class="caption-4-local text-white"
+          class="caption-4-local text-black"
         >
           Putri dari Bapak {{ pengantinWanita.namaAyah }} dan <br />
           Ibu {{ pengantinWanita.namaIbu }}
         </p>
-        <p
-          data-aos="fade-right"
-          data-aos-duration="2500"
-          class="caption-4-local text-white mt-10"
-        >
-          {{ tanggalResepsi }}
-        </p>
       </div>
+      <p class="caption-7-local mb-10">
+        Love is more than a feeling. <br />
+        It is full of action.
+      </p>
     </div>
   </div>
 </template>
@@ -244,7 +277,6 @@ onMounted(() => {
 }
 
 .caption-1-local {
-  color: #fff;
   text-align: center;
   font-family: EB Garamond;
   font-size: 15px;
@@ -255,7 +287,6 @@ onMounted(() => {
 }
 
 .caption-2-local {
-  color: #fff;
   text-align: center;
   font-family: "EB Garamond";
   font-size: 12px;
@@ -266,28 +297,65 @@ onMounted(() => {
 }
 
 .caption-3-local {
-  color: #fff;
-  font-family: "EB Garamond";
-  text-align: center;
-  font-size: 20px;
+  font-family: "Bree Serif";
+  font-size: 18px;
   font-style: normal;
   font-weight: 400;
-  line-height: 30px; /* 150% */
-  text-transform: uppercase;
+  line-height: normal;
+  letter-spacing: 0.63px;
 }
 
 .caption-4-local {
-  color: #fff;
   text-align: center;
-  font-family: "Monesta";
-  font-size: 16px;
+  font-family: "Poppins";
+  font-size: 12px;
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
   line-height: normal;
+  letter-spacing: 0.385px;
+}
+
+.caption-5-local {
+  font-family: "Jost";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  /* or 138% */
+  text-align: center;
+
+  color: #000000;
+}
+
+.caption-dan-local {
+  font-family: "Fleur De Leah";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 36px;
+}
+
+.caption-6-local {
+  font-family: "EB Garamond";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 30px;
+  /* or 158% */
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.caption-7-local {
+  text-align: center;
+  font-family: "Fleur De Leah";
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 43.2px;
 }
 
 .body-1-local {
-  color: #fff;
   text-align: center;
   font-family: "Fleur De Leah";
   font-size: 24px;

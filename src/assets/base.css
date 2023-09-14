@@ -43,6 +43,21 @@
   src: url("./fonts/EBGaramond.ttf");
 }
 
+@font-face {
+  font-family: "Jost";
+  src: url("./fonts/Jost-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Bree Serif";
+  src: url("./fonts/BreeSerif-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./fonts/Poppins-Regular.ttf");
+}
+
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
   color-scheme: light only;
