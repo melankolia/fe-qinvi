@@ -64,19 +64,26 @@ const handleCopy = (i: number): void => {
 </script>
 
 <template>
-  <div class="flex flex-col bg-green-30 relative">
-    <div class="flex flex-col px-4 py-6">
+  <div class="flex flex-col bg-white relative">
+    <div class="flex flex-col px-5 py-6">
       <p
         data-aos="fade-right"
         data-aos-duration="2500"
-        class="headline-6 text-white mb-9 text-center"
+        class="headline-6-local text-black mt-6 mb-9 text-center"
       >
-        Wedding Gift
+        Kirim Hadiah
+      </p>
+      <p class="caption-1-local text-black mb-7">
+        Berikan ucapan dan cinta kepada Arif & Yuliana melalui hadiah istimewa.
+        Kami mengundang Anda untuk berbagi kebahagiaan dalam momen spesial
+        mereka. Silakan pilih hadiah dan kirimkan dengan cinta melalui transfer
+        bank.
       </p>
       <div
+        @click="() => handleCopy(i)"
         v-for="(e, i) in props.rekening"
         :key="i"
-        class="flex flex-col bg-[#EEF1F3] items-center rounded-xl p-4 mb-3 z-10"
+        class="flex flex-col bg-white items-center rounded-xl p-4 mb-3 z-10"
       >
         <input
           type="hidden"
@@ -89,11 +96,11 @@ const handleCopy = (i: number): void => {
           height="19"
           class="mb-3"
         />
-        <p class="caption-1 text-blue-10 mb-3">
+        <p class="caption-2-local text-black mb-3">
           No. Rekening : {{ e.noRekening }}
         </p>
-        <p class="caption-1 text-blue-10 mb-3">A/n {{ e.namaPemilik }}</p>
-        <div class="flex flex-col items-center">
+        <p class="caption-2-local text-black mb-3">A/n {{ e.namaPemilik }}</p>
+        <!-- <div class="flex flex-col items-center">
           <button
             @click="() => handleCopy(i)"
             class="button-date border border-white bg-blue-10 py-1.5 px-3 rounded-2xl flex flex-row items-center space-x-2.5 drop-shadow-md"
@@ -106,9 +113,42 @@ const handleCopy = (i: number): void => {
             />
             <p class="body-2 text-white">Copy Text</p>
           </button>
-        </div>
+        </div> -->
       </div>
+      <p class="caption-1-local text-black mb-5">
+        Terima kasih atas perhatian dan <br />
+        doa terbaik Anda ❤
+      </p>
     </div>
-    <img src="@/assets/images/bg-wedding-gift.webp" class="absolute z-0" />
   </div>
 </template>
+
+<style scoped>
+.headline-6-local {
+  font-family: "Bonheur Royale";
+  font-size: 39px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1.365px;
+}
+
+.caption-1-local {
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.35px;
+}
+
+.caption-2-local {
+  text-align: center;
+  font-family: "EB Garamond";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+</style>

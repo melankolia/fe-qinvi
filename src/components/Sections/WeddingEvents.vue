@@ -155,7 +155,7 @@ onMounted(() => {
         <img src="@/assets/images/p-wedding-events.webp" />
       </div>
     </template>
-    <p class="body-6-local mt-2 mb-10">
+    <p class="body-6-local mt-2">
       Di dalam Hidup kami, cinta bukan hanya sekadar perasaan. Ia penuh dengan
       tindakan nyata, seperti pilihan-pilihan indah yang kami hadirkan dan kami
       abadikan dalam sebuah Galeri sederhana.

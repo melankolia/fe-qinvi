@@ -67,51 +67,38 @@ const handleConfirm = (): void => {
 </script>
 
 <template>
-  <div class="flex flex-col bg-green-30 px-4 py-6">
-    <div class="flex flex-row justify-between items-center mb-5">
-      <img
-        width="140"
-        class="h-[64px]"
-        src="@/assets/images/icon-rsvp-l.webp"
-      />
-      <p
-        data-aos="fade-right"
-        data-aos-duration="2500"
-        class="headline-13 text-blue-10 text-center font-semibold"
-      >
-        RSVP
-      </p>
-      <img
-        width="140"
-        class="h-[64px]"
-        src="@/assets/images/icon-rsvp-r.webp"
-      />
-    </div>
+  <div class="flex flex-col bg-white p-6">
+    <p class="body-6-local mt-2 mb-14">
+      Di dalam Hidup kami, cinta bukan hanya sekadar perasaan. Ia penuh dengan
+      tindakan nyata, seperti pilihan-pilihan indah yang kami hadirkan dan kami
+      abadikan dalam sebuah Galeri sederhana.
+    </p>
+    <p class="title-1-local text-black mb-4">Ucapkan Selamat</p>
     <form action="#">
       <div class="flex flex-col">
-        <label for="text" class="caption-8 mb-1 text-yellow-20">Nama</label>
+        <label for="text" class="caption-1-local mb-1 text-black">Nama</label>
         <input
-          placeholder="Nama"
           v-model="form.nama"
           type="text"
           id="fname"
           name="fname"
-          class="rounded-sm mb-5 p-2 text-black"
+          class="rounded-lg mb-5 p-2 text-black bg-[#F8F4EA]"
           required
         />
-        <label for="phone" class="caption- mb-18 text-yellow-20">No Hp</label>
+        <label for="phone" class="caption-1-local mb-18 text-black">
+          No Hp
+        </label>
         <input
           v-model="form.nomor_handphone"
-          placeholder="No Handphone"
           type="text"
           id="phone"
           name="phone"
-          class="rounded-sm mb-5 p-2 text-black"
+          class="rounded-lg mb-5 p-2 bg-[#F8F4EA]"
           required
         />
       </div>
       <div class="flex flex-col">
-        <p class="caption-8 text-yellow-20 mb-2">Kehadiran</p>
+        <p class="caption-8 text-black mb-2">Kehadiran</p>
 
         <div class="flex flex-row space-x-12">
           <div class="flex flex-row space-x-2">
@@ -171,3 +158,33 @@ const handleConfirm = (): void => {
     </div>
   </div>
 </template>
+
+<style scoped>
+.caption-1-local {
+  font-family: "Poppins";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.525px;
+}
+.title-1-local {
+  text-align: center;
+  font-family: "MonteCarlo";
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.805px;
+}
+.body-6-local {
+  color: #000;
+  text-align: center;
+  font-family: "Bona Nova";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.42px;
+}
+</style>

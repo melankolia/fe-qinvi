@@ -9,15 +9,6 @@
       alt="Qinvi Wedding Icon"
       class="invert mb-10"
     />
-    <p
-      data-aos="fade-down"
-      data-aos-duration="2500"
-      class="body-3 text-white font-medium"
-    >
-      Kehadiran Bapak/Ibu/Saudara/i di acara kami akan menjadi suatu kebahagiaan
-      dan kehormatan yang tidak terlupakan bagi kami. Terima kasih atas restu
-      dan dukungannya.
-    </p>
   </div>
 </template>
 

@@ -58,37 +58,29 @@ const handleSubmit = async (): Promise<void> => {
 </script>
 
 <template>
-  <div class="flex flex-col bg-green-30 relative">
-    <img src="@/assets/images/bg-wedding-gift.webp" class="absolute top-10" />
-    <div class="flex flex-col bg-green-30 px-4 pb-6 pt-8">
-      <p
-        data-aos="fade-right"
-        data-aos-duration="2500"
-        class="headline-6 text-white mb-2 text-center"
-      >
-        Wedding Wish
+  <div class="flex flex-col bg-white relative">
+    <div class="flex flex-col bg-white px-4 pb-6 pt-8">
+      <p class="body-6-local mt-2 mb-14">
+        Di dalam Hidup kami, cinta bukan hanya sekadar perasaan. Ia penuh dengan
+        tindakan nyata, seperti pilihan-pilihan indah yang kami hadirkan dan
+        kami abadikan dalam sebuah Galeri sederhana.
       </p>
-      <p
-        data-aos="fade-up"
-        data-aos-duration="2500"
-        class="headline-12 text-center text-white mb-3"
-      >
-        THANKS FOR ALL THE WEDDING WISHES ! <br />
-        YOU MADE A GREAT DAY EVEN GREATER !
-      </p>
+      <p class="title-1-local text-black mb-4">Ucapkan Selamat</p>
       <div class="flex flex-col z-10">
+        <label for="text" class="caption-1-local mb-2 text-black">Nama</label>
         <input
-          placeholder="Nama"
           v-model="form.from"
           type="text"
           id="fname"
           name="fname"
-          class="rounded-sm mb-5 p-2 text-black"
+          class="rounded-lg mb-5 p-2 text-black bg-[#F8F4EA]"
         />
+        <label for="text" class="caption-1-local mb-2 text-black">
+          Isi Pesan
+        </label>
         <textarea
-          placeholder="Give Your Wish"
           v-model="form.message"
-          class="rounded-sm p-2 text-black"
+          class="rounded-lg p-2 text-black bg-[#F8F4EA]"
           id="prayer"
           name="prayer"
           rows="4"
@@ -97,12 +89,12 @@ const handleSubmit = async (): Promise<void> => {
       </div>
       <div class="flex flex-col pt-5">
         <button
-          class="button-date border border-white bg-yellow-20 py-1.5 px-3 rounded-2xl flex flex-row justify-center items-center space-x-2.5 drop-shadow-md"
+          class="bg-[#F8F4EA] border border-white mb-4 mt-12 py-1.5 px-3 rounded-xl space-x-2.5 z-10 mx-16"
           @click="handleSubmit"
         >
           <svg
             v-if="loading"
-            class="animate-spin -ml-1 h-5 w-5 text-white"
+            class="animate-spin -ml-1 h-5 w-5 text-black"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -121,7 +113,7 @@ const handleSubmit = async (): Promise<void> => {
               d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
             ></path>
           </svg>
-          <p class="body-2 text-black">Kirim Ucapan</p>
+          <p class="body-2 text-black">Kirim</p>
         </button>
       </div>
     </div>
@@ -131,5 +123,32 @@ const handleSubmit = async (): Promise<void> => {
 <style scoped>
 .text-shadow {
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.caption-1-local {
+  font-family: "Poppins";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.525px;
+}
+.title-1-local {
+  text-align: center;
+  font-family: "MonteCarlo";
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.805px;
+}
+.body-6-local {
+  color: #000;
+  text-align: center;
+  font-family: "Bona Nova";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.42px;
 }
 </style>

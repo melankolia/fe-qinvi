@@ -6,7 +6,7 @@ import WelcomeSection from "@/components/Sections/WelcomeSection.vue";
 import CountdownSection from "@/components/Sections/CountdownSection.vue";
 import IntroductionFamilies from "@/components/Sections/IntroductionFamilies.vue";
 import WeddingEvents from "@/components/Sections/WeddingEvents.vue";
-import PresenceForm from "@/components/Sections/PresenceForm.vue";
+// import PresenceForm from "@/components/Sections/PresenceForm.vue";
 import ElectronicWallet from "@/components/Sections/ElectronicWallet.vue";
 import GalleryPhotos from "@/components/Sections/GalleryPhotos.vue";
 import PrayerWishes from "@/components/Sections/PrayerWishes.vue";
@@ -301,7 +301,7 @@ useHead({
       /><WeddingEvents id="acaraSection" :acara="dataPernikahan.acara" />
       <GalleryPhotos id="gallerySection" :gallery="dataPernikahan.gallery" />
 
-      <PresenceForm />
+      <!-- <PresenceForm /> -->
       <PrayerWishes />
       <WishesList :wishes="dataPernikahan.ucapan" />
       <ElectronicWallet :rekening="dataPernikahan.rekening" />

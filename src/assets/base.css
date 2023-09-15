@@ -63,6 +63,16 @@
   src: url("./fonts/BonaNova-Regular.ttf");
 }
 
+@font-face {
+  font-family: "MonteCarlo";
+  src: url("./fonts/MonteCarlo-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Bonheur Royale";
+  src: url("./fonts/BonheurRoyale-Regular.ttf");
+}
+
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
   color-scheme: light only;

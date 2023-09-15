@@ -164,21 +164,21 @@ onMounted(() => {
         </p>
         <p
           data-aos="fade-up"
-          data-aos-duration="5000"
+          data-aos-duration="2500"
           class="caption-6-local text-black"
         >
           {{ pengantinPria.namaLengkap }}
         </p>
         <p
           data-aos="fade-up"
-          data-aos-duration="5000"
+          data-aos-duration="2500"
           class="caption-dan-local text-black my-1"
         >
           dan
         </p>
         <p
           data-aos="fade-up"
-          data-aos-duration="5000"
+          data-aos-duration="2500"
           class="caption-6-local text-black"
         >
           {{ pengantinWanita.namaLengkap }}
@@ -216,14 +216,14 @@ onMounted(() => {
         />
         <p
           data-aos="fade-up"
-          data-aos-duration="5000"
+          data-aos-duration="2500"
           class="caption-3-local text-black my-5"
         >
           {{ pengantinPria.namaLengkap }}
         </p>
         <p
           data-aos="fade-down"
-          data-aos-duration="5500"
+          data-aos-duration="2500"
           class="caption-4-local text-black"
         >
           Putra dari Bapak {{ pengantinPria.namaAyah }} dan <br />
@@ -244,7 +244,7 @@ onMounted(() => {
         />
         <p
           data-aos="fade-down"
-          data-aos-duration="5000"
+          data-aos-duration="2500"
           class="caption-3-local text-black my-5"
         >
           {{ pengantinWanita.namaLengkap }}

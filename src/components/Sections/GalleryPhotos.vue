@@ -97,35 +97,10 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex flex-col bg-green-30">
-    <div class="flex flex-col items-center py-6 relative bg-green-30 px-10">
-      <img
-        src="@/assets/images/left-flower-gallery.webp"
-        width="135"
-        class="absolute left-0 top-5"
-      />
-      <img
-        src="@/assets/images/right-bot-flower-gallery.webp"
-        width="230"
-        class="absolute right-0 bottom-0"
-      />
-      <p
-        data-aos="fade-right"
-        data-aos-duration="2500"
-        class="headline-14 text-white mb-8"
-      >
-        GALLERY
-      </p>
-      <p
-        data-aos="fade-up"
-        data-aos-duration="2500"
-        class="caption-9 text-white text-center mb-6"
-      >
-        A successful marriage requires falling in love many times, always with
-        the same person
-      </p>
+  <div class="flex flex-col bg-white">
+    <div class="flex flex-col items-center pt-2 pb-4 px-10">
       <div
-        class="flex flex-col items-center bg-gallery-ov p-4 overflow-hidden my-8"
+        class="flex flex-col items-center bg-gallery-ov px-4 overflow-hidden"
       >
         <!-- Vertical Slider -->
         <div
@@ -166,7 +141,7 @@ onMounted(() => {
         <!-- Landscape Slider -->
         <div
           ref="containerImage2"
-          class="flex flex-row overflow-hidden relative mt-8"
+          class="flex flex-row overflow-hidden relative mt-8 rounded-xl"
         >
           <div
             class="flex flex-col justify-center absolute left-0 top-0 bottom-0 my-auto"
@@ -192,7 +167,7 @@ onMounted(() => {
           <img
             v-for="(e, i) in thumbnailLandscapeRef"
             ref="image"
-            class="image-slide rounded-xl"
+            class="image-slide"
             :style="`transform: translateX(${slidingLandscape}px);`"
             :src="e"
             :key="i"
@@ -200,6 +175,20 @@ onMounted(() => {
           />
         </div>
       </div>
+    </div>
+    <div
+      data-aos="fade-up"
+      data-aos-duration="2500"
+      class="flex flex-col mx-10"
+    >
+      <button
+        @click="onShow(0)"
+        class="bg-[#F8F4EA] border border-white mb-6 py-1.5 px-3 rounded-lg space-x-2.5 z-10"
+      >
+        <span class="body-2-local text-black text-center font-semibold">
+          Lihat Lainnya
+        </span>
+      </button>
     </div>
     <vue-easy-lightbox
       :visible="visibleRef"
