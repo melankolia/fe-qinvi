@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="flex flex-col bg-container items-center justify-center px-5 relative"
-  >
+  <div class="flex flex-col bg-container items-center pt-12 px-5 relative">
     <img
       data-aos="fade-up"
       data-aos-duration="2500"
@@ -9,12 +7,12 @@
       height="78"
       src="@/assets/images/icon-sincan-blacks.webp"
       alt="Qinvi Wedding Icon"
-      class="invert mb-12"
+      class="invert mb-10"
     />
     <p
       data-aos="fade-down"
       data-aos-duration="2500"
-      class="body-3 text-white font-medium mb-32"
+      class="body-3 text-white font-medium"
     >
       Kehadiran Bapak/Ibu/Saudara/i di acara kami akan menjadi suatu kebahagiaan
       dan kehormatan yang tidak terlupakan bagi kami. Terima kasih atas restu

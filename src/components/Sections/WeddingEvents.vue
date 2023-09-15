@@ -155,14 +155,11 @@ onMounted(() => {
         <img src="@/assets/images/p-wedding-events.webp" />
       </div>
     </template>
-    <button
-      data-aos="fade-right"
-      data-aos-duration="2500"
-      class="button-date w-full mt-6 mb-12 border border-white bg-yellow-20 py-1.5 px-3 rounded-2xl space-x-2.5 z-10 drop-shadow-md"
-      @click="handleSave()"
-    >
-      <p class="body-2 text-black">Simpan Acara</p>
-    </button>
+    <p class="body-6-local mt-2 mb-10">
+      Di dalam Hidup kami, cinta bukan hanya sekadar perasaan. Ia penuh dengan
+      tindakan nyata, seperti pilihan-pilihan indah yang kami hadirkan dan kami
+      abadikan dalam sebuah Galeri sederhana.
+    </p>
   </div>
 </template>
 
@@ -236,5 +233,16 @@ onMounted(() => {
   font-style: normal;
   font-weight: 300;
   line-height: 21.77px;
+}
+
+.body-6-local {
+  color: #000;
+  text-align: center;
+  font-family: "Bona Nova";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.42px;
 }
 </style>
