@@ -61,7 +61,7 @@ const handleCopy = (i: number): void => {
     <div
       v-for="(e, i) in props.rekening"
       :key="i"
-      class="flex flex-col bg-[#EEF1F3] items-center rounded-xl p-4 mb-3"
+      class="flex flex-col bg-white items-center rounded-xl p-4 mb-3"
     >
       <input type="hidden" :id="`#copy-rekening-${i}`" :value="e.noRekening" />
       <img

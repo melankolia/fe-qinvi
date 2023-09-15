@@ -56,7 +56,7 @@ onMounted(() => {
 
 <template>
   <div class="flex flex-col">
-    <div class="flex flex-col items-center py-6 relative bg-[#EEF1F3]">
+    <div class="flex flex-col items-center py-6 relative bg-white">
       <p
         data-aos="fade-right"
         data-aos-duration="2500"

@@ -96,7 +96,7 @@ onMounted(() => {
         - QS. Ar-Rum 21 -
       </p>
     </div>
-    <div class="flex flex-col px-4 items-center relative pb-9 bg-[#EEF1F3]">
+    <div class="flex flex-col px-4 items-center relative pb-9 bg-white">
       <p
         data-aos="fade-right"
         data-aos-duration="2500"
