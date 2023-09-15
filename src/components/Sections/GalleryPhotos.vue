@@ -80,14 +80,17 @@ onMounted(() => {
   // }, 3000);
   if (props.gallery.length > 0) {
     imgsRef.value = [...props.gallery];
-    let midIndex = Math.ceil(imgsRef.value.length / 2);
+    // let midIndex = Math.ceil(imgsRef.value.length / 2);
 
-    imgsRef.value.forEach((e: string, i: number) => {
-      if (i <= midIndex) {
-        thumbnailVerticalRef.value = [...thumbnailVerticalRef.value, e];
-      } else {
-        thumbnailLandscapeRef.value = [...thumbnailLandscapeRef.value, e];
-      }
+    // imgsRef.value.forEach((e: string, i: number) => {
+    imgsRef.value.forEach((e: string) => {
+      thumbnailLandscapeRef.value = [...thumbnailLandscapeRef.value, e];
+      //   if (i <= midIndex) {
+      //     thumbnailVerticalRef.value = [...thumbnailVerticalRef.value, e];
+      //   } else {
+      //     thumbnailLandscapeRef.value = [...thumbnailLandscapeRef.value, e];
+      //   }
+      // });
     });
   }
 });
@@ -206,3 +209,10 @@ onMounted(() => {
     />
   </div>
 </template>
+
+<style scoped>
+.image-slide {
+  transition: transform 1s;
+  object-fit: contain;
+}
+</style>
