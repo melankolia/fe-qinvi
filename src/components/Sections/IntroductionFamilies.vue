@@ -80,7 +80,7 @@ onMounted(() => {
       <p
         data-aos="fade-down"
         data-aos-duration="2500"
-        class="caption-1 text-blue-10 italic"
+        class="caption-1 text-[#000B18] italic"
       >
         “Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
         pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan
@@ -91,7 +91,7 @@ onMounted(() => {
       <p
         data-aos="fade-down"
         data-aos-duration="2500"
-        class="caption-1 text-blue-10 italic pt-4"
+        class="caption-1 text-[#000B18] italic pt-4"
       >
         - QS. Ar-Rum 21 -
       </p>
@@ -100,7 +100,7 @@ onMounted(() => {
       <p
         data-aos="fade-right"
         data-aos-duration="2500"
-        class="headline-6 text-blue-10 mt-12 mb-14"
+        class="headline-6 text-[#000B18] mt-12 mb-14"
       >
         The Wedding Of
       </p>
@@ -108,27 +108,27 @@ onMounted(() => {
         <div
           data-aos="fade-down"
           data-aos-duration="2500"
-          class="flex flex-col text-center px-14 py-5 border border-blue-10"
+          class="flex flex-col text-center px-14 py-5 border border-[#000B18]"
         >
-          <p class="headline-7 text-blue-10">
+          <p class="headline-7 text-[#000B18]">
             {{ pengantinWanita.namaLengkap }}
           </p>
-          <p class="caption-1 italic text-blue-10">
+          <p class="caption-1 italic text-[#000B18]">
             Putri Ketiga dari Bapak {{ pengantinWanita.namaAyah }}
             <br />
             dan Ibu {{ pengantinWanita.namaIbu }}
           </p>
         </div>
-        <p class="caption-1 text-blue-10 my-6 self-center">&</p>
+        <p class="caption-1 text-[#000B18] my-6 self-center">&</p>
         <div
           data-aos="fade-up"
           data-aos-duration="2500"
           class="flex flex-col text-center px-14 py-5 border border-blue-10"
         >
-          <p class="headline-7 text-blue-10">
+          <p class="headline-7 text-[#000B18]">
             {{ pengantinPria.namaLengkap }}
           </p>
-          <p class="caption-1 italic text-blue-10">
+          <p class="caption-1 italic text-[#000B18]">
             Putra Kedua dari Bapak {{ pengantinPria.namaAyah }}
             <br />
             dan Ibu {{ pengantinPria.namaIbu }}
