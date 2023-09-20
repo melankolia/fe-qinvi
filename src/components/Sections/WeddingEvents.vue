@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { defineProps, onMounted, ref } from "vue";
 import type { Ref } from "vue";
+import { defineProps, onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
 
 type acaraTypes = {
@@ -15,39 +15,76 @@ type acaraTypes = {
   userId: number;
   waktuMulai: string;
   waktuSelesai: string;
+  ingatkanAcara: string;
 };
 
 type acaraPropsTypes = {
   acara: Array<acaraTypes>;
 };
-const props = defineProps<acaraPropsTypes>();
-const route = useRoute();
 
-const tanggal: Ref<string> = ref("-");
+const acaraAkad: Ref<any> = ref({
+  hari: null,
+  tanggal: null,
+  jamMulai: null,
+  lokasi: null,
+  alamat: null,
+  urlMap: null,
+  ingatkanAcara: null,
+});
+
+const acaraResepsi: Ref<any> = ref({
+  hari: null,
+  tanggal: null,
+  jamMulai: null,
+  lokasi: null,
+  alamat: null,
+  urlMap: null,
+  ingatkanAcara: null,
+});
+
+const props = defineProps<acaraPropsTypes>();
+
+const route = useRoute();
 
 const bindingData = (): void => {
   props.acara.map((e: acaraTypes) => {
-    if (e.namaAcara?.toLowerCase().includes("resepsi")) {
-      tanggal.value = new Date(e.tanggal).toLocaleDateString("id-ID", {
-        weekday: "long",
-        day: "2-digit",
-        month: "long",
-        year: "numeric",
-      });
-    }
+    e.tanggal = new Date(e.tanggal).toLocaleDateString("id-ID", {
+      weekday: "long",
+      day: "2-digit",
+      month: "long",
+      year: "numeric",
+    });
   });
+
+  if (props.acara.length > 0) {
+    acaraAkad.value = {
+      jamMulai: props.acara[0]?.waktuMulai?.split(":").splice(0, 2).join(":"),
+      lokasi: props.acara[0].lokasi,
+      alamat: props.acara[0].alamat,
+      urlMap: props.acara[0].urlMap,
+      ingatkanAcara: props.acara[0].ingatkanAcara,
+      hari: props.acara[0].tanggal.split(",")[0],
+      tanggal: props.acara[0].tanggal.split(",")[1],
+    };
+
+    acaraResepsi.value = {
+      jamMulai: props.acara[1]?.waktuMulai?.split(":").splice(0, 2).join(":"),
+      lokasi: props.acara[1].lokasi,
+      alamat: props.acara[1].alamat,
+      urlMap: props.acara[1].urlMap,
+      ingatkanAcara: props.acara[1].ingatkanAcara,
+      hari: props.acara[1].tanggal.split(",")[0],
+      tanggal: props.acara[1].tanggal.split(",")[1],
+    };
+  }
 };
 
 const openMap = (e: acaraTypes): void => {
   window.open(e.urlMap);
 };
 
-const invitedPerson: string | null = route.query?.to as string | null;
-
-const handleSave = (): void => {
-  window.open(
-    "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MW4zdjVrcmVqOWI5cW5icTBvZ2NrdmU5NjIgYWRtLnFpbnZpQG0&tmsrc=adm.qinvi%40gmail.com"
-  );
+const openAcara = (e: any): void => {
+  window.open(e.ingatkanAcara);
 };
 
 onMounted(() => {
@@ -56,115 +93,127 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex flex-col items-center px-4 bg-wedding bg-green-30 relative">
-    <img
-      src="@/assets/images/left-top-flower-event.webp"
-      class="absolute top-24 left-0"
-      width="100"
-    />
-    <img
-      src="@/assets/images/right-bot-flower-gallery.webp"
-      width="230"
-      class="absolute right-0 bottom-0"
-    />
-    <img
-      data-aos="fade-up"
-      data-aos-duration="2500"
-      src="@/assets/images/img-header.webp"
-      width="300"
-      alt="Qinvi Header Events"
-      class="-mt-4 mb-1"
-    />
-    <p
-      data-aos="fade-up"
-      data-aos-duration="2500"
-      class="body-2 text-white text-center"
+  <div
+    class="flex flex-col items-center px-4 pt-16 pb-5 bg-[#F3F0EB] text-white"
+  >
+    <div
+      data-aos="zoom-in-up"
+      data-aos-duration="1000"
+      class="flex flex-col py-20 bg-container-shadow rounded-tema-jawa mb-10"
     >
-      Kepada Bapak/Ibu/Saudara/i,
-    </p>
-    <p
-      data-aos="fade-up"
-      data-aos-duration="2500"
-      class="body-2 text-white text-center my-2"
-    >
-      {{ invitedPerson }}
-    </p>
-    <p
-      data-aos="fade-up"
-      data-aos-duration="2500"
-      class="body-2 text-white text-center"
-    >
-      Dengan memohon rahmat dan ridho Allah Subhanahu wa Ta'ala, kami memohon
-      kehadiran Bapak/Ibu/Saudara/i pada acara pernikahan kami:
-    </p>
-    <div class="flex flex-col items-center my-4">
-      <img
-        src="@/assets/images/img-leaf-events.webp"
-        width="186"
-        alt="Qinvi Image Leaf"
-      />
-      <p class="body-2 text-white my-2">{{ tanggal }}</p>
-      <img
-        src="@/assets/images/img-leaf-events.webp"
-        width="186"
-        alt="Qinvi Image Leaf"
-      />
-    </div>
-    <img
-      data-aos="fade-up"
-      data-aos-duration="2500"
-      width="85"
-      height="78"
-      src="@/assets/images/icon-sincan.webp"
-      alt="Qinvi Wedding Icon"
-      class="my-4"
-    />
-    <template v-for="(e, i) in props.acara" :key="i">
+      <p class="headline-local">Acara Pernikahan</p>
+      <!-- Akad Nikah -->
       <div
-        data-aos="fade-down"
-        data-aos-duration="2500"
-        class="flex flex-col items-center rounded-xl"
+        data-aos="zoom-in-up"
+        data-aos-duration="2000"
+        class="flex flex-col items-center rounded-xl bg-akad pt-14 mx-1"
       >
-        <p class="headline-6 text-white my-2">{{ e.namaAcara }}</p>
-        <!-- <p class="body-2 text-white">Pukul : {{ e.waktuMulai }} WIB</p> -->
-        <p class="body-2 text-white text-center" style="max-width: 300px">
-          Tempat : <br />
+        <p class="title-1 mt-2 uppercase">Akad Nikah</p>
+        <p class="subtitle-1 my-2">
+          {{ acaraAkad.hari }}, {{ acaraAkad.tanggal }}
         </p>
-        <p class="body-2 text-white text-center my-2" style="max-width: 300px">
-          {{ e.alamat }}
-        </p>
+        <p class="subtitle-1 my-2">{{ acaraAkad.jamMulai }} WIB</p>
       </div>
+
+      <!-- Resepsi -->
       <div
-        data-aos="fade-up"
-        data-aos-duration="2500"
-        class="flex flex-col items-center"
+        data-aos="zoom-in-up"
+        data-aos-duration="2000"
+        class="flex flex-col mt-2.5 items-center rounded-xl bg-resepsi mx-1"
       >
-        <button
-          @click="openMap(e)"
-          class="button-date drop-shadow-md bg-yellow-20 border border-white mt-2 mb-6 py-1.5 px-3 rounded-2xl flex flex-row items-center space-x-2.5"
+        <p class="title-1 mt-14 uppercase">Resepsi Pernikahan</p>
+        <p class="subtitle-1 text-center mt-7 mb-2.5">
+          Kami memohon kehadiran Bapak/Ibu/Saudara/i dalam pelaksanaan Resepsi
+          Pernikahan yang akan dilaksanakan pada:
+        </p>
+        <p class="subtitle-1 my-2">
+          {{ acaraResepsi.hari }}, {{ acaraResepsi.tanggal }}
+        </p>
+        <p class="subtitle-1 my-8">{{ acaraResepsi.jamMulai }} WIB - SELESAI</p>
+        <p class="subtitle-1 text-center mt-2" style="max-width: 300px">
+          {{ acaraResepsi.lokasi }}
+        </p>
+        <p class="subtitle-1 text-center mt-2 mb-4" style="max-width: 300px">
+          {{ acaraResepsi.alamat }}
+        </p>
+        <div
+          data-aos="zoom-in-up"
+          data-aos-duration="2000"
+          class="flex flex-col items-center"
         >
-          <img
-            src="@/assets/icons/icon-locations.png"
-            width="18"
-            height="15.5"
-          />
-          <p class="body-2 text-black">Lihat Peta</p>
-        </button>
+          <button
+            @click="() => openMap(acaraResepsi)"
+            class="button-date bg-[#8D7C6A] px-2.5 py-2 rounded-lg flex flex-row justify-center items-center space-x-2.5 transition-all mx-6 mb-4"
+          >
+            <p class="title-3 text-white">Lihat Peta</p>
+          </button>
+        </div>
       </div>
-    </template>
-    <button
-      data-aos="fade-right"
-      data-aos-duration="2500"
-      class="button-date w-full mt-6 mb-12 border border-white bg-yellow-20 py-1.5 px-3 rounded-2xl space-x-2.5 z-10 drop-shadow-md"
-      @click="handleSave()"
-    >
-      <p class="body-2 text-black">Simpan Acara</p>
-    </button>
+    </div>
   </div>
 </template>
 
 <style scoped>
-.bg-wedding {
-  min-height: 940px;
+.headline-local {
+  color: #8d7c6a;
+  text-align: center;
+  font-family: "Pinyon Script";
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 43.2px; /* 123.429% */
+}
+
+.title-1 {
+  color: #8d7c6a;
+  text-align: center;
+  font-family: "EB Garamond";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+  text-transform: uppercase;
+}
+
+.title-3 {
+  text-align: center;
+  font-family: "Jost";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16.8px;
+}
+
+.subtitle-1 {
+  color: #8d7c6a;
+  font-family: "EB Garamond";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21px; /* 150% */
+  text-transform: uppercase;
+}
+/* .bg-wedding {
+  background-image: url("@/assets/images/bg-wedding.webp");
+  background-size: cover;
+} */
+
+/* .bg-akad {
+  background-image: url("@/assets/images/bg-akad.webp");
+  background-size: cover;
+} */
+
+/* .bg-resepsi {
+  background-image: url("@/assets/images/bg-resepsi.webp");
+  background-size: cover;
+} */
+
+.bg-container-shadow {
+  background: #ffffff1a;
+  box-shadow: 0px 0px 45px 1px rgba(0, 0, 0, 0.5);
+}
+
+.bg-linear-btn {
+  background: linear-gradient(282.22deg, #000000 0%, #a98466 100%);
 }
 </style>

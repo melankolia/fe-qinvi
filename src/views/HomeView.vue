@@ -88,6 +88,7 @@ interface dataPernikahanType {
     userId: number;
     waktuMulai: string;
     waktuSelesai: string;
+    ingatkanAcara: string;
   }>;
   ceritaCinta: Array<{
     createdDate: string;
@@ -293,6 +294,7 @@ useHead({
         :acara="dataPernikahan.acara"
       />
       <NewQuotes />
+      <WeddingEvents id="acaraSection" :acara="dataPernikahan.acara" />
       <GalleryPhotos id="gallerySection" :gallery="dataPernikahan.gallery" />
       <!-- <CountdownSection
         :mempelaiPria="mempelaiPria"
@@ -300,7 +302,6 @@ useHead({
         :acara="dataPernikahan.acara"
         id="homeSection"
       /> -->
-      <WeddingEvents id="acaraSection" :acara="dataPernikahan.acara" />
       <PresenceForm />
       <PrayerWishes />
       <WishesList :wishes="dataPernikahan.ucapan" />
