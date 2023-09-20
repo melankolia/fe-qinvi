@@ -99,7 +99,7 @@ onMounted(() => {
     <div
       data-aos="zoom-in-up"
       data-aos-duration="1000"
-      class="flex flex-col py-20 bg-container-shadow rounded-tema-jawa mb-10"
+      class="flex flex-col py-20 bg-container-shadow rounded-aulia-ilham mb-10"
     >
       <p class="headline-local">Acara Pernikahan</p>
       <!-- Akad Nikah -->
@@ -215,5 +215,12 @@ onMounted(() => {
 
 .bg-linear-btn {
   background: linear-gradient(282.22deg, #000000 0%, #a98466 100%);
+}
+
+.rounded-aulia-ilham {
+  border-top-left-radius: 350px;
+  border-top-right-radius: 350px;
+  border-bottom-left-radius: 35px;
+  border-bottom-right-radius: 35px;
 }
 </style>

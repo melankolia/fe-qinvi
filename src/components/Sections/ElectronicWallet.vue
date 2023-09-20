@@ -64,19 +64,19 @@ const handleCopy = (i: number): void => {
 </script>
 
 <template>
-  <div class="flex flex-col bg-green-30 relative">
+  <div class="flex flex-col bg-[#F3F0EB] relative">
     <div class="flex flex-col px-4 py-6">
       <p
         data-aos="fade-right"
         data-aos-duration="2500"
-        class="headline-6 text-white mb-9 text-center"
+        class="headline-6 text-[#55391C] mb-9 text-center"
       >
         Wedding Gift
       </p>
       <div
         v-for="(e, i) in props.rekening"
         :key="i"
-        class="flex flex-col bg-[#EEF1F3] items-center rounded-xl p-4 mb-3 z-10"
+        class="flex flex-col bg-[#F8F7F3] items-center rounded-xl p-4 mb-3 z-10 wedding-gift-shadow"
       >
         <input
           type="hidden"
@@ -109,6 +109,13 @@ const handleCopy = (i: number): void => {
         </div>
       </div>
     </div>
-    <img src="@/assets/images/bg-wedding-gift.webp" class="absolute z-0" />
+    <!-- <img src="@/assets/images/bg-wedding-gift.webp" class="absolute z-0" /> -->
   </div>
 </template>
+
+<style scoped>
+.wedding-gift-shadow {
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.1),
+    0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+}
+</style>

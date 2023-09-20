@@ -295,7 +295,7 @@ useHead({
       />
       <NewQuotes />
       <WeddingEvents id="acaraSection" :acara="dataPernikahan.acara" />
-      <GalleryPhotos id="gallerySection" :gallery="dataPernikahan.gallery" />
+      <FooterWeddings />
       <!-- <CountdownSection
         :mempelaiPria="mempelaiPria"
         :mempelaiWanita="mempelaiWanita"
@@ -307,7 +307,7 @@ useHead({
       <WishesList :wishes="dataPernikahan.ucapan" />
       <ElectronicWallet :rekening="dataPernikahan.rekening" />
       <!-- <HealthProtocols /> -->
-      <FooterWeddings />
+      <GalleryPhotos id="gallerySection" :gallery="dataPernikahan.gallery" />
       <FooterSections />
       <MenusFloating @fnClick="(e) => handleMenuClick(e)" />
     </div>

@@ -58,20 +58,20 @@ const handleSubmit = async (): Promise<void> => {
 </script>
 
 <template>
-  <div class="flex flex-col bg-green-30 relative">
-    <img src="@/assets/images/bg-wedding-gift.webp" class="absolute top-10" />
-    <div class="flex flex-col bg-green-30 px-4 pb-6 pt-8">
+  <div class="flex flex-col bg-[#F3F0EB] relative">
+    <!-- <img src="@/assets/images/bg-wedding-gift.webp" class="absolute top-10" /> -->
+    <div class="flex flex-col bg-[#F3F0EB] px-4 pb-6 pt-8">
       <p
         data-aos="fade-right"
         data-aos-duration="2500"
-        class="headline-6 text-white mb-2 text-center"
+        class="headline-6 text-black mb-2 text-center"
       >
         Wedding Wish
       </p>
       <p
         data-aos="fade-up"
         data-aos-duration="2500"
-        class="headline-12 text-center text-white mb-3"
+        class="headline-12 text-center text-black mb-3"
       >
         THANKS FOR ALL THE WEDDING WISHES ! <br />
         YOU MADE A GREAT DAY EVEN GREATER !

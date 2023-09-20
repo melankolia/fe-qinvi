@@ -67,7 +67,7 @@ const handleConfirm = (): void => {
 </script>
 
 <template>
-  <div class="flex flex-col bg-green-30 px-4 py-6">
+  <div class="flex flex-col bg-[#F3F0EB] px-4 py-6">
     <div class="flex flex-row justify-between items-center mb-5">
       <img
         width="140"
@@ -77,7 +77,7 @@ const handleConfirm = (): void => {
       <p
         data-aos="fade-right"
         data-aos-duration="2500"
-        class="headline-13 text-blue-10 text-center font-semibold"
+        class="headline-13 text-black text-center font-semibold"
       >
         RSVP
       </p>

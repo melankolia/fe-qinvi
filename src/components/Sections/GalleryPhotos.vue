@@ -55,8 +55,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex flex-col bg-green-30">
-    <div class="flex flex-col items-center py-6 relative bg-green-30 px-10">
+  <div class="flex flex-col bg-[#F3F0EB]">
+    <div class="flex flex-col items-center py-6 relative bg-[#F3F0EB] px-10">
       <img
         src="@/assets/images/left-flower-gallery.webp"
         width="135"
@@ -70,14 +70,14 @@ onMounted(() => {
       <p
         data-aos="fade-right"
         data-aos-duration="2500"
-        class="headline-14 text-white mb-8"
+        class="headline-14 text-[#8D7C6A] mb-8"
       >
         GALLERY
       </p>
       <p
         data-aos="fade-up"
         data-aos-duration="2500"
-        class="caption-9 text-white text-center mb-6"
+        class="caption-9 text-[#8D7C6A] text-center mb-6"
       >
         A successful marriage requires falling in love many times, always with
         the same person
