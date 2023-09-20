@@ -224,10 +224,13 @@ useHead({
 </script>
 
 <template>
-  <div class="flex flex-col mx-auto bg-green-30" style="max-width: 480px">
+  <div
+    class="flex flex-col mx-auto bg-[lightgray 50% ]"
+    style="max-width: 480px"
+  >
     <div
       v-if="!isOpen"
-      class="container flex flex-col items-center justify-between h-screen px-8 pt-14 pb-20"
+      class="container flex flex-col items-center justify-between h-screen px-8 pt-14 pb-8"
     >
       <!-- data-aos="zoom-in-up"
       data-aos-duration="2000" -->
@@ -236,7 +239,7 @@ useHead({
         <p class="title-2 mt-4 text-center text-white">
           {{ mempelaiPria }} & {{ mempelaiWanita }}
         </p>
-        <img src="@/assets/images/logo-wedding-2.png" width="114" />
+        <img src="@/assets/images/logo-wedding-2.webp" width="114" />
       </div>
       <div class="flex flex-col">
         <!-- data-aos="zoom-in-up"
@@ -268,9 +271,11 @@ useHead({
           </svg>
           <p class="title-3 text-black uppercase">Buka Undangan</p>
         </button>
-        <p class="caption-local text-white">Created with Love by Qinvi</p>
-        <p class="caption-local text-white">
-          © 2023 Dita & Arif. All Rights Reserved
+        <p class="caption-local text-[#8D7C6A] mt-10">
+          Created with Love by Qinvi
+        </p>
+        <p class="caption-local text-[#8D7C6A]">
+          © 2023 Aulia & Ilham. All Rights Reserved
         </p>
       </div>
     </div>
@@ -314,7 +319,7 @@ useHead({
 }
 
 .title-1 {
-  color: #e8eced;
+  color: #8d7c6a;
   text-align: center;
   font-family: "Jost";
   font-size: 14px;
@@ -325,7 +330,7 @@ useHead({
 }
 
 .title-2 {
-  color: #e8eced;
+  color: #8d7c6a;
   text-align: center;
   font-family: "Pinyon Script";
   font-size: 30px;

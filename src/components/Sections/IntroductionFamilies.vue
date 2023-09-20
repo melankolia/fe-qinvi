@@ -105,21 +105,21 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex flex-col bg-green-30">
-    <div class="flex flex-col items-center p-8 bg-green-30 relative">
+  <div class="flex flex-col bg-[#D9D9D959]">
+    <div class="flex flex-col items-center p-8 bg-[#D9D9D959] relative">
       <img
         data-aos="fade-up"
         data-aos-duration="2500"
         width="85"
         height="78"
-        src="@/assets/images/icon-sincan.webp"
+        src="@/assets/images/logo-wedding-2.webp"
         alt="Qinvi Wedding Icon"
         class="my-4"
       />
       <p
         data-aos="fade-down"
         data-aos-duration="2500"
-        class="caption-8 text-white"
+        class="caption-8 text-[#8D7C6A]"
       >
         Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
         pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan
@@ -130,7 +130,7 @@ onMounted(() => {
       <p
         data-aos="fade-down"
         data-aos-duration="2500"
-        class="caption-8 text-white pt-4"
+        class="caption-8 text-[#8D7C6A] pt-4"
       >
         - QS. Ar-Rum 21 -
       </p>
@@ -148,13 +148,8 @@ onMounted(() => {
       />
     </div>
     <div
-      class="flex flex-col justify-center px-6 relative bg-events bg-green-30"
+      class="flex flex-col justify-center px-6 relative bg-events bg-[#D9D9D959]"
     >
-      <img
-        src="@/assets/images/left-flower.webp"
-        width="120"
-        class="absolute left-0 top-0"
-      />
       <div
         data-aos="fade-right"
         data-aos-duration="2500"
@@ -163,21 +158,35 @@ onMounted(() => {
         <p
           data-aos="fade-up"
           data-aos-duration="2500"
-          class="caption-1-local text-white text-center"
+          class="caption-1-local text-[#8D7C6A] text-center mt-6 mb-4"
+        >
+          سْمِ اللّهِ الرَّحْمَنِ الرَّحِيْمِ
+        </p>
+        <p
+          data-aos="fade-up"
+          data-aos-duration="2500"
+          class="caption-1-local text-[#8D7C6A] text-center"
+        >
+          Assalamualaikum warahmatullahi wabarakatuh
+        </p>
+        <p
+          data-aos="fade-up"
+          data-aos-duration="2500"
+          class="caption-1-local text-[#8D7C6A] text-center"
         >
           Kepada Bapak/Ibu/Saudara/i,
         </p>
         <p
           data-aos="fade-up"
           data-aos-duration="2500"
-          class="caption-1-local text-white text-center mt-2 mb-10"
+          class="caption-1-local text-[#8D7C6A] text-center mt-2 mb-4"
         >
           {{ invitedPerson }}
         </p>
         <p
           data-aos="fade-down"
           data-aos-duration="2500"
-          class="caption-2-local text-white"
+          class="caption-2-local text-[#8D7C6A]"
         >
           Dengan memohon rahmat dan ridho Allah SWT, kami memohon kehadiran
           Bapak/Ibu/Saudara/i pada acara pernikahan kami:
@@ -186,14 +195,14 @@ onMounted(() => {
         <p
           data-aos="fade-up"
           data-aos-duration="5000"
-          class="caption-3-local text-white my-5"
+          class="caption-3-local text-[#8D7C6A] my-5"
         >
           {{ pengantinPria.namaLengkap }}
         </p>
         <p
           data-aos="fade-down"
           data-aos-duration="5500"
-          class="caption-4-local text-white"
+          class="caption-4-local text-[#8D7C6A]"
         >
           Putra dari Bapak {{ pengantinPria.namaAyah }} dan <br />
           Ibu {{ pengantinPria.namaIbu }}
@@ -201,7 +210,7 @@ onMounted(() => {
         <p
           data-aos="fade-up"
           data-aos-duration="2500"
-          class="body-1-local text-white mt-4"
+          class="body-1-local text-[#8D7C6A] mt-4"
         >
           dan
         </p>
@@ -209,14 +218,14 @@ onMounted(() => {
         <p
           data-aos="fade-down"
           data-aos-duration="5000"
-          class="caption-3-local text-white my-5"
+          class="caption-3-local text-[#8D7C6A] my-5"
         >
           {{ pengantinWanita.namaLengkap }}
         </p>
         <p
           data-aos="fade-up"
           data-aos-duration="5500"
-          class="caption-4-local text-white"
+          class="caption-4-local text-[#8D7C6A]"
         >
           Putri dari Bapak {{ pengantinWanita.namaAyah }} dan <br />
           Ibu {{ pengantinWanita.namaIbu }}
@@ -224,7 +233,7 @@ onMounted(() => {
         <p
           data-aos="fade-right"
           data-aos-duration="2500"
-          class="caption-4-local text-white mt-10"
+          class="caption-4-local text-[#8D7C6A] mt-10"
         >
           {{ tanggalResepsi }}
         </p>
@@ -235,6 +244,9 @@ onMounted(() => {
 
 <style scoped>
 .bg-events {
+  background-image: url("@/assets/images/bg-introduction-families.webp");
+  background-size: cover;
+  background-position: top center;
   min-height: 681px;
 }
 
@@ -244,7 +256,6 @@ onMounted(() => {
 }
 
 .caption-1-local {
-  color: #fff;
   text-align: center;
   font-family: EB Garamond;
   font-size: 15px;
@@ -255,7 +266,6 @@ onMounted(() => {
 }
 
 .caption-2-local {
-  color: #fff;
   text-align: center;
   font-family: "EB Garamond";
   font-size: 12px;
@@ -266,7 +276,6 @@ onMounted(() => {
 }
 
 .caption-3-local {
-  color: #fff;
   font-family: "EB Garamond";
   text-align: center;
   font-size: 20px;
@@ -277,7 +286,6 @@ onMounted(() => {
 }
 
 .caption-4-local {
-  color: #fff;
   text-align: center;
   font-family: "Monesta";
   font-size: 16px;
@@ -287,7 +295,6 @@ onMounted(() => {
 }
 
 .body-1-local {
-  color: #fff;
   text-align: center;
   font-family: "Fleur De Leah";
   font-size: 24px;
