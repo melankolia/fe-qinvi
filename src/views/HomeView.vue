@@ -14,6 +14,7 @@ import FooterSections from "@/components/Sections/FooterSections.vue";
 import FooterWeddings from "@/components/Sections/FooterWeddings.vue";
 import MenusFloating from "@/components/MenusFloating.vue";
 import WishesList from "@/components/Sections/WishesList.vue";
+import NewQuotes from "@/components/Sections/NewQuotes.vue";
 import { useRoute } from "vue-router";
 import { useSnackbar } from "vue3-snackbar";
 import { useHead } from "unhead";
@@ -291,6 +292,7 @@ useHead({
         :pengantin="dataPernikahan.pengantin"
         :acara="dataPernikahan.acara"
       />
+      <NewQuotes />
       <GalleryPhotos id="gallerySection" :gallery="dataPernikahan.gallery" />
       <!-- <CountdownSection
         :mempelaiPria="mempelaiPria"
