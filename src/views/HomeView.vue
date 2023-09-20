@@ -227,59 +227,52 @@ useHead({
   <div class="flex flex-col mx-auto bg-green-30" style="max-width: 480px">
     <div
       v-if="!isOpen"
-      class="container flex flex-col h-screen justify-between pt-9 pb-24"
+      class="container flex flex-col items-center justify-between h-screen px-8 pt-14 pb-20"
     >
-      <div class="flex flex-col items-center text-black">
-        <p data-aos="fade-down" data-aos-duration="1000" class="headline-9">
-          Undangan Pernikahan
+      <!-- data-aos="zoom-in-up"
+      data-aos-duration="2000" -->
+      <div class="flex flex-col items-center mb-2.5">
+        <p class="title-1">The Wedding Of</p>
+        <p class="title-2 mt-4 text-center text-white">
+          {{ mempelaiPria }} & {{ mempelaiWanita }}
         </p>
-        <p
-          data-aos="fade-down"
-          data-aos-duration="3000"
-          class="headline-10 mt-8 mb-2.5"
+        <img src="@/assets/images/logo-wedding-2.png" width="114" />
+      </div>
+      <div class="flex flex-col">
+        <!-- data-aos="zoom-in-up"
+          data-aos-duration="2000" -->
+        <button
+          @click="handleClick"
+          class="button-date bg-white px-4 py-3 rounded-sm flex flex-row justify-center items-center space-x-2.5 transition-all mx-6 mb-4"
         >
-          {{ mempelaiPria }} dan {{ mempelaiWanita }}
-        </p>
-        <p data-aos="fade-down" data-aos-duration="3000" class="caption-6">
-          17.11.2023
+          <svg
+            v-if="loading"
+            class="animate-spin -ml-1 h-3 w-3 text-black"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <circle
+              class="opacity-25"
+              cx="12"
+              cy="12"
+              r="10"
+              stroke="currentColor"
+              stroke-width="4"
+            ></circle>
+            <path
+              class="opacity-75"
+              fill="currentColor"
+              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+            ></path>
+          </svg>
+          <p class="title-3 text-black uppercase">Buka Undangan</p>
+        </button>
+        <p class="caption-local text-white">Created with Love by Qinvi</p>
+        <p class="caption-local text-white">
+          © 2023 Dita & Arif. All Rights Reserved
         </p>
       </div>
-      <button
-        data-aos="fade-up"
-        data-aos-duration="1500"
-        @click="handleClick"
-        class="button-date border border-white bg-green-30 py-1.5 px-3 rounded-md flex flex-row justify-center items-center space-x-2.5 transition-all mx-6 drop-shadow-md"
-      >
-        <svg
-          v-if="loading"
-          class="animate-spin -ml-1 h-5 w-5 text-white"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-        >
-          <circle
-            class="opacity-25"
-            cx="12"
-            cy="12"
-            r="10"
-            stroke="currentColor"
-            stroke-width="4"
-          ></circle>
-          <path
-            class="opacity-75"
-            fill="currentColor"
-            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-          ></path>
-        </svg>
-        <img
-          v-else
-          src="@/assets/icons/icon-email.png"
-          class="brightness-0 invert"
-          height="16"
-          width="16"
-        />
-        <p class="body-2 text-white">Buka Undangan</p>
-      </button>
     </div>
     <div
       class="flex flex-col mx-none md:mx-auto"
@@ -318,5 +311,63 @@ useHead({
   background-image: url("@/assets/images/bg-cover.webp");
   background-position: center;
   background-size: cover;
+}
+
+.title-1 {
+  color: #e8eced;
+  text-align: center;
+  font-family: "Jost";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 21px; /* 150% */
+  text-transform: uppercase;
+}
+
+.title-2 {
+  color: #e8eced;
+  text-align: center;
+  font-family: "Pinyon Script";
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 45px; /* 150% */
+}
+
+.title-3 {
+  font-family: "Jost";
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+.caption-local {
+  font-family: "Jost";
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.background-linear {
+  background: linear-gradient(
+    0deg,
+    rgba(255, 247, 239, 0.47) 100%,
+    rgba(244, 234, 225, 0.37) 100%
+  );
+}
+
+.bg-linear-btn {
+  background: linear-gradient(282.22deg, #000000 0%, #a98466 100%);
+}
+
+.border-outline {
+  background-image: url("@/assets/images/border-outline.webp");
+  background-size: 97% 98%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 </style>
