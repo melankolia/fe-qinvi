@@ -369,10 +369,4 @@ useHead({
   background: linear-gradient(282.22deg, #000000 0%, #a98466 100%);
 }
 
-.border-outline {
-  background-image: url("@/assets/images/border-outline.webp");
-  background-size: 97% 98%;
-  background-position: center;
-  background-repeat: no-repeat;
-}
 </style>
