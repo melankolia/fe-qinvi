@@ -117,9 +117,9 @@ onMounted(() => {
         class="my-4"
       />
       <p
-        data-aos="fade-down"
+        data-aos="fade-up"
         data-aos-duration="2500"
-        class="caption-8 text-[#8D7C6A]"
+        class="caption-8 text-[#3e1c00]"
       >
         Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
         pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan
@@ -130,7 +130,7 @@ onMounted(() => {
       <p
         data-aos="fade-down"
         data-aos-duration="2500"
-        class="caption-8 text-[#8D7C6A] pt-4"
+        class="caption-8 text-[#3e1c00] pt-4"
       >
         - QS. Ar-Rum 21 -
       </p>
@@ -158,82 +158,83 @@ onMounted(() => {
         <p
           data-aos="fade-up"
           data-aos-duration="2500"
-          class="caption-1-local text-[#8D7C6A] text-center mt-6 mb-4"
+          class="caption-1-local text-[#3e1c00] text-center mt-6 mb-4"
         >
           سْمِ اللّهِ الرَّحْمَنِ الرَّحِيْمِ
         </p>
         <p
           data-aos="fade-up"
           data-aos-duration="2500"
-          class="caption-1-local text-[#8D7C6A] text-center"
+          class="caption-1-local text-[#3e1c00] text-center"
         >
           Assalamualaikum warahmatullahi wabarakatuh
         </p>
         <p
           data-aos="fade-up"
           data-aos-duration="2500"
-          class="caption-1-local text-[#8D7C6A] text-center"
+          class="caption-1-local text-[#3e1c00] text-center"
         >
           Kepada Bapak/Ibu/Saudara/i,
         </p>
         <p
           data-aos="fade-up"
           data-aos-duration="2500"
-          class="caption-1-local text-[#8D7C6A] text-center mt-2 mb-4"
+          class="caption-1-local text-[#3e1c00] text-center mt-2 mb-4"
         >
           {{ invitedPerson }}
         </p>
         <p
           data-aos="fade-down"
           data-aos-duration="2500"
-          class="caption-2-local text-[#8D7C6A]"
+          class="caption-2-local text-[#3e1c00]"
         >
           Dengan memohon rahmat dan ridho Allah SWT, kami memohon kehadiran
           Bapak/Ibu/Saudara/i pada acara pernikahan kami:
         </p>
-        <img src="@/assets/images/p-spouse-1.png" width="128" class="mt-7" />
-        <p
-          data-aos="fade-up"
-          data-aos-duration="5000"
-          class="caption-3-local text-[#8D7C6A] my-5"
-        >
-          {{ pengantinPria.namaLengkap }}
-        </p>
-        <p
-          data-aos="fade-down"
-          data-aos-duration="5500"
-          class="caption-4-local text-[#8D7C6A]"
-        >
-          Putra dari Bapak {{ pengantinPria.namaAyah }} dan <br />
-          Ibu {{ pengantinPria.namaIbu }}
-        </p>
-        <p
-          data-aos="fade-up"
-          data-aos-duration="2500"
-          class="body-1-local text-[#8D7C6A] mt-4"
-        >
-          dan
-        </p>
-        <img src="@/assets/images/p-spouse-2.png" width="128" class="mt-7" />
+        <img src="@/assets/images/p-spouse-2.webp" width="128" class="mt-7" />
         <p
           data-aos="fade-down"
           data-aos-duration="5000"
-          class="caption-3-local text-[#8D7C6A] my-5"
+          class="caption-3-local text-[#3e1c00] my-5"
         >
           {{ pengantinWanita.namaLengkap }}
         </p>
         <p
           data-aos="fade-up"
           data-aos-duration="5500"
-          class="caption-4-local text-[#8D7C6A]"
+          class="caption-4-local text-[#3e1c00]"
         >
           Putri dari Bapak {{ pengantinWanita.namaAyah }} dan <br />
           Ibu {{ pengantinWanita.namaIbu }}
         </p>
         <p
+          data-aos="fade-up"
+          data-aos-duration="2500"
+          class="body-1-local text-[#3e1c00] mt-4"
+        >
+          dan
+        </p>
+        <img src="@/assets/images/p-spouse-1.webp" width="128" class="mt-7" />
+        <p
+          data-aos="fade-up"
+          data-aos-duration="5000"
+          class="caption-3-local text-[#3e1c00] my-5"
+        >
+          {{ pengantinPria.namaLengkap }}
+        </p>
+        <p
+          data-aos="fade-down"
+          data-aos-duration="5500"
+          class="caption-4-local text-[#3e1c00]"
+        >
+          Putra dari Bapak {{ pengantinPria.namaAyah }} dan <br />
+          Ibu {{ pengantinPria.namaIbu }}
+        </p>
+
+        <p
           data-aos="fade-right"
           data-aos-duration="2500"
-          class="caption-4-local text-[#8D7C6A] mt-10"
+          class="caption-4-local text-[#3e1c00] mt-10"
         >
           {{ tanggalResepsi }}
         </p>

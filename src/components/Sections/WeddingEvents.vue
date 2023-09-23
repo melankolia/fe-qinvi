@@ -103,7 +103,7 @@ onMounted(() => {
     >
       <p class="headline-local">Acara Pernikahan</p>
       <!-- Akad Nikah -->
-      <div
+      <!-- <div
         data-aos="zoom-in-up"
         data-aos-duration="2000"
         class="flex flex-col items-center rounded-xl bg-akad pt-14 mx-1"
@@ -113,7 +113,7 @@ onMounted(() => {
           {{ acaraAkad.hari }}, {{ acaraAkad.tanggal }}
         </p>
         <p class="subtitle-1 my-2">{{ acaraAkad.jamMulai }} WIB</p>
-      </div>
+      </div> -->
 
       <!-- Resepsi -->
       <div

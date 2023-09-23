@@ -11,7 +11,7 @@ export default defineConfig({
     },
   },
   plugins: [vue()],
-  base: "/TemaSatrio/",
+  base: "/TemaAulia/",
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),

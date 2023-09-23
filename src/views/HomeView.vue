@@ -226,10 +226,7 @@ useHead({
 </script>
 
 <template>
-  <div
-    class="flex flex-col mx-auto bg-[lightgray 50% ]"
-    style="max-width: 480px"
-  >
+  <div class="flex flex-col mx-auto bg-[#F3F0EB]" style="max-width: 480px">
     <div
       v-if="!isOpen"
       class="container flex flex-col items-center justify-between h-screen px-8 pt-14 pb-8"
@@ -239,7 +236,7 @@ useHead({
       <div class="flex flex-col items-center mb-2.5">
         <p class="title-1">The Wedding Of</p>
         <p class="title-2 mt-4 text-center text-white">
-          {{ mempelaiPria }} & {{ mempelaiWanita }}
+          {{ mempelaiWanita }} & {{ mempelaiPria }}
         </p>
         <img src="@/assets/images/logo-wedding-2.webp" width="114" />
       </div>
