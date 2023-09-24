@@ -51,7 +51,6 @@ const props = defineProps<introductionFamiliesType>();
 
 const invitedPerson: string | null = route.query?.to as string | null;
 
-const tanggalResepsi: Ref<string> = ref("-");
 const pengantinPria: Ref<pengantinTypes> = ref({
   createdAt: "-",
   gender: "-",
@@ -86,17 +85,6 @@ const bindingData = (): void => {
       pengantinWanita.value = { ...e };
     }
   });
-
-  props.acara.map((e: acaraTypes) => {
-    if (e.namaAcara?.toLowerCase().includes("resepsi")) {
-      tanggalResepsi.value = new Date(e.tanggal).toLocaleDateString("id-ID", {
-        weekday: "long",
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-      });
-    }
-  });
 };
 
 onMounted(() => {
@@ -119,7 +107,7 @@ onMounted(() => {
       <p
         data-aos="fade-up"
         data-aos-duration="2500"
-        class="caption-8 text-[#3e1c00]"
+        class="caption-8 text-[#3e1c00] text-justify"
       >
         Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
         pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan
@@ -189,7 +177,7 @@ onMounted(() => {
           class="caption-2-local text-[#3e1c00]"
         >
           Dengan memohon rahmat dan ridho Allah SWT, kami memohon kehadiran
-          Bapak/Ibu/Saudara/i pada acara pernikahan kami:
+          Bapak/Ibu/Saudara/i pada acara resepsi pernikahan kami:
         </p>
         <img src="@/assets/images/p-spouse-2.webp" width="128" class="mt-7" />
         <p
@@ -229,14 +217,6 @@ onMounted(() => {
         >
           Putra dari Bapak {{ pengantinPria.namaAyah }} dan <br />
           Ibu {{ pengantinPria.namaIbu }}
-        </p>
-
-        <p
-          data-aos="fade-right"
-          data-aos-duration="2500"
-          class="caption-4-local text-[#3e1c00] mt-10"
-        >
-          {{ tanggalResepsi }}
         </p>
       </div>
     </div>

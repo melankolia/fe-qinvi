@@ -97,7 +97,7 @@ onMounted(() => {
 
 <template>
   <div
-    class="flex flex-col w-full text-center bg-container justify-end text-[#8D7C6A]"
+    class="flex flex-col w-full text-center bg-container justify-end text-[#3e1c00]"
   >
     <p data-aos="fade-up" data-aos-duration="2500" class="headline-11">
       The Wedding Of <br />
@@ -105,7 +105,7 @@ onMounted(() => {
     </p>
     <div class="flex flex-row justify-center mt-16 mb-7 caption-7">
       <div
-        class="flex flex-row border-r border-[#8D7C6A] border-y px-6 py-1 space-x-6"
+        class="flex flex-row border-r border-[#3e1c00] border-y px-6 py-1 space-x-6"
       >
         <div class="flex flex-col">
           <p>
@@ -129,7 +129,7 @@ onMounted(() => {
         </div>
       </div>
       <div
-        class="flex flex-col border-[#8D7C6A] border-y px-6 py-1 justify-center"
+        class="flex flex-col border-[#3e1c00] border-y px-6 py-1 justify-center"
       >
         Save The Dates <br />
         {{ tanggalAkad }}

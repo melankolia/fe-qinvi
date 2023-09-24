@@ -57,18 +57,12 @@ const bindingData = (): void => {
   });
 
   if (props.acara.length > 0) {
-    acaraAkad.value = {
-      jamMulai: props.acara[0]?.waktuMulai?.split(":").splice(0, 2).join(":"),
-      lokasi: props.acara[0].lokasi,
-      alamat: props.acara[0].alamat,
-      urlMap: props.acara[0].urlMap,
-      ingatkanAcara: props.acara[0].ingatkanAcara,
-      hari: props.acara[0].tanggal.split(",")[0],
-      tanggal: props.acara[0].tanggal.split(",")[1],
-    };
-
     acaraResepsi.value = {
       jamMulai: props.acara[1]?.waktuMulai?.split(":").splice(0, 2).join(":"),
+      jamSelesai: props.acara[1]?.waktuSelesai
+        ?.split(":")
+        .splice(0, 2)
+        .join(":"),
       lokasi: props.acara[1].lokasi,
       alamat: props.acara[1].alamat,
       urlMap: props.acara[1].urlMap,
@@ -121,19 +115,21 @@ onMounted(() => {
         data-aos-duration="2000"
         class="flex flex-col mt-2.5 items-center rounded-xl bg-resepsi mx-1"
       >
-        <p class="title-1 mt-14 uppercase">Resepsi Pernikahan</p>
+        <p class="title-1 mt-14 uppercase">Resepsi Pernikahan Kami</p>
         <p class="subtitle-1 text-center mt-7 mb-2.5">
           Kami memohon kehadiran Bapak/Ibu/Saudara/i dalam pelaksanaan Resepsi
-          Pernikahan yang akan dilaksanakan pada:
+          Pernikahan kami yang akan dilaksanakan pada:
         </p>
         <p class="subtitle-1 my-2">
           {{ acaraResepsi.hari }}, {{ acaraResepsi.tanggal }}
         </p>
-        <p class="subtitle-1 my-8">{{ acaraResepsi.jamMulai }} WIB - SELESAI</p>
+        <p class="subtitle-1 my-8">
+          {{ acaraResepsi.jamMulai }} WIB - {{ acaraResepsi.jamSelesai }} WIB
+        </p>
         <p class="subtitle-1 text-center mt-2" style="max-width: 300px">
           {{ acaraResepsi.lokasi }}
         </p>
-        <p class="subtitle-1 text-center mt-2 mb-4" style="max-width: 300px">
+        <p class="subtitle-1 text-center mt-2 mb-4" style="max-width: 240px">
           {{ acaraResepsi.alamat }}
         </p>
         <div

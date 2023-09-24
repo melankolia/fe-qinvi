@@ -14,7 +14,7 @@ import FooterSections from "@/components/Sections/FooterSections.vue";
 import FooterWeddings from "@/components/Sections/FooterWeddings.vue";
 import MenusFloating from "@/components/MenusFloating.vue";
 import WishesList from "@/components/Sections/WishesList.vue";
-import NewQuotes from "@/components/Sections/NewQuotes.vue";
+// import NewQuotes from "@/components/Sections/NewQuotes.vue";
 import { useRoute } from "vue-router";
 import { useSnackbar } from "vue3-snackbar";
 import { useHead } from "unhead";
@@ -290,7 +290,7 @@ useHead({
         :pengantin="dataPernikahan.pengantin"
         :acara="dataPernikahan.acara"
       />
-      <NewQuotes />
+      <!-- <NewQuotes /> -->
       <WeddingEvents id="acaraSection" :acara="dataPernikahan.acara" />
       <FooterWeddings />
       <!-- <CountdownSection
@@ -368,5 +368,4 @@ useHead({
 .bg-linear-btn {
   background: linear-gradient(282.22deg, #000000 0%, #a98466 100%);
 }
-
 </style>
