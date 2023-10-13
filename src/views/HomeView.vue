@@ -2,7 +2,7 @@
 import { ref, onMounted, computed } from "vue";
 import type { Ref } from "vue";
 
-import WelcomeSection from "@/components/Sections/WelcomeSection.vue";
+// import WelcomeSection from "@/components/Sections/WelcomeSection.vue";
 import CountdownSection from "@/components/Sections/CountdownSection.vue";
 import IntroductionFamilies from "@/components/Sections/IntroductionFamilies.vue";
 import WeddingEvents from "@/components/Sections/WeddingEvents.vue";
@@ -177,6 +177,12 @@ const handleClick = (): void => {
         dataPernikahan.value = { ...data?.data } as dataPernikahanType;
 
         isOpen.value = true;
+
+        window.scrollTo({
+          top: 600,
+          left: 0,
+          behavior: "smooth",
+        });
       } else {
         console.error(data?.data?.message);
         snackbar.add({
@@ -224,69 +230,44 @@ useHead({
 </script>
 
 <template>
-  <div class="flex flex-col mx-auto bg-white" style="max-width: 480px">
-    <div
-      v-if="!isOpen"
-      class="container flex flex-col h-screen justify-between pt-9 pb-24"
-    >
+  <div
+    id="invitationSection"
+    class="flex flex-col mx-auto bg-white"
+    style="max-width: 480px"
+  >
+    <div class="container flex flex-col h-screen justify-between pt-9 pb-16">
       <div class="flex flex-col items-center text-black">
-        <p data-aos="fade-down" data-aos-duration="1000" class="headline-9">
-          Undangan Pernikahan
+        <p
+          data-aos="fade-down"
+          data-aos-duration="1000"
+          class="title-1-cover mt-20 mb-0"
+        >
+          WEDDING ANNOUNCEMENT
         </p>
         <p
           data-aos="fade-down"
           data-aos-duration="3000"
-          class="headline-10 mt-8 mb-2.5"
+          class="headline-10 mb-2.5 title-2-cover"
         >
-          {{ mempelaiPria }} dan {{ mempelaiWanita }}
-        </p>
-        <p data-aos="fade-down" data-aos-duration="3000" class="caption-6">
-          17.11.2023
+          {{ mempelaiPria }} & {{ mempelaiWanita }}
         </p>
       </div>
-      <button
-        data-aos="fade-up"
-        data-aos-duration="1500"
-        @click="handleClick"
-        class="button-date border border-white bg-green-30 py-1.5 px-3 rounded-md flex flex-row justify-center items-center space-x-2.5 transition-all mx-6 drop-shadow-md"
-      >
-        <svg
-          v-if="loading"
-          class="animate-spin -ml-1 h-5 w-5 text-white"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-        >
-          <circle
-            class="opacity-25"
-            cx="12"
-            cy="12"
-            r="10"
-            stroke="currentColor"
-            stroke-width="4"
-          ></circle>
-          <path
-            class="opacity-75"
-            fill="currentColor"
-            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-          ></path>
-        </svg>
+      <div class="flex flex-col items-center">
+        <p class="title-3-cover">Kepada Yth Bapak/Ibu/Saudara/I</p>
+        <p class="title-4-cover mt-4">{{ invitedPerson }}</p>
         <img
-          v-else
-          src="@/assets/icons/icon-email.png"
-          class="brightness-0 invert"
-          height="16"
+          src="@/assets/icons/icon-chevron-down.svg"
           width="16"
+          height="18"
+          class="mt-16 mb-6 animate-bounce"
+          @click="handleClick"
         />
-        <p class="body-2 text-white">Buka Undangan</p>
-      </button>
+        <p class="title-5-cover">Buka Undangan</p>
+      </div>
     </div>
-    <div
-      class="flex flex-col mx-none md:mx-auto"
-      v-else
-      style="max-width: 480px"
-    >
-      <WelcomeSection :acara="dataPernikahan.acara" id="welcomeSection" />
+    <!-- v-if="isOpen" -->
+    <div class="flex flex-col mx-none md:mx-auto" style="max-width: 480px">
+      <!-- <WelcomeSection :acara="dataPernikahan.acara" id="welcomeSection" /> -->
       <IntroductionFamilies
         id="mempelaiSection"
         :tamu="dataPernikahan.tamu"
@@ -298,7 +279,8 @@ useHead({
         :mempelaiWanita="mempelaiWanita"
         :acara="dataPernikahan.acara"
         id="homeSection"
-      /><WeddingEvents id="acaraSection" :acara="dataPernikahan.acara" />
+      />
+      <WeddingEvents id="acaraSection" :acara="dataPernikahan.acara" />
       <GalleryPhotos id="gallerySection" :gallery="dataPernikahan.gallery" />
 
       <!-- <PresenceForm /> -->
@@ -308,7 +290,7 @@ useHead({
       <!-- <HealthProtocols /> -->
       <FooterWeddings />
       <FooterSections />
-      <MenusFloating @fnClick="(e) => handleMenuClick(e)" />
+      <MenusFloating v-if="isOpen" @fnClick="(e) => handleMenuClick(e)" />
     </div>
   </div>
 </template>
@@ -318,5 +300,56 @@ useHead({
   background-image: url("@/assets/images/bg-cover.webp");
   background-position: center;
   background-size: cover;
+}
+
+.title-1-cover {
+  color: #f4f4f5;
+  font-family: "Averia Serif Libre";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2.47px;
+}
+
+.title-2-cover {
+  color: #f4f4f5;
+  font-family: "Scheherazade New";
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 6.65px;
+}
+
+.title-3-cover {
+  color: #f4f4f5;
+  text-align: center;
+  font-family: "Seaweed Script";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2.47px;
+}
+
+.title-4-cover {
+  color: #f4f4f5;
+  text-align: center;
+  font-family: "Seaweed Script";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2.47px;
+}
+
+.title-5-cover {
+  color: #f4f4f5;
+  font-family: "Scheherazade New";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 </style>
