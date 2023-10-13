@@ -177,12 +177,6 @@ const handleClick = (): void => {
         dataPernikahan.value = { ...data?.data } as dataPernikahanType;
 
         isOpen.value = true;
-
-        window.scrollTo({
-          top: 600,
-          left: 0,
-          behavior: "smooth",
-        });
       } else {
         console.error(data?.data?.message);
         snackbar.add({
@@ -193,6 +187,13 @@ const handleClick = (): void => {
           count: 1,
         });
       }
+    })
+    .then(() => {
+      window.scrollTo({
+        top: 600,
+        left: 0,
+        behavior: "smooth",
+      });
     })
     .catch((err) => {
       console.error(err);
@@ -265,8 +266,12 @@ useHead({
         <p class="title-5-cover">Buka Undangan</p>
       </div>
     </div>
-    <!-- v-if="isOpen" -->
-    <div class="flex flex-col mx-none md:mx-auto" style="max-width: 480px">
+
+    <div
+      v-if="isOpen"
+      class="flex flex-col mx-none md:mx-auto"
+      style="max-width: 480px"
+    >
       <!-- <WelcomeSection :acara="dataPernikahan.acara" id="welcomeSection" /> -->
       <IntroductionFamilies
         id="mempelaiSection"
@@ -290,7 +295,9 @@ useHead({
       <!-- <HealthProtocols /> -->
       <FooterWeddings />
       <FooterSections />
-      <MenusFloating v-if="isOpen" @fnClick="(e) => handleMenuClick(e)" />
+      <Transition name="fade">
+        <MenusFloating v-if="isOpen" @fnClick="(e) => handleMenuClick(e)" />
+      </Transition>
     </div>
   </div>
 </template>
@@ -351,5 +358,15 @@ useHead({
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
