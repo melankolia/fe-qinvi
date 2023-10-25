@@ -94,23 +94,27 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="h-1/3 md:h-1/3 flex flex-col py-8">
+  <div class="h-1/3 md:h-1/3 flex flex-col py-8 bg-[#603F8B]">
+    <p class="caption-7-local mb-10 text-white">
+      Love is more than a feeling. <br />
+      It is full of action.
+    </p>
     <div class="flex flex-row w-full justify-between pl-4">
       <p
         data-aos="fade-right"
         data-aos-duration="2500"
-        class="headline-6-local text-black"
+        class="headline-6-local text-white"
       >
         Save The
         <br />
         Date
       </p>
       <div class="flex flex-col min-w-[60%] justify-center">
-        <div class="flex flex-row border-t border-t-black"></div>
+        <div class="flex flex-row border-t border-t-white"></div>
       </div>
     </div>
     <div
-      class="flex flex-col justify-center border-b border-b-black w-full mt-6 mb-10"
+      class="flex flex-col justify-center border-b border-b-white w-full mt-6 mb-10"
     >
       <TimerCountDown
         :days="CountDown.days"
@@ -155,4 +159,14 @@ onMounted(() => {
   font-weight: 400;
   line-height: normal;
 }
+
+.caption-7-local {
+  text-align: center;
+  font-family: "Fleur De Leah";
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 43.2px;
+}
+
 </style>

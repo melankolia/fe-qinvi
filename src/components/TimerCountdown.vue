@@ -1,32 +1,32 @@
 <template>
   <div class="flex flex-row justify-center space-x-6 z-30">
     <div
-      class="flex flex-col items-center py-2 px-3.5 bg-white rounded-lg"
+      class="flex flex-col items-center py-2 px-3.5 rounded-lg"
       style="max-width: 54px"
     >
-      <p class="body-1-local text-black mb-1">{{ days }}</p>
-      <p class="caption-1-local text-[#404040]">Days</p>
+      <p class="body-1-local text-white mb-1">{{ days }}</p>
+      <p class="caption-1-local text-white">Days</p>
     </div>
     <div
-      class="flex flex-col items-center py-2 px-3.5 bg-white rounded-lg"
+      class="flex flex-col items-center py-2 px-3.5 rounded-lg"
       style="max-width: 54px"
     >
-      <p class="body-1-local text-black mb-1">{{ hours }}</p>
-      <p class="caption-1-local text-[#404040]">Hours</p>
+      <p class="body-1-local text-white mb-1">{{ hours }}</p>
+      <p class="caption-1-local text-white">Hours</p>
     </div>
     <div
-      class="flex flex-col items-center py-2 px-3.5 bg-white rounded-lg"
+      class="flex flex-col items-center py-2 px-3.5 rounded-lg"
       style="max-width: 54px"
     >
-      <p class="body-1-local text-black mb-1">{{ minutes }}</p>
-      <p class="caption-1-local text-[#404040]">Minutes</p>
+      <p class="body-1-local text-white mb-1">{{ minutes }}</p>
+      <p class="caption-1-local text-white">Minutes</p>
     </div>
     <div
-      class="flex flex-col items-center py-2 px-3.5 bg-white rounded-lg"
+      class="flex flex-col items-center py-2 px-3.5 rounded-lg"
       style="max-width: 54px"
     >
-      <p class="body-1-local text-black mb-1">{{ seconds }}</p>
-      <p class="caption-1-local text-[#404040]">Seconds</p>
+      <p class="body-1-local text-white mb-1">{{ seconds }}</p>
+      <p class="caption-1-local text-white">Seconds</p>
     </div>
   </div>
 </template>

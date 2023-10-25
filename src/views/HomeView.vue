@@ -7,11 +7,12 @@ import CountdownSection from "@/components/Sections/CountdownSection.vue";
 import IntroductionFamilies from "@/components/Sections/IntroductionFamilies.vue";
 import WeddingEvents from "@/components/Sections/WeddingEvents.vue";
 // import PresenceForm from "@/components/Sections/PresenceForm.vue";
-import ElectronicWallet from "@/components/Sections/ElectronicWallet.vue";
-import GalleryPhotos from "@/components/Sections/GalleryPhotos.vue";
+// import ElectronicWallet from "@/components/Sections/ElectronicWallet.vue";
+// import GalleryPhotos from "@/components/Sections/GalleryPhotos.vue";
 import PrayerWishes from "@/components/Sections/PrayerWishes.vue";
 import FooterSections from "@/components/Sections/FooterSections.vue";
-import FooterWeddings from "@/components/Sections/FooterWeddings.vue";
+// import FooterWeddings from "@/components/Sections/FooterWeddings.vue";
+import VideoSection from "@/components/Sections/VideoSection.vue";
 import MenusFloating from "@/components/MenusFloating.vue";
 import WishesList from "@/components/Sections/WishesList.vue";
 import { useRoute } from "vue-router";
@@ -33,6 +34,8 @@ const invitedPerson: string | null = route.query?.to as string | null;
 const isInvited = computed(() => {
   return invitedPerson !== null;
 });
+
+const isVideoSectionShown: Ref<boolean> = ref(false);
 
 interface dataPernikahanType {
   // homeView: {
@@ -178,7 +181,6 @@ const handleClick = (): void => {
 
         isOpen.value = true;
       } else {
-        console.error(data?.data?.message);
         snackbar.add({
           type: "error",
           title: "Error",
@@ -189,11 +191,14 @@ const handleClick = (): void => {
       }
     })
     .then(() => {
-      window.scrollTo({
-        top: 600,
-        left: 0,
-        behavior: "smooth",
-      });
+      const $element = document.getElementById("videoSection");
+      if ($element) {
+        $element.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+          inline: "nearest",
+        });
+      }
     })
     .catch((err) => {
       console.error(err);
@@ -223,6 +228,27 @@ const handleMenuClick = (e: string): void => {
 onMounted(() => {
   const username: string | null = route.params?.username as string;
   splittingUsername(username);
+
+  const vidSection = document.getElementById(
+    "videoSection"
+  ) as HTMLVideoElement;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry: any) => {
+        const intersecting = entry.isIntersecting;
+        if (intersecting) {
+          vidSection.play();
+          isVideoSectionShown.value = true;
+        } else {
+          isVideoSectionShown.value = false;
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+
+  observer.observe(vidSection);
 });
 
 useHead({
@@ -233,8 +259,8 @@ useHead({
 <template>
   <div
     id="invitationSection"
-    class="flex flex-col mx-auto bg-white"
-    style="max-width: 480px"
+    class="flex flex-col mx-auto bg-[#603F8B]"
+    style="max-width: 640px"
   >
     <div class="container flex flex-col h-screen justify-between pt-9 pb-16">
       <div class="flex flex-col items-center text-black">
@@ -248,14 +274,14 @@ useHead({
         <p
           data-aos="fade-down"
           data-aos-duration="3000"
-          class="headline-10 mb-2.5 title-2-cover"
+          class="headline-10-local mb-2.5 title-2-cover"
         >
           {{ mempelaiPria }} & {{ mempelaiWanita }}
         </p>
       </div>
       <div class="flex flex-col items-center">
-        <p class="title-3-cover">Kepada Yth Bapak/Ibu/Saudara/I</p>
-        <p class="title-4-cover mt-4">{{ invitedPerson }}</p>
+        <!-- <p class="title-3-cover">Kepada Yth Bapak/Ibu/Saudara/I</p> -->
+        <!-- <p class="title-4-cover mt-4">{{ invitedPerson }}</p> -->
         <img
           src="@/assets/icons/icon-chevron-down.svg"
           width="16"
@@ -268,11 +294,12 @@ useHead({
     </div>
 
     <div
-      v-if="isOpen"
+      v-show="isOpen"
       class="flex flex-col mx-none md:mx-auto"
-      style="max-width: 480px"
+      style="max-width: 640px"
     >
       <!-- <WelcomeSection :acara="dataPernikahan.acara" id="welcomeSection" /> -->
+      <VideoSection />
       <IntroductionFamilies
         id="mempelaiSection"
         :tamu="dataPernikahan.tamu"
@@ -286,17 +313,20 @@ useHead({
         id="homeSection"
       />
       <WeddingEvents id="acaraSection" :acara="dataPernikahan.acara" />
-      <GalleryPhotos id="gallerySection" :gallery="dataPernikahan.gallery" />
+      <!-- <GalleryPhotos id="gallerySection" :gallery="dataPernikahan.gallery" /> -->
 
       <!-- <PresenceForm /> -->
       <PrayerWishes />
       <WishesList :wishes="dataPernikahan.ucapan" />
-      <ElectronicWallet :rekening="dataPernikahan.rekening" />
+      <!-- <ElectronicWallet :rekening="dataPernikahan.rekening" /> -->
       <!-- <HealthProtocols /> -->
-      <FooterWeddings />
+      <!-- <FooterWeddings /> -->
       <FooterSections />
       <Transition name="fade">
-        <MenusFloating v-if="isOpen" @fnClick="(e) => handleMenuClick(e)" />
+        <MenusFloating
+          v-if="isOpen ? !isVideoSectionShown : isOpen"
+          @fnClick="(e) => handleMenuClick(e)"
+        />
       </Transition>
     </div>
   </div>
@@ -310,11 +340,11 @@ useHead({
 }
 
 .title-1-cover {
-  color: #f4f4f5;
-  font-family: "Averia Serif Libre";
+  color: #e3e3ff;
+  font-family: "Aspire";
   font-size: 13px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   line-height: normal;
   letter-spacing: 2.47px;
 }
@@ -358,6 +388,16 @@ useHead({
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+.headline-10-local {
+  color: #e4e4fb;
+  font-family: "Aspire";
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 6.65px;
 }
 
 .fade-enter-active,

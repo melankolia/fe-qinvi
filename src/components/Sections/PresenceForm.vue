@@ -68,11 +68,11 @@ const handleConfirm = (): void => {
 
 <template>
   <div class="flex flex-col bg-white p-6">
-    <p class="body-6-local mt-2 mb-14">
+    <!-- <p class="body-6-local mt-2 mb-14">
       Di dalam Hidup kami, cinta bukan hanya sekadar perasaan. Ia penuh dengan
       tindakan nyata, seperti pilihan-pilihan indah yang kami hadirkan dan kami
       abadikan dalam sebuah Galeri sederhana.
-    </p>
+    </p> -->
     <p class="title-1-local text-black mb-4">Ucapkan Selamat</p>
     <form action="#">
       <div class="flex flex-col">

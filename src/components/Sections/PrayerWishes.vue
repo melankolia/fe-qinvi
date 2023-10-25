@@ -58,29 +58,29 @@ const handleSubmit = async (): Promise<void> => {
 </script>
 
 <template>
-  <div class="flex flex-col bg-white relative">
-    <div class="flex flex-col bg-white px-4 pb-6 pt-8">
-      <p class="body-6-local mt-2 mb-14">
+  <div class="flex flex-col relative">
+    <div class="flex flex-col bg-[#603F8B] px-4 pb-6 pt-8">
+      <!-- <p class="body-6-local mt-2 mb-14">
         Di dalam Hidup kami, cinta bukan hanya sekadar perasaan. Ia penuh dengan
         tindakan nyata, seperti pilihan-pilihan indah yang kami hadirkan dan
         kami abadikan dalam sebuah Galeri sederhana.
-      </p>
-      <p class="title-1-local text-black mb-4">Ucapkan Selamat</p>
+      </p> -->
+      <p class="title-1-local text-white mb-4">Ucapkan Selamat</p>
       <div class="flex flex-col z-10">
-        <label for="text" class="caption-1-local mb-2 text-black">Nama</label>
+        <label for="text" class="caption-1-local mb-2 text-white">Nama</label>
         <input
           v-model="form.from"
           type="text"
           id="fname"
           name="fname"
-          class="rounded-lg mb-5 p-2 text-black bg-[#F8F4EA]"
+          class="rounded-lg mb-5 p-2 text-white bg-[#F8F4EA]"
         />
-        <label for="text" class="caption-1-local mb-2 text-black">
+        <label for="text" class="caption-1-local mb-2 text-white">
           Isi Pesan
         </label>
         <textarea
           v-model="form.message"
-          class="rounded-lg p-2 text-black bg-[#F8F4EA]"
+          class="rounded-lg p-2 text-white bg-[#F8F4EA]"
           id="prayer"
           name="prayer"
           rows="4"
@@ -94,7 +94,7 @@ const handleSubmit = async (): Promise<void> => {
         >
           <svg
             v-if="loading"
-            class="animate-spin -ml-1 h-5 w-5 text-black"
+            class="animate-spin -ml-1 h-5 w-5 text-white"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
