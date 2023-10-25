@@ -210,17 +210,18 @@ onMounted(() => {
             - QS. Ar-Rum 21 -
           </p>
         </div>
-        <div class="flex flex-col items-center relative">
+        <div class="castle-container flex flex-col items-center relative w-full">
           <img
             src="@/assets/images/p-spouse-1.webp"
             width="512"
             class="mt-16 z-10"
             style="border-radius: 50%"
           />
-          <img
+          <!-- <img
             src="@/assets/images/bg-introductions.webp"
             class="absolute top-0 left-0 right-0"
-          />
+            height="100"
+          /> -->
           <p
             data-aos="fade-up"
             data-aos-duration="2500"
@@ -259,7 +260,7 @@ onMounted(() => {
           <p
             data-aos="fade-up"
             data-aos-duration="5500"
-            class="caption-4-local text-white"
+            class="caption-4-local text-white mb-10"
           >
             Putri dari Bapak {{ pengantinWanita.namaAyah }} dan <br />
             Ibu {{ pengantinWanita.namaIbu }}
@@ -273,6 +274,13 @@ onMounted(() => {
 <style scoped>
 .bg-events {
   min-height: 681px;
+}
+
+.castle-container {
+  background-image: url('@/assets/images/bg-introductions.webp');
+  background-size: cover;
+  background-position: center center;
+  min-height: 1000px;
 }
 
 .orientation {
