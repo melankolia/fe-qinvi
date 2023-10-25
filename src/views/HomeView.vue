@@ -179,6 +179,7 @@ const handleClick = (): void => {
 
         dataPernikahan.value = { ...data?.data } as dataPernikahanType;
 
+        console.log(dataPernikahan.value?.pengantin);
         isOpen.value = true;
       } else {
         snackbar.add({

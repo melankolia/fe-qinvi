@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref, onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
 import type { Ref } from "vue";
 
@@ -93,6 +93,14 @@ onMounted(() => {
   bindingData();
   startCountDownAkad();
 });
+
+watch(
+  () => props.acara,
+  () => {
+    bindingData();
+    startCountDownAkad();
+  }
+);
 </script>
 
 <template>

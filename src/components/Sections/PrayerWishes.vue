@@ -73,14 +73,14 @@ const handleSubmit = async (): Promise<void> => {
           type="text"
           id="fname"
           name="fname"
-          class="rounded-lg mb-5 p-2 text-white bg-[#F8F4EA]"
+          class="rounded-lg mb-5 p-2 text-black bg-[#F8F4EA]"
         />
         <label for="text" class="caption-1-local mb-2 text-white">
           Isi Pesan
         </label>
         <textarea
           v-model="form.message"
-          class="rounded-lg p-2 text-white bg-[#F8F4EA]"
+          class="rounded-lg p-2 text-black bg-[#F8F4EA]"
           id="prayer"
           name="prayer"
           rows="4"

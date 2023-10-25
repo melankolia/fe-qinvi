@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { defineProps, onMounted, ref } from "vue";
+import { defineProps, onMounted, ref, watch } from "vue";
 import type { Ref } from "vue";
-import { useRoute } from "vue-router";
 
 type acaraTypes = {
   alamat: string;
@@ -21,7 +20,6 @@ type acaraPropsTypes = {
   acara: Array<acaraTypes>;
 };
 const props = defineProps<acaraPropsTypes>();
-const route = useRoute();
 
 const tanggal: Ref<string> = ref("-");
 
@@ -49,45 +47,18 @@ const openMap = (e: acaraTypes): void => {
   window.open(e.urlMap);
 };
 
-const handleSave = (): void => {
-  window.open(
-    "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MW4zdjVrcmVqOWI5cW5icTBvZ2NrdmU5NjIgYWRtLnFpbnZpQG0&tmsrc=adm.qinvi%40gmail.com"
-  );
-};
 
-const getDay = (e: string, type: string): string | null => {
-  if (!e) return null;
 
-  if (type == "name") {
-    return new Date(e).toLocaleDateString("en-US", {
-      weekday: "long",
-    });
-  }
 
-  return new Date(e).toLocaleDateString("en-US", {
-    day: "numeric",
-  });
-};
-
-const getMonth = (e: string): string | null => {
-  if (!e) return null;
-
-  return new Date(e).toLocaleDateString("en-US", {
-    month: "long",
-  });
-};
-
-const getYear = (e: string): string | null => {
-  if (!e) return null;
-
-  return new Date(e).toLocaleDateString("en-US", {
-    year: "numeric",
-  });
-};
 
 onMounted(() => {
   bindingData();
 });
+
+watch(
+  () => props.acara,
+  () => bindingData()
+);
 </script>
 
 <template>

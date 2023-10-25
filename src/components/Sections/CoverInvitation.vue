@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref, onMounted, watch } from "vue";
 import type { Ref } from "vue";
 import images from "@/assets/images/cover.webp";
 import TimerCountDown from "@/components/TimerCountdown.vue";
@@ -97,6 +97,14 @@ onMounted(() => {
   bindingData();
   startCountDown();
 });
+
+watch(
+  () => props.acara,
+  () => {
+    bindingData();
+    startCountDown();
+  }
+);
 </script>
 
 <template>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineProps, onMounted, ref } from "vue";
+import { defineProps, onMounted, ref, watch } from "vue";
 import type { Ref } from "vue";
 import { useRoute } from "vue-router";
 
@@ -102,6 +102,15 @@ const bindingData = (): void => {
 onMounted(() => {
   bindingData();
 });
+
+watch(
+  () => props.pengantin,
+  () => bindingData()
+);
+watch(
+  () => props.acara,
+  () => bindingData()
+);
 </script>
 
 <template>
@@ -210,7 +219,9 @@ onMounted(() => {
             - QS. Ar-Rum 21 -
           </p>
         </div>
-        <div class="castle-container flex flex-col items-center relative w-full">
+        <div
+          class="castle-container flex flex-col items-center relative w-full"
+        >
           <img
             src="@/assets/images/p-spouse-1.webp"
             width="512"
@@ -277,7 +288,7 @@ onMounted(() => {
 }
 
 .castle-container {
-  background-image: url('@/assets/images/bg-introductions.webp');
+  background-image: url("@/assets/images/bg-introductions.webp");
   background-size: cover;
   background-position: center center;
   min-height: 1000px;

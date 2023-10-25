@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref, onMounted, watch } from "vue";
 import type { Ref } from "vue";
 import TimerCountDown from "@/components/TimerCountdown.vue";
 import { useSnackbar } from "vue3-snackbar";
@@ -91,6 +91,14 @@ onMounted(() => {
   bindingData();
   startCountDown();
 });
+
+watch(
+  () => props.acara,
+  () => {
+    bindingData();
+    startCountDown();
+  }
+);
 </script>
 
 <template>
@@ -168,5 +176,4 @@ onMounted(() => {
   font-weight: 400;
   line-height: 43.2px;
 }
-
 </style>
