@@ -9,7 +9,10 @@
       controls
       class="absolute top-0 left-0 w-full h-full object-cover"
     >
-      <source src="@/assets/fairy.mp4" type="video/mp4" />
+      <source
+        src="https://ik.imagekit.io/qinvi/Video/copy_E5625816-15D9-47E9-81C3-7E525E914471_2.mp4?updatedAt=1698234461865"
+        type="video/mp4"
+      />
     </video>
     <!-- <iframe
       width="100%"

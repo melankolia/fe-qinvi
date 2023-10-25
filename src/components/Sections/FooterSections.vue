@@ -1,16 +1,17 @@
 <template>
   <div
-    class="footer-container flex flex-col items-center justify-between bg-[#F8F4EA] px-10 py-6 min-h-[980px]"
+    class="footer-container relative flex flex-col items-center justify-between bg-black px-10 py-6 min-h-[980px] overlay"
   >
-    <div class="flex flex-col mt-16">
+    <div class="absolute top-0 left-0 bg-black opacity-60 h-full w-full" />
+    <div class="flex flex-col mt-16 z-10">
       <p class="title-1-local">The Wedding Day</p>
       <p class="title-2-local mt-10">
         Dengan segala kerendahan hati dan dengan ungkapan syukur atas karunia
         Tuhan, kami hendak menyampaikan kabar bahagia pernikahan kami
       </p>
     </div>
-    <img src="@/assets/images/p-footer-fairy.webp" />
-    <div class="flex flex-col items-center">
+    <img src="@/assets/images/p-footer-fairy.webp" class="z-10" />
+    <div class="flex flex-col items-center z-10">
       <p class="caption-local text-white mt-8 mb-6">QINVI</p>
       <div class="flex flex-row space-x-2 mb-20">
         <img src="@/assets/icons/icon-ig.png" width="32" />
