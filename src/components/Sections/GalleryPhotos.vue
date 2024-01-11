@@ -56,24 +56,21 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex flex-col">
-    <div class="flex flex-col items-center bg-gallery">
-      <div class="flex flex-col items-center bg-gallery-ov px-10 py-6">
+  <div class="flex flex-col bg-black">
+    <div class="flex flex-col items-center bg-gallery-ov py-6">
+      <div class="flex flex-row w-full justify-between items-center pl-4">
         <p
-          data-aos="zoom-in-up"
-          data-aos-duration="2000"
-          class="headline-19 text-white my-8 font-extralight"
+          data-aos="fade-right"
+          data-aos-duration="2500"
+          class="headline-1-local text-white"
         >
-          GALLERY
+          Our
+          <br />
+          <span class="headline-1-local">Gallery</span>
         </p>
-        <p
-          data-aos="zoom-in-up"
-          data-aos-duration="2000"
-          class="caption-9 text-white text-center mb-6"
-        >
-          A successful marriage requires falling in love many times, always with
-          the same person
-        </p>
+        <div class="w-1/2 border-t border-white"></div>
+      </div>
+      <div class="flex flex-col mt-10 px-5">
         <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
           <img
             data-aos="fade-down p-1"
@@ -93,60 +90,15 @@ onMounted(() => {
             class="p-1"
           />
         </div>
-        <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
+        <div class="grid grid-cols-2">
           <img
-            data-aos="fade-down p-1"
+            :data-aos="handleAnimation(i)"
             data-aos-duration="2500"
-            :src="imgsRef[2]"
-            @click="onShow(2 + 1)"
-          />
-        </div>
-        <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
-          <img
-            data-aos="fade-down p-1"
-            data-aos-duration="2500"
-            :src="imgsRef[3]"
-            @click="onShow(3 + 1)"
-          />
-        </div>
-        <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
-          <img
-            data-aos="fade-down p-1"
-            data-aos-duration="2500"
-            :src="imgsRef[5]"
-            @click="onShow(5 + 1)"
-          />
-        </div>
-        <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
-          <img
-            data-aos="fade-down p-1"
-            data-aos-duration="2500"
-            :src="imgsRef[6]"
-            @click="onShow(6 + 1)"
-          />
-        </div>
-        <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
-          <img
-            data-aos="fade-down p-1"
-            data-aos-duration="2500"
-            :src="imgsRef[7]"
-            @click="onShow(7 + 1)"
-          />
-        </div>
-        <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
-          <img
-            data-aos="fade-down p-1"
-            data-aos-duration="2500"
-            :src="imgsRef[9]"
-            @click="onShow(9 + 1)"
-          />
-        </div>
-        <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
-          <img
-            data-aos="fade-down p-1"
-            data-aos-duration="2500"
-            :src="imgsRef[10]"
-            @click="onShow(10 + 1)"
+            v-for="(e, i) in thumbnailRef"
+            :key="i"
+            @click="onShow(i + 1)"
+            :src="e"
+            class="p-1"
           />
         </div>
         <!-- <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
@@ -193,6 +145,10 @@ onMounted(() => {
           <p class="body-6 text-white">More Of Us</p>
         </button> -->
       </div>
+      <p class="headline-2-local self-start ml-8 mt-2">
+        Every Love Story Is Beautiful, But <br />
+        Ours Is My Favorite
+      </p>
     </div>
     <vue-easy-lightbox
       :visible="visibleRef"
@@ -205,7 +161,7 @@ onMounted(() => {
 
 <style scoped>
 .bg-gallery-ov {
-  background: rgba(131, 96, 63, 0.9);
+  background: linear-gradient(143deg, rgba(0, 0, 0, 0.76) 0%, #ab738c 100%);
 }
 .bg-gallery {
   background-image: url("@/assets/images/bg-gallery.webp");
@@ -213,5 +169,24 @@ onMounted(() => {
 }
 .bg-linear-btn {
   background: linear-gradient(282.22deg, #000000 0%, #a98466 100%);
+}
+
+.headline-1-local {
+  color: #fff;
+
+  font-family: "Vidaloka";
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 36px;
+}
+
+.headline-2-local {
+  color: #fff;
+  font-family: "Vidaloka";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
 }
 </style>

@@ -59,47 +59,28 @@ const handleSubmit = async (): Promise<void> => {
 
 <template>
   <div class="flex flex-col">
-    <div class="flex flex-col px-6 pb-6 pt-8">
-      <p
-        data-aos="zoom-in-up"
-        data-aos-duration="2000"
-        class="headline-wish text-brown-30 mb-2 text-center"
-      >
-        Wedding Wish
-      </p>
-      <p
-        data-aos="zoom-in-up"
-        data-aos-duration="2000"
-        class="headline-12 text-center text-brown-30 mb-3"
-      >
-        Bantu kami mempersiapkan acara yang aman dan jamuan yang hangat untuk
-        anda semua dengan mengirimkan konfirmasi kehadiran melalui form berikut:
-      </p>
+    <div class="flex flex-col px-6 pb-6">
       <div class="flex flex-col">
-        <p class="headline-12 text-brown-30 mb-1.5">Nama</p>
         <input
           v-model="form.from"
           type="text"
           id="fname"
           name="fname"
-          class="rounded-sm mb-5 p-2 text-brown-30"
+          class="rounded-lg mb-5 p-2 text-#AB738C border-[#E0DCD1] border"
+          placeholder="Nama"
         />
-        <p class="headline-12 text-brown-30 mb-1.5">
-          Sampaikan ucapan selamat untuk <br />
-          pernikahan kami :
-        </p>
         <textarea
           v-model="form.message"
-          class="rounded-sm p-2 text-brown-30"
+          class="rounded-lg p-2 text-#AB738C border-[#E0DCD1] border"
           id="prayer"
           name="prayer"
           rows="4"
           cols="50"
         />
       </div>
-      <div class="flex flex-col pt-5">
+      <div class="flex pt-5">
         <button
-          class="button-date border border-white bg-yellow-20 py-1.5 px-3 rounded-2xl flex flex-row justify-center items-center space-x-2.5 drop-shadow-md"
+          class="button-date border border-white bg-[#AB738C] py-1 px-6 rounded-md flex flex-row justify-center items-center space-x-2.5"
           @click="handleSubmit"
         >
           <svg
@@ -123,7 +104,7 @@ const handleSubmit = async (): Promise<void> => {
               d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
             ></path>
           </svg>
-          <p class="body-2 text-brown-30">Kirim Ucapan</p>
+          <p class="body-1-local text-white">Kirim</p>
         </button>
       </div>
     </div>
@@ -133,5 +114,25 @@ const handleSubmit = async (): Promise<void> => {
 <style scoped>
 .text-shadow {
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.headline-wish {
+  color: #ab738c;
+  text-align: center;
+  font-family: "Inter";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 86.8px; /* 310% */
+  text-transform: capitalize;
+}
+
+.body-1-local {
+  color: #fff;
+  font-family: "Nunito";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 00;
+  line-height: 18.2px; /* 130% */
 }
 </style>

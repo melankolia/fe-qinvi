@@ -187,26 +187,47 @@ useHead({
         id="homeSection"
       /> -->
         <WeddingEvents id="acaraSection" :acara="dataPernikahan.acara" />
+        <GalleryPhotos id="gallerySection" :gallery="dataPernikahan.gallery" />
+        <ElectronicWallet :rekening="dataPernikahan.rekening" />
+        <PresenceForm />
         <div class="flex flex-col bg-combo px-8 pt-9">
           <div
             data-aos="zoom-in-up"
             data-aos-duration="1000"
             class="flex flex-col pt-20 bg-combo-linear rounded-tema-jawa mb-10"
           >
-            <PresenceForm />
-            <PrayerWishes />
-            <WishesList :wishes="dataPernikahan.ucapan" />
+            <div class="flex flex-col items-center">
+              <img src="@/assets/images/p-wishes.webp" width="194" />
+              <p
+                data-aos="zoom-in-up"
+                data-aos-duration="2000"
+                class="headline-wish text-[#AB738C] mb-2 text-center"
+              >
+                Best Wishes
+              </p>
+              <p
+                data-aos="zoom-in-up"
+                data-aos-duration="2000"
+                class="headline-12 text-center text-[#AB738C] mb-3"
+              >
+                Sampaikan doa dan ucapan terbaik Anda
+              </p>
+            </div>
+            <div
+              class="flex flex-col bg-[#FFF] pt-5 mb-10 mx-2.5 rounded-xl border-[#E0DCD1] border"
+            >
+              <PrayerWishes />
+              <WishesList :wishes="dataPernikahan.ucapan" />
+            </div>
           </div>
         </div>
-        <ElectronicWallet :rekening="dataPernikahan.rekening" />
         <!-- <HealthProtocols /> -->
-        <img
+        <!-- <img
           src="@/assets/images/p-spouses-4.webp"
           alt="Qinvi Wedding Photos Groom"
-        />
-        <GalleryPhotos id="gallerySection" :gallery="dataPernikahan.gallery" />
-        <FooterWeddings />
-        <FooterSections />
+        /> -->
+        <!-- <FooterWeddings /> -->
+        <!-- <FooterSections /> -->
         <MenusFloating @fnClick="(e) => handleMenuClick(e)" />
       </template>
     </div>
@@ -229,12 +250,12 @@ useHead({
 }
 
 .bg-combo {
-  background-image: url("@/assets/images/bg-combo.webp");
+  background-image: url("@/assets/images/bg-wishes.webp");
   background-size: cover;
 }
 
 .bg-combo-linear {
-  background: rgba(244, 234, 225, 0.77);
-  box-shadow: 0px 0px 45px 1px rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.68);
+  /* box-shadow: 0px 0px 45px 1px rgba(0, 0, 0, 0.5); */
 }
 </style>
