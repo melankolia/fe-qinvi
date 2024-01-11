@@ -227,7 +227,7 @@ useHead({
           alt="Qinvi Wedding Photos Groom"
         /> -->
         <!-- <FooterWeddings /> -->
-        <!-- <FooterSections /> -->
+        <FooterSections />
         <MenusFloating @fnClick="(e) => handleMenuClick(e)" />
       </template>
     </div>
