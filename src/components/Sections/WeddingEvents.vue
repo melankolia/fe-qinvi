@@ -93,179 +93,183 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex flex-col items-center px-4 pt-16 pb-5 bg-wedding bg-white">
-    <div
-      data-aos="zoom-in-up"
-      data-aos-duration="1000"
-      class="flex flex-col pt-20 pb-32 bg-container-shadow rounded-tema-jawa mb-10"
-    >
-      <div class="flex flex-col items-center">
-        <img
-          data-aos="zoom-in-up"
-          data-aos-duration="2000"
-          src="@/assets/images/img-header.webp"
-          alt="Qinvi Header Events"
-          class="mb-1"
-          width="250"
-        />
-        <p
-          data-aos="zoom-in-up"
-          data-aos-duration="2000"
-          class="headline-20 text-black"
-        >
-          With Love
-        </p>
-        <hr class="border-black mt-6 mb-9" style="width: 40%" />
-        <p
-          data-aos="zoom-in-up"
-          data-aos-duration="2000"
-          class="caption-14 text-black text-center mx-7 mb-12"
-        >
-          Dengan segala kerendahan hati dan dengan ucapan syukur atas karunia
-          Tuhan, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir di
-          acara pernikahan kami yang akan dilaksanakan pada:
-        </p>
-      </div>
-
-      <!-- Akad Nikah -->
-      <!-- <div
-        data-aos="zoom-in-up"
-        data-aos-duration="2000"
-        class="flex flex-col items-center rounded-xl bg-akad py-14 mx-8"
+  <div class="flex flex-col items-center px-5 pt-16 pb-5 bg-wedding bg-white">
+    <div class="flex flex-row w-full justify-between items-center">
+      <p
+        data-aos="fade-right"
+        data-aos-duration="2500"
+        class="headline-6-local text-white"
       >
-        <p class="headline-21 text-gold-10 mt-2 uppercase">Akad Nikah</p>
-        <hr class="border-gold-10 mt-5 mb-7" style="width: 40%" />
-        <p class="body-7 text-gold-10 my-2">{{ acaraAkad.hari }}</p>
-        <p class="body-7 text-gold-10 my-5">{{ acaraAkad.tanggal }}</p>
-        <p class="body-7 text-gold-10 my-2">{{ acaraAkad.jamMulai }} WIB</p>
-        <img
-          data-aos="zoom-in-up"
-          data-aos-duration="2000"
-          src="@/assets/images/img-building.png"
-          width="128"
-          alt="Qinvi Header Events"
-          class="my-7"
-        />
-        <p
-          class="body-7 text-gold-10 text-center mt-2 mb-6"
-          style="max-width: 300px"
-        >
-          {{ acaraAkad.lokasi }}
-        </p>
-        <p
-          class="body-8 text-gold-10 text-center mt-2 mb-6"
-          style="max-width: 300px"
-        >
-          {{ acaraAkad.alamat }}
-        </p>
-        <div
-          data-aos="zoom-in-up"
-          data-aos-duration="2000"
-          class="flex flex-col items-center"
-        >
-          <button
-            @click="openMap(acaraAkad)"
-            class="button-date bg-linear-btn px-8 py-4 rounded-3xl flex flex-row justify-center items-center space-x-2.5 transition-all my-4 mx-6"
-          >
-            <p class="body-6 text-white">Lihat Lokasi</p>
-          </button>
-          <button
-            @click="openAcara(acaraAkad)"
-            data-aos="zoom-in-up"
-            data-aos-duration="2000"
-            class="button-date bg-linear-btn px-8 py-4 rounded-3xl flex flex-row justify-center items-center space-x-2.5 transition-all my-4 mx-6"
-          >
-            <p class="body-6 text-white">Add to Calendar</p>
-          </button>
-        </div>
-      </div> -->
-
-      <!-- Resepsi -->
-      <div
-        data-aos="zoom-in-up"
-        data-aos-duration="2000"
-        class="flex flex-col mt-2.5 items-center rounded-xl bg-resepsi py-14 mx-8"
-      >
-        <p class="headline-21 text-gold-10 mt-2 uppercase text-center">
-          Resepsi <br />
-          Pernikahan
-        </p>
-        <hr class="border-gold-10 mt-5 mb-7" style="width: 40%" />
-        <p class="body-7 text-gold-10 my-2">{{ acaraResepsi.hari }}</p>
-        <p class="body-7 text-gold-10 my-5">{{ acaraResepsi.tanggal }}</p>
-        <p class="body-7 text-gold-10 my-2">{{ acaraResepsi.jamMulai }} WIB</p>
-        <p class="body-9 text-gold-10 my-2 text-center" style="">
-          (diawali dengan prosesi Pedang Pora)
-        </p>
-        <img
-          data-aos="zoom-in-up"
-          data-aos-duration="2000"
-          src="@/assets/images/img-building.png"
-          width="128"
-          alt="Qinvi Header Events"
-          class="my-7"
-        />
-        <p
-          class="body-7 text-gold-10 text-center mt-2 mb-6"
-          style="max-width: 300px"
-        >
-          {{ acaraResepsi.lokasi }}
-        </p>
-        <p
-          class="body-8 text-gold-10 text-center mt-2 mb-6"
-          style="max-width: 300px"
-        >
-          {{ acaraResepsi.alamat }}
-        </p>
-        <div
-          data-aos="zoom-in-up"
-          data-aos-duration="2000"
-          class="flex flex-col items-center"
-        >
-          <button
-            @click="openMap(acaraResepsi)"
-            class="button-date bg-linear-btn px-8 py-4 rounded-3xl flex flex-row justify-center items-center space-x-2.5 transition-all my-4 mx-6"
-          >
-            <p class="body-6 text-white">Lihat Lokasi</p>
-          </button>
-          <button
-            @click="openAcara(acaraResepsi)"
-            data-aos="zoom-in-up"
-            data-aos-duration="2000"
-            class="button-date bg-linear-btn px-8 py-4 rounded-3xl flex flex-row justify-center items-center space-x-2.5 transition-all my-4 mx-6"
-          >
-            <p class="body-6 text-white">Add to Calendar</p>
-          </button>
-        </div>
-      </div>
+        Wedding
+        <br />
+        <span class="headline-7-local">Event</span>
+      </p>
+      <div class="w-1/2 border-t border-white"></div>
     </div>
+    <p class="body-7-local text-white text-center mt-5 mx-10">
+      Assalamu'alaikum Wr.Wb. <br />
+      Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i untuk
+      hadir dihari bahagia Pernikahan kami yang akan dilaksanakan pada:
+    </p>
+    <template v-for="(e, i) in props.acara" :key="i">
+      <div
+        data-aos="fade-down"
+        data-aos-duration="2500"
+        class="container-event flex flex-col items-center rounded-xl mb-8"
+      >
+        <p class="title-2-local text-black mb-6 mt-5">{{ e.namaAcara }}</p>
+        <div class="flex flex-row">
+          <div class="flex flex-col border-r border-r-black text-black px-2">
+            <p class="body-3-local">{{ getDay(e.tanggal, "name") }}</p>
+            <p class="body-4-local">{{ getDay(e.tanggal, "number") }}</p>
+            <p class="body-3-local">{{ getMonth(e.tanggal) }}</p>
+            <p class="body-3-local">{{ getYear(e.tanggal) }}</p>
+          </div>
+          <div class="flex flex-col text-center px-2">
+            <p class="title-3-local text-black my-2" style="max-width: 300px">
+              {{ e.lokasi }}
+            </p>
+            <p
+              class="body-5-local text-[#404040;] my-2"
+              style="max-width: 300px"
+            >
+              {{ e.alamat }}
+            </p>
+            <p class="body-5-local text-black my-2" style="max-width: 300px">
+              {{ e.waktuMulai }} - {{ e.waktuSelesai }} WIB
+            </p>
+            <div
+              data-aos="fade-up"
+              data-aos-duration="2500"
+              class="flex flex-col"
+            >
+              <button
+                @click="openMap(e)"
+                class="bg-[#F8F4EA] border border-white mb-6 py-1.5 px-3 rounded-lg space-x-2.5 z-10"
+              >
+                <span class="body-2-local text-black text-center">
+                  View Maps
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <img src="@/assets/images/p-wedding-events.webp" />
+      </div>
+    </template>
   </div>
 </template>
 
 <style scoped>
+.container-event {
+  border-radius: 16px 16px 0px 0px;
+  background: #fffdfb;
+  box-shadow: 0px 1px 16px 0px rgba(0, 0, 0, 0.08);
+}
 .bg-wedding {
   background-image: url("@/assets/images/bg-wedding.webp");
   background-size: cover;
-}
-
-.bg-akad {
-  background-image: url("@/assets/images/bg-akad.webp");
-  background-size: cover;
   background-position: center;
+  min-height: 940px;
 }
 
-.bg-resepsi {
-  background-image: url("@/assets/images/bg-resepsi.webp");
-  background-size: cover;
-  background-position: center;
+.title-1-local {
+  text-align: center;
+  font-family: "Pinyon Script";
+  font-size: 33.9px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 53px;
 }
 
-.bg-container-shadow {
-  background: rgba(244, 234, 225, 0.77);
-  box-shadow: 0px 0px 45px 1px rgba(0, 0, 0, 0.5);
+.title-2-local {
+  text-align: center;
+  font-family: "Pinyon Script";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 43.26px;
 }
 
-.bg-linear-btn {
-  background: linear-gradient(282.22deg, #000000 0%, #a98466 100%);
+.title-3-local {
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 21.55px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 30.17px;
+}
+
+.headline-6-local {
+  color: #fff;
+  font-family: "Cormorant";
+  font-size: 30px;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 30px;
+}
+
+.headline-7-local {
+  color: #fff;
+  font-family: "Inter";
+  font-size: 25.313px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 40px;
+}
+
+.body-2-local {
+  text-align: center;
+  font-family: "EB Garamond";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24.57px;
+}
+
+.body-3-local {
+  font-family: "Poppins";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 24.57px;
+}
+
+.body-4-local {
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 60px;
+}
+
+.body-5-local {
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 21.77px;
+}
+
+.body-6-local {
+  color: #000;
+  text-align: center;
+  font-family: "Bona Nova";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.42px;
+}
+
+.body-7-local {
+  color: #fff;
+  font-family: "Poppins";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16.8px;
 }
 </style>
