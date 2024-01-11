@@ -1,32 +1,32 @@
 <template>
-  <div class="flex flex-row space-x-1.5 my-6 z-30">
+  <div class="flex flex-row space-x-1.5 z-30">
     <div
-      class="flex flex-col items-center py-2 px-3.5 border border-black bg-linear rounded-lg"
+      class="flex flex-col items-center py-2 px-3.5 rounded-lg"
       style="width: 66px"
     >
-      <p class="body-5 text-black">{{ days }}</p>
-      <p class="caption-12 text-black">Days</p>
+      <p class="body-5 text-white mb-1">{{ days }}</p>
+      <p class="caption-12 text-white">Hari</p>
     </div>
     <div
-      class="flex flex-col items-center py-2 px-3.5 border border-black bg-linear rounded-lg"
+      class="flex flex-col items-center py-2 px-3.5 rounded-lg"
       style="width: 66px"
     >
-      <p class="body-5 text-black">{{ hours }}</p>
-      <p class="caption-12 text-black">Hours</p>
+      <p class="body-5 text-white mb-1">{{ hours }}</p>
+      <p class="caption-12 text-white">Jam</p>
     </div>
     <div
-      class="flex flex-col items-center py-2 px-3.5 border border-black bg-linear rounded-lg"
+      class="flex flex-col items-center py-2 px-3.5 rounded-lg"
       style="width: 66px"
     >
-      <p class="body-5 text-black">{{ minutes }}</p>
-      <p class="caption-12 text-black">Minutes</p>
+      <p class="body-5 text-white mb-1">{{ minutes }}</p>
+      <p class="caption-12 text-white">Menit</p>
     </div>
     <div
-      class="flex flex-col items-center py-2 px-3.5 border border-black bg-linear rounded-lg"
+      class="flex flex-col items-center py-2 px-3.5 rounded-lg"
       style="width: 66px"
     >
-      <p class="body-5 text-black">{{ seconds }}</p>
-      <p class="caption-12 text-black">Seconds</p>
+      <p class="body-5 text-white mb-1">{{ seconds }}</p>
+      <p class="caption-12 text-white">Detik</p>
     </div>
   </div>
 </template>
@@ -41,7 +41,7 @@ interface CountDownTypes {
   seconds: string | number;
 }
 
-const props = defineProps<CountDownTypes>();
+defineProps<CountDownTypes>();
 </script>
 
 <style scoped>

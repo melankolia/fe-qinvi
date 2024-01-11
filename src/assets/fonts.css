@@ -56,11 +56,11 @@
 }
 
 .caption-8 {
-  font-family: "Noto Sans", sans-serif;
-  font-style: normal;
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 12px;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
+  line-height: 19px; /* 140% */
 }
 
 .caption-9 {
@@ -72,28 +72,33 @@
 }
 
 .caption-10 {
-  font-family: "Monesta";
+  color: #000;
+  text-align: center;
+  font-family: "Varela Round";
+  font-size: 12px;
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
+  line-height: 18px;
 }
 
 .caption-11 {
-  font-family: "Cormorant Garamond";
-  font-style: italic;
-  font-weight: 700;
-  font-size: 20.8px;
-  line-height: 27px;
-  letter-spacing: 0.2px;
+  color: #AB738C;
+  text-align: center;
+  font-family: "Vidaloka";
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px; /* 100% */
+  text-transform: capitalize;
 }
 
 .caption-12 {
-  font-family: "Cormorant Garamond";
-  font-style: italic;
-  font-weight: 400;
-  font-size: 12.8px;
-  line-height: 13px;
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 12px;
 }
 
 .caption-13 {
@@ -144,18 +149,19 @@
   font-family: "Cormorant Garamond", "cursive";
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 16px;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
 
 .body-5 {
-  font-family: "Cormorant Garamond";
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 20px;
   font-style: normal;
   font-weight: 400;
-  font-size: 22px;
-  line-height: 30px;
+  line-height: 20px; 
 }
 
 .body-6 {
@@ -204,11 +210,14 @@
 }
 
 .headline-2 {
-  font-family: "Dream Avenue";
+  color: #AB738C;
+  text-align: center;
+  font-family: "Sacramento";
+  font-size: 21.102px;
   font-style: normal;
   font-weight: 400;
-  font-size: 32px;
-  line-height: 48px;
+  line-height: 37px; /* 175.342% */
+  text-transform: uppercase;
 }
 
 .headline-3 {
@@ -272,12 +281,15 @@
 }
 
 .headline-9 {
-  font-family: "Cormorant Garamond";
+  color: #000;
+  text-align: center;
+  font-family: 'Vidaloka', serif;
+  font-size: 14px;
   font-style: normal;
-  font-weight: 700;
-  font-size: 14.4px;
-  line-height: 19px;
-  letter-spacing: 1.8px;
+  font-weight: 400;
+  line-height: 12px; /* 100% */
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .headline-10 {
