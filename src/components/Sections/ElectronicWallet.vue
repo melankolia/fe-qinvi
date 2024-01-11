@@ -68,49 +68,51 @@ const handleCopy = (i: number): void => {
 </script>
 
 <template>
-  <div class="flex flex-col container-e-wallet relative">
-    <div class="flex flex-col px-4 py-6">
+  <div class="flex flex-col container-e-wallet relative px-5 py-4">
+    <div class="flex flex-row w-full justify-between items-center px-4">
       <p
-        data-aos="zoom-in-up"
-        data-aos-duration="2000"
-        class="headline-19 text-white mb-8 font-extralight text-center"
+        data-aos="fade-right"
+        data-aos-duration="2500"
+        class="headline-1-local text-black"
       >
-        Wedding Gift
+        Wedding
+        <br />
+        <span class="headline-2-local pl-14">Gift</span>
       </p>
+      <div class="w-1/2 border-t border-black"></div>
+    </div>
+    <p class="body-1-local text-center my-5">
+      Kehadiran Anda merupakan hadiah terindah. <br />
+      Namun, apabila Anda hendak memberikna tanda <br />
+      kasih kepada kami, dpat melalui fitur di bawah ini:
+    </p>
+    <div class="flex flex-col px-4 py-6">
       <div
         v-for="(e, i) in props.rekening"
         :key="i"
-        class="flex flex-col bg-[#F8F7F3] items-center rounded-xl p-4 mb-3 z-10"
+        class="flex flex-col bg-[#AB738C] items-center rounded-md p-4 mb-3 z-10"
       >
         <input
           type="hidden"
           :id="`#copy-rekening-${i}`"
           :value="e.noRekening"
         />
-        <img
-          :src="handleIconBank(e.namaBank)"
-          width="100"
-          height="19"
-          class="mb-3"
-        />
-        <p class="caption-1 text-blue-10 mb-3">
-          No. Rekening : {{ e.noRekening }}
+        <div class="flex flex-col items-center bg-white mb-3 p-2.5 rounded-xl">
+          <img :src="handleIconBank(e.namaBank)" width="100" height="19" />
+        </div>
+        <p class="caption-1-local text-white mb-3">
+          {{ e.noRekening }}
         </p>
-        <p class="caption-1 text-blue-10 mb-3">A/n {{ e.namaPemilik }}</p>
-        <div class="flex flex-col items-center">
+        <div class="flex flex-col items-center mb-3">
           <button
             @click="() => handleCopy(i)"
-            class="button-date border border-white bg-blue-10 py-1.5 px-3 rounded-2xl flex flex-row items-center space-x-2.5 drop-shadow-md"
+            class="button-date border border-white bg-white py-0.5 px-2.5 rounded-2xl flex flex-row justify-center items-center space-x-2.5"
           >
-            <img
-              src="@/assets/icons/icon-copy.png"
-              class="brightness-0 invert"
-              height="18"
-              width="18"
-            />
-            <p class="body-2 text-white">Copy Text</p>
+            <img src="@/assets/icons/icon-copy.png" width="14" />
+            <p class="body-2 text-[#AB738C]">Copy Text</p>
           </button>
         </div>
+        <p class="caption-1 text-white">A/n {{ e.namaPemilik }}</p>
       </div>
     </div>
     <!-- <img src="@/assets/images/bg-wedding-gift.webp" class="absolute z-0" /> -->
@@ -119,9 +121,47 @@ const handleCopy = (i: number): void => {
 
 <style scoped>
 .container-e-wallet {
-  /* background-image: url("@/assets/images/bg-gift.webp");
+  background-image: url("@/assets/images/bg-wedding-gift.webp");
   background-size: cover;
-  background-position: center; */
-  background-color: #8c6c4f;
+  background-position: center;
+  /* background-color: #8c6c4f; */
+}
+
+.headline-1-local {
+  color: #000;
+  font-family: "Cormorant";
+  font-size: 30px;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 30px; /* 100% */
+}
+
+.headline-2-local {
+  color: #000;
+  text-align: center;
+  font-family: "Inter";
+  font-size: 23.555px;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 30px; /* 127.363% */
+}
+
+.body-1-local {
+  color: #000;
+  font-family: "Poppins";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16.8px; /* 140% */
+}
+
+.caption-1-local {
+  color: #fff;
+  font-family: "Poppins";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22.5px; /* 150% */
+  letter-spacing: 1.5px;
 }
 </style>

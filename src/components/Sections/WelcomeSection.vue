@@ -47,6 +47,24 @@ const handleClick = (): void => {
           );
         }
 
+        data.data.rekening = [
+          {
+            createdAt: new Date(),
+            updatedAt: new Date(),
+            namaBank: "bca",
+            namaPemilik: "AA Digital",
+            noRekening: "487456007509",
+            userId: "12345",
+          },
+          {
+            createdAt: new Date(),
+            updatedAt: new Date(),
+            namaBank: "bni",
+            namaPemilik: "AA Digital",
+            noRekening: "487456007509",
+            userId: "12345",
+          },
+        ];
         emit("handleDataPernikahan", data?.data);
         // dataPernikahan.value = { ...data?.data } as dataPernikahanType;
       } else {

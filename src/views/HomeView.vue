@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, computed } from "vue";
+import { ref, onMounted } from "vue";
 import type { Ref } from "vue";
 
 import WelcomeSection from "@/components/Sections/WelcomeSection.vue";
@@ -11,7 +11,7 @@ import ElectronicWallet from "@/components/Sections/ElectronicWallet.vue";
 import GalleryPhotos from "@/components/Sections/GalleryPhotos.vue";
 import PrayerWishes from "@/components/Sections/PrayerWishes.vue";
 import FooterSections from "@/components/Sections/FooterSections.vue";
-import FooterWeddings from "@/components/Sections/FooterWeddings.vue";
+// import FooterWeddings from "@/components/Sections/FooterWeddings.vue";
 import MenusFloating from "@/components/MenusFloating.vue";
 import WishesList from "@/components/Sections/WishesList.vue";
 import { useRoute } from "vue-router";

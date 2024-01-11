@@ -131,113 +131,126 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex flex-col items-center px-5 pt-16 pb-5 bg-wedding bg-white">
-    <div class="flex flex-row w-full justify-between items-center">
-      <p
-        data-aos="fade-right"
+  <div class="flex flex-col">
+    <div class="flex flex-col items-center px-5 pt-16 pb-5 bg-wedding bg-white">
+      <div class="flex flex-row w-full justify-between items-center">
+        <p
+          data-aos="fade-right"
+          data-aos-duration="2500"
+          class="headline-6-local text-white"
+        >
+          Wedding
+          <br />
+          <span class="headline-7-local">Event</span>
+        </p>
+        <div class="w-1/2 border-t border-white"></div>
+      </div>
+      <p class="body-7-local text-white text-center mt-5 mx-14">
+        <span class="italic">Assalamu'alaikum Wr.Wb.</span> <br />
+        Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i untuk
+        hadir dihari bahagia Pernikahan kami yang akan dilaksanakan pada:
+      </p>
+      <div
+        data-aos="fade-down"
         data-aos-duration="2500"
-        class="headline-6-local text-white"
+        class="container-event flex flex-col items-center rounded-xl mb-8 mt-10"
       >
-        Wedding
-        <br />
-        <span class="headline-7-local">Event</span>
-      </p>
-      <div class="w-1/2 border-t border-white"></div>
-    </div>
-    <p class="body-7-local text-white text-center mt-5 mx-14">
-      <span class="italic">Assalamu'alaikum Wr.Wb.</span> <br />
-      Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i untuk
-      hadir dihari bahagia Pernikahan kami yang akan dilaksanakan pada:
-    </p>
-    <div
-      data-aos="fade-down"
-      data-aos-duration="2500"
-      class="container-event flex flex-col items-center rounded-xl mb-8 mt-10"
-    >
-      <p class="title-2-local text-black mb-6 mt-5">
-        {{ acaraAkad.namaAcara }}
-      </p>
-      <div class="flex flex-row">
-        <div class="flex flex-col border-r border-r-black text-black px-2">
-          <p class="body-3-local">{{ getDay(acaraAkad.tanggal, "name") }}</p>
-          <p class="body-4-local">{{ getDay(acaraAkad.tanggal, "number") }}</p>
-          <p class="body-3-local">{{ getMonth(acaraAkad.tanggal) }}</p>
-          <p class="body-3-local">{{ getYear(acaraAkad.tanggal) }}</p>
-        </div>
-        <div class="flex flex-col text-center px-2">
-          <p class="title-3-local text-black my-2" style="max-width: 300px">
-            {{ acaraAkad.lokasi }}
-          </p>
-          <p class="body-5-local text-[#404040;] my-2" style="max-width: 300px">
-            {{ acaraAkad.alamat }}
-          </p>
-          <p class="body-5-local text-black my-2" style="max-width: 300px">
-            {{ acaraAkad.waktuMulai }} - {{ acaraAkad.waktuSelesai }} WIB
-          </p>
-          <div
-            data-aos="fade-up"
-            data-aos-duration="2500"
-            class="flex flex-col"
-          >
-            <button
-              @click="openMap(acaraAkad)"
-              class="bg-[#F8F4EA] border border-white mb-6 py-1.5 px-3 rounded-lg space-x-2.5 z-10"
+        <p class="title-2-local text-black mb-6 mt-5">
+          {{ acaraAkad.namaAcara }}
+        </p>
+        <div class="flex flex-row">
+          <div class="flex flex-col border-r border-r-black text-black px-2">
+            <p class="body-3-local">{{ getDay(acaraAkad.tanggal, "name") }}</p>
+            <p class="body-4-local">
+              {{ getDay(acaraAkad.tanggal, "number") }}
+            </p>
+            <p class="body-3-local">{{ getMonth(acaraAkad.tanggal) }}</p>
+            <p class="body-3-local">{{ getYear(acaraAkad.tanggal) }}</p>
+          </div>
+          <div class="flex flex-col text-center px-2">
+            <p class="title-3-local text-black my-2" style="max-width: 300px">
+              {{ acaraAkad.lokasi }}
+            </p>
+            <p
+              class="body-5-local text-[#404040;] my-2"
+              style="max-width: 300px"
             >
-              <span class="body-2-local text-black text-center">
-                View Maps
-              </span>
-            </button>
+              {{ acaraAkad.alamat }}
+            </p>
+            <p class="body-5-local text-black my-2" style="max-width: 300px">
+              {{ acaraAkad.waktuMulai }} - {{ acaraAkad.waktuSelesai }} WIB
+            </p>
+            <div
+              data-aos="fade-up"
+              data-aos-duration="2500"
+              class="flex flex-col"
+            >
+              <button
+                @click="openMap(acaraAkad)"
+                class="bg-[#F8F4EA] border border-white mb-6 py-1.5 px-3 rounded-lg space-x-2.5 z-10"
+              >
+                <span class="body-2-local text-black text-center">
+                  View Maps
+                </span>
+              </button>
+            </div>
           </div>
         </div>
+        <img src="@/assets/images/p-wedding-events.webp" />
       </div>
-      <img src="@/assets/images/p-wedding-events.webp" />
     </div>
-  </div>
-  <div class="bg-wedding-2 px-5 pb-5">
-    <div
-      data-aos="fade-down"
-      data-aos-duration="2500"
-      class="container-event flex flex-col items-center rounded-xl mb-8 mt-10"
-    >
-      <p class="title-2-local text-black mb-6 mt-5">
-        {{ acaraResepsi.namaAcara }}
-      </p>
-      <div class="flex flex-row">
-        <div class="flex flex-col border-r border-r-black text-black px-2">
-          <p class="body-3-local">{{ getDay(acaraResepsi.tanggal, "name") }}</p>
-          <p class="body-4-local">
-            {{ getDay(acaraResepsi.tanggal, "number") }}
-          </p>
-          <p class="body-3-local">{{ getMonth(acaraResepsi.tanggal) }}</p>
-          <p class="body-3-local">{{ getYear(acaraResepsi.tanggal) }}</p>
-        </div>
-        <div class="flex flex-col text-center px-2">
-          <p class="title-3-local text-black my-2" style="max-width: 300px">
-            {{ acaraResepsi.lokasi }}
-          </p>
-          <p class="body-5-local text-[#404040;] my-2" style="max-width: 300px">
-            {{ acaraResepsi.alamat }}
-          </p>
-          <p class="body-5-local text-black my-2" style="max-width: 300px">
-            {{ acaraResepsi.waktuMulai }} - {{ acaraResepsi.waktuSelesai }} WIB
-          </p>
-          <div
-            data-aos="fade-up"
-            data-aos-duration="2500"
-            class="flex flex-col"
-          >
-            <button
-              @click="openMap(acaraResepsi)"
-              class="bg-[#F8F4EA] border border-white mb-6 py-1.5 px-3 rounded-lg space-x-2.5 z-10"
+    <div class="bg-wedding-2 px-5 pb-5">
+      <div
+        data-aos="fade-down"
+        data-aos-duration="2500"
+        class="container-event flex flex-col items-center rounded-xl mb-8 mt-10"
+      >
+        <p class="title-2-local text-black mb-6 mt-5">
+          {{ acaraResepsi.namaAcara }}
+        </p>
+        <div class="flex flex-row">
+          <div class="flex flex-col border-r border-r-black text-black px-2">
+            <p class="body-3-local">
+              {{ getDay(acaraResepsi.tanggal, "name") }}
+            </p>
+            <p class="body-4-local">
+              {{ getDay(acaraResepsi.tanggal, "number") }}
+            </p>
+            <p class="body-3-local">{{ getMonth(acaraResepsi.tanggal) }}</p>
+            <p class="body-3-local">{{ getYear(acaraResepsi.tanggal) }}</p>
+          </div>
+          <div class="flex flex-col text-center px-2">
+            <p class="title-3-local text-black my-2" style="max-width: 300px">
+              {{ acaraResepsi.lokasi }}
+            </p>
+            <p
+              class="body-5-local text-[#404040;] my-2"
+              style="max-width: 300px"
             >
-              <span class="body-2-local text-black text-center">
-                View Maps
-              </span>
-            </button>
+              {{ acaraResepsi.alamat }}
+            </p>
+            <p class="body-5-local text-black my-2" style="max-width: 300px">
+              {{ acaraResepsi.waktuMulai }} -
+              {{ acaraResepsi.waktuSelesai }} WIB
+            </p>
+            <div
+              data-aos="fade-up"
+              data-aos-duration="2500"
+              class="flex flex-col"
+            >
+              <button
+                @click="openMap(acaraResepsi)"
+                class="bg-[#F8F4EA] border border-white mb-6 py-1.5 px-3 rounded-lg space-x-2.5 z-10"
+              >
+                <span class="body-2-local text-black text-center">
+                  View Maps
+                </span>
+              </button>
+            </div>
           </div>
         </div>
+        <img src="@/assets/images/p-wedding-events.webp" />
       </div>
-      <img src="@/assets/images/p-wedding-events.webp" />
     </div>
   </div>
 </template>
