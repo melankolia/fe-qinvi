@@ -70,16 +70,25 @@ onMounted(() => {
         </p>
         <div class="w-1/2 border-t border-white"></div>
       </div>
-      <div class="flex flex-col mt-10 px-5">
-        <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
+      <div
+        class="flex flex-col flex-wrap mt-10 overflow-hidden"
+        style="max-height: 100vh"
+      >
+        <div
+          class="flex flex-col px-2"
+          v-for="(e, i) in imgsRef"
+          :key="i"
+          style="max-width: 50%"
+        >
           <img
-            data-aos="fade-down p-1"
             data-aos-duration="2500"
-            :src="imgsRef[1]"
+            :src="e"
             @click="onShow(1 + 1)"
+            class="mb-4 rounded-lg"
           />
         </div>
-        <div class="grid grid-cols-2">
+
+        <!-- <div class="grid grid-cols-2">
           <img
             :data-aos="handleAnimation(i)"
             data-aos-duration="2500"
@@ -88,32 +97,6 @@ onMounted(() => {
             @click="onShow(i + 1)"
             :src="e"
             class="p-1"
-          />
-        </div>
-        <div class="grid grid-cols-2">
-          <img
-            :data-aos="handleAnimation(i)"
-            data-aos-duration="2500"
-            v-for="(e, i) in thumbnailRef"
-            :key="i"
-            @click="onShow(i + 1)"
-            :src="e"
-            class="p-1"
-          />
-        </div>
-        <!-- <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
-          <img
-            data-aos="fade-down p-1"
-            data-aos-duration="2500"
-            :src="imgsRef[4]"
-            @click="onShow(4 + 1)"
-          />
-        </div> -->
-        <!-- <div class="grid grid-cols-1 gap-2 mb-1 mx-1">
-          <img
-            data-aos="fade-down p-1"
-            data-aos-duration="2500"
-            :src="imgsRef[8]"
           />
         </div> -->
         <div v-if="loading" class="flex flex-col items-center">
